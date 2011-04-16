@@ -1,0 +1,3 @@
+module Rmthemegen
+  # Your code goes here...
+end
