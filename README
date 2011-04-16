@@ -1,0 +1,22 @@
+rmthemegen - A syntax color theme generator for IntelliJ's Rubymine IDE
+
+By David Heitzman 
+evolvemeans@gmail.com
+released under the MIT  license "free to use"  
+
+"This software is not designed to diagnose, treat, or cure any particular software or hardware ailment. Discretion is advised." 
+
+requirements : 
+     ruby : >= 1.9.1
+     gems:
+       color
+
+
+usage: ruby rmthemegen
+     It will generate 1 or more files called: "rmt_something_something.xml"
+     Place these in your ./RubyMine/config/colors directory and then go to File/Settings/Editor/Colors&Fonts
+     you should see your theme(s) listed there. 
+
+     Trivia: the names are chosen at random from lists of nouns and adjectives.   
+
+
