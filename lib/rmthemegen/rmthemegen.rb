@@ -13,7 +13,7 @@ module ColorThemeGen
       
     def initialize
     @rand = Random.new
-  
+	puts @@adjectives.size * @@nouns.size  
 =begin
   #for testing purposes of the RGB contrast evaluator
     f = File.open("index.html","w+")
@@ -44,7 +44,9 @@ module ColorThemeGen
       #italic:                <option name="FONT_TYPE" value="2" />
       #bold & italic:         <option name="FONT_TYPE" value="3" />
 
-      @caret_row_color = "333333"
+      @caret_row_color = "232323"
+      @caret_row_color = randcolor(:max_bright=>0.3, :min_bright=>0.15,:shade_of_grey=>false)
+
       # if the element name contains a string from the following arrays it makes that element
       # eligible for bold, italic or both. This allows elements from multiple languages to all
       # be exposed equally to 
@@ -58,7 +60,7 @@ module ColorThemeGen
       @underline_chance = 0.3
 #      @loadfile = "stellar.xml"
 #      @schemename = "Efficient Wasteland"
-      @bright_median = 0.75
+      @bright_median = 0.85
         @min_bright = @bright_median * 0.65
         @max_bright =  [@bright_median * 1.35,1.0].max 
       @schemeversion = 1
@@ -111,6 +113,7 @@ module ColorThemeGen
         color = Color::RGB.new(r,g,b)
 #        puts "color "+color.html
 #        puts "contrast "+color.contrast(df[:bg_rgb]).to_s if df[:bg_rgb]
+        bright = 
         contok = df[:bg_rgb] ? (df[:min_cont]..df[:max_cont]).cover?( color.contrast(df[:bg_rgb]) ) : true
 #        puts "contok "+contok.to_s
         brightok = (df[:min_bright]..df[:max_bright]).cover?( color.to_hsl.brightness )  
@@ -151,6 +154,7 @@ module ColorThemeGen
     def set_element_colors
       newopt = []
       newopt[0]={:option=>[]}
+      ################      set the fonttype 
       @@element_keys.each do |o|
         fonttype = 0 #bold: 1,  #italic: 2, bold & italic: 3   
         @bold_candidates.each do |bc|
@@ -163,18 +167,42 @@ module ColorThemeGen
             fonttype += 2
           end 
         end 
+        #this block is for setting up special cases for the new color - ie, comments darker,
+        #reserved words are yellowins, whatever 
         fonttype = "" unless fonttype.is_a? Fixnum
-        optblj = [{:option=>[ {:name => "FOREGROUND", :value =>randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright )},     
-        {:name => "BACKGROUND", :value =>@backgroundcolor},
-                  {:name => "EFFECT_COLOR" },{:name => "FONT_TYPE", :value=>fonttype.to_s },
-                  {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright )}]}] 
+        case 
+          when o.include?( "COMMENT") 
+      #comments -- this is done so that COMMENTED texts skew toward darker shades. 
+            newcol = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_cont => @min_cont*1.2, :min_cont=>@min_cont ) 
+            optblj=[{:option=>[ {:name => "FOREGROUND", :value => newcol},     
+#           {:name => "BACKGROUND", :value =>@backgroundcolor},
+            {:name => "BACKGROUND"},
+            {:name => "EFFECT_COLOR" },{:name => "FONT_TYPE", :value=>fonttype.to_s },
+            {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright )}]}] 
+       #default text and background for whole document
+          when ["TEXT","FOLDED_TEXT_ATTRIBUTES"].include?( o.to_s)  
+            newcol = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright ) 
+            optblj=[{:option=>[ {:name => "FOREGROUND", :value => newcol},     
+            {:name => "BACKGROUND", :value =>@backgroundcolor},
+            {:name => "EFFECT_COLOR" },{:name => "FONT_TYPE", :value=>fonttype.to_s },
+            {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright )}]}] 
+          else
+            newcol=randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright ) 
+            optblj=[{:option=>[ {:name => "FOREGROUND", :value => newcol},     
+            {:name => "BACKGROUND"},
+            {:name => "EFFECT_COLOR" },{:name => "FONT_TYPE", :value=>fonttype.to_s },
+            {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright )}]}] 
+        end
         newopt[0][:option] << {:name =>o.to_s , :value=>optblj}
       end
       @xmlout[:scheme][0][:attributes] = newopt
     end 
   
     def make_theme_file
+      @caret_row_color = randcolor(:max_bright=>0.35, :min_bright=>0.23,:shade_of_grey=>false)
       @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
+      @default_fg = @backgroundcolor
+      @default_bg = @backgroundcolor
 #      puts "backgroundcolor = "+@backgroundcolor
       @schemename = randthemename
       @xmlout = {:scheme=>
@@ -193,8 +221,8 @@ module ColorThemeGen
       begin
         @outf = File.new(@savefile, "w+")
       rescue
-      
       end 
+
       set_doc_options
       set_doc_colors
       set_element_colors
