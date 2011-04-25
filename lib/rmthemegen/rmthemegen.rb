@@ -51,7 +51,6 @@ module ColorThemeGen
       #   5 => blockey underline 
       #   0 ==> box around word
       #   -1 ==> seems to have no effect
-      @caret_row_color = "232323"
 
       # if the element name contains a string from the following arrays it makes that element
       # eligible for bold, italic or both. This allows elements from multiple languages to all
@@ -81,6 +80,9 @@ module ColorThemeGen
       @background_grey = true #if false, allows background to be any color, as long as it meets brightness parameter
       @foreground_min_brightness = 0.4
       @min_cont = 0.25
+
+
+      @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
       
     end 
     
@@ -141,11 +143,12 @@ module ColorThemeGen
     def set_doc_colors
       newopt = []
       @@doc_color_keys.each do |o|
-        if o.include? "BACKGR" then
-          newopt << {:name=> o, :value => @backgroundcolor }
-        elsif o == "CARET_ROW_COLOR" then
+        if o == "CARET_ROW_COLOR" then
           @caret_row_color = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.04,:max_cont => 0.06,:shade_of_grey=>false)
           newopt << {:name=> o, :value => @caret_row_color }
+        elsif o.include?("SELECTION_BACKGROUND") then
+          @selection_background = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.07,:max_cont => 0.09,:shade_of_grey=>false)
+          newopt << {:name=> o, :value => @selection_background }
         else
 #        puts "bgc"+@backgroundcolor
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont,:max_bright=>0.5,:min_bright=>0.3,:shade_of_grey=>@background_grey).to_s }
@@ -227,10 +230,7 @@ module ColorThemeGen
     end 
   
     def make_theme_file
-      @caret_row_color = randcolor(:max_bright=>0.35, :min_bright=>0.23,:shade_of_grey=>false)
-      @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
-      @default_fg = @backgroundcolor
-      @default_bg = @backgroundcolor
+#      @default_fg = @backgroundcolor
 #      puts "backgroundcolor = "+@backgroundcolor
       @schemename = randthemename
       @xmlout = {:scheme=>
