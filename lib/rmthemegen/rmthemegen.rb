@@ -149,6 +149,8 @@ module ColorThemeGen
         elsif o.include?("SELECTION_BACKGROUND") then
           @selection_background = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.07,:max_cont => 0.09,:shade_of_grey=>false)
           newopt << {:name=> o, :value => @selection_background }
+        elsif o.include?("GUTTER_BACKGROUND") then
+          newopt << {:name=> o, :value => @backgroundcolor }
         else
 #        puts "bgc"+@backgroundcolor
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont,:max_bright=>0.5,:min_bright=>0.3,:shade_of_grey=>@background_grey).to_s }
