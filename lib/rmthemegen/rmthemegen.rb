@@ -43,9 +43,15 @@ module ColorThemeGen
       #bold:                  <option name="FONT_TYPE" value="1" />
       #italic:                <option name="FONT_TYPE" value="2" />
       #bold & italic:         <option name="FONT_TYPE" value="3" />
-
+      
+      #"EFFECT-TYPE" s: 
+      #   3 ==> cross-out 
+      #   1 ==> underline
+      #   2 == >squiggle underline
+      #   5 => blockey underline 
+      #   0 ==> box around word
+      #   -1 ==> seems to have no effect
       @caret_row_color = "232323"
-      @caret_row_color = randcolor(:max_bright=>0.3, :min_bright=>0.15,:shade_of_grey=>false)
 
       # if the element name contains a string from the following arrays it makes that element
       # eligible for bold, italic or both. This allows elements from multiple languages to all
@@ -53,7 +59,14 @@ module ColorThemeGen
       # underline not implemented yet. There are several font decorations in rubymine, 
       # probably should be used sparingly. 
       @italic_candidates = ["STRING"]
+      
       @bold_candidates = ["KEYWORD","RUBY_SPECIFIC_CALL", "CONSTANT", "COMMENT", "COMMA", "PAREN"]
+# with code inspections we don't color the text, we just put a line or something under it .
+      @code_inspections = ["ERROR","WARNING_ATTRIBUTES","DEPRECATED", "TYPO","WARNING_ATTRIBUTES", "BAD_CHARACTER",
+      "CUSTOM_INVALID_STRING_ESCAPE_ATTRIBUTES","ERRORS_ATTRIBUTES"]
+      @cross_out = ["DEPRECATED_ATTRIBUTES" ]
+      
+      @unders = %w(-1 0 1 2 5  )
       @underline_candidates = ["STRING"]
       @italic_chance = 0.5
       @bold_chance = 0.7
@@ -74,7 +87,7 @@ module ColorThemeGen
     def randthemename
       out = " "
       while out.include? " "   do 
-       out = @@adjectives[Kernel.rand * @@adjectives.size]+"_"+@@nouns[Kernel.rand * @@nouns.size]
+       out = @@adjectives[@rand.rand * @@adjectives.size]+"_"+@@nouns[@rand.rand * @@nouns.size]
       end 
       return out
     end
@@ -131,6 +144,7 @@ module ColorThemeGen
         if o.include? "BACKGR" then
           newopt << {:name=> o, :value => @backgroundcolor }
         elsif o == "CARET_ROW_COLOR" then
+          @caret_row_color = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.04,:max_cont => 0.06,:shade_of_grey=>false)
           newopt << {:name=> o, :value => @caret_row_color }
         else
 #        puts "bgc"+@backgroundcolor
@@ -185,6 +199,20 @@ module ColorThemeGen
             optblj=[{:option=>[ {:name => "FOREGROUND", :value => newcol},     
             {:name => "BACKGROUND", :value =>@backgroundcolor},
             {:name => "EFFECT_COLOR" },{:name => "FONT_TYPE", :value=>fonttype.to_s },
+            {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright )}]}] 
+          when @code_inspections.include?(o.to_s)  
+            newcol = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright ) 
+            optblj=[{:option=>[ {:name => "FOREGROUND"},     
+            {:name => "BACKGROUND"},
+            {:name => "EFFECT_COLOR", :value =>newcol},{:name => "FONT_TYPE", :value=>fonttype.to_s },
+            {:name => "EFFECT_TYPE", :value=>@unders.shuffle[0].to_s },
+            {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright )}]}] 
+          when @cross_out.include?(o.to_s)
+            newcol = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright ) 
+            optblj=[{:option=>[ {:name => "FOREGROUND"},     
+            {:name => "BACKGROUND"},
+            {:name => "EFFECT_COLOR", :value =>newcol},{:name => "FONT_TYPE", :value=>fonttype.to_s },
+            {:name => "EFFECT_TYPE", :value=>"3" },
             {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright )}]}] 
           else
             newcol=randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>@min_cont,:max_bright => @max_bright, :min_bright=>@min_bright ) 
