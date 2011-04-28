@@ -88,7 +88,7 @@ module ColorThemeGen
 			  "IDENTIFIER"]
 # with code inspections we don't color the text, we just put a line or something under it .
       @code_inspections = ["ERROR","WARNING_ATTRIBUTES","DEPRECATED", "TYPO","WARNING_ATTRIBUTES", "BAD_CHARACTER",
-      "CUSTOM_INVALID_STRING_ESCAPE_ATTRIBUTES","ERRORS_ATTRIBUTES"]
+      "CUSTOM_INVALID_STRING_ESCAPE_ATTRIBUTES","ERRORS_ATTRIBUTES", "MATCHED_BRACE_ATTRIBUTES"]
       @cross_out = ["DEPRECATED_ATTRIBUTES" ]
       
       @unders = %w(-1 0 1 2 5  )
@@ -195,6 +195,10 @@ module ColorThemeGen
           newopt << {:name=> o, :value => @backgroundcolor }
         elsif o.include?("CARET_COLOR") then
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.40,:max_cont=>0.7,:shade_of_grey=>true) }
+        elsif o.include?("READONLY_BACKGROUND") then
+          newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.03,:max_cont=>0.09,:shade_of_grey=>@background_grey) }
+        elsif o.include?("READONLY_FRAGMENT_BACKGROUND") then
+          newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.3,:max_cont=>0.09,:shade_of_grey=>@background_grey) }
         else
 #        puts "bgc"+@backgroundcolor
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont,:max_cont=>0.5,:shade_of_grey=>@background_grey).to_s }
