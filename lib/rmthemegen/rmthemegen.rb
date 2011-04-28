@@ -21,7 +21,7 @@ module ColorThemeGen
   
     puts "generating #{@iterations.to_s} themes into current directory. Filenames: rmt_xyz.xml "
     
-
+=begin
   #for testing purposes of the RGB contrast evaluator
     f = File.open("index.html","w+")
     st1="<html>"
@@ -63,7 +63,7 @@ module ColorThemeGen
     st1+="</html>"
     printf(f,st1)
     f.close
-Kernel.exit
+=end
 
       #bold:                  <option name="FONT_TYPE" value="1" />
       #italic:                <option name="FONT_TYPE" value="2" />
@@ -112,12 +112,12 @@ Kernel.exit
         @max_cont =  [@cont_median * 1.35,1.0].max
       
       #broad contrast spec
-      @min_cont = 0.55
+      @min_cont = 0.30	
       @max_cont = 1.0
       
       @schemeversion = 1
-      @background_max_brightness = 0.16
-      @background_grey = true #if false, allows background to be any color, as long as it meets brightness parameter
+      @background_max_brightness = 1.0
+      @background_grey = false #if false, allows background to be any color, as long as it meets brightness parameter
     #  @foreground_min_brightness = 0.4
 
 
@@ -271,6 +271,14 @@ Kernel.exit
       end
       @xmlout[:scheme][0][:attributes] = newopt
     end 
+    
+    def make_geany_files
+      geanydir ="geany_"+randthemename 
+      Dir.mkdir(geanydir)
+      f=File.new(geanydir+"/filetypes.xml","w+")
+      f.puts(@@geany_filetypes_end)
+      f.close	
+    end
   
     def make_theme_files
 #      @default_fg = @backgroundcolor
@@ -298,6 +306,7 @@ Kernel.exit
 	XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
 	puts "outputting to file "+@savefile
 	@outf.close	
+	puts "making geany directory "+make_geany_files.to_s
       end 
     end
     
