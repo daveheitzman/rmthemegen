@@ -116,8 +116,8 @@ module ColorThemeGen
       @max_cont = 1.0
       
       @schemeversion = 1
-      @background_max_brightness = 1.0
-      @background_grey = false #if false, allows background to be any color, as long as it meets brightness parameter
+      @background_max_brightness = 0.14
+      @background_grey = true #if false, allows background to be any color, as long as it meets brightness parameter
     #  @foreground_min_brightness = 0.4
 
 
@@ -189,6 +189,8 @@ module ColorThemeGen
         elsif o.include?("SELECTION_BACKGROUND") then
           @selection_background = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.07,:max_cont => 0.09,:shade_of_grey=>false)
           newopt << {:name=> o, :value => @selection_background }
+        elsif o.include?("SELECTION_FOREGROUND") then
+          newopt << {:name=> o }
         elsif o.include?("GUTTER_BACKGROUND") then
           newopt << {:name=> o, :value => @backgroundcolor }
         elsif o.include?("CARET_COLOR") then
