@@ -27,7 +27,7 @@ module ColorThemeGen
     st1="<html>"
     h = Hash.new
     #generate histogram 
-    1000.times do 
+    0.times do 
       begin 
         grkcol = Color::RGB.new(@rand.rand*256,@rand.rand*256,@rand.rand*256)
         brkcol = Color::RGB.new(@rand.rand*256,@rand.rand*256,@rand.rand*256)
@@ -38,15 +38,17 @@ module ColorThemeGen
       
     end
     
-    0.upto 100  do |f|
+    0.upto 0  do |f|
       st1 += "<p>"+f.to_s+": "+ ( h[f.to_i] ? h[f.to_i].to_s : "nada")+"</p>"
     
     end
     
-    1000.times do 
+    0.upto 255 do |i|
       begin 
-        grkcol = Color::RGB.new(@rand.rand*256,@rand.rand*256,@rand.rand*256)
-        brkcol = Color::RGB.new(@rand.rand*256,@rand.rand*256,@rand.rand*256)
+#        grkcol = Color::RGB.new(@rand.rand*256,@rand.rand*256,@rand.rand*256)
+#        brkcol = Color::RGB.new(@rand.rand*256,@rand.rand*256,@rand.rand*256)
+        grkcol = Color::RGB.new(  0,0,0 )
+        brkcol = Color::RGB.new(i,0,0)
         #puts grkcol.contrast(brkcol)
       end until true# grkcol.contrast(brkcol) > 0.20
       st1 += "<p style='padding:0;margin:0;background-color:#{grkcol.html};color:#{brkcol.html};'>aBD9 #!#$87 asf asdf werpl  09890 asd78coiuqwe rasdu 987zxcv klj;lcv "
@@ -60,9 +62,12 @@ module ColorThemeGen
      # st1 += "<p style='background-color:#{grkcol.html};color:#{brkcol.html};'>aBD9 #!#$87 asf asdf werpl  09890 asd78coiuqwe rasdu 987zxcv klj;lcv "
       #st1 += "<span style='background-color:#ffffff;color:#000000;'>hue/lum/bri/all: #{(100*grkcol.diff_hue(brkcol)).to_i}/#{(100*grkcol.diff_lum(brkcol)).to_i}/#{(100*grkcol.diff_bri(brkcol)).to_i}/#{(100*grkcol.contrast(brkcol)).to_i}</p>"
     end 
+     
     st1+="</html>"
     printf(f,st1)
     f.close
+
+Kernel.exit
 =end
 
       #bold:                  <option name="FONT_TYPE" value="1" />
@@ -84,8 +89,7 @@ module ColorThemeGen
       # probably should be used sparingly. 
       @italic_candidates = ["STRING", "SYMBOL", "REQUIRE"]
       
-      @bold_candidates = ["KEYWORD","RUBY_SPECIFIC_CALL", "CONSTANT", "COMMA", "PAREN","RUBY_ATTR_ACCESSOR_CALL", "RUBY_ATTR_READER_CALL" ,"RUBY_ATTR_WRITER_CALL",
-			  "IDENTIFIER"]
+      @bold_candidates = ["KEYWORD","RUBY_SPECIFIC_CALL", "CONSTANT", "COMMA", "PAREN","RUBY_ATTR_ACCESSOR_CALL", "RUBY_ATTR_READER_CALL" ,"RUBY_ATTR_WRITER_CALL", "IDENTIFIER"]
 # with code inspections we don't color the text, we just put a line or something under it .
       @code_inspections = ["ERROR","WARNING_ATTRIBUTES","DEPRECATED", "TYPO","WARNING_ATTRIBUTES", "BAD_CHARACTER",
       "CUSTOM_INVALID_STRING_ESCAPE_ATTRIBUTES","ERRORS_ATTRIBUTES", "MATCHED_BRACE_ATTRIBUTES"]
@@ -147,6 +151,7 @@ module ColorThemeGen
      return "rmt_"+out+".xml"
     end
     
+    
     def randcolor(opts={})
     
       df= { :r=>nil, :g=>nil, :b=>nil, #these are the usual 0..255 
@@ -195,13 +200,15 @@ module ColorThemeGen
           newopt << {:name=> o, :value => @backgroundcolor }
         elsif o.include?("CARET_COLOR") then
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.40,:max_cont=>0.7,:shade_of_grey=>true) }
+
         elsif o.include?("READONLY_BACKGROUND") then
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.03,:max_cont=>0.09,:shade_of_grey=>@background_grey) }
         elsif o.include?("READONLY_FRAGMENT_BACKGROUND") then
-          newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.3,:max_cont=>0.09,:shade_of_grey=>@background_grey) }
+          newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.03,:max_cont=>0.09,:shade_of_grey=>@background_grey) }
+  
         else
 #        puts "bgc"+@backgroundcolor
-          newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont,:max_cont=>0.5,:shade_of_grey=>@background_grey).to_s }
+          newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont,:max_cont=>@max_cont,:shade_of_grey=>@background_grey).to_s }
         end 
       end
       
@@ -282,7 +289,17 @@ module ColorThemeGen
       geanydir ="geany_"+randthemename 
       Dir.mkdir(geanydir)
       f=File.new(geanydir+"/filetypes.xml","w+")
-      f.puts(@@geany_filetypes_end)
+      f.puts('[styling]')
+      
+      @@geany_tokens.each do |t|
+      # foreground;background;bold;italic
+      if t.upcase.include? "COMMENT" then
+        f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.12, :max_cont=>0.22)+";0x"+@backgroundcolor+";"+"false;false")
+      else
+              f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor)+";0x"+@backgroundcolor+";false"+";false")
+      end
+      end
+      f.puts(@@geany_filetypes_preamble)
       f.close	
     end
   
@@ -309,7 +326,8 @@ module ColorThemeGen
 	set_doc_options
 	set_doc_colors
 	set_element_colors
-	XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
+#	@outf.puts @@mybanner
+  XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
 	puts "outputting to file "+@savefile
 	@outf.close	
 	puts "making geany directory "+make_geany_files.to_s
