@@ -3,9 +3,9 @@ require 'color'
 require File.dirname(__FILE__)+"/token_list"
 require File.dirname(__FILE__)+'/rgb_contrast_methods'
 
-module ColorThemeGen
+module RMThemeGen
 
-  class ReadRMcolor
+  class ThemeGenerator
     
     attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
       
@@ -353,5 +353,5 @@ Kernel.exit
   end #class
 end #module 
 
-l = ColorThemeGen::ReadRMcolor.new
+l = RMThemeGen::ThemeGenerator.new
 l.make_theme_files
