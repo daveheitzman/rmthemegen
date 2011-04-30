@@ -1,7 +1,7 @@
 require 'xmlsimple'
 require 'color'
 require File.dirname(__FILE__)+"/token_list"
-
+require File.dirname(__FILE__)+'/rgb_contrast_methods'
 
 module ColorThemeGen
 
