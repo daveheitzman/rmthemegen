@@ -189,7 +189,7 @@ Kernel.exit
       newopt = []
       @@doc_color_keys.each do |o|
         if o == "CARET_ROW_COLOR" then
-          @caret_row_color = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.04,:max_cont => 0.06,:shade_of_grey=>false)
+          @caret_row_color = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.05,:max_cont => 0.08,:shade_of_grey=>false)
           newopt << {:name=> o, :value => @caret_row_color }
         elsif o.include?("SELECTION_BACKGROUND") then
           @selection_background = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.07,:max_cont => 0.09,:shade_of_grey=>false)
@@ -199,7 +199,7 @@ Kernel.exit
         elsif o.include?("GUTTER_BACKGROUND") then
           newopt << {:name=> o, :value => @backgroundcolor }
         elsif o.include?("CARET_COLOR") then
-          newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.40,:max_cont=>0.7,:shade_of_grey=>true) }
+          newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.30,:max_cont=>0.7,:shade_of_grey=>true) }
 
         elsif o.include?("READONLY_BACKGROUND") then
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.03,:max_cont=>0.09,:shade_of_grey=>@background_grey) }
@@ -246,7 +246,7 @@ Kernel.exit
         case 
           when o.include?( "COMMENT") 
       #comments -- this is done so that COMMENTED texts skew toward darker shades. 
-            newcol = randcolor(:bg_rgb=>@backgroundcolor) 
+            newcol = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.25, :max_cont => 0.27) 
             optblj=[{:option=>[ {:name => "FOREGROUND", :value => newcol},     
 #           {:name => "BACKGROUND", :value =>@backgroundcolor},
             {:name => "BACKGROUND"},
@@ -286,12 +286,27 @@ Kernel.exit
     end 
     
     def make_geany_files
-      geanydir ="geany_"+randthemename 
+      rantm = randthemename
+      geanydir ="geany_"+rantm 
       Dir.mkdir(geanydir)
       f=File.new(geanydir+"/filetypes.xml","w+")
       f.puts('[styling]')
-      
+      #these are for php, html, sgml, xml
       @@geany_tokens.each do |t|
+      # foreground;background;bold;italic
+        if t.upcase.include? "COMMENT" then
+          f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.12, :max_cont=>0.22)+";0x"+@backgroundcolor+";"+"false;false")
+          else
+          f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor)+";0x"+@backgroundcolor+";false"+";false")
+        end
+      end
+      f.puts(@@geany_filetypes_post)
+      f.close
+  
+      geanydir ="geany_"+rantm 
+      f=File.new(geanydir+"/filetypes.ruby","w+")
+      f.puts('[styling]')
+      @@geany_ruby_tokens.each do |t|
       # foreground;background;bold;italic
       if t.upcase.include? "COMMENT" then
         f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.12, :max_cont=>0.22)+";0x"+@backgroundcolor+";"+"false;false")
@@ -299,8 +314,8 @@ Kernel.exit
               f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor)+";0x"+@backgroundcolor+";false"+";false")
       end
       end
-      f.puts(@@geany_filetypes_preamble)
-      f.close	
+      f.puts(@@geany_filetypes_post)
+      f.close
     end
   
     def make_theme_files

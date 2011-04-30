@@ -20,7 +20,7 @@ module ColorThemeGen
 
 
       
-      @@geany_filetypes_preamble =    <<-HERE
+      @@geany_filetypes_post =    <<-HERE
       
 # for embedded Python script (<script language="python">...</script>), Python styles from
 # filetypes.python are used
@@ -133,7 +133,10 @@ jscript_regex
 }
     #end 
 
-
+@@geany_ruby_tokens =%w{default commentline number string character word global symbol classname defname
+operator identifier modulename backticks instancevar classvar heredelim worddemoted stdin stdout stderr
+datasection regex here_q here_qq here_qx string_q string_qq string_qx string_qr string_qw upper_bound error
+pod }
     
 
   end #class
