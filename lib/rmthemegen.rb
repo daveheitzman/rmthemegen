@@ -1,4 +1,4 @@
 module Rmthemegen
   # Your code goes here...
-  require "./rmthemegen/rmthemegen.rb"
+  require File.dirname(__FILE__)+"/rmthemegen/rmthemegen.rb"
 end
