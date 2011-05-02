@@ -1,7 +1,6 @@
 
 module RMThemeGen
-
-  class ThemeGenerator
+  class RMThemeParent
       @@doc_opt_keys = %w(  LINE_SPACING  EDITOR_FONT_SIZE  EDITOR_FONT_NAME)
       @@doc_color_keys = %w(ANNOTATIONS_COLOR CARET_COLOR CARET_ROW_COLOR CONSOLE_BACKGROUND_KEY GUTTER_BACKGROUND INDENT_GUIDE LINE_NUMBERS_COLOR
         METHOD_SEPARATORS_COLOR MODIFIED_LINES_COLOR READONLY_BACKGROUND READONLY_FRAGMENT_BACKGROUND RECURSIVE_CALL_ATTRIBUTES RIGHT_MARGIN_COLOR
@@ -138,6 +137,5 @@ operator identifier modulename backticks instancevar classvar heredelim worddemo
 datasection regex here_q here_qq here_qx string_q string_qq string_qx string_qr string_qw upper_bound error
 pod }
     
-
-  end #class
+  end #class 
 end #module

@@ -5,7 +5,7 @@ require File.dirname(__FILE__)+'/rgb_contrast_methods'
 
 module RMThemeGen
 
-  class ThemeGenerator
+  class ThemeGenerator < RMThemeParent
     
     attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
       

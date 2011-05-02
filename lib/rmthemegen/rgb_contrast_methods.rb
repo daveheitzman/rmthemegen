@@ -1,6 +1,6 @@
 require 'color'
 
-module ColorThemeGen
+class Color::RGB
 
   # Outputs how much contrast this color has with another rgb color. Computes the same
   # regardless of which one is considered foreground. 
