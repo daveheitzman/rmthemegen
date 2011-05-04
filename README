@@ -4,13 +4,13 @@ By David Heitzman
 evolvemeans@gmail.com
 released under the MIT  license "free to use"  
 
-"This software is not designed to diagnose, treat, or cure any particular software or hardware ailment. Discretion is advised." 
+"This software is not designed to diagnose, treat, or cure any particular ailment. Except bad color schemes. " 
 
 requirements : 
      ruby : >= 1.9.1
      gems:
        color
-
+       xml-simple
 
 usage: ruby rmthemegen
      It will generate 1 or more files called: "rmt_something_something.xml"
