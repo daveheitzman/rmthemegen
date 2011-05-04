@@ -17,6 +17,5 @@ usage: ruby rmthemegen
      Place these in your ./RubyMine/config/colors directory and then go to File/Settings/Editor/Colors&Fonts
      you should see your theme(s) listed there. 
 
-     Trivia: the names are chosen at random from lists of nouns and adjectives.   
 
 
