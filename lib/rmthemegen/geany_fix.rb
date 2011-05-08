@@ -18,6 +18,7 @@ module RMThemeGen
     puts "  David Heitzman 2011 "
     puts "  Note: if you want to put back your old Geany colors, go to ~/.config/geany/filedefs/ and"
     puts "  copy the corresponding _old_xxx file back onto filetypes.xyz, eg. filetypes.html, etc. "
+    puts "  Restart geany to see new colors  "
   
     begin
     @dir = (File.expand_path "~/.config/geany/filedefs/")+"/"
@@ -64,7 +65,7 @@ module RMThemeGen
       @max_cont = 1.0
 
       @schemeversion = 1
-      @background_max_brightness = 0.12
+      @background_max_brightness = 0.16
       @background_grey = true #if false, allows background to be any color, as long as it meets brightness parameter
     #  @foreground_min_brightness = 0.4
 
@@ -134,7 +135,6 @@ module RMThemeGen
       #goes into the geany directory and kicks some ass. it replaces every single color definition with
       #something random, of course with a consistent background. 
 
-      puts "Backing up all your current color files"
       @filelist.each do |f|
         begin
 #          puts f+" -->"+@dir+"_old_"+@extstring+File.basename(f)
@@ -165,45 +165,47 @@ module RMThemeGen
             case File.basename(f)
               when  "filetypes.common"
                 if    token == "marker_search" then
-                  r9 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.35, :max_cont=>0.99).upcase
+                  r9 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.35, :max_cont=>@max_cont).upcase
                   newl = token +"="+"0x"+r1+";0x"+r9+";true;true"
                 elsif token == "caret"  then
-                  r9 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.35, :max_cont=>0.99).upcase
+                  r9 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.35, :max_cont=>@max_cont).upcase
                   newl = token +"="+"0xFFFFFF;0x"+r9+";"+p3+";"+p4
                 elsif token == "current_line" then
-                  r9 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.03, :max_cont=>0.06).upcase
-                  newl = token +"="+"0x"+r1+";0x"+r9+";"+"true"+";"+"true"
+                  r9 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont*0.15, :max_cont=>@min_cont*0.3).upcase
+                  newl = token +"="+"0x"+r1+";0x"+r9+";"+"true"+";"+"false"
                 elsif token == "selection" then
-                  r9 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.08, :max_cont=>0.16).upcase
+                  r9 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont*0.25, :max_cont=>@min_cont*0.5).upcase
                   newl = token +"="+"0x"+r1+";0x"+r9+";"+"false"+";"+"true"
                 elsif token == "brace_good" then
-                  rb = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.25, :max_cont=>0.9999).upcase
-                  rf = randcolor(:bg_rgb=>rb, :min_cont=>0.30, :max_cont=>0.9999).upcase
-                  newl = token +"="+"0x"+rf+";0x"+rb+";"+"false"+";"+"true"
+                  rb = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.25, :max_cont=>@max_cont).upcase
+                  rf = randcolor(:bg_rgb=>rb, :min_cont=>0.30, :max_cont=>1.0).upcase
+                  newl = token +"="+"0x"+rf+";0x"+rb+";"+"true"+";"+"false"
                 elsif token == "brace_bad" then
-                  rb = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.30, :max_cont=>0.9999).upcase
-                  rf = randcolor(:bg_rgb=>rb, :min_cont=>0.30, :max_cont=>0.9999).upcase
-                  newl = token +"="+"0x"+rf+";0x"+rb+";"+"true"+";"+"true"
+                  rb = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont, :max_cont=>1.0).upcase
+                  rf = randcolor(:bg_rgb=>rb, :min_cont=>0.30, :max_cont=>1.0).upcase
+                  newl = token +"="+"0x"+rf+";0x"+rb+";"+"true"+";"+"false"
                 else
-                newl = token +"="+"0x"+r1+";0x"+r2+";"+p3+";"+p4
+                  newl = token +"="+"0x"+r1+";0x"+r2+";"+p3+";"+p4
                 end
 
               when "filetypes.xml"
-                if token=="translucency" then
-                else
-                newl = token +"="+"0x"+r1+";0x"+r2+";"+p3+";"+p4
-                end
+                  newl = token +"="+"0x"+r1+";0x"+r2+";"+p3+";"+p4
+
               when "filetypes.ruby"
                 if token=="default" then
                   r3 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont, :max_cont=>@max_cont).upcase
                   #for whatever reason this needs to go in there in a ruby file : pod=0x388afb;0x131313;false;false
                   newl = token +"="+"0x"+r1+";0x"+r2+";"+p3+";"+p4+"\npod=0x#{r3};0x#{@backgroundcolor};false;false"
+                elsif token.include?("comment") then
+                  r1 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont*0.87, :max_cont=>@min_cont*0.95).upcase
+                  r2 = @backgroundcolor.upcase
+                  newl = token +"="+"0x"+r1+";0x"+r2+";"+p3+";"+p4
                 else
                   newl = token +"="+"0x"+r1+";0x"+r2+";"+p3+";"+p4
                 end
               else
                 if token.include?("comment") then
-                  r1 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.18, :max_cont=>0.21).upcase
+                  r1 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont*0.33, :max_cont=>@min_cont*0.64).upcase
                   r2 = @backgroundcolor.upcase
                   newl = token +"="+"0x"+r1+";0x"+r2+";"+p3+";"+p4
                 else
