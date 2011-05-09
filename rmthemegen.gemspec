@@ -11,8 +11,15 @@ Gem::Specification.new do |s|
   s.homepage    = "http://aptifuge.com"
   s.summary     = %q{Generates RubyMine >= 3.0 editor color themes}
   s.description = %q{}
-
+  s.add_gem_dependency = 
   s.rubyforge_project = "rmthemegen"
+
+  s.required_ruby_version = '>= 1.8.7'
+  s.add_dependency('xml-simple', ">= 1.0.15")
+  s.add_dependency('color',">=1.4.1")
+  
+  s.bindir = "bin"
+  s.executables = ['bin/generate_themes.rb']
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

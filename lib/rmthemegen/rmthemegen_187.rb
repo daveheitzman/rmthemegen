@@ -276,7 +276,7 @@ module RMThemeGen
       f.close
     end
   
-    def make_theme_file(outputdir = File.dirname(__FILE__) )
+    def make_theme_file(outputdir = File.dirname(__FILE__)+"/../../generated_themes" )
         @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
         @schemename = randthemename
         @xmlout = {:scheme=>
