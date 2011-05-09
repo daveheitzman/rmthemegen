@@ -1,4 +1,4 @@
-#! /usr/bin/env/ruby 
+#! /usr/bin/env ruby 
 #**********************************************************************
 #*                                                                    *
 #*  RmThemeGen - a ruby script to create random, usable themes for    *
