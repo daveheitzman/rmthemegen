@@ -4,17 +4,17 @@ require "rmthemegen/version"
 
 Gem::Specification.new do |s|
   s.name        = "rmthemegen"
-  s.version     = "0.0.8"
+  s.version     = "0.0.9"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["David Heitzman"]
   s.email       = ["evolvemeans@gmail.com"]
   s.homepage    = "http://aptifuge.com"
   s.summary     = %q{Generates RubyMine >= 3.0 editor color themes}
   s.description = %q{}
-  s.add_gem_dependency = 
   s.rubyforge_project = "rmthemegen"
 
   s.required_ruby_version = '>= 1.8.7'
+
   s.add_dependency('xml-simple', ">= 1.0.15")
   s.add_dependency('color',">=1.4.1")
   
