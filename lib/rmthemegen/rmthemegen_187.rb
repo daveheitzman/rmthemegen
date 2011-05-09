@@ -13,8 +13,8 @@
 
 
 require 'rubygems'
-require 'xmlsimple'
 require 'color'
+require 'xmlsimple'
 require File.dirname(__FILE__)+"/token_list"
 require File.dirname(__FILE__)+'/rgb_contrast_methods'
 
