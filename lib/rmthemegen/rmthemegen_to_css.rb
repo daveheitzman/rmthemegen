@@ -18,10 +18,14 @@ require File.dirname(__FILE__)+'/rgb_contrast_methods'
 
 module RMThemeGen
   class ThemeGenerator < RMThemeParent
+    
       def to_css
-      s = '<script type="text/css">'
-      s += '</script>' 
-      return '' 
+      s = '<style type="text/css">'
+      s += "#"+ @schemename.to_s + " { background-color: #{@backgroundcolor.to_s}; } "
+      s += "#"+ @schemename.to_s + " <token name> color:" 
+      
+      s += '</style>' 
+      return s
       end
   end #class ThemeGenerator < RMThemeParent
 end #module RMThemeGen

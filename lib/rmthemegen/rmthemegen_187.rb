@@ -112,7 +112,6 @@ module RMThemeGen
     
     
     def randcolor(opts={})
-    
       df= { :r=>nil, :g=>nil, :b=>nil, #these are the usual 0..255 
             :bg_rgb => nil,
             :min_cont  => @min_cont, #if a backrgb (background color)  is supplied this will be used to create a minimum contrast with it.
@@ -277,7 +276,8 @@ module RMThemeGen
       f.close
     end
   
-    def make_theme_file(outputdir = File.dirname(__FILE__)+"/../../generated_themes" )
+ #   def make_theme_file(outputdir = File.dirname(__FILE__)+"/../../generated_themes" )
+    def make_theme_file(outputdir = ENV["PWD"] )
         @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
         @schemename = randthemename
         @xmlout = {:scheme=>

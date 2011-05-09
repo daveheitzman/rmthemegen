@@ -41,6 +41,7 @@ puts l.to_css
 @iterations.times do 
   puts l.make_theme_file 
   end
-
+puts "testing to_css"
+puts l.to_css
 
 puts
