@@ -12,10 +12,10 @@ requirements :
        color
        xml-simple
 
-usage: ruby rmthemegen
-     It will generate 1 or more files called: "rmt_something_something.xml"
+usage: <rmthemegem gem directory>/bin/generate_themes
+     It will generate 1 or more files called: "<rmthemegen gem directory/generated_themes/rmt_something_something.xml"
      Place these in your ./RubyMine/config/colors directory and then go to File/Settings/Editor/Colors&Fonts
-     you should see your theme(s) listed there. 
+     you should see your newly generated theme(s) listed there. 
 
 
 
