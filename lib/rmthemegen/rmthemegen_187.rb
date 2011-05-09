@@ -17,6 +17,7 @@ require 'color'
 require 'xmlsimple'
 require File.dirname(__FILE__)+"/token_list"
 require File.dirname(__FILE__)+'/rgb_contrast_methods'
+require File.dirname(__FILE__)+'/rmthemegen_to_css'
 
 module RMThemeGen
 

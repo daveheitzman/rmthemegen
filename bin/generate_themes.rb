@@ -1,4 +1,4 @@
-#! /usr/bin/ruby 
+#! /usr/bin/env/ruby 
 #**********************************************************************
 #*                                                                    *
 #*  RmThemeGen - a ruby script to create random, usable themes for    *
@@ -21,7 +21,8 @@ puts
 puts "  by David Heitzman 2011 "
 puts "  dheitzman@aptifuge.com -- Questions / Comments welcome. "
 puts  
-puts "  usage: rmthemegen <number of themes you want> "
+puts "  usage: lib/generate_themes.rb <number of themes you want> "
+puts "  example: lib/generate_themes.rb 5 "
 puts
 puts "  Instructions: Complete path of generated theme will be printed below "
 puts "  Copy the rmt_*_*.xml files to: "
@@ -30,6 +31,9 @@ puts "  Mac:  Copy xml files to ~/Library/Preferences/RubyMine/color. You must r
 puts
  
 l = RMThemeGen::ThemeGenerator.new
+
+puts "testing to_css"
+puts l.to_css
 
 @iterations = ARGV[0] || 1
 @iterations = @iterations.to_i 
