@@ -28,12 +28,6 @@ module RMThemeGen
     
     @iterations = 1 
     @iterations = ARGV[0].to_s.to_i if ARGV[0]
-    
-    puts "rmthemegen - creates theme files for use with rubymine (3.0.0 and up) "
-    puts "by David Heitzman 2011 "
-    puts (@@adjectives.size * @@nouns.size).to_s  + " possible theme names "
-  
-    puts "generating #{@iterations.to_s} themes into current directory. Filenames: rmt_xyz.xml "
       #bold:                  <option name="FONT_TYPE" value="1" />
       #italic:                <option name="FONT_TYPE" value="2" />
       #bold & italic:         <option name="FONT_TYPE" value="3" />
@@ -282,10 +276,7 @@ module RMThemeGen
       f.close
     end
   
-    def make_theme_files
-#      @default_fg = @backgroundcolor
-#      puts "backgroundcolor = "+@backgroundcolor
-      @iterations.times do
+    def make_theme_file
         @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
         @schemename = randthemename
         @xmlout = {:scheme=>
@@ -299,23 +290,17 @@ module RMThemeGen
                                  }]
                 }]
                 }
-	@savefile = randfilename(@schemename)
+        @savefile = randfilename(@schemename)
         @outf = File.new(@savefile, "w+")
-  
-	set_doc_options
-	set_doc_colors
-	set_element_colors
-#	@outf.puts @@mybanner
-  XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
-	puts "outputting to file "+@savefile
-	@outf.close	
-#	puts "making geany directory "+make_geany_files.to_s
-      end 
+        set_doc_options
+        set_doc_colors
+        set_element_colors
+        XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
+      #  puts "outputting to file "+@savefile
+        @outf.close	
+        return File.expand_path(@outf.path)
     end
     
   
   end #class
 end #module 
-
-l = RMThemeGen::ThemeGenerator.new
-l.make_theme_files
