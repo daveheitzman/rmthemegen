@@ -11,7 +11,7 @@
 #originally it was written and tested for ruby 1.9.2
 
 
-require 'rmthemegen_187'
+require File.dirname(__FILE__)+'/rmthemegen_187'
 
     
 puts "rmthemegen - creates theme files for use with rubymine (3.0.0 and up) "
@@ -25,5 +25,5 @@ l = RMThemeGen::ThemeGenerator.new
 @iterations = @iterations.to_i 
 
 @iterations.times do 
-  puts l.make_theme_file
+  puts l.make_theme_file 
   end

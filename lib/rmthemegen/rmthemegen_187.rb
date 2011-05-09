@@ -276,7 +276,7 @@ module RMThemeGen
       f.close
     end
   
-    def make_theme_file
+    def make_theme_file(outputdir = File.dirname(__FILE__) )
         @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
         @schemename = randthemename
         @xmlout = {:scheme=>
@@ -291,7 +291,7 @@ module RMThemeGen
                 }]
                 }
         @savefile = randfilename(@schemename)
-        @outf = File.new(@savefile, "w+")
+        @outf = File.new(outputdir+"/"+@savefile, "w+")
         set_doc_options
         set_doc_colors
         set_element_colors
