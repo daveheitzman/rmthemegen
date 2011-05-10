@@ -22,10 +22,10 @@ module RMThemeGen
   class ThemeGenerator < RMThemeParent
     
       def to_css
-      fout = File.new("index.html", "w+")
+      #fout = File.new("index.html", "w+")
       s = ' <style type="text/css"> '
       s+= "#"+ @xmlout[:scheme][0][:name].to_s  
-      s+=" { background-color: \##{@xmlout[:scheme][0][:colors][0][:option][1][:value].to_s}; } "
+      s+=" { background-color: \##{@backgroundcolor.to_s}; } "
         @xmlout[:scheme][0][:attributes][0][:option].each do |o|
           if @@tokens_for_css.include? o[:name]
             s+= "#"+ @xmlout[:scheme][0][:name].to_s 
@@ -41,9 +41,9 @@ module RMThemeGen
           y+= "<span class='#{o[:name]}'>"+ o[:name]+"</span>" 
         end #if 
       end
-      fout.puts( s)
-      fout.puts( y)
-      fout.close
+      #fout.puts( s)
+      #fout.puts( y)
+      #fout.close
       return s
       end
   end #class ThemeGenerator < RMThemeParent
