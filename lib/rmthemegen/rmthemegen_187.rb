@@ -23,7 +23,7 @@ module RMThemeGen
 
   class ThemeGenerator < RMThemeParent
     
-    attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
+    attr_reader :xml_save, :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
       
     def initialize
     
@@ -276,7 +276,6 @@ module RMThemeGen
       f.close
     end
   
- #   def make_theme_file(outputdir = File.dirname(__FILE__)+"/../../generated_themes" )
     def make_theme_file(outputdir = ENV["PWD"] )
         @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
         @schemename = randthemename
@@ -297,7 +296,6 @@ module RMThemeGen
         set_doc_colors
         set_element_colors
         XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
-      #  puts "outputting to file "+@savefile
         @outf.close	
         return File.expand_path(@outf.path)
     end

@@ -1,0 +1,30 @@
+#sample ruby source code 
+
+require "test"
+CONSTANT = 777
+
+# Sample comment
+
+module SampleModule
+  include Testcase
+
+  render :action => 'foo'
+  def foo(parameter)
+    @parameter = parameter
+  end
+
+  local_var = eval <<-"FOO";\
+  printIndex "Hello world!"
+  And now this is heredoc!
+  printIndex "Hello world again!"
+  FOO
+  foo("#{$GLOBAL_TIME >> $`} is \Z sample \"string\"" * 777);
+  if ($1 =~ /sample regular expression/ni) then
+  begin
+    puts %W(sample words), CONSTANT, :fooo;
+    do_something :action => "action"
+  end
+  1.upto(@@n) do |index| printIndex "Hello" + index end
+  \\\\\\\\\\
+  end
+end
