@@ -60,9 +60,9 @@ module RMThemeGen
       @italic_chance = 0.2
       @bold_chance = 0.4
       @underline_chance = 0.3
-      @bright_median = 0.85
-        @min_bright = @bright_median * 0.65
-        @max_bright =  [@bright_median * 1.35,1.0].max
+#      @bright_median = 0.85
+#        @min_bright = @bright_median * 0.65
+#        @max_bright =  [@bright_median * 1.35,1.0].max
 
         @min_bright = 0.0
         @max_bright =  1.0
@@ -81,7 +81,9 @@ module RMThemeGen
       
       @schemeversion = 1
       @background_max_brightness = 0.14
+      @background_min_brightness = 0.65
       @background_grey = true #if false, allows background to be any color, as long as it meets brightness parameter
+      @bg_color_style = 0 #0 = grey/dark 1 = grey/light (whitish), 2 = any color
     #  @foreground_min_brightness = 0.4
 
 
@@ -135,10 +137,10 @@ module RMThemeGen
   #puts "contrast "+color.contrast(df[:bg_rgb]).to_s if df[:bg_rgb]
         contok = df[:bg_rgb] ? (df[:min_cont]..df[:max_cont]).include?( color.contrast(df[:bg_rgb]) ) : true
   #puts "contok "+contok.to_s
-        brightok = (df[:min_bright]..df[:max_bright]).include?( color.to_hsl.brightness )  
+        brightok =  (df[:min_bright]..df[:max_bright]).include?( color.to_hsl.brightness )  
+                     
   #puts "brightok "+brightok.to_s
       end 
-  
       cn = color.html
       cn= cn.slice(1,cn.size)
       return cn
@@ -277,10 +279,28 @@ module RMThemeGen
       f.close
     end
   
-    def make_theme_file(outputdir = ENV["PWD"])
-        @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
-        @schemename = randthemename
-        @xmlout = {:scheme=>
+    def make_theme_file(opts = {})
+      defaults[:outputdir] = ENV["PWD"]
+      defaults[:bg_color_style] = 0 
+      opts = defaults.merge opts
+      @bg_color_style = opts[:bg_color_style]  
+      @background_grey = (:bg_color_style < 2) #whitish or blackish bg are both "grey" 
+      
+      case opts[:bg_color_style]
+        when 0 #blackish background
+          @background_min_brightness = 0.0 
+          @background_max_brightness = 0.14 
+        when 1 #whitish background
+          @background_min_brightness = 0.6 
+          @background_max_brightness = 1.0 
+        when 2 #colored (any) bg
+          @background_min_brightness = 0.0 
+          @background_max_brightness = 1.0 
+      end
+      @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness,
+        :min_bright => @background_min_brightness )# "0"
+      @schemename = randthemename
+      @xmlout = {:scheme=>
                 [{:name => @schemename,:version=>@schemeversion,:parent_scheme=>"Default",
                   :option =>[{:name=>"pencil length",:value=>"48 cm"},{:name => "Doowop level", :value=>"medium"}],
                   :colors => [{ :option => [{:name=>"foreground",:value => "yellow"},{:name=>"background",:value => "black"} ] }],
@@ -292,7 +312,7 @@ module RMThemeGen
                 }]
                 }
         @savefile = randfilename(@schemename)
-        @outf = File.new(outputdir+"/"+@savefile, "w+")
+        @outf = File.new(opts[:outputdir]+"/"+@savefile, "w+")
         set_doc_options
         set_doc_colors
         set_element_colors
