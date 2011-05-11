@@ -1,0 +1,2945 @@
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+comment=comment
+commentline=comment
+commentdoc=commentdoc
+number=number
+word=word
+word2=word2
+string=string
+character=string
+uuid=0xF1BE3B;0x000000;false;false
+#uuid=0xffffff
+preprocessor=preprocessor
+operator=operator
+identifier=default
+stringeol=stringeol
+# @"verbatim"
+verbatim=0x09EB56;0x000000;false;false
+# (/regex/)
+regex=0x0F9E4D;0x000000;false;false
+commentlinedoc=commentdoc,bold
+commentdockeyword=commentdoc,bold,italic
+commentdockeyworderror=commentdoc
+globalclass=type
+
+[keywords]
+# all items must be in one line
+primary=arguments break case catch class const continue default do dynamic each else extends false final finally for function get if implements import in include Infinity interface internal label namespace NaN native new null override package private protected public return set static super switch this throw true try typeof undefined var while with
+secondary=decodeURI decodeURIcomponent encodeURI encodeURIcomponent escape isFinite isNaN isXMLName parseFloat parseInt trace unescape
+classes=ArgumentError Array Boolean Class Date DefinitionError Error EvalError Function int Math NameSpace Null Number Object QName RangeError ReferenceError RegExp SecurityError String SyntaxError TypeError uint URIError Vector VerifyError void XML XMLList
+
+[settings]
+# default extension used when saving files
+#extension=as
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=//
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=
+run_cmd=
+
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+word=0xF7A59E;0x000000;true;false
+identifier=0xBFD8E2;0x000000;false;false
+number=0x7AE037;0x000000;false;false
+delimiter=0xA50E9A;0x000000;false;false
+character=0x88E081;0x000000;false;false
+charactereol=0xF8AA33;0x000000;false;false
+string=0x6EBAB9;0x000000;false;false
+stringeol=0xA49294;0x000000;false;false
+label=0xB13371;0x000000;false;true
+commentline=0x70180F;0x000000;false;false
+
+pod=0x6E6B6F;0x000000;false;false
+
+pod=0x1A89D2;0x000000;false;false
+
+pod=0x5515FA;0x000000;false;false
+
+pod=0xA66258;0x000000;false;false
+
+pod=0x469A2A;0x000000;false;false
+
+pod=0xF0F7B1;0x000000;false;false
+illegal=0xD5F619;0x000000;false;true
+
+[keywords]
+# all items must be in one line
+primary=abort abs abstract accept access aliased all and array at begin body case constant declare delay delta digits do else elsif end entry exception exit for function generic goto if in interface is limited loop mod new not null of or others out overriding package pragma private procedure protected raise range record rem renames requeue return reverse select separate subtype synchronized tagged task terminate then type until use when while with xor
+
+
+[settings]
+# default extension used when saving files
+#extension=adb
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=gcc -Wall -c "%f"
+linker=gnatmake "%e"
+run_cmd="./%e"
+
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x86A499;0x000000;false;false
+comment=0x422D54;0x000000;false;false
+
+pod=0xD997CA;0x000000;false;false
+
+pod=0xA76821;0x000000;false;false
+
+pod=0xEB162F;0x000000;false;false
+
+pod=0x7BFFEC;0x000000;false;false
+number=0x85B52B;0x000000;false;false
+string=0xC9117E;0x000000;false;false
+operator=0x07CE25;0x000000;false;false
+identifier=0x6BAF2C;0x000000;false;false
+cpuinstruction=0x288E98;0x000000;true;false
+mathinstruction=0xC68462;0x000000;true;false
+register=0x4460D4;0x000000;true;false
+directive=0xC5A8E8;0x000000;true;false
+directiveoperand=0xC723C8;0x000000;false;false
+commentblock=0x391F53;0x000000;false;false
+
+pod=0x15F40E;0x000000;false;false
+
+pod=0x11E4C9;0x000000;false;false
+
+pod=0xF7C62E;0x000000;false;false
+
+pod=0xAE0BBB;0x000000;false;false
+character=0xD48CF3;0x000000;false;false
+stringeol=0x9E73BF;0x000000;false;false
+extinstruction=0x1567D3;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+# this is by default a very simple instruction set; not of Intel or so
+instructions=hlt lad spi add sub mul div jmp jez jgz jlz swap jsr ret pushac popac addst subst mulst divst lsa lds push pop cli ldi ink lia dek ldx
+registers=
+directives=org list nolist page equivalent word text
+
+
+[settings]
+# default extension used when saving files
+#extension=asm
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=;
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=nasm "%f"
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+comment=comment
+commentline=comment
+commentdoc=commentdoc
+number=number
+word=word
+word2=word2
+string=string
+character=string
+uuid=0x25EB8F;0x000000;false;false
+preprocessor=preprocessor
+operator=operator
+identifier=default
+stringeol=stringeol
+# @"verbatim"
+verbatim=0xDAEF7D;0x000000;false;false
+# (/regex/)
+regex=0x2D50C4;0x000000;false;false
+commentlinedoc=commentdoc,bold
+commentdockeyword=commentdoc,bold,italic
+commentdockeyworderror=commentdoc
+globalclass=type
+# whether arguments of preprocessor commands should be styled (only first argument is used)
+# 1 to enable, 0 to disable
+styling_within_preprocessor=1;0;false;false
+
+[keywords]
+# all items must be in one line
+primary=asm auto break case char const continue default do double else enum extern float for goto if inline int long register return short signed sizeof static struct switch typedef union unsigned void volatile while FALSE NULL TRUE
+secondary=
+# these are some doxygen keywords (incomplete)
+docComment=attention author brief bug class code date def enum example exception file fn namespace note param remarks return see since struct throw todo typedef var version warning union
+
+[settings]
+# default extension used when saving files
+#extension=c
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=//
+comment_close=
+# this is an alternative way, so multiline comments are used
+#comment_open=/*
+#comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=gcc -Wall -c "%f"
+linker=gcc -Wall -o "%e" "%f"
+run_cmd="./%e"
+
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0xF7F838;0x000000;false;false
+comment=0x053083;0x000000;false;false
+
+pod=0xD3F049;0x000000;false;false
+
+pod=0xCA1995;0x000000;false;false
+
+pod=0x8CC3FC;0x000000;false;false
+
+pod=0x2D983D;0x000000;false;false
+comment1=0x5B023C;0x000000;false;false
+
+pod=0xA3F80D;0x000000;false;false
+
+pod=0x72D3A0;0x000000;false;false
+
+pod=0x4043D7;0x000000;false;false
+
+pod=0xC0741E;0x000000;false;false
+comment2=0x212B09;0x000000;false;false
+
+pod=0x58DB89;0x000000;false;false
+
+pod=0x81C169;0x000000;false;false
+
+pod=0x37B9B3;0x000000;false;false
+
+pod=0x34D91F;0x000000;false;false
+comment3=0x254E09;0x000000;false;false
+
+pod=0x5CD6BB;0x000000;false;false
+
+pod=0x90EFB9;0x000000;false;false
+
+pod=0xC75C9D;0x000000;false;false
+
+pod=0x9EB69E;0x000000;false;false
+number=0xBB01EE;0x000000;false;false
+keyword=0x53A457;0x000000;true;false
+keyword2=0x5E7CB3;0x000000;true;false
+string=0xF1A053;0x000000;false;false
+char=0x0BC13E;0x000000;false;false
+operator=0xCC7911;0x000000;false;false
+identifier=0xD50D8B;0x000000;false;false
+tagname=0xE7BBF9;0x000000;true;false
+linenum=0x16BD31;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+keywords=and as assert asr begin class constraint do done downto else end exception external false for fun function functor if in include inherit initializer land lazy let lor lsl lsr lxor match method mod module mutable new object of open or private rec sig struct then to true try type val virtual when while with
+keywords_optional=option Some None ignore ref
+
+
+[settings]
+# default extension used when saving files
+#extension=ml
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=(*
+comment_close=*)
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=ocamlc -c "%f"
+linker=ocamlc -o "%e" "%f"
+run_cmd="./%e"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0xAA4F33;0x000000;false;false
+comment=0x5D101F;0x000000;false;false
+
+pod=0xCBC2D7;0x000000;false;false
+
+pod=0x5FF82F;0x000000;false;false
+
+pod=0x42A383;0x000000;false;false
+pod=0xCCF781;0x000000;false;false
+stringdq=0x7EBD0B;0x000000;false;false
+stringlq=0xE9F03A;0x000000;false;false
+stringrq=0xBFD46A;0x000000;false;false
+command=0xB2AAE4;0x000000;false;false
+parameters=0xDDEFCF;0x000000;false;false
+variable=0x6E5987;0x000000;false;false
+userdefined=0xA4A15B;0x000000;true;false
+whiledef=0xBE583F;0x000000;true;false
+foreachdef=0xBBB49C;0x000000;true;false
+ifdefinedef=0x24FC53;0x000000;true;false
+macrodef=0xC89C59;0x000000;true;false
+stringvar=0x85EC42;0x000000;false;false
+number=0x69FCDF;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+commands=add_custom_command add_custom_target add_definitions add_dependencies add_executable add_library add_subdirectory add_test aux_source_directory build_command build_name cmake_minimum_required configure_file create_test_sourcelist else elseif enable_language enable_testing endforeach endif endmacro endwhile exec_program execute_process export_library_dependencies file find_file find_library find_package find_path find_program fltk_wrap_ui foreach get_cmake_property get_directory_property get_filename_component get_source_file_property get_target_property get_test_property if include include_directories include_external_msproject include_regular_expression install install_files install_programs install_targets link_directories link_libraries list load_cache load_command macro make_directory mark_as_advanced math message option output_required_files project qt_wrap_cpp qt_wrap_ui remove remove_definitions separate_arguments set set_directory_properties set_source_files_properties set_target_properties set_tests_properties site_name source_group string subdir_depends subdirs target_link_libraries try_compile try_run use_mangled_mesa utility_source variable_requires vtk_make_instantiator vtk_wrap_java vtk_wrap_python vtk_wrap_tcl while write_file
+parameters=ABSOLUTE ABSTRACT ADDITIONAL_MAKE_CLEAN_FILES ALL AND APPEND APPLE ARGS ASCII BEFORE BORLAND CACHE CACHE_VARIABLES CLEAR CMAKE_COMPILER_2005 COMMAND COMMAND_NAME COMMANDS COMMENT COMPARE COMPILE_FLAGS COPYONLY CYGWIN DEFINED DEFINE_SYMBOL DEPENDS DOC EQUAL ESCAPE_QUOTES EXCLUDE EXCLUDE_FROM_ALL EXISTS EXPORT_MACRO EXT EXTRA_INCLUDE FATAL_ERROR FILE FILES FORCE FUNCTION GENERATED GLOB GLOB_RECURSE GREATER GROUP_SIZE HEADER_FILE_ONLY HEADER_LOCATION IMMEDIATE INCLUDE_DIRECTORIES INCLUDE_INTERNALS INCLUDE_REGULAR_EXPRESSION INCLUDES LESS LINK_DIRECTORIES LINK_FLAGS LOCATION MACOSX_BUNDLE MACROS MAIN_DEPENDENCY MAKE_DIRECTORY MATCH MATCHALL MATCHES MINGW MODULE MSVC MSVC60 MSVC70 MSVC71 MSVC80 MSVC_IDE MSYS NAME NAME_WE NO_SYSTEM_PATH NOT NOTEQUAL OBJECT_DEPENDS OFF ON OPTIONAL OR OUTPUT OUTPUT_VARIABLE PATH PATHS POST_BUILD POST_INSTALL_SCRIPT PRE_BUILD PREFIX PRE_INSTALL_SCRIPT PRE_LINK PREORDER PROGRAM PROGRAM_ARGS PROPERTIES QUIET RANGE READ REGEX REGULAR_EXPRESSION REPLACE REQUIRED RETURN_VALUE RUNTIME_DIRECTORY SEND_ERROR SHARED SOURCES STATIC STATUS STREQUAL STRGREATER STRLESS SUFFIX TARGET TOLOWER TOUPPER VAR VARIABLES VERSION WATCOM WIN32 WRAP_EXCLUDE WRITE
+userdefined=
+
+
+[settings]
+# default extension used when saving files
+#extension=cmake
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# use foreground;background;bold;italic or named_style,bold,italic
+
+# used for filetype All/None
+# default=default commented out since this breaks geany 0.16
+default=0x48ED08;0x000000;false;false
+
+# 3rd selection argument is true to override default foreground
+# 4th selection argument is true to override default background
+selection=0xD7A6DC;0x164014;false;true
+
+# style for a matching brace
+brace_good=0x50803E;0x51F0EB;true;false
+# style for a non-matching brace (a brace without a counterpart)
+brace_bad=0xE3D6BD;0x8D9408;true;false
+
+# the following settings define the colours of the margins on the left side
+margin_linenumber=0x9EAF5D;0x000000;false;false
+margin_folding=0xBCC0A5;0x000000;false;false # 0x000000
+
+# background colour of the current line, only the second and third argument is interpreted
+# use the third argument to enable or disable the highlighting of the current line (has to be true/false)
+current_line=0x71BD64;0x0E0734;true;false
+
+# translucency for the current line(first argument) and the selection (second argument)
+# values between 0 and 256 are accepted. Note for Windows 95, 98 and ME users:
+# keep this value at 256 to disable translucency otherwise Geany might crash
+# only the first and second argument is interpreted
+translucency=256;256;false;false
+
+# style for a highlighted line (e.g when using Goto line or goto tag)
+# only the first and second argument is interpreted
+marker_line=0x4B8A78;0x000000;false;false
+
+# style for a marked search results (when using "Mark" in Search dialogs)
+# the second argument sets the background colour for the drawn rectangle
+# only the second argument is interpreted
+marker_search=0x3589CE;0x5DB3FF;true;true
+
+# style for a marked line (e.g when using the "Toggle Marker" keybinding (Ctrl-M))
+# only the first and second argument is interpreted
+marker_mark=0x917D27;0x000000;false;false
+
+# translucency for the line marker(first argument) and the search marker (second argument)
+# only the first and second argument is interpreted
+marker_translucency=256;256;false;false
+
+# colour of the caret(the blinking cursor), only first and third argument is interpreted
+# set the third argument to true to change the caret into a block caret
+caret=0xFFFFFF;0x178393;false;false
+
+# width of the caret(the blinking cursor), only first argument is interpreted
+# width in pixels, use 0 to make it invisible, maximum width is 3
+caret_width=2;0;false;false
+
+# set foreground and background colour of indentation guides
+indent_guide=0xffffff;0xffffff;true;true
+
+# third argument: if true, use this foreground color. If false, use the default value defined by the filetypes.
+# fourth argument: if true, use this background color. If false, use the default value defined by the filetypes.
+white_space=0x9EBF69;0x000000;true;false
+
+# style of folding icons, only first and second arguments are used, valid values are:
+# first argument:  1 for boxes, 2 for circles
+# second argument: 1 for straight lines, 2 for curved lines
+folding_style=1;1;false;false
+
+# should an horizontal line be drawn at the line where text is folded (only first argument is interpreted)
+# 0 to disable
+# 1 to draw the line above folded text
+# 2 to draw the line below folded text
+folding_horiz_line=2;0;false;false
+
+# only first argument is interpreted, sets whether all defined colours should be inverted
+invert_all=0;0;false;false
+
+# only first and second argument is interpreted
+# first argument: drawing of visual flags to indicate a line is wrapped. This is a bitmask of the
+# values: 0 - No visual flags, 1 - Visual flag at end of subline of a wrapped line, 2 - Visual flag
+# at begin of subline of a wrapped line, Subline is indented by at least 1 to make room for the flag.
+# second argument: wether the visual flags to indicate a line is wrapped are drawn near the border
+# or near the text. This is a bitmask of the values: 0 - Visual flags drawn near border,
+# 1 - Visual flag at end of subline drawn near text, 2 - Visual flag at begin of subline drawn near text
+line_wrap_visuals=3;0;false;false
+
+# only first and second argument is interpreted
+# first argument: sets the size of indentation of sublines for wrapped lines in terms of
+# the width of a space, only used when the second argument is 0
+# second argument: wrapped sublines can be indented to the position of their first subline or
+# one more indent level, possible values:
+# 0 - Wrapped sublines aligned to left of window plus amount set by the first argument
+# 1 - Wrapped sublines are aligned to first subline indent (use the same indentation)
+# 2 - Wrapped sublines are aligned to first subline indent plus one more level of indentation
+line_wrap_indent=0;1;false;false
+
+# only first and second argument is interpreted
+# first argument: amount of space to be drawn above the line's baseline
+# second argument: amount of space to be drawn below the line's baseline
+line_height=0;0;false;false
+
+[settings]
+# which characters should be skipped when moving (or included when deleting) to word boundaries
+# should always include space and tab (\s\t)
+whitespace_chars=\s\t!\"#$%&'()*+,-./:;<=>?@[\\]^`{|}~
+
+[named_styles]
+# style names to use in filetypes.* [styling] sections
+# use foreground;background;bold;italic
+# normally background should be left blank to use the "default" style
+
+default=0xEB8032;0x000000;false;false
+comment=0xD83EE0;0x000000;false;false
+commentdoc=0xA3BD03;0x000000;false;false
+number=0xA32A7F;0x000000;false;false
+# keyword
+word=0x699D32;0x000000;true;false
+# e.g. global types from a *.c.tags file
+word2=0xE7BCF3;0x000000;true;false
+string=0xFB05E4;0x000000;false;false
+preprocessor=0x8AA02C;0x000000;false;false
+operator=0xAD49C9;0x000000;false;false
+# unterminated string
+stringeol=0x156DAD;0x000000;false;false
+type=0x02C933;0x000000;true;false
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x2CC166;0x000000;false;false
+comment=0x22472F;0x000000;false;false
+
+pod=0x6FB6A4;0x000000;false;false
+
+pod=0x2FDEB1;0x000000;false;false
+
+pod=0xD0C2B5;0x000000;false;false
+
+pod=0x226A8D;0x000000;false;false
+section=0x0ACE01;0x000000;true;false
+key=0xBBE87B;0x000000;false;false
+assignment=0xE7A803;0x000000;false;false
+defval=0x4944D8;0x000000;false;false
+
+# the lexer don't support keywords
+
+
+[settings]
+# default extension used when saving files
+#extension=conf
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+comment=comment
+commentline=comment
+commentdoc=commentdoc
+number=number
+word=word
+word2=word2
+string=string
+character=string
+uuid=0x99698C;0x000000;false;false
+preprocessor=preprocessor
+operator=operator
+identifier=default
+stringeol=stringeol
+# @"verbatim"
+verbatim=0x97581D;0x000000;false;false
+# (/regex/)
+regex=0xB3BB84;0x000000;false;false
+commentlinedoc=commentdoc,bold
+commentdockeyword=commentdoc,bold,italic
+commentdockeyworderror=commentdoc
+globalclass=type
+# whether arguments of preprocessor commands should be styled (only first argument is used)
+# 1 to enable, 0 to disable
+styling_within_preprocessor=1;0;false;false
+
+[keywords]
+# all items must be in one line
+primary=and and_eq asm auto bitand bitor bool break case catch char class compl const const_cast continue default delete do double dynamic_cast else enum explicit export extern false float for friend goto if inline int long mutable namespace new not not_eq operator or or_eq private protected public register reinterpret_cast return short signed sizeof static static_cast struct switch template this throw true try typedef typeid typename union unsigned using virtual void volatile wchar_t while xor xor_eq
+secondary=
+# these are some doxygen keywords (incomplete)
+docComment=attention author brief bug class code date def enum example exception file fn namespace note param remarks return see since struct throw todo typedef var version warning union
+
+[settings]
+# default extension used when saving files
+#extension=cpp
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=//
+comment_close=
+# this is an alternative way, so multiline comments are used
+#comment_open=/*
+#comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=g++ -Wall -c "%f"
+linker=g++ -Wall -o "%e" "%f"
+run_cmd="./%e"
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+comment=comment
+commentline=comment
+commentdoc=commentdoc
+number=number
+word=word
+word2=word2
+string=string
+character=string
+uuid=0x0BA09B;0x000000;false;false
+preprocessor=preprocessor
+operator=operator
+identifier=default
+stringeol=stringeol
+# @"verbatim"
+verbatim=0xD89C9E;0x000000;false;false
+# (/regex/)
+regex=0x928B47;0x000000;false;false
+commentlinedoc=commentdoc,bold
+commentdockeyword=commentdoc,bold,italic
+commentdockeyworderror=commentdoc
+globalclass=type
+# whether arguments of preprocessor commands should be styled (only first argument is used)
+# 1 to enable, 0 to disable
+styling_within_preprocessor=1;0;false;false
+
+[keywords]
+# all items must be in one line
+primary=abstract as base bool break byte case catch char checked class const continue decimal default delegate do double else enum event explicit extern false finally fixed float for foreach goto if implicit in int interface internal is lock long namespace new null object operator out override params private protected public readonly ref return sbyte sealed short sizeof stackalloc static string struct switch this throw true try typeof uint ulong unchecked unsafe ushort using virtual void volatile while
+secondary=
+# these are some doxygen keywords (incomplete)
+docComment=attention author brief bug class code date def enum example exception file fn namespace note param remarks return see since struct throw todo typedef var version warning union
+
+[settings]
+# default extension used when saving files
+#extension=cs
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=//
+comment_close=
+# this is an alternative way, so multiline comments are used
+#comment_open=/*
+#comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+# be careful following settings are untested
+compiler=mcs /t:winexe "%f" /r:System,System.Drawing
+run_cmd=mono "%e.exe"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x23BF09;0x000000;false;false
+comment=0x3A0A54;0x000000;false;false
+
+pod=0x7EA090;0x000000;false;false
+
+pod=0x9EC267;0x000000;false;false
+
+pod=0x5DC82D;0x000000;false;false
+
+pod=0xE77FAA;0x000000;false;false
+tag=0xA1CEC6;0x000000;true;false
+class=0x9B8CD7;0x000000;true;false
+pseudoclass=0xCED096;0x000000;true;true
+unknown_pseudoclass=0x5CFBC7;0x000000;false;false
+unknown_identifier=0xF8D8E8;0x000000;false;false
+operator=0x78B00C;0x000000;false;false
+identifier=0x66909A;0x000000;true;false
+doublestring=0xC47AA9;0x000000;false;false
+singlestring=0xE10666;0x000000;false;false
+attribute=0x37C2B6;0x000000;false;false
+value=0xFEFA2E;0x000000;false;false
+id=0x9AE49B;0x000000;true;false
+#identifier2=0x996699;0x000000;true;false # not in np++
+identifier2=0x761ACB;0x000000;true;false
+important=0x3CCBA0;0x000000;true;false
+directive=0x5745F2;0x000000;false;true
+#identifier3=0x669999;0x000000;true;false # not in np++
+identifier2=0xA7C8F4;0x000000;true;false
+pseudoelement=0x85F457;0x000000;true;true # not in np++
+extended_identifier=0x51DBA6;0x000000;true;false # not in np++
+extended_pseudoclass=0x007D92;0x000000;true;true # not in np++
+extended_pseudoelement=0x636798;0x000000;true;true # not in np++
+
+[keywords]
+# CSS 1 properties
+primary=background background-attachment background-color background-image background-position background-repeat border border-bottom border-bottom-width border-color border-left border-left-width border-right border-right-width border-style border-top border-top-width border-width clear color display float font font-family font-size font-style font-variant font-weight height letter-spacing line-height list-style list-style-image list-style-position list-style-type margin margin-bottom margin-left margin-right margin-top padding padding-bottom padding-left padding-right padding-top text-align text-decoration text-indent text-transform vertical-align white-space width word-spacing
+# CSS 2 properties
+secondary=azimuth border-bottom-color border-bottom-style border-collapse border-left-color border-left-style border-right-color border-right-style border-spacing border-top-color border-top-style bottom caption-side clip content counter-increment counter-reset cue cue-after cue-before cursor direction elevation empty-cells font-size-adjust font-stretch left max-height max-width min-height min-width orphans outline outline-color outline-style outline-width overflow page-break-after page-break-before page-break-inside pause pause-after pause-before pitch pitch-range play-during position quotes richness right speak speak-header speak-numeral speak-punctuation speech-rate stress table-layout top unicode-bidi visibility voice-family volume widows z-index
+css3_properties=alignment-adjust alignment-baseline appearance ascent background-break background-clip background-origin background-size baseline baseline-shift bbox bookmark-label bookmark-level bookmark-target border-bottom-left-radius border-bottom-right-radius border-break border-image border-length border-radius border-top-left-radius border-top-right-radius box-align box-direction box-flex box-flex-group box-lines box-orient box-pack box-shadow box-sizing box-sizing cap-height centerline column-break-after column-break-before column-count column-fill column-gap column-rule column-rule-color column-rule-style column-rule-width columns column-span column-width crop definition-src descent dominant-baseline drop-initial-after-adjust drop-initial-after-align drop-initial-before-adjust drop-initial-before-align drop-initial-size drop-initial-value fit fit-position float-offset font-effect font-emphasize font-emphasize-position font-emphasize-style font-size-adjust font-smooth hanging-punctuation hyphenate-after hyphenate-before hyphenate-character hyphenate-lines hyphenate-resource hyphens icon image-orientation image-resolution inline-box-align line-stacking line-stacking-ruby line-stacking-shift line-stacking-strategy mark mark-after mark-before marks marquee-direction marquee-loop marquee-speed marquee-style mathline move-to nav-down nav-index nav-left nav-right nav-up opacity outline-offset overflow-style overflow-x overflow-y page page-policy panose-1 phonemes presentation-level punctuation-trim resize rest rest-after rest-before rotation rotation-point ruby-align ruby-overhang ruby-position ruby-span size slope src stemh stemv string-set tab-side target target-name target-new target-position text-align-last text-emphasis text-height text-indent text-justify text-outline text-replace text-shadow text-wrap topline unicode-range units-per-em voice-balance voice-duration voice-pitch voice-pitch-range voice-rate voice-stress voice-volume white-space-collapse widths word-break word-wrap x-height
+pseudoclasses=active after before checked current disabled empty enabled first-child first-letter first-line first-of-type focus hover lang last-of-type link not nth-child nth-last-child nth-last-of-type nth-of-type only-child only-of-type root target visited
+pseudo_elements=after before choices first-letter first-line line-marker marker outside repeat-index repeat-item selection slot value
+browser_css_properties=
+browser_pseudo_classes=
+browser_pseudo_elements=
+
+
+[settings]
+# default extension used when saving files
+#extension=css
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=/*
+comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+comment=comment
+commentline=comment
+commentdoc=commentdoc
+commentdocnested=commentdoc
+number=number
+word=word
+word2=word2
+word3=word2
+typedef=type
+string=string
+stringeol=stringeol
+character=string
+operator=operator
+identifier=default
+commentlinedoc=commentdoc,bold
+commentdockeyword=commentdoc,bold,italic
+commentdockeyworderror=commentdoc
+
+[keywords]
+# all items must be in one line
+primary=__FILE__ __LINE__ __DATA__ __TIME__ __TIMESTAMP__ abstract alias align asm assert auto body bool break byte case cast catch cdouble cent cfloat char class const continue creal dchar debug default delegate delete deprecated do double else enum export extern false final finally float for foreach function goto idouble if ifloat import in inout int interface invariant ireal is long mixin module new null out override package pragma private protected public real return scope short static struct super switch synchronized template this throw true try typedef typeof ubyte ucent uint ulong union unittest ushort version void volatile wchar while with
+secondary=
+# documentation keywords for D, currently not working
+docComment=Authors Bugs Copyright Date Deprecated Examples History License Macros Params Returns See_Also Standards Throws Version
+types=
+
+[settings]
+# default extension used when saving files
+#extension=d
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=//
+comment_close=
+# this is an alternative way, so multiline comments are used
+#comment_open=/*
+#comment_close=*/
+# this is alternative way, so multiline comments are used
+#comment_open=/+
+#comment_close=+/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=dmd -w -c "%f"
+linker=dmd -w -of"%e" "%f"
+# you can also use the gdc compiler, please use the "gdmd" wrapper script(included with gdc)
+#compiler=gdmd -w -c "%f"
+#linker=gdmd -w -of"%e" "%f"
+
+run_cmd="./%e"
+
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x667825;0x000000;false;false
+comment=0x155122;0x000000;false;false
+
+pod=0x3F833D;0x000000;false;false
+
+pod=0xA263A3;0x000000;false;false
+
+pod=0x6098C4;0x000000;false;false
+
+pod=0x2470D4;0x000000;false;false
+command=0xCE2547;0x000000;false;false
+header=0x4EBF45;0x000000;false;false
+position=0x289E80;0x000000;false;false
+deleted=0x1BBBA4;0x000000;false;false
+added=0xFD0EB0;0x000000;false;false
+changed=0xA79858;0x000000;false;false # not in np++
+
+
+[settings]
+# default extension used when saving files
+#extension=diff
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# only the text before the first --- is a comment
+comment_open=
+comment_close=
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x099E9D;0x000000;false;false
+tag=0xE4993F;0x000000;false;false
+tagunknown=0x65D21E;0x000000;false;false
+attribute=0x2F42F3;0x000000;false;false
+attributeunknown=0xA3FFDE;0x000000;false;false
+number=0xDBA79E;0x000000;false;false
+doublestring=0xFE5C00;0x000000;false;false
+singlestring=0x0394A1;0x000000;false;false
+other=0x906EF0;0x000000;false;false
+comment=0x140C61;0x000000;false;false
+
+pod=0xE92D19;0x000000;false;false
+
+pod=0x025AF9;0x000000;false;false
+
+pod=0xFDDF9D;0x000000;false;false
+
+pod=0xDA40D7;0x000000;false;false
+entity=0x526698;0x000000;false;false
+tagend=0xA541A7;0x000000;false;false
+xmlstart=0xAD5653;0x000000;false;false
+xmlend=0xE42AAF;0x000000;false;false
+cdata=0x95A32E;0x000000;false;false
+question=0xD1D4F9;0x000000;false;false
+value=0x4D9C10;0x000000;false;false
+xccomment=0x3C0079;0x000000;false;false
+
+pod=0x7D6410;0x000000;false;false
+
+pod=0xFC5134;0x000000;false;false
+
+pod=0xD8B028;0x000000;false;false
+
+pod=0xA47B32;0x000000;false;false
+sgml_default=0x6BCC33;0x000000;false;false
+sgml_comment=0x153A42;0x000000;false;false
+
+pod=0xCD26A3;0x000000;false;false
+
+pod=0xA85D4D;0x000000;false;false
+
+pod=0x773B83;0x000000;false;false
+
+pod=0x78CFAD;0x000000;false;false
+sgml_special=0xD1E4DE;0x000000;false;false
+sgml_command=0x09C14D;0x000000;true;false
+sgml_doublestring=0x616FF2;0x000000;false;false
+sgml_simplestring=0xC41ADF;0x000000;false;false
+sgml_1st_param=0x919792;0x000000;false;false
+sgml_entity=0xD46358;0x000000;false;false
+sgml_block_default=0x8FDFFF;0x000000;false;false
+sgml_1st_param_comment=0x231C82;0x000000;false;false
+
+pod=0xDC5C9C;0x000000;false;false
+
+pod=0xACB43E;0x000000;false;false
+
+pod=0x3D6881;0x000000;false;false
+
+pod=0x976DC8;0x000000;false;false
+sgml_error=0x81BBCF;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+elements=abbrev abstract accel ackno acronym action address affiliation alt anchor answer appendix appendixinfo application area areaset areaspec arg article articleinfo artpagenums attribution audiodata audioobject author authorblurb authorgroup authorinitials beginpage bibliocoverage bibliodiv biblioentry bibliography bibliographyinfo biblioid bibliomisc bibliomixed bibliomset bibliorelation biblioset bibliosource blockinfo blockquote book bookinfo bridgehead callout calloutlist caption caution chapter chapterinfo citation citebiblioid citerefentry citetitle city classname classsynopsis classsynopsisinfo cmdsynopsis co collab  cols colnum nameend namest align spanname colname collabname colophon colspec command computeroutput confdates confgroup confnum confsponsor conftitle constant constraint constraintdef constructorsynopsis contractnum contractsponsor contrib copyright coref corpauthor corpname country database date dedication destructorsynopsis edition editor email emphasis entry entrytbl envar epigraph equation errorcode errorname errortext errortype example exceptionname fax fieldsynopsis figure filename fileref firstname firstterm footnote footnoteref foreignphrase formalpara frame funcdef funcparams funcprototype funcsynopsis funcsynopsisinfo function glossary glossaryinfo glossdef glossdiv glossentry glosslist glosssee glossseealso glossterm graphic graphicco group guibutton guiicon guilabel guimenu guimenuitem guisubmenu hardware highlights holder honorific htm imagedata imageobject imageobjectco important index indexdiv indexentry indexinfo indexterm informalequation informalexample informalfigure informaltable initializer inlineequation inlinegraphic inlinemediaobject interface interfacename invpartnumber isbn issn issuenum itemizedlist itermset jobtitle keycap keycode keycombo keysym keyword keywordset label legalnotice lhs lineage lineannotation link listitem iteral literallayout lot lotentry manvolnum markup medialabel mediaobject mediaobjectco member menuchoice methodname methodparam methodsynopsis mm modespec modifier ousebutton msg msgaud msgentry msgexplan msginfo msglevel msgmain msgorig msgrel msgset msgsub msgtext nonterminal note objectinfo olink ooclass ooexception oointerface option optional orderedlist orgdiv orgname otheraddr othercredit othername pagenums para paramdef parameter part partinfo partintro personblurb personname phone phrase pob postcode preface prefaceinfo primary primaryie printhistory procedure production productionrecap productionset productname productnumber programlisting programlistingco prompt property pubdate publisher publishername pubsnumber qandadiv qandaentry qandaset question quote refclass refdescriptor refentry refentryinfo refentrytitle reference referenceinfo refmeta refmiscinfo refname refnamediv refpurpose refsect1 refsect1info refsect2 refsect2info refsect3 refsect3info refsection refsectioninfo refsynopsisdiv refsynopsisdivinfo releaseinfo remark replaceable returnvalue revdescription revhistory revision revnumber revremark rhs row sbr screen screenco screeninfo screenshot secondary secondaryie sect1 sect1info sect2 sect2info sect3 sect3info sect4 sect4info sect5 sect5info section sectioninfo see seealso seealsoie seeie seg seglistitem segmentedlist segtitle seriesvolnums set setindex setindexinfo setinfo sgmltag shortaffil shortcut sidebar sidebarinfo simpara simplelist simplemsgentry simplesect spanspec state step street structfield structname subject subjectset subjectterm subscript substeps subtitle superscript surname sv symbol synopfragment synopfragmentref synopsis systemitem table tbody term tertiary tertiaryie textdata textobject tfoot tgroup thead tip title titleabbrev toc tocback tocchap tocentry tocfront toclevel1 toclevel2 toclevel3 toclevel4 toclevel5 tocpart token trademark type ulink userinput varargs variablelist varlistentry varname videodata videoobject void volumenum warning wordasword xref year arch condition conformance id lang os remap role revision revisionflag security userlevel url vendor xreflabel status label endterm linkend space width
+dtd=ELEMENT DOCTYPE ATTLIST ENTITY NOTATION
+
+
+[settings]
+# default extension used when saving files
+#extension=docbook
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=<!--
+comment_close=-->
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0xCE4FEC;0x000000;false;false
+comment=0x6F0E3A;0x000000;false;false
+
+pod=0xF3770F;0x000000;false;false
+
+pod=0xB4FEA5;0x000000;false;false
+
+pod=0xDC8EF0;0x000000;false;false
+
+pod=0xD15096;0x000000;false;false
+number=0xF1BBBD;0x000000;false;false
+string=0xB2DC02;0x000000;false;false
+operator=0xFA8BBE;0x000000;false;false
+identifier=0xF3219D;0x000000;false;false
+string2=0xE2DF35;0x000000;true;false
+word=0x7AF3F0;0x000000;true;false
+word2=0xDC59D5;0x000000;true;false
+word3=0xB93152;0x000000;true;false
+preprocessor=0x88D852;0x000000;false;false
+operator2=0x88C147;0x000000;true;false
+continuation=0x89D6E7;0x000000;false;false
+#continuation=0x66ff00;0xf0e080;false;false
+stringeol=0x4BDC22;0x000000;false;false
+label=0xEF957D;0x000000;true;false
+
+
+[keywords]
+# all items must be in one line
+primary=access action advance allocatable allocate apostrophe assign assignment associate asynchronous backspace bind blank blockdata call case character class close common complex contains continue cycle data deallocate decimal delim default dimension direct do dowhile double doubleprecision else elseif elsewhere encoding end endassociate endblockdata enddo endfile endforall endfunction endif endinterface endmodule endprogram endselect endsubroutine endtype endwhere entry eor equivalence err errmsg exist exit external file flush fmt form format formatted function go goto id if implicit in include inout integer inquire intent interface intrinsic iomsg iolength iostat kind len logical module name named namelist nextrec nml none nullify number only open opened operator optional out pad parameter pass pause pending pointer pos position precision print private program protected public quote read readwrite real rec recl recursive result return rewind save select selectcase selecttype sequential sign size stat status stop stream subroutine target then to type unformatted unit use value volatile wait where while write
+intrinsic_functions=abs achar acos acosd adjustl adjustr aimag aimax0 aimin0 aint ajmax0 ajmin0 akmax0 akmin0 all allocated alog alog10 amax0 amax1 amin0 amin1 amod anint any asin asind associated atan atan2 atan2d atand bitest bitl bitlr bitrl bjtest bit_size bktest break btest cabs ccos cdabs cdcos cdexp cdlog cdsin cdsqrt ceiling cexp char clog cmplx conjg cos cosd cosh count cpu_time cshift csin csqrt dabs dacos dacosd dasin dasind datan datan2 datan2d datand date date_and_time dble dcmplx dconjg dcos dcosd dcosh dcotan ddim dexp dfloat dflotk dfloti dflotj digits dim dimag dint dlog dlog10 dmax1 dmin1 dmod dnint dot_product dprod dreal dsign dsin dsind dsinh dsqrt dtan dtand dtanh eoshift epsilon errsns exp exponent float floati floatj floatk floor fraction free huge iabs iachar iand ibclr ibits ibset ichar idate idim idint idnint ieor ifix iiabs iiand iibclr iibits iibset iidim iidint iidnnt iieor iifix iint iior iiqint iiqnnt iishft iishftc iisign ilen imax0 imax1 imin0 imin1 imod index inint inot int int1 int2 int4 int8 iqint iqnint ior ishft ishftc isign isnan izext jiand jibclr jibits jibset jidim jidint jidnnt jieor jifix jint jior jiqint jiqnnt jishft jishftc jisign jmax0 jmax1 jmin0 jmin1 jmod jnint jnot jzext kiabs kiand kibclr kibits kibset kidim kidint kidnnt kieor kifix kind kint kior kishft kishftc kisign kmax0 kmax1 kmin0 kmin1 kmod knint knot kzext lbound leadz len len_trim lenlge lge lgt lle llt log log10 logical lshift malloc matmul max max0 max1 maxexponent maxloc maxval merge min min0 min1 minexponent minloc minval mod modulo mvbits nearest nint not nworkers number_of_processors pack popcnt poppar precision present product radix random random_number random_seed range real repeat reshape rrspacing rshift scale scan secnds selected_int_kind selected_real_kind set_exponent shape sign sin sind sinh size sizeof sngl snglq spacing spread sqrt sum system_clock tan tand tanh tiny transfer transpose trim ubound unpack verify
+user_functions=cdabs cdcos cdexp cdlog cdsin cdsqrt cotan cotand dcmplx dconjg dcotan dcotand decode dimag dll_export dll_import doublecomplex dreal dvchk encode find flen flush getarg getcharqq getcl getdat getenv gettim hfix ibchng identifier imag int1 int2 int4 intc intrup invalop iostat_msg isha ishc ishl jfix lacfar locking locnear map nargs nbreak ndperr ndpexc offset ovefl peekcharqq precfill prompt qabs qacos qacosd qasin qasind qatan qatand qatan2 qcmplx qconjg qcos qcosd qcosh qdim qexp qext qextd qfloat qimag qlog qlog10 qmax1 qmin1 qmod qreal qsign qsin qsind qsinh qsqrt qtan qtand qtanh ran rand randu rewrite segment setdat settim system timer undfl unlock union val virtual volatile zabs zcos zexp zlog zsin zsqrt
+
+
+[settings]
+# default extension used when saving files
+#extension=f
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=c
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=false
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=gfortran -Wall -c "%f"
+linker=gfortran -Wall -o "%e" "%f"
+run_cmd="./%e"
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+comment=comment
+commentline=comment
+commentdoc=commentdoc
+number=number
+word=word
+word2=word2
+string=string
+character=string
+uuid=0x9D7416;0x000000;false;false
+#uuid=0xffffff
+preprocessor=preprocessor
+operator=operator
+identifier=default
+stringeol=stringeol
+# @"verbatim"
+verbatim=0x4C50D5;0x000000;false;false
+# (/regex/)
+regex=0x43CACD;0x000000;false;false
+commentlinedoc=commentdoc,bold
+commentdockeyword=commentdoc,bold,italic
+commentdockeyworderror=commentdoc
+globalclass=type
+
+[keywords]
+# all items must be in one line
+primary=false null self super true abstract alias and arguments attribute_missing break case class closure conformsToProtocol constructor continue default deliver destructor diliver directive do else extends eval final fix for function global handle if iferr implements include instanceof isa method_missing modifies monitor namespace new or private protected protocol public raise recipient rename return static switch uses using while
+types=boolean string number array object void XML Unix Sys String Stream Serialize RMI Posix Number Network Math FileSystem Console Array Regexp XSLT
+docComment=brief class declaration description end example extends function group implements modifies module namespace param protocol return return static type variable warning
+
+[settings]
+# default extension used when saving files
+#extension=fe
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=//
+comment_close=
+# this is an alternative way, so multiline comments are used
+#comment_open=/*
+#comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=ferite -vc "%f"
+run_cmd=ferite "%f"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0xC343B1;0x000000;false;false
+comment=0x4001A0;0x000000;false;false
+
+pod=0xC0509C;0x000000;false;false
+
+pod=0x22A65F;0x000000;false;false
+
+pod=0xF5D7A0;0x000000;false;false
+
+pod=0x6AF10B;0x000000;false;false
+number=0x18964E;0x000000;false;false
+string=0x9CFCCC;0x000000;false;false
+operator=0xCA9724;0x000000;false;false
+identifier=0xB4EFCE;0x000000;false;false
+string2=0x9C48FB;0x000000;true;false
+word=0xD0D1FC;0x000000;true;false
+word2=0x45AE46;0x000000;true;false
+word3=0xB6A9B6;0x000000;true;false
+preprocessor=0xD8EA99;0x000000;false;false
+operator2=0x90CCB5;0x000000;true;false
+continuation=0xFF6FF8;0x000000;false;false
+#continuation=0x66ff00;0xf0e080;false;false
+stringeol=0x80AB41;0x000000;false;false
+label=0x6A42E2;0x000000;true;false
+
+
+[keywords]
+# all items must be in one line
+primary=access action advance allocatable allocate apostrophe assign assignment associate asynchronous backspace bind blank blockdata call case character class close common complex contains continue cycle data deallocate decimal delim default dimension direct do dowhile double doubleprecision elemental else elseif elsewhere encoding end endassociate endblockdata enddo endfile endforall endfunction endif endinterface endmodule endprogram endselect endsubroutine endtype endwhere entry eor equivalence err errmsg exist exit extends external file flush fmt forall form format formatted function go goto id if implicit in include inout integer inquire intent interface intrinsic iomsg iolength iostat kind len logical module name named namelist nextrec nml none nullify number only open opened operator optional out pad parameter pass pause pending pointer pos position precision print private procedure program protected public quote pure read readwrite real rec recl recursive result return rewind save select selectcase selecttype sequential sign size stat status stop stream subroutine target then to type unformatted unit use value volatile wait where while write
+intrinsic_functions=abs achar acos acosd adjustl adjustr aimag aimax0 aimin0 aint ajmax0 ajmin0 akmax0 akmin0 all allocated alog alog10 amax0 amax1 amin0 amin1 amod anint any asin asind associated atan atan2 atan2d atand bitest bitl bitlr bitrl bjtest bit_size bktest break btest cabs ccos cdabs cdcos cdexp cdlog cdsin cdsqrt ceiling cexp char clog cmplx conjg cos cosd cosh count cpu_time cshift csin csqrt dabs dacos dacosd dasin dasind datan datan2 datan2d datand date date_and_time dble dcmplx dconjg dcos dcosd dcosh dcotan ddim dexp dfloat dflotk dfloti dflotj digits dim dimag dint dlog dlog10 dmax1 dmin1 dmod dnint dot_product dprod dreal dsign dsin dsind dsinh dsqrt dtan dtand dtanh eoshift epsilon errsns exp exponent float floati floatj floatk floor fraction free huge iabs iachar iand ibclr ibits ibset ichar idate idim idint idnint ieor ifix iiabs iiand iibclr iibits iibset iidim iidint iidnnt iieor iifix iint iior iiqint iiqnnt iishft iishftc iisign ilen imax0 imax1 imin0 imin1 imod index inint inot int int1 int2 int4 int8 iqint iqnint ior ishft ishftc isign isnan izext jiand jibclr jibits jibset jidim jidint jidnnt jieor jifix jint jior jiqint jiqnnt jishft jishftc jisign jmax0 jmax1 jmin0 jmin1 jmod jnint jnot jzext kiabs kiand kibclr kibits kibset kidim kidint kidnnt kieor kifix kind kint kior kishft kishftc kisign kmax0 kmax1 kmin0 kmin1 kmod knint knot kzext lbound leadz len len_trim lenlge lge lgt lle llt log log10 logical lshift malloc matmul max max0 max1 maxexponent maxloc maxval merge min min0 min1 minexponent minloc minval mod modulo mvbits nearest nint not nworkers number_of_processors pack popcnt poppar precision present product radix random random_number random_seed range real repeat reshape rrspacing rshift scale scan secnds selected_int_kind selected_real_kind set_exponent shape sign sin sind sinh size sizeof sngl snglq spacing spread sqrt sum system_clock tan tand tanh tiny transfer transpose trim ubound unpack verify
+user_functions=cdabs cdcos cdexp cdlog cdsin cdsqrt cotan cotand dcmplx dconjg dcotan dcotand decode dimag dll_export dll_import doublecomplex dreal dvchk encode find flen flush getarg getcharqq getcl getdat getenv gettim hfix ibchng identifier imag int1 int2 int4 intc intrup invalop iostat_msg isha ishc ishl jfix lacfar locking locnear map nargs nbreak ndperr ndpexc offset ovefl peekcharqq precfill prompt qabs qacos qacosd qasin qasind qatan qatand qatan2 qcmplx qconjg qcos qcosd qcosh qdim qexp qext qextd qfloat qimag qlog qlog10 qmax1 qmin1 qmod qreal qsign qsin qsind qsinh qsqrt qtan qtand qtanh ran rand randu rewrite segment setdat settim system timer undfl unlock union val virtual volatile zabs zcos zexp zlog zsin zsqrt
+
+
+[settings]
+# default extension used when saving files
+#extension=f90
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=!
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=false
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=gfortran -Wall -c "%f"
+linker=gfortran -Wall -o "%e" "%f"
+run_cmd="./%e"
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x4B9B53;0x000000;false;false
+comment=0x340453;0x000000;false;false
+
+pod=0xBD215A;0x000000;false;false
+
+pod=0xB1B655;0x000000;false;false
+
+pod=0xE96221;0x000000;false;false
+pod=0x098BAC;0x000000;false;false
+number=0x8AB337;0x000000;false;false
+word=0x65F9E4;0x000000;true;false
+string=0xB836F5;0x000000;false;false
+preprocessor=0xE12AFF;0x000000;false;false
+operator=0x82AE4B;0x000000;false;false
+identifier=0xCCFF64;0x000000;false;false
+date=0xD4879E;0x000000;false;false
+stringeol=0x7AD469;0x000000;false;false
+word2=0x39F74A;0x000000;true;false
+word3=0x3472B6;0x000000;false;false
+word4=0xFEB7A7;0x000000;false;false
+constant=0x1A9B67;0x000000;false;false
+# asm is still unused
+asm=0x7591A9;0x000000;false;false
+label=0x77E905;0x000000;false;false
+error=0xE2AA14;0x000000;false;false
+hexnumber=0xBE372F;0x000000;false;false
+binnumber=0x3C55FF;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+keywords=abs access acos alias allocate alpha and any append as assert assertwarn asc asin asm atan2 atn base beep bin binary bit bitreset bitset bload bsave byref byte byval call callocate case cast cbyte cdbl cdecl chain chdir chr cint circle class clear clng clngint close cls color com cons command common condbroadcast condcreate conddestroy condsignal condwait const constructor continue cos cptr cshort csign csng csrlin cubyte cuint culng culngint cunsg curdir cushort custom cvd cvi cvl cvlongint cvs cvshort data date dateadd datediff datepart dateserial datevalue day deallocate declare defbyte defdbl defint deflng deflngint defshort defsng defstr defubyte defuint defulngint defushort delete destructor dim dir do double draw dynamic dylibfree dylibload dylibsymbol else elseif encoding end enum environ escape eof eqv erase erfn erl ermn err error exec exepath exit exp explicit export extern false fboolean field fileattr filecopy filedatetime fileexists filelen fix flip for format frac fre freefile function get getjoystick getkey getmouse gosub goto  hex hibyte hiword hour  if iif imageconvertrow imagecreate imagedestroy imp import inkey inp input input$ instr int integer is isdate  kill  lbound lcase left len let lib lpt line lobyte loc local locate lock lof log long longint loop loword lpos lprint lset ltrim mid minute mkd mkdir mki mkl mklongint mks mkshort mod month monthname multikey mutexcreate mutexdestroy mutexlock mutexunlock name namespace nokeyword next new not now oct offsetof on once open option operator or out output overload paint palette pascal pcopy peek pipe pmap point pointer poke pos preserve preset print private procptr property protected pset ptr public put random randomize read reallocate redim rem reset restore resume return rgb rgba right rmdir rnd rset rtrim run sadd scope scrn screen screencopy screencontrol screenevent screeninfo screenglproc screenlist screenlock screenptr screenres screenset screensync screenunlock second seek select setdate setenviron setmouse settime sgn shared shell short sin single sizeof sleep space spc sqr static stdcall step stop str string strptr sub swap system shr shl tab tan then this threadcreate threadwait time timeserial timevalue timer to trans trim true type ubound ubyte ucase uinteger ulong ulongint union unlock unsigned until ushort using va_arg va_first va_next val vallng valint valuint valulng var varptr view wait wbin wchr weekday weekdayname wend while whex width window windowtitle winput with woct write wspace wstr wstring xor year zstring
+preprocessor=#define defined typeof #dynamic #else #endif #error #if #ifdef #ifndef #inclib #include #print #static #undef #macro #endmacro #elseif #libpath #pragma
+# user definable keywords
+user1=
+user2=
+
+[settings]
+# default extension used when saving files
+#extension=bas
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open='
+comment_close=
+# this is an alternative way, so multiline comments are used
+#comment_open=/'
+#comment_close='/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=fbc -w all "%f"
+run_cmd="./%e"
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+comment=comment
+commentline=comment
+commentdoc=commentdoc
+number=number
+word=word
+word2=word2
+string=string
+character=string
+uuid=0x2C5DDD;0x000000;false;false
+#uuid=0xffffff
+preprocessor=preprocessor
+operator=operator
+identifier=default
+stringeol=stringeol
+# @"verbatim"
+verbatim=0x24BD2D;0x000000;false;false
+# (/regex/)
+regex=0xE532A6;0x000000;false;false
+commentlinedoc=commentdoc,bold
+commentdockeyword=commentdoc,bold,italic
+commentdockeyworderror=commentdoc
+globalclass=type
+# whether arguments of preprocessor commands should be styled (only first argument is used)
+# 1 to enable, 0 to disable
+styling_within_preprocessor=1;0;false;false
+
+[keywords]
+# all items must be in one line
+primary=if else switch case default for while do discard return break continue true false struct void bool int uint float vec2 vec3 vec4 ivec2 ivec3 ivec4 bvec2 bvec3 bvec4 uvec2 uvec3 uvec4 mat2 mat3 mat4 mat2x2 mat2x3 mat2x4 mat3x2 mat3x3 mat3x4 mat4x2 mat4x3 mat4x4 sampler1D sampler2D sampler3D samplerCube sampler1DShadow sampler2DShadow sampler1DArray sampler2DArray sampler1DArrayShadow sampler2DArrayShadow isampler1D isampler2D isampler3D isamplerCube isampler1DArray isampler2DArray usampler1D usampler2D usampler3D usamplerCube usampler1DArray usampler2DArray const invariant centroid in out inout attribute uniform varying smooth flat noperspective highp mediump lowp
+secondary=
+# these are some doxygen keywords (incomplete)
+docComment=attention author brief bug class code date def enum example exception file fn namespace note param remarks return returns see since struct throw todo typedef var version warning union
+
+[settings]
+# default extension used when saving files
+#extension=glsl
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=//
+comment_close=
+# this is an alternative way, so multiline comments are used
+#comment_open=/*
+#comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+#compiler=
+#linker=
+#run_cmd=
+
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x26C2FD;0x000000;false;false
+commentline=0x8C1807;0x000000;false;false
+
+pod=0x4CB6E5;0x000000;false;false
+
+pod=0x8EE942;0x000000;false;false
+
+pod=0xB12FFF;0x000000;false;false
+
+pod=0xA32AEC;0x000000;false;false
+commentblock=0x0E5A08;0x000000;false;false
+
+pod=0xD04929;0x000000;false;false
+
+pod=0xFD7FA3;0x000000;false;false
+
+pod=0x916F3E;0x000000;false;false
+
+pod=0x9F7739;0x000000;false;false
+commentblock2=0x351A3E;0x000000;false;false
+
+pod=0xDB3C5C;0x000000;false;false
+
+pod=0xAC5992;0x000000;false;false
+
+pod=0xE6741F;0x000000;false;false
+
+pod=0xE6EEF9;0x000000;false;false
+commentblock3=0x6A0820;0x000000;false;false
+
+pod=0x72B1B2;0x000000;false;false
+
+pod=0x003FEC;0x000000;false;false
+
+pod=0x9A9B6D;0x000000;false;false
+
+pod=0x20AD6E;0x000000;false;false
+number=0xB93AA4;0x000000;false;false
+keyword=0x37A2A0;0x000000;true;false
+import=0x99C1BB;0x000000;false;false
+string=0xE9DFD1;0x000000;false;false
+character=0xAA0FD4;0x000000;false;false
+class=0xC1AE44;0x000000;false;false
+operator=0x45BB8F;0x000000;false;false
+identifier=0xF7B96C;0x000000;false;false
+instance=0x9782F6;0x000000;false;false
+capital=0xF710FE;0x000000;false;false
+module=0xA6C8CF;0x000000;false;false
+data=0x559C55;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+keywords=as case class data deriving do else if import in infixl infixr instance let module of primitive qualified then type where
+
+
+[settings]
+# default extension used when saving files
+#extension=hs
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=--
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=ghc --make "%f"
+run_cmd="./%e"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+comment=comment
+commentline=comment
+commentdoc=commentdoc
+number=number
+word=word
+word2=word2
+string=string
+character=string
+uuid=0xE1E26B;0x000000;false;false
+#uuid=0xffffff
+preprocessor=preprocessor
+operator=operator
+identifier=default
+stringeol=stringeol
+# @"verbatim"
+verbatim=0x60BF1C;0x000000;false;false
+# (/regex/)
+regex=0xA4B48C;0x000000;false;false
+commentlinedoc=commentdoc,bold
+commentdockeyword=commentdoc,bold,italic
+commentdockeyworderror=commentdoc
+globalclass=type
+
+[keywords]
+# all items must be in one line
+primary=abstract break case catch class const continue trace do else enum extends finally for function goto if implements import in instanceof int interface new package private public return static super switch this throw throws transient try typeof var void volatile while with
+secondary=Bool Float Int null Void Enum String
+classes=Array ArrayAccess Class Date DateTools EReg Hash IntHash IntIter Iterable Iterator Lambda List Math Null Protected Reflect Std StringBuf StringTools Type UInt ValueType Xml XmlType
+
+
+[settings]
+# default extension used when saving files
+#extension=hx
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=//
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=haxe -neko "%e.n" -cp . "%f"
+run_cmd=neko "%e"
+
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# styling for PHP/HTML is done in filetypes.xml
+
+
+[settings]
+# default extension used when saving files
+#extension=html
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+# these comments are used for PHP, the comments used in HTML are in filetypes.xml
+comment_open=<!--
+comment_close=-->
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+# use a syntax checker and ignore the formatted output
+compiler=tidy %f >/dev/null
+
+# the file will be opened with the default browser which can be set in the preferences dialog
+run_cmd=builtin
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+comment=comment
+commentline=comment
+commentdoc=commentdoc
+number=number
+word=word
+word2=word2
+string=string
+character=string
+uuid=0x6F35E0;0x000000;false;false
+#uuid=0xffffff
+preprocessor=preprocessor
+operator=operator
+identifier=default
+stringeol=stringeol
+# @"verbatim"
+verbatim=0xBB30BE;0x000000;false;false
+# (/regex/)
+regex=0xA7733E;0x000000;false;false
+commentlinedoc=commentdoc,bold
+commentdockeyword=commentdoc,bold,italic
+commentdockeyworderror=commentdoc
+globalclass=type
+
+[keywords]
+primary=abstract assert break case catch class const continue default do else extends final finally for future generic goto if implements import inner instanceof interface native new outer package private protected public rest return static super switch synchronized this throw throws transient try var volatile while true false null
+secondary=boolean byte char double float int long null short void
+# documentation keywords for javadoc
+doccomment=author deprecated exception param return see serial serialData serialField since throws todo version
+typedefs=
+
+
+[settings]
+# default extension used when saving files
+#extension=java
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=/*
+comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=javac "%f"
+run_cmd=java "%e"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+comment=comment
+commentline=comment
+commentdoc=commentdoc
+number=number
+word=word
+word2=word2
+string=string
+character=string
+uuid=0xC4348D;0x000000;false;false
+#uuid=ffffff
+preprocessor=preprocessor
+operator=operator
+identifier=default
+stringeol=stringeol
+# @"verbatim"
+verbatim=0x5BA345;0x000000;false;false
+# (/regex/)
+regex=0xD36817;0x000000;false;false
+commentlinedoc=commentdoc,bold
+commentdockeyword=commentdoc,bold,italic
+commentdockeyworderror=commentdoc
+globalclass=type
+
+[keywords]
+# all items must be in one line
+primary=abs abstract acos anchor asin atan atan2 big bold boolean break byte case catch ceil char charAt charCodeAt class concat const continue cos Date debugger default delete do double else enum escape eval exp export extends false final finally fixed float floor fontcolor fontsize for fromCharCode function goto if implements import in indexOf Infinity instanceof int interface isFinite isNaN italics join lastIndexOf length link log long Math max MAX_VALUE min MIN_VALUE NaN native NEGATIVE_INFINITY new null Number package parseFloat parseInt pop POSITIVE_INFINITY pow private protected public push random return reverse round shift short sin slice small sort splice split sqrt static strike string String sub substr substring sup super switch synchronized tan this throw throws toLowerCase toString toUpperCase transient true try typeof undefined unescape unshift valueOf var void volatile while with
+
+[settings]
+# default extension used when saving files
+#extension=js
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=//
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=
+run=
+
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0xBC761D;0x000000;false;false
+command=0x66A790;0x000000;true;false
+tag=0x2A886C;0x000000;true;false
+math=0xEDB121;0x000000;false;false
+comment=0x250298;0x000000;false;true
+
+pod=0xE5198E;0x000000;false;false
+
+pod=0x6ACE30;0x000000;false;false
+
+pod=0x44DD77;0x000000;false;false
+
+pod=0x9F9D41;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+primary=above abovedisplayshortskip abovedisplayskip abovewithdelims accent adjdemerits advance afterassignment aftergroup atop atopwithdelims badness baselineskip batchmode begin begingroup belowdisplayshortskip belowdisplayskip binoppenalty botmark box boxmaxdepth brokenpenalty catcode char chardef cleaders closein closeout clubpenalty copy count countdef cr crcr csname day deadcycles def defaulthyphenchar defaultskewchar delcode delimeters delimiter delimiterfactor delimitershortfall dimen dimendef discretionary displayindent displaylimits displaystyle displaywidowpenalty displaywidth divide doublehyphendemerits dp dump edef else emergencystretch end endcsname endgroup endinput endlinechar eqno errhelp errmessage errorcontextlines errorstopmode escapechar everycr everydisplay everyhbox everyjob everymath everypar everyvbox exhyphenpenalty expandafter fam fi finalhyphendemerits firstmark floatingpenalty font fontdimen fontname futurelet gdef global globaldefs group halign hangafter hangindent hbadness hbox hfil hfill hfilneg hfuzz hoffset holdinginserts horizontal hrule hsize hskip hss ht hyphen hyphenation hyphenchar hyphenpenalty if ifcase ifcat ifdim ifeof iffalse ifhbox ifhmode ifinner ifmmode ifnum ifodd iftrue ifvbox ifvmode ifvoid ifx ignorespaces immediate indent input inputlineno insert insertpenalties interlinepenalty jobname kern language lastbox lastkern lastpenalty lastskip lccode leaders left lefthyphenmin leftskip leqno let limits line linepenalty lineskip lineskiplimit long looseness lower lowercase mag mark mathaccent mathbin mathchar mathchardef mathchoice mathclose mathcode mathinner mathop mathopen mathord mathpunct mathrel mathsurround maxdeadcycles maxdepth meaning medmuskip message mkern month moveleft moveright mskip multiply muskip muskipdef newlinechar noalign noboundary noexpand noindent nolimits nonscript nonstopmode nulldelimiterspace nullfont number omit openin openout or outer output outputpenalty over overfullrule overline overwithdelims pagedepth pagefilllstretch pagefillstretch pagefilstretch pagegoal pageshrink pagestretch pagetotal par parfillskip parindent parshape parskip patterns pausing penalty postdisplaypenalty predisplaypenalty predisplaysize pretolerance prevdepth prevgraf radical raise read relax relpenalty right righthyphenmin rightskip romannumeral scriptfont scriptscript scriptscriptfont scriptscriptstyle scriptspace scriptstyle scrollmode setbox setlanguage sfcode shipout show showbox showboxbreadth showboxdepth showlists showthe skewchar skip skipdef spacefactor spaceskip span special splitbotmark splitfirstmark splitmaxdepth splittopskip string subsection tabskip textfont textstyle the thickmuskip thinmuskip time toks toksdef tolerance topmark topskip tracingcommands tracinglostchars tracingmacros tracingonline tracingoutput tracingpages tracingparagraphs tracingrestores tracingstats uccode uchyph underline unhbox unhcopy unkern unpenalty unskip unvbox unvcopy uppercase vadjust valign vbadness vbox vcenter vfil vfill vfilneg vfuzz voffset vrule vsize vskip vsplit vss vtop wd widowpenalty write xdef xleaders xspaceskip year
+
+
+[settings]
+# default extension used when saving files
+#extension=tex
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=%
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=latex --file-line-error-style "%f"
+# it is called linker, but here it is an alternative compiler command
+linker=pdflatex --file-line-error-style "%f"
+run_cmd=xdvi "%f"
+run_cmd2=xpdf "%f"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x8BCB87;0x000000;false;false
+comment=0x061B5C;0x000000;false;false
+
+pod=0x786576;0x000000;false;false
+
+pod=0xE5B211;0x000000;false;false
+
+pod=0x57B3FC;0x000000;false;false
+
+pod=0x1DB710;0x000000;false;false
+commentline=0x622228;0x000000;false;false
+
+pod=0x64CA61;0x000000;false;false
+
+pod=0xEAC2F0;0x000000;false;false
+
+pod=0xE69160;0x000000;false;false
+
+pod=0x86DBD9;0x000000;false;false
+commentdoc=0x130D8A;0x000000;true;false
+
+pod=0xFCDE5E;0x000000;false;false
+
+pod=0xA09F86;0x000000;false;false
+
+pod=0xAF33FE;0x000000;false;false
+
+pod=0x1DDBAC;0x000000;false;false
+number=0xA9DD1A;0x000000;false;false
+word=0x7D88E3;0x000000;true;false
+string=0xD6AA24;0x000000;false;false
+character=0xDF82B2;0x000000;false;false
+literalstring=0xC84267;0x000000;false;false
+preprocessor=0xA25516;0x000000;false;false
+operator=0x88C633;0x000000;false;false
+identifier=0xC096E6;0x000000;false;false
+stringeol=stringeol
+function_basic=0x7854D1;0x000000;false;false
+function_other=0xD43812;0x000000;false;false
+coroutines=0x4D8D93;0x000000;false;false
+word5=0x07C6C8;0x000000;false;false
+word6=0xC79256;0x000000;false;false
+word7=0xF44D01;0x000000;false;false
+word8=0xA3CD5F;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+keywords=and break do else elseif end false for function if in local nil not or repeat return then true until while
+# Basic functions
+function_basic=_ALERT assert call collectgarbage coroutine debug dofile dostring error _ERRORMESSAGE foreach foreachi _G gcinfo getfenv getmetatable getn globals _INPUT io ipairs load loadfile loadlib loadstring math module newtype next os _OUTPUT pairs pcall print _PROMPT rawequal rawget rawset require select setfenv setmetatable sort _STDERR _STDIN _STDOUT string table tinsert tonumber tostring tremove type unpack _VERSION xpcall
+# String, (table) & math functions
+function_other=abs acos asin atan atan2 ceil cos deg exp floor format frexp gsub ldexp log log10 math.abs math.acos math.asin math.atan math.atan2 math.ceil math.cos math.cosh math.deg math.exp math.floor math.fmod math.frexp math.huge math.ldexp math.log math.log10 math.max math.min math.mod math.modf math.pi math.pow math.rad math.random math.randomseed math.sin math.sinh math.sqrt math.tan math.tanh max min mod rad random randomseed sin sqrt strbyte strchar strfind string.byte string.char string.dump string.find string.format string.gfind string.gmatch string.gsub string.len string.lower string.match string.rep string.reverse string.sub string.upper strlen strlower strrep strsub strupper table.concat table.foreach table.foreachi table.getn table.insert table.maxn table.remove table.setn table.sort tan
+# (coroutines), I/O & system facilities
+coroutines=appendto clock closefile coroutine.create coroutine.resume coroutine.running coroutine.status coroutine.wrap coroutine.yield date difftime execute exit flush getenv io.close io.flush io.input io.lines io.open io.output io.popen io.read io.stderr io.stdin io.stdout io.tmpfile io.type io.write openfile os.clock os.date os.difftime os.execute os.exit os.getenv os.remove os.rename os.setlocale os.time os.tmpname package.cpath package.loaded package.loadlib package.path package.preload package.seeall read readfrom remove rename seek setlocale time tmpfile tmpname write writeto
+# user definable keywords
+user1=
+user2=
+user3=
+user4=
+
+[settings]
+# default extension used when saving files
+#extension=lua
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=--
+comment_close=
+# this is an alternative way, so multiline comments are used
+#comment_open=--[[
+#comment_close=]]--
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=
+run_cmd=lua "%f"
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x71AB85;0x000000;false;false
+comment=0x173230;0x000000;false;false
+
+pod=0x4E68BB;0x000000;false;false
+
+pod=0xE12EF3;0x000000;false;false
+
+pod=0x23E364;0x000000;false;false
+
+pod=0xDDB4F5;0x000000;false;false
+preprocessor=0xF580BE;0x000000;false;false
+identifier=0x4494E2;0x000000;false;false
+operator=0xAE7116;0x000000;false;false
+target=0xC33022;0x000000;false;false
+ideol=0x5ADB20;0x000000;false;false
+
+# there are no keywords available otherwise mail me
+
+
+[settings]
+# default extension used when saving files
+#extension=mak
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x73C0FA;0x000000;false;false
+comment=0x17481E;0x000000;false;false
+
+pod=0x6C877F;0x000000;false;false
+
+pod=0xDC6DE0;0x000000;false;false
+
+pod=0x9E368E;0x000000;false;false
+
+pod=0x74FF5E;0x000000;false;false
+command=0x81D8B5;0x000000;true;false
+number=0xFD11D7;0x000000;false;false
+keyword=0x3EB560;0x000000;true;false
+string=0x0AF5E9;0x000000;false;false
+operator=0x64E7BD;0x000000;false;false
+identifier=0x17C8A5;0x000000;false;false
+doublequotedstring=0xD063B7;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+primary=break case catch continue else elseif end for function global if otherwise persistent return switch try while
+
+[settings]
+# default extension used when saving files
+#extension=m
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=%
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=
+run_cmd=octave -q "%f"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x88ED3D;0x000000;false;false
+comment=0x0D4E0E;0x000000;false;false
+
+pod=0xAEB12B;0x000000;false;false
+
+pod=0x22BCA0;0x000000;false;false
+
+pod=0x66BA9E;0x000000;false;false
+pod=0xA305B3;0x000000;false;false
+stringdq=0xFC2322;0x000000;false;false
+stringlq=0x5ECEDD;0x000000;false;false
+stringrq=0xD8D123;0x000000;false;false
+function=0xF4198F;0x000000;false;false
+variable=0x459D6B;0x000000;false;false
+label=0xE3DE8A;0x000000;false;false
+userdefined=0x28E5B4;0x000000;true;false
+sectiondef=0x77A1A2;0x000000;true;false
+subsectiondef=0x71DC57;0x000000;true;false
+ifdefinedef=0xEE522D;0x000000;true;false
+macrodef=0x52A776;0x000000;true;false
+stringvar=0x75BCA0;0x000000;false;false
+number=0x62CCF6;0x000000;false;false
+sectiongroup=0xBDB2C2;0x000000;true;false
+pageex=0x8980E7;0x000000;true;false
+functiondef=0xBA7656;0x000000;true;false
+commentbox=0x5C0C73;0x000000;false;false
+
+pod=0x4D5792;0x000000;false;false
+
+pod=0x7B2FCE;0x000000;false;false
+
+pod=0x9C8F3C;0x000000;false;false
+pod=0xE1AFB7;0x000000;false;false
+
+
+[keywords]
+# all items must be in one line and in lowercase
+functions=abort addbrandingimage !addincludedir !addincludedirdir !addplugindir addsize addsizesize_to_add_to_section_in_kb allowrootdirinstall allowskipfiles !appendfile autoclosewindow bgfont bggradient brandingtext bringtofront call callinstdll caption captioninstaller_caption !cd changeui checkbitmap clearerrors completedtext componenttext contributors: copyfiles crccheck createdirectory createdirectorydirectory_name createfont createshortcut !define delete deleteinisec deleteinistr deleteregkey deleteregvalue !delfilefile detailprint detailprintmessage detailsbuttontext dirshow dirtext dirvar dirverify dirverifyauto !echo !echomessage !else enablewindow !endif enumregkey enumregvalue !error exch exec execshell !execute execwait expandenvstrings file filebufsize fileclose fileerrortext fileopen fileread filereadbyte fileseek filewrite filewritebyte findclose findfirst findnext findwindow flushini function functionend function_name getcurinsttype getcurrentaddress getcurrentaddressoutput getdlgitem getdllversion getdllversionlocal geterrorlevel getfiletime getfiletimelocal getfullpathname getfunctionaddress getinstdirerror getlabeladdress gettempfilename goto gotolabel hidewindow icon !if ifabort !ifdef iferrors iffileexists !ifmacrodef !ifmacrondef !ifndef ifrebootflag ifsilent !include initpluginsdir !insertmacro installbuttontext installcolors installdir installdirregkey instprogressflags insttype insttypegettext insttypesettext intcmp intcmpu intfmt intop iswindow langstring langstringup licensebkcolor licensedata licenseforceselection licenselangstring licensetext loadlanguagefile lockwindow logset logtext !macro !macroend makensis messagebox miscbuttontext name none nop outfile !packhdr page pagecallbacks pageex pageexend pop portions push pushstring quit readenvstr readinistr readregdword readregstr reboot regdll rename requestexecutionlevel reservefile return rmdir !searchparse searchpath !searchreplace section sectionend sectiongetflags sectiongetinsttypes sectiongetsize sectiongettext sectiongroup sectiongroupend sectionin sectionsetflags sectionsetinsttypes sectionsetsize sectionsettext sendmessage setautoclose setbrandingimage setcompress setcompressionlevel setcompressor setcompressordictsize setctlcolors setcurinsttype setdatablockoptimize setdatesave setdetailsprint setdetailsview seterrorlevel seterrors setfileattributes setfont setoutpath setoverwrite setpluginunload setrebootflag setregview setshellvarcontext setsilent showinstdetails showuninstdetails showwindow silentinstall silentuninstall sleep spacetexts strcmp strcmps strcpy strlen subcaption subsection subsectionend !system !tempfilesymbol !undef uninstallbuttontext uninstallcaption uninstallexename uninstallicon uninstallsubcaption uninstalltext uninstpage unregdll var !verbose viaddversionkey viproductversion !warning windowicon writeinistr writeregbin writeregdword writeregexpandstr writeregstr writeuninstaller xpstyle
+variables=$$ $` $' $" $0 $0, $1 $2 $3 $4 $5 $6 $7 $8 $9 $admintools $appdata $cdburn_area $cmdline $commonfiles $cookies $desktop $documents $exedir $favorites $fonts $history $hwndparent $instdir $internet_cache $language $music $nethood ${nsisdir} $outdir $pictures $pluginsdir $printhood $profile $programfiles $quicklaunch $\r $r0 $r1 $r2 $r3 $r4 $r5 $r6 $r7 $r8 $r9 $recent $resources $resources_localized $sendto $smprograms $smstartup $startmenu $sysdir $temp $templates $varname $videos $windir
+lables=all alt alwaysoff archive auto both bottom bzip2 center colored components control current custom directory dlg_id ext false file_attribute_archive file_attribute_hidden file_attribute_normal file_attribute_offline file_attribute_readonly file_attribute_system file_attribute_temporary filesonly force hidden hide hkcc hkcr hkcu hkdd hkey_classes_root hkey_current_config hkey_current_user hkey_dyn_data hkey_local_machine hkey_performance_data hkey_users hklm hkpd hku idabort idcancel idignore idno idok idretry idyes ifdiff ifnewer instfiles italic  lastused leave left license listonly lzma manual mb_abortretryignore mb_defbutton1 mb_defbutton2 mb_defbutton3 mb_defbutton4 mb_iconexclamation mb_iconinformation mb_iconquestion mb_iconstop mb_ok mb_okcancel mb_retrycancel mb_right mb_setforeground mb_topmost mb_yesno mb_yesnocancel nevershow none nonfatal normal of off offline on open print readonly rebootok right shctx shift show silent silentlog smooth strike sw_hide  sw_showmaximized sw_showmaximized  sw_showminimized sw_showminimized  sw_showminnoactive  sw_showna  sw_shownoactivate  sw_shownormal sw_shownormal  system temporary textonly top trim true try underline  uninstconfirm zlib
+userdefined=
+
+
+[settings]
+# default extension used when saving files
+#extension=nsi
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=;
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=makensis "%f"
+run_cmd="./%e"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x19B767;0x000000;false;false
+identifier=0x75C280;0x000000;false;false
+comment=0x570522;0x000000;false;false
+
+pod=0xFB3360;0x000000;false;false
+
+pod=0xD83398;0x000000;false;false
+
+pod=0x1CB39B;0x000000;false;false
+
+pod=0xBF543B;0x000000;false;false
+comment2=0x283C3A;0x000000;false;false
+
+pod=0x39F7A7;0x000000;false;false
+
+pod=0x9D805B;0x000000;false;false
+
+pod=0x77D831;0x000000;false;false
+
+pod=0x68E511;0x000000;false;false
+commentline=0x7F0439;0x000000;false;false
+
+pod=0xD37BA6;0x000000;false;false
+
+pod=0xE6ED8B;0x000000;false;false
+
+pod=0xFC1910;0x000000;false;false
+
+pod=0xA4D895;0x000000;false;false
+preprocessor=0x7B33AD;0x000000;false;false
+preprocessor2=0xBCE5AE;0x000000;false;false
+number=0xEBC6F8;0x000000;false;false
+hexnumber=0x1CB7F3;0x000000;false;false
+word=0x7AC850;0x000000;true;false
+string=0xD25F81;0x000000;false;false
+stringeol=0xDF634A;0x000000;false;false
+character=0xB0E4F6;0x000000;false;false
+operator=0xB52F44;0x000000;false;false
+asm=0xE2D455;0x000000;false;false
+
+
+[keywords]
+# all items must be in one line
+primary=absolute abstract add and array as asm assembler automated begin byte case cdecl char class const constructor contains default deprecated destructor dispid dispinterface div do downto dynamic else end except export exports external far file final finalization finally for forward function goto if implementation implements in index inherited initialization inline integer interface is label library message mod name near nil nodefault not object of on or out overload override package packed pascal platform private procedure program property protected public published raise read readonly real record register reintroduce remove repeat requires resourcestring safecall sealed set shl shr static stdcall stored strict string then threadvar to try type unit unsafe until uses var varargs virtual while with word write writeonly xor
+
+
+[settings]
+# default extension used when saving files
+#extension=pas
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open={
+comment_close=}
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=fpc "%f"
+run_cmd="./%e"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x26FF1E;0x000000;false;false
+error=0x8C6525;0x000000;false;false
+commentline=0x411381;0x000000;false;false
+
+pod=0x11D7F4;0x000000;false;false
+
+pod=0x8652B2;0x000000;false;false
+
+pod=0x652AFE;0x000000;false;false
+
+pod=0xE3A87F;0x000000;false;false
+number=0xAA119C;0x000000;false;false
+word=0xE2C104;0x000000;true;false
+string=0x7D9995;0x000000;false;false
+character=0x049F3A;0x000000;false;false
+preprocessor=0x35DEF1;0x000000;false;false
+operator=0x49DDA5;0x000000;false;false
+identifier=0xB3E35F;0x000000;false;false
+scalar=0xBF8D50;0x000000;false;false
+pod=0x63B5D2;0x000000;false;true
+regex=0x587D2E;0x000000;false;false
+array=0x4FDDF9;0x000000;false;false
+hash=0x0E93AB;0x000000;false;false
+symboltable=0x519318;0x000000;false;false
+backticks=0x55AC5B;0x000000;false;false
+pod_verbatim=0x8977AF;0x000000;false;false
+reg_subst=0xCB2A88;0x000000;false;false
+datasection=0x9DF604;0x000000;false;false
+here_delim=0x65B087;0x000000;false;false
+here_q=0x7EFEAA;0x000000;false;false
+here_qq=0xB41C83;0x000000;true;false
+here_qx=0xA21ECD;0x000000;false;true
+string_q=0xB22592;0x000000;false;false
+string_qq=0xAD9E75;0x000000;false;false
+string_qx=0x80A10C;0x000000;false;false
+string_qr=0x0EB275;0x000000;false;false
+string_qw=0x9897CB;0x000000;false;false
+variable_indexer=0x38FC17;0x000000;false;false
+# not used
+punctuation=0xE3172D;0x000000;false;false
+# obsolete: replaced by qq, qx, qr, qw
+longquote=0x2A817C;0x000000;false;false
+sub_prototype=0x8FE7B8;0x000000;false;true
+format_ident=0x88F49A;0x000000;true;false
+format=0x37F911;0x000000;false;false
+
+[keywords]
+primary=NULL __FILE__ __LINE__ __PACKAGE__ __DATA__ __END__ AUTOLOAD BEGIN CORE DESTROY END EQ GE GT INIT LE LT NE CHECK abs accept alarm and atan2 bind binmode bless caller chdir chmod chomp chop chown chr chroot close closedir cmp connect continue cos crypt dbmclose dbmopen defined delete die do dump each else elsif endgrent endhostent endnetent endprotoent endpwent endservent eof eq eval exec exists exit exp fcntl fileno flock for foreach fork format formline ge getc getgrent getgrgid getgrnam gethostbyaddr gethostbyname gethostent getlogin getnetbyaddr getnetbyname getnetent getpeername getpgrp getppid getpriority getprotobyname getprotobynumber getprotoent getpwent getpwnam getpwuid getservbyname getservbyport getservent getsockname getsockopt glob gmtime goto grep gt hex if index int ioctl join keys kill last lc lcfirst le length link listen local localtime lock log lstat lt m map mkdir msgctl msgget msgrcv msgsnd my ne next no not oct open opendir or ord our pack package pipe pop pos print printf prototype push q qq qr quotemeta qu qw qx rand read readdir readline readlink readpipe recv redo ref rename require reset return reverse rewinddir rindex rmdir s scalar seek seekdir select semctl semget semop send setgrent sethostent setnetent setpgrp setpriority setprotoent setpwent setservent setsockopt shift shmctl shmget shmread shmwrite shutdown sin sleep socket socketpair sort splice split sprintf sqrt srand stat study sub substr symlink syscall sysopen sysread sysseek system syswrite tell telldir tie tied time times tr truncate uc ucfirst umask undef unless unlink unpack unshift untie until use utime values vec wait waitpid wantarray warn while write x xor y
+
+
+[settings]
+# default extension used when saving files
+#extension=pl
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+
+# B - The Perl Bytecode Compiler (requires Perl 5.8 or higher)
+compiler=perl -MO=Bytecode,-H,-o"%f"c "%f"
+
+# alternatively use perlcc
+#compiler=perlcc -o "%e" "%f"
+
+# instead of actual compiling, just run a nice syntax check
+#compiler=perl -c "%f"
+
+run_cmd=perl "%f"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# styling for PHP/HTML is done in filetypes.xml
+
+
+[settings]
+# default extension used when saving files
+#extension=php
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+# these comments are used for PHP, the comments used in HTML are in filetypes.xml
+comment_open=/*
+comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=php -l "%f"
+run_cmd=php "%f"
+
+# use can also use something like this, to view your PHP or HTML files through a browser and webserver
+#run_cmd=firefox http://localhost/test_site/%f
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0xBE2FAB;0x000000;false;false
+comment=0x321A11;0x000000;false;false
+
+pod=0xFFF630;0x000000;false;false
+
+pod=0x44FF91;0x000000;false;false
+
+pod=0xCCC652;0x000000;false;false
+
+pod=0xB47E05;0x000000;false;false
+msgid=0x26B814;0x000000;true;false
+msgid_text=0x40DA07;0x000000;false;false
+msgstr=0x67EA8C;0x000000;true;false
+msgstr_text=0xA82382;0x000000;false;false
+msgctxt=0x32D0C8;0x000000;true;false
+msgctxt_text=0x426371;0x000000;false;false
+#fuzzy=0xffa500;0x000000;true;false
+fuzzy=0x3AE053;0x000000;true;false
+
+# the lexer don't support keywords
+
+
+[settings]
+# default extension used when saving files
+#extension=po
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=msgfmt --check --check-accelerators=_ "%f"
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0xDDC6AC;0x000000;false;false
+commentline=0x551664;0x000000;false;false
+
+pod=0x7835D1;0x000000;false;false
+
+pod=0x8057B4;0x000000;false;false
+
+pod=0x7DCA9D;0x000000;false;false
+
+pod=0xD20484;0x000000;false;false
+number=0x5237C3;0x000000;false;false
+string=0x0F93FE;0x000000;false;false
+character=0x9689A5;0x000000;false;false
+word=0x857CFF;0x000000;true;false
+triple=0x27A17B;0x000000;false;false
+tripledouble=0x4EF52F;0x000000;false;false
+classname=0x7EC253;0x000000;false;false
+defname=0xAADF68;0x000000;false;false
+operator=0xB343DB;0x000000;false;false
+identifier=0xD5777B;0x000000;false;false
+commentblock=0x410F8C;0x000000;false;false
+
+pod=0xA48F1E;0x000000;false;false
+
+pod=0x7E9F42;0x000000;false;false
+
+pod=0x0BB8F1;0x000000;false;false
+
+pod=0x7BB77B;0x000000;false;false
+stringeol=0xE5E629;0x000000;false;false
+word2=0x5277DD;0x000000;true;false
+decorator=0x2FA1F0;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+primary=and as assert break class continue def del elif else except exec finally for from global if import in is lambda not or pass print raise return try while with yield False None True
+# additional keywords, will be highlighted with style "word2"
+identifiers=
+
+
+[settings]
+# default extension used when saving files
+#extension=py
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=python -c "import py_compile; py_compile.compile('%f')"
+run_cmd=python "%f"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x92F1C7;0x000000;false;false
+comment=0x681205;0x000000;false;false
+
+pod=0xF110A8;0x000000;false;false
+
+pod=0xF7BB76;0x000000;false;false
+
+pod=0xE98B96;0x000000;false;false
+
+pod=0x12F696;0x000000;false;false
+# primary keyword
+kword=0xC0B9F5;0x000000;false;false
+operator=0xFCF53A;0x000000;false;false
+# package keyword
+basekword=0xC13EF5;0x000000;false;false
+# package_other keyword
+otherkword=0x1850E4;0x000000;false;false
+number=0xAADC38;0x000000;false;false
+# "blah" string
+string=0xF1C172;0x000000;false;false
+# 'blah' string
+string2=0xF62CA3;0x000000;false;false
+identifier=0x39CDD5;0x000000;false;false
+infix=0x39F725;0x000000;false;false
+infixeol=0xDFDF44;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+primary=abs array break data.frame diag else FALSE for function if in Inf matrix NA NaN NCOL next NROW NULL print read.table repeat require return solve source sqrt sum TRUE while
+package=abbreviate abline abs acf acos acosh addmargins aggregate agrep alarm alias alist all anova any aov aperm append apply approx approxfun apropos ar args arima array arrows asin asinh assign assocplot atan atanh attach attr attributes autoload autoloader ave axis backsolve barplot basename beta bindtextdomain binomial biplot bitmap bmp body box boxplot bquote break browser builtins bxp by bzfile c call cancor capabilities casefold cat category cbind ccf ceiling character charmatch chartr chol choose chull citation class close cm cmdscale codes coef coefficients col colnames colors colorspaces colours comment complex confint conflicts contour contrasts contributors convolve cophenetic coplot cor cos cosh cov covratio cpgram crossprod cummax cummin cumprod cumsum curve cut cutree cycle data dataentry date dbeta dbinom dcauchy dchisq de debug debugger decompose delay deltat demo dendrapply density deparse deriv det detach determinant deviance dexp df dfbeta dfbetas dffits dgamma dgeom dget dhyper diag diff diffinv difftime digamma dim dimnames dir dirname dist dlnorm dlogis dmultinom dnbinom dnorm dotchart double dpois dput drop dsignrank dt dump dunif duplicated dweibull dwilcox eapply ecdf edit effects eigen emacs embed end environment eval evalq example exists exp expression factanal factor factorial family fft fifo file filter find fitted fivenum fix floor flush for force formals format formula forwardsolve fourfoldplot frame frequency ftable function gamma gaussian gc gcinfo gctorture get getenv geterrmessage gettext gettextf getwd gl glm globalenv gray grep grey grid gsub gzcon gzfile hat hatvalues hcl hclust head heatmap help hist history hsv httpclient iconv iconvlist identical identify if ifelse image influence inherits integer integrate interaction interactive intersect invisible isoreg jitter jpeg julian kappa kernapply kernel kmeans knots kronecker ksmooth labels lag lapply layout lbeta lchoose lcm legend length letters levels lfactorial lgamma library licence license line lines list lm load loadhistory loadings local locator loess log logb logical loglin lowess ls lsfit machine mad mahalanobis makepredictcall manova mapply match matlines matplot matpoints matrix max mean median medpolish menu merge message methods mget min missing mode monthplot months mosaicplot mtext mvfft names napredict naprint naresid nargs nchar ncol next nextn ngettext nlevels nlm nls noquote nrow numeric objects offset open optim optimise optimize options order ordered outer pacf page pairlist pairs palette par parse paste pbeta pbinom pbirthday pcauchy pchisq pdf pentagamma person persp pexp pf pgamma pgeom phyper pi pico pictex pie piechart pipe plclust plnorm plogis plot pmatch pmax pmin pnbinom png pnorm points poisson poly polygon polym polyroot postscript power ppoints ppois ppr prcomp predict preplot pretty princomp print prmatrix prod profile profiler proj promax prompt provide psigamma psignrank pt ptukey punif pweibull pwilcox q qbeta qbinom qbirthday qcauchy qchisq qexp qf qgamma qgeom qhyper qlnorm qlogis qnbinom qnorm qpois qqline qqnorm qqplot qr qsignrank qt qtukey quantile quarters quasi quasibinomial quasipoisson quit qunif quote qweibull qwilcox rainbow range rank raw rbeta rbind rbinom rcauchy rchisq readline real recover rect reformulate regexpr relevel remove reorder rep repeat replace replicate replications require reshape resid residuals restart return rev rexp rf rgamma rgb rgeom rhyper rle rlnorm rlogis rm rmultinom rnbinom rnorm round row rownames rowsum rpois rsignrank rstandard rstudent rt rug runif runmed rweibull rwilcox sample sapply save savehistory scale scan screen screeplot sd search searchpaths seek segments seq sequence serialize setdiff setequal setwd shell sign signif sin single sinh sink smooth solve sort source spectrum spline splinefun split sprintf sqrt stack stars start stderr stdin stdout stem step stepfun stl stop stopifnot str strftime strheight stripchart strptime strsplit strtrim structure strwidth strwrap sub subset substitute substr substring sum summary sunflowerplot supsmu svd sweep switch symbols symnum system t table tabulate tail tan tanh tapply tempdir tempfile termplot terms tetragamma text time title toeplitz tolower topenv toupper trace traceback transform trigamma trunc truncate try ts tsdiag tsp typeof unclass undebug union unique uniroot unix unlink unlist unname unserialize unsplit unstack untrace unz update upgrade url var varimax vcov vector version vi vignette warning warnings weekdays weights which while window windows with write wsbrowser xedit xemacs xfig xinch xor xtabs xyinch yinch zapsmall
+package_other=acme aids aircondit amis aml banking barchart barley beaver bigcity boot brambles breslow bs bwplot calcium cane capability cav censboot channing city claridge cloth cloud coal condense contourplot control corr darwin densityplot dogs dotplot ducks empinf envelope environmental ethanol fir frets gpar grav gravity grob hirose histogram islay knn larrows levelplot llines logit lpoints lsegments lset ltext lvqinit lvqtest manaus melanoma melanoma motor multiedit neuro nitrofen nodal ns nuclear oneway parallel paulsen poisons polar qq qqmath remission rfs saddle salinity shingle simplex singer somgrid splom stripplot survival tau tmd tsboot tuna unit urine viewport wireframe wool xyplot
+
+[settings]
+# default extension used when saving files
+#extension=R
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+# this is an alternative way, so multiline comments are used
+#comment_open=/*
+#comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+   #command_example();
+# setting to false would generate this
+#  command_example();
+# This setting works only for single line comments
+comment_use_indent=false
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+Copy files from /usr/share/geany/ to this directory to overwrite them. To use the defaults, just delete the file in this directory.
+For more information read the documentation (in /usr/share/doc/geany/html/index.html or visit http://www.geany.org/).
+# For complete documentation of this file, please see Geany's main documentation
+[settings]
+# default extension used when saving files
+#extension=rst
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+#comment_open=#
+#comment_close=
+# this is an alternative way, so multiline comments are used
+#comment_open=/*
+#comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+#comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x7483AD;0x000000;false;false
+
+pod=0x04BEBB;0x000000;false;false
+
+pod=0xF74546;0x000000;false;false
+
+pod=0xC43681;0x000000;false;false
+
+pod=0x6E1BFA;0x000000;false;false
+
+pod=0x67D572;0x000000;false;false
+
+pod=0x51E2DC;0x000000;false;false
+pod=0xFAC61E;0x000000;false;false
+commentline=0x4625B1;0x000000;false;false
+number=0x26A8CE;0x000000;false;false
+string=0xB7BBA1;0x000000;false;false
+character=0x37BE91;0x000000;false;false
+word=0x997AAA;0x000000;true;false
+global=0xFF22F0;0x000000;false;false
+symbol=0x2968AF;0x000000;false;false
+classname=0x74E287;0x000000;true;false
+defname=0xDB8A19;0x000000;false;false
+operator=0xACD3E2;0x000000;false;false
+identifier=0xD855FB;0x000000;false;false
+modulename=0x9FCC39;0x000000;true;false
+backticks=0x1142DE;0x000000;false;false
+instancevar=0x1AD2BF;0x000000;false;true
+classvar=0xFA72EC;0x000000;true;true
+heredelim=0x6BCEE3;0x000000;false;false
+worddemoted=0x0FC4A9;0x000000;false;false
+stdin=0x48E6FB;0x000000;false;false
+stdout=0x4661EF;0x000000;false;false
+stderr=0xD98703;0x000000;false;false
+datasection=0x427ED8;0x000000;false;false
+regex=0x8ADFE1;0x000000;false;false
+here_q=0x4EABEC;0x000000;false;false
+here_qq=0x0690E7;0x000000;true;false
+here_qx=0xE958AE;0x000000;false;true
+string_q=0x15D3C8;0x000000;false;false
+string_qq=0xF92665;0x000000;false;false
+string_qx=0x1CB35D;0x000000;false;false
+string_qr=0x5C5F64;0x000000;false;false
+string_qw=0x94827D;0x000000;false;false
+upper_bound=0x61CD60;0x000000;false;false
+error=0x0D7D9C;0x000000;false;false
+pod=0xC4667A;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+primary=__FILE__ load define_method attr_accessor attr_writer attr_reader and def end in or self unless __LINE__ begin defined? ensure module redo super until BEGIN break do false next rescue then when END case else for nil include require retry true while alias class elsif if not return undef yield
+
+
+[settings]
+# default extension used when saving files
+#extension=rb
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=ruby -c "%f"
+run_cmd=ruby "%f"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0xBEE290;0x000000;false;false
+commentline=0x502E10;0x000000;false;false
+
+pod=0x9119E7;0x000000;false;false
+
+pod=0x9CE223;0x000000;false;false
+
+pod=0xBF3670;0x000000;false;false
+
+pod=0x3EBA46;0x000000;false;false
+number=0xC67FC6;0x000000;false;false
+word=0x1597EC;0x000000;true;false
+string=0xFF18FA;0x000000;false;false
+character=0x50D335;0x000000;false;false
+operator=0x67D182;0x000000;false;false
+identifier=0xC092FB;0x000000;false;false
+backticks=0xECC20A;0x000000;false;false
+param=0x990FEB;0x000000;false;false
+scalar=0xAEE83B;0x000000;false;false
+error=0x1CBECD;0x000000;false;false
+here_delim=0xF70CB0;0x000000;false;false
+here_q=0xC9A2F3;0x000000;false;false
+
+[keywords]
+primary=break case continue do done elif else esac eval exit export fi for function goto if in integer return set shift then until while
+
+
+[settings]
+# default extension used when saving files
+#extension=sh
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+
+# set to false if a comment character/string should start a column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+run_cmd="./%f"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x7AD82D;0x000000;false;false
+comment=0x08350E;0x000000;false;false
+
+pod=0xBAD8DE;0x000000;false;false
+
+pod=0x79FE31;0x000000;false;false
+
+pod=0xB4EB65;0x000000;false;false
+
+pod=0x4554A5;0x000000;false;false
+commentline=0x03355C;0x000000;false;false
+
+pod=0xE287A3;0x000000;false;false
+
+pod=0x956454;0x000000;false;false
+
+pod=0x6BEB9D;0x000000;false;false
+
+pod=0x0CC63E;0x000000;false;false
+commentdoc=0x155009;0x000000;false;false
+
+pod=0xE40F7F;0x000000;false;false
+
+pod=0x6ED2FA;0x000000;false;false
+
+pod=0xB486EB;0x000000;false;false
+
+pod=0x4696E1;0x000000;false;false
+number=0x0DCF30;0x000000;false;false
+word=0x03F7A7;0x000000;true;false
+word2=0x4B725C;0x000000;true;false
+string=0xC4009B;0x000000;false;false
+character=0xC1E137;0x000000;false;false
+operator=0xECA0ED;0x000000;true;false
+identifier=0x978A3D;0x000000;false;false
+sqlplus=0xFD46DB;0x000000;false;false
+sqlplus_prompt=0xA57ED4;0x000000;false;false
+sqlplus_comment=0x5A3B07;0x000000;false;false
+
+pod=0xDEADA8;0x000000;false;false
+
+pod=0xAEC9B1;0x000000;false;false
+
+pod=0x9F6D02;0x000000;false;false
+
+pod=0x11F93B;0x000000;false;false
+quotedidentifier=0x54823F;0x000000;false;false
+
+[keywords]
+# all items must be in one line
+keywords=absolute action add admin after aggregate alias all allocate alter and any are array as asc assertion at authorization before begin bfile bigint binary bit blob bool boolean both breadth by call cascade cascaded case cast catalog char character check class clob close cluster collate collation column commit completion connect connection constraint constraints constructor continue corresponding create cross cube current current_date current_path current_role current_time current_timestamp current_user cursor cycle data date day deallocate dec decimal declare default deferrable deferred delete depth deref desc describe descriptor destroy destructor deterministic diagnostics dictionary dimension disconnect diskgroup distinct domain double drop dynamic each else end end-exec equals escape every except exception exec execute exists explain external false fetch first fixed flashback float for foreign found from free full function general get global go goto grant group grouping having host hour identity if ignore immediate in index indextype indicator initialize initially inner inout input insert int integer intersect interval into is isolation iterate join key language large last lateral leading left less level like limit local localtime localtimestamp locator long map match materialized mediumblob mediumint mediumtext merge middleint minus minute modifies modify module month names national natural nchar nclob new next no noaudit none not null numeric nvarchar2 object of off old on only open operation option or order ordinality out outer output package pad parameter parameters partial path postfix precision prefix preorder prepare preserve primary prior privileges procedure profile public purge read reads real recursive ref references referencing regexp regexp_like relative rename restrict result return returning returns revoke right role rollback rollup routine row rows savepoint schema scroll scope search second section select sequence session session_user set sets size smallint some space specific specifictype sql sqlexception sqlstate sqlwarning start state statement static structure synonym system_user table tablespace temporary terminate than then time timestamp timezone_hour timezone_minute tinyint to trailing transaction translation  treat trigger true truncate type under union unique unknown unnest update usage user using value values varchar varchar2 variable varying view when whenever where with without work write year zone
+
+
+[settings]
+# default extension used when saving files
+#extension=sql
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=/*
+comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+# For complete documentation of this file; please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x4CF833;0x000000;false;false
+comment=0x033152;0x000000;false;false
+
+pod=0xCFE4C2;0x000000;false;false
+
+pod=0x40F7E7;0x000000;false;false
+
+pod=0xC4ECA0;0x000000;false;false
+
+pod=0x7D37E6;0x000000;false;false
+commentline=0x350F6C;0x000000;false;false
+
+pod=0xF9F94B;0x000000;false;false
+
+pod=0x5E9FBA;0x000000;false;false
+
+pod=0x3B943E;0x000000;false;false
+
+pod=0xFFF007;0x000000;false;false
+number=0xADE854;0x000000;false;false
+operator=0xA6FDC7;0x000000;false;false
+identifier=0xE1F33A;0x000000;false;false
+wordinquote=0x58A429;0x000000;false;false
+inquote=0x05E490;0x000000;false;false
+substitution=0x2868CB;0x000000;false;false
+modifier=0xE9282A;0x000000;false;false
+expand=0xFFAB78;0x000000;false;false
+wordtcl=0xF497FC;0x000000;true;false
+wordtk=0x1E6EC2;0x000000;true;false
+worditcl=0xCD8B1D;0x000000;true;false
+wordtkcmds=0x727E56;0x000000;true;false
+wordexpand=0xD8572C;0x000000;true;false
+
+
+[keywords]
+# all items must be in one line
+tcl=after append apply array auto_execok auto_import auto_load auto_load_index auto_mkindex auto_mkindex_old auto_qualify auto_reset beep bgerror binary break case catch cd chan clock close concat continue coroutine dde default dict echo else elseif encoding eof error eval exec exit expr fblocked fconfigure fcopy file fileevent filename flush for foreach format gets glob global history http if incr info interp join lappend lassign lindex linsert list llength load loadTk lrange lrepeat lreplace lreverse lsearch lset lsort mathfunc mathop memory msgcat namespace oo::class oo::copy oo::define oo::objdefine oo::object open package parray pid pkg::create pkg_mkIndex platform platform::shell Platform-specific proc puts pwd read refchan regexp registry regsub rename resource re_syntax return Safe Base scan seek set socket source split string subst switch tailcall Tcl tcl::prefix tcl_endOfWord tcl_findLibrary tclLog tclMacPkgSearch tclPkgSetup tclPkgUnknown tcl_startOfNextWord tcl_startOfPreviousWord tcltest tclvars tcl_wordBreakAfter tcl_wordBreakBefore tell throw time tm trace try unknown unload unset update uplevel upvar variable vwait while yield zlib
+tk=bell bind bindtags bitmap button canvas checkbutton clipboard colors console cursors destroy entry event focus font frame grab grid image Inter-client keysyms label labelframe listbox loadTk lower menu menubutton message option options pack panedwindow photo place radiobutton raise scale scrollbar selection send spinbox text toplevel winfo wish wm
+itcl=@scope body class code common component configbody constructor define destructor hull import inherit itcl itk itk_component itk_initialize itk_interior itk_option iwidgets keep method private protected public
+tkcommands=tk tk_bisque tkButtonAutoInvoke tkButtonDown tkButtonEnter tkButtonInvoke tkButtonLeave tkButtonUp tkCancelRepeat tkCheckRadioDown tkCheckRadioEnter tkCheckRadioInvoke tk_chooseColor tk_chooseDirectory tkColorDialog tkColorDialog_BuildDialog tkColorDialog_CancelCmd tkColorDialog_Config tkColorDialog_CreateSelector tkColorDialog_DrawColorScale tkColorDialog_EnterColorBar tkColorDialog_HandleRGBEntry tkColorDialog_HandleSelEntry tkColorDialog_InitValues tkColorDialog_LeaveColorBar tkColorDialog_MoveSelector tkColorDialog_OkCmd tkColorDialog_RedrawColorBars tkColorDialog_RedrawFinalColor tkColorDialog_ReleaseMouse tkColorDialog_ResizeColorBars tkColorDialog_RgbToX tkColorDialog_SetRGBValue tkColorDialog_StartMove tkColorDialog_XToRgb tkConsoleAbout tkConsoleBind tkConsoleExit tkConsoleHistory tkConsoleInit tkConsoleInsert tkConsoleInvoke tkConsoleOutput tkConsolePrompt tkConsoleSource tkDarken tk_dialog tkEntryAutoScan tkEntryBackspace tkEntryButton1 tkEntryClosestGap tkEntryGetSelection tkEntryInsert tkEntryKeySelect tkEntryMouseSelect tkEntryNextWord tkEntryPaste tkEntryPreviousWord tkEntrySeeInsert tkEntrySetCursor tkEntryTranspose tkerror tkEventMotifBindings tkFDGetFileTypes tkFirstMenu tk_focusFollowsMouse tkFocusGroup_BindIn tkFocusGroup_BindOut tkFocusGroup_Create tkFocusGroup_Destroy tkFocusGroup_In tkFocusGroup_Out tk_focusNext tkFocusOK tk_focusPrev tkGenerateMenuSelect tk_getOpenFile tk_getSaveFile tkIconList tkIconList_Add tkIconList_Arrange tkIconList_AutoScan tkIconList_Btn1 tkIconList_Config tkIconList_Create tkIconList_CtrlBtn1 tkIconList_Curselection tkIconList_DeleteAll tkIconList_Double1 tkIconList_DrawSelection tkIconList_FocusIn tkIconList_FocusOut tkIconList_Get tkIconList_Goto tkIconList_Index tkIconList_Invoke tkIconList_KeyPress tkIconList_Leave1 tkIconList_LeftRight tkIconList_Motion1 tkIconList_Reset tkIconList_ReturnKey tkIconList_See tkIconList_Select tkIconList_Selection tkIconList_ShiftBtn1 tkIconList_UpDown tkListbox tkListboxAutoScan tkListboxBeginExtend tkListboxBeginSelect tkListboxBeginToggle tkListboxCancel tkListboxDataExtend tkListboxExtendUpDown tkListboxKeyAccel_Goto tkListboxKeyAccel_Key tkListboxKeyAccel_Reset tkListboxKeyAccel_Set tkListboxKeyAccel_Unset tkListboxMotion tkListboxSelectAll tkListboxUpDown tkMbButtonUp tkMbEnter tkMbLeave tkMbMotion tkMbPost tkMenuButtonDown tkMenuDownArrow tkMenuDup tkMenuEscape tkMenuFind tkMenuFindName tkMenuFirstEntry tkMenuInvoke tkMenuLeave tkMenuLeftArrow tkMenuMotion tkMenuNextEntry tkMenuNextMenu tkMenuRightArrow tk_menuSetFocus tkMenuUnpost tkMenuUpArrow tk_messageBox tkMessageBox tkMotifFDialog tkMotifFDialog_ActivateDList tkMotifFDialog_ActivateFEnt tkMotifFDialog_ActivateFList tkMotifFDialog_ActivateSEnt tkMotifFDialog_BrowseDList tkMotifFDialog_BrowseFList tkMotifFDialog_BuildUI tkMotifFDialog_CancelCmd tkMotifFDialog_Config tkMotifFDialog_Create tkMotifFDialog_FileTypes tkMotifFDialog_FilterCmd tkMotifFDialog_InterpFilter tkMotifFDialog_LoadFiles tkMotifFDialog_MakeSList tkMotifFDialog_OkCmd tkMotifFDialog_SetFilter tkMotifFDialog_SetListMode tkMotifFDialog_Update tk_optionMenu tk_popup tkPostOverPoint tkRecolorTree tkRestoreOldGrab tkSaveGrabInfo tkScaleActivate tkScaleButton2Down tkScaleButtonDown tkScaleControlPress tkScaleDrag tkScaleEndDrag tkScaleIncrement tkScreenChanged tkScrollButton2Down tkScrollButtonDown tkScrollButtonDrag tkScrollButtonUp tkScrollByPages tkScrollByUnits tkScrollDrag tkScrollEndDrag tkScrollSelect tkScrollStartDrag tkScrollTopBottom tkScrollToPos tk_setPalette tkTabToWindow tkTearOffMenu tkTextAutoScan tkTextButton1 tkTextClosestGap tk_textCopy tk_textCut tkTextInsert tkTextKeyExtend tkTextKeySelect tkTextNextPara tkTextNextPos tkTextNextWord tk_textPaste tkTextPaste tkTextPrevPara tkTextPrevPos tkTextPrevWord tkTextResetAnchor tkTextScrollPages tkTextSelectTo tkTextSetCursor tkTextTranspose tkTextUpDownLine tkTraverseToMenu tkTraverseWithinMenu tkvars tkwait toplevel ttk::button ttk::checkbutton ttk::combobox ttk::entry ttk::frame ttk::image ttk::intro ttk::label ttk::labelframe ttk::menubutton ttk::notebook ttk::panedwindow ttk::progressbar ttk::radiobutton ttk::scale ttk::scrollbar ttk::separator ttk::sizegrip ttk::spinbox ttk::style ttk::treeview ttk::widget ttk_vsapi
+expand=
+
+[settings]
+# default extension used when saving files
+#extension=tcl
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=tclsh "%f"
+run_cmd=tclsh "%f"
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=default
+comment=comment
+commentline=comment
+commentdoc=commentdoc
+number=number
+word=word
+word2=word2
+string=string
+character=string
+uuid=0x91E5B8;0x000000;false;false
+#uuid=0x000000
+preprocessor=preprocessor
+operator=operator
+identifier=default
+stringeol=stringeol
+# @"verbatim"
+verbatim=0xAC820D;0x000000;false;false
+# (/regex/)
+regex=0x94E690;0x000000;false;false
+commentlinedoc=commentdoc,bold
+commentdockeyword=commentdoc,bold,italic
+commentdockeyworderror=commentdoc
+globalclass=type
+
+[keywords]
+# all items must be in one line
+#primary=
+#secondary=
+# these are some doxygen keywords (incomplete)
+#docComment=attention author brief bug class code date def enum example exception file fn namespace note param remarks return see since struct throw todo typedef var version warning union
+
+[settings]
+# default extension used when saving files
+#extension=vala
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+#comment_open=//
+#comment_close=
+# this is an alternative way, so multiline comments are used
+#comment_open=/*
+#comment_close=*/
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+#comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+#context_action_cmd=
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=valac -c "%f"
+linker=valac "%f"
+run_cmd=./"%e"
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x5DD1E5;0x000000;false;false
+comment=0x730804;0x000000;false;false
+
+pod=0x7A655E;0x000000;false;false
+
+pod=0xF14888;0x000000;false;false
+
+pod=0xD8C18C;0x000000;false;false
+
+pod=0xA905A6;0x000000;false;false
+comment_line_bang=0x1C3E61;0x000000;false;false
+
+pod=0x9CDCF3;0x000000;false;false
+
+pod=0x759925;0x000000;false;false
+
+pod=0x329D15;0x000000;false;false
+pod=0x2CFB87;0x000000;false;false
+number=0x1287A4;0x000000;false;false
+string=0xC46BC8;0x000000;false;false
+operator=0x7EB125;0x000000;false;false
+identifier=0x19C5C8;0x000000;false;false
+stringeol=0x7F66BF;0x000000;false;false
+keyword=0x6444FC;0x000000;true;false
+stdoperator=0x779FAE;0x000000;false;false
+attribute=0xD9778E;0x000000;false;false
+stdfunction=0x65D245;0x000000;true;false
+stdpackage=0xB58A93;0x000000;false;false
+stdtype=0xA6EB0C;0x000000;false;false
+userword=0xDD33BD;0x000000;true;false
+
+[keywords]
+# all items must be in one line
+keywords=access after alias all architecture array assert attribute begin block body buffer bus case component configuration constant disconnect downto else elsif end entity exit file for function generate generic group guarded if impure in inertial inout is label library linkage literal loop map new next null of on open others out package port postponed procedure process pure range record register reject report return select severity shared signal subtype then to transport type unaffected units until use variable wait when while with
+operators=abs and mod nand nor not or rem rol ror sla sll sra srl xnor xor
+attributes=left right low high ascending image value pos val succ pred leftof rightof base range reverse_range length delayed stable quiet transaction event active last_event last_active last_value driving driving_value simple_name path_name instance_name
+std_functions=now readline read writeline write endfile resolved to_bit to_bitvector to_stdulogic to_stdlogicvector to_stdulogicvector to_x01 to_x01z to_UX01 rising_edge falling_edge is_x shift_left shift_right rotate_left rotate_right resize to_integer to_unsigned to_signed std_match to_01
+std_packages=std ieee work standard textio std_logic_1164 std_logic_arith std_logic_misc std_logic_signed std_logic_textio std_logic_unsigned numeric_bit numeric_std math_complex math_real vital_primitives vital_timing
+std_types=boolean bit character severity_level integer real time delay_length natural positive string bit_vector file_open_kind file_open_status line text side width std_ulogic std_ulogic_vector std_logic std_logic_vector X01 X01Z UX01 UX01Z unsigned signed
+userwords=
+
+[settings]
+# default extension used when saving files
+#extension=vhd
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=--
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+html_default=0xBF6535;0x000000;false;false
+html_tag=0x3D26E7;0x000000;false;false
+html_tagunknown=0x8518CD;0x000000;false;false
+html_attribute=0xE723B1;0x000000;false;false
+html_attributeunknown=0x75C153;0x000000;false;false
+html_number=0x5A74AB;0x000000;false;false
+html_doublestring=0x51DD48;0x000000;false;false
+html_singlestring=0xD063E5;0x000000;false;false
+html_other=0xC19820;0x000000;false;false
+html_comment=0x705493;0x000000;false;false
+html_entity=0x750FE8;0x000000;false;false
+html_tagend=0xDA4571;0x000000;false;false
+# <?
+html_xmlstart=0xFD58DC;0x000000;false;false
+# ?>
+html_xmlend=0x3CBF55;0x000000;false;false
+# <script
+html_script=0x53FDB2;0x000000;false;false
+# <% ... %>
+html_asp=0x2345D2;0x000000;false;false
+# <%@ ... %>
+html_aspat=0xD031F4;0x000000;false;false
+html_cdata=0xECE7A5;0x000000;false;false
+html_question=0xBBC16E;0x000000;false;false
+html_value=0xE893DC;0x000000;false;false
+html_xccomment=0xBE1480;0x000000;false;false
+
+sgml_default=0x9F5DA3;0x000000;false;false
+sgml_comment=0xBEBB51;0x000000;false;false
+sgml_special=0x83E42E;0x000000;false;false
+sgml_command=0x567DA6;0x000000;true;false
+sgml_doublestring=0x0DE226;0x000000;false;false
+sgml_simplestring=0xFD744D;0x000000;false;false
+sgml_1st_param=0xED4C85;0x000000;false;false
+sgml_entity=0x5F7A44;0x000000;false;false
+sgml_block_default=0x03B0F7;0x000000;false;false
+sgml_1st_param_comment=0x0261C2;0x000000;false;false
+sgml_error=0xF7CF0F;0x000000;false;false
+
+php_default=0xDF2FEB;0x000000;false;false
+php_simplestring=0x93F3C2;0x000000;false;false
+php_hstring=0xA656C6;0x000000;false;false
+php_number=0x3FD9E8;0x000000;false;false
+php_word=0x3DB4E8;0x000000;false;false
+php_variable=0x9957F9;0x000000;false;false
+php_comment=0x8FEF1F;0x000000;false;false
+php_commentline=0x09D7AC;0x000000;false;false
+php_operator=0xB667BB;0x000000;false;false
+php_hstring_variable=0x30E7AB;0x000000;false;false
+php_complex_variable=0xCC18A2;0x000000;false;false
+
+# used for JavaScript, ASP Javascript, VBScript
+jscript_start=0x56C59E;0x000000;false;false
+jscript_default=0x229586;0x000000;false;false
+jscript_comment=0xA7EBEC;0x000000;false;false
+jscript_commentline=0x9EC789;0x000000;false;false
+jscript_commentdoc=0xC923DC;0x000000;true;false
+jscript_number=0x6ED1C3;0x000000;false;false
+jscript_word=0x0BB720;0x000000;false;false
+jscript_keyword=0xCFEFCD;0x000000;true;false
+jscript_doublestring=0xE47F87;0x000000;false;false
+jscript_singlestring=0x89AB79;0x000000;false;false
+# same as operators
+jscript_symbols=0xED2C0B;0x000000;false;false
+jscript_stringeol=0x93AA6D;0x000000;false;false
+jscript_regex=0x8CA3E1;0x000000;false;false
+
+# for embedded Python script (<script language="python">...</script>), Python styles from
+# filetypes.python are used
+
+[keywords]
+html=a abbr acronym address applet area b base basefont bdo big blockquote body br button caption center cite code col colgroup dd del dfn dir div dl dt em embed fieldset font form frame frameset h1 h2 h3 h4 h5 h6 head hr html i iframe img input ins isindex kbd label legend li link map menu meta noframes noscript object ol optgroup option p param pre q quality s samp script select small span strike strong style sub sup table tbody td textarea tfoot th thead title tr tt u ul var xmlns leftmargin topmargin abbr accept-charset accept accesskey action align alink alt archive axis background bgcolor border cellpadding cellspacing char charoff charset checked cite class classid clear codebase codetype color cols colspan compact content coords data datafld dataformatas datapagesize datasrc datetime declare defer dir disabled enctype face for frame frameborder selected headers height href hreflang hspace http-equiv id ismap label lang language link longdesc marginwidth marginheight maxlength media framespacing method multiple name nohref noresize noshade nowrap object onblur onchange onclick ondblclick onfocus onkeydown onkeypress onkeyup onload onmousedown onmousemove onmouseover onmouseout onmouseup onreset onselect onsubmit onunload profile prompt pluginspage readonly rel rev rows rowspan rules scheme scope scrolling shape size span src standby start style summary tabindex target text title type usemap valign value valuetype version vlink vspace width text password checkbox radio submit reset file hidden image public doctype xml xml:lang
+javascript=abs abstract acos anchor asin atan atan2 big bold boolean break byte case catch ceil char charAt charCodeAt class concat const continue cos Date debugger default delete do double else enum escape eval exp export extends false final finally fixed float floor fontcolor fontsize for fromCharCode function goto if implements import in indexOf Infinity instanceof int interface isFinite isNaN italics join lastIndexOf length link log long Math max MAX_VALUE min MIN_VALUE NaN native NEGATIVE_INFINITY new null Number package parseFloat parseInt pop POSITIVE_INFINITY pow private protected public push random return reverse round shift short sin slice small sort splice split sqrt static strike string String sub substr substring sup super switch synchronized tan this throw throws toLowerCase toString toUpperCase transient true try typeof undefined unescape unshift valueOf var void volatile while with
+vbscript=and as byref byval case call const continue dim do each else elseif end error exit false for function global goto if in loop me new next not nothing on optional or private public redim rem resume select set sub then to true type while with boolean byte currency date double integer long object single string type variant
+python=and assert break class continue complex def del elif else except exec finally for from global if import in inherit is int lambda not or pass print raise return tuple try unicode while yield long float str list
+php=abstract and array as bool boolean break case catch cfunction __class__ class clone const continue declare default die __dir__ directory do double echo else elseif empty enddeclare endfor endforeach endif endswitch endwhile eval exception exit extends false __file__ final float for foreach __function__ function goto global if implements include include_once int integer interface isset __line__ list __method__ namespace __namespace__ new null object old_function or parent php_user_filter print private protected public real require require_once resource return __sleep static stdclass string switch this throw true try unset use var __wakeup while xor
+sgml=ELEMENT DOCTYPE ATTLIST ENTITY NOTATION
+
+
+[settings]
+# default extension used when saving files
+#extension=xml
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=<!--
+comment_close=-->
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# foreground;background;bold;italic
+default=0x9A4D4B;0x000000;false;false
+comment=0x1F0CB3;0x000000;false;false
+
+pod=0xDAEFE8;0x000000;false;false
+
+pod=0x816DC4;0x000000;false;false
+
+pod=0x7D19F1;0x000000;false;false
+
+pod=0x94CB73;0x000000;false;false
+identifier=0x9F30C9;0x000000;true;false
+keyword=0x597A66;0x000000;true;false
+number=0xD846F0;0x000000;false;false
+reference=0x7364B1;0x000000;false;false
+document=0xF5E4F0;0x000000;false;false
+text=0x9932EB;0x000000;false;false
+error=0xEE320C;0x000000;true;true
+operator=0xE4FFCC;0x000000;false;false
+
+
+[keywords]
+# all items must be in one line
+keywords=true false yes no
+
+
+[settings]
+# default extension used when saving files
+extension=yaml
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# if only single comment char is supported like # in this file, leave comment_close blank
+comment_open=#
+comment_close=
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=true
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
