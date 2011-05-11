@@ -23,7 +23,7 @@ l = RMThemeGen::ThemeGenerator.new
 
 10.times do 
 #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 0 ) 
-  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 1 ) 
+  puts l.make_theme_file('.',1 ) 
 #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 2 ) 
   end
 puts "testing to_css"

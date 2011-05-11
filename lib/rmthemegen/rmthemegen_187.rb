@@ -279,11 +279,11 @@ module RMThemeGen
       f.close
     end
   
-    def make_theme_file(opts = {})
-      defaults = Hash.new
-      defaults[:outputdir] = ENV["PWD"]
-      defaults[:bg_color_style] = 0 
-      opts = defaults.merge opts
+    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0)
+      defaults = {}
+      defaults[:outputdir] = outputdir
+      defaults[:bg_color_style] = bg_color_style
+      opts = defaults
       @bg_color_style = opts[:bg_color_style]  
       @background_grey = (opts[:bg_color_style] < 2) #whitish or blackish bg are both "grey" 
       
