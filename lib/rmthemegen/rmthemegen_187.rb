@@ -280,18 +280,19 @@ module RMThemeGen
     end
   
     def make_theme_file(opts = {})
+      defaults = Hash.new
       defaults[:outputdir] = ENV["PWD"]
       defaults[:bg_color_style] = 0 
       opts = defaults.merge opts
       @bg_color_style = opts[:bg_color_style]  
-      @background_grey = (:bg_color_style < 2) #whitish or blackish bg are both "grey" 
+      @background_grey = (opts[:bg_color_style] < 2) #whitish or blackish bg are both "grey" 
       
       case opts[:bg_color_style]
         when 0 #blackish background
           @background_min_brightness = 0.0 
           @background_max_brightness = 0.14 
         when 1 #whitish background
-          @background_min_brightness = 0.6 
+          @background_min_brightness = 0.75 
           @background_max_brightness = 1.0 
         when 2 #colored (any) bg
           @background_min_brightness = 0.0 
