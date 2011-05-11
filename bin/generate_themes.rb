@@ -1,4 +1,4 @@
-#! /usr/bin/ruby 
+#! /usr/bin/env ruby 
 #**********************************************************************
 #*                                                                    *
 #*  RmThemeGen - a ruby script to create random, usable themes for    *
@@ -32,8 +32,6 @@ puts
  
 l = RMThemeGen::ThemeGenerator.new
 
-puts "testing to_css"
-puts l.to_css
 
 @iterations = ARGV[0] || 1
 @iterations = @iterations.to_i 
