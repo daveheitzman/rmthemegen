@@ -17,13 +17,21 @@ puts "TEST TEST TEST"
 puts    
 puts "  Mac:  Copy xml files to ~/Library/Preferences/RubyMine/color. You must restart RubyMine on the Mac, then look for new color schemes. "
 puts
+
+=begin
+c=Color::RGB.new(0,0,0)
+1000.times do 
+puts c.next_gaussian(0.00 ) 
+end 
+Kernel.exit
+=end
+
  
 l = RMThemeGen::ThemeGenerator.new
 
-
-10.times do 
+100.times do 
 #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 0 ) 
-  puts l.make_theme_file('.',1 ) 
+  puts l.make_theme_file() 
 #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 2 ) 
   end
 puts "testing to_css"

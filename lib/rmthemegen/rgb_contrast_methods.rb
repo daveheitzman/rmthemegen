@@ -59,5 +59,23 @@ class Color::RGB
            (self.b-rgb.b).abs)/3 
   end 
 
+  #returns a random number distributed about a mean (in [0..1) )
+  def next_gaussian(mean)
+    begin
+      w1 = (rand - 0.5) 
+      w2 = (rand - 0.5)
+      w = w1**2 + w2**2
+    end while w >= 0.5 || w <= 0
+#    y = -Math.log(rand)
+    y = (-1*(Math.log(w)))**0.5
+    y=y*w2
+    # so now y should be in [-0.5 .. 0.5]
+    y= y + mean
+    y= y > 1.0 ? 1.0 : y
+    y= y < 0.0 ? 0.0 : y
+   # puts "next_gaussian: "+ y.to_s
+    return y
+  end 
+
 end
 
