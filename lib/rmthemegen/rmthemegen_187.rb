@@ -23,10 +23,11 @@ module RMThemeGen
 
   class ThemeGenerator < RMThemeParent
     
-    attr_reader :xml_save, :schemename 
+    attr_reader :xml_save, :themename 
     attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
     
     def initialize
+    @theme_successfully_created = false
 
     @iterations = 1 
     @iterations = ARGV[0].to_s.to_i if ARGV[0]
@@ -79,14 +80,15 @@ module RMThemeGen
       @min_cont = 0.30	
       @max_cont = 1.0
       
-      @schemeversion = 1
+      @themeversion = 1
+      @themename = ''
       @background_max_brightness = 0.14
       @background_min_brightness = 0.65
       @background_grey = true #if false, allows background to be any color, as long as it meets brightness parameter
       @bg_color_style = 0 #0 = grey/dark 1 = grey/light (whitish), 2 = any color
     #  @foreground_min_brightness = 0.4
 
-
+      
       @backgroundcolor= randcolor( :shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
 
       reset_colorsets
@@ -348,6 +350,7 @@ module RMThemeGen
     # (output directory, bg_color_style, colorsets []) 
     def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[])
     #bg_color_style: 0 = blackish, 1 = whitish, 2 = any color
+      @theme_successfully_created=false
       defaults = {}
       defaults[:outputdir] = outputdir
       defaults[:bg_color_style] = bg_color_style
@@ -376,9 +379,9 @@ module RMThemeGen
       end
       @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness,
         :min_bright => @background_min_brightness )# "0"
-      @schemename = randthemename
+      @themename = randthemename
       @xmlout = {:scheme=>
-                [{:name => @schemename,:version=>@schemeversion,:parent_scheme=>"Default",
+                [{:name => @themename,:version=>@themeversion,:parent_scheme=>"Default",
                   :option =>[{:name=>"pencil length",:value=>"48 cm"},{:name => "Doowop level", :value=>"medium"}],
                   :colors => [{ :option => [{:name=>"foreground",:value => "yellow"},{:name=>"background",:value => "black"} ] }],
                   :attributes => [{:option=>[
@@ -388,13 +391,14 @@ module RMThemeGen
                                  }]
                 }]
                 }
-        @savefile = randfilename(@schemename)
+        @savefile = randfilename(@themename)
         @outf = File.new(opts[:outputdir]+"/"+@savefile, "w+")
         set_doc_options
         set_doc_colors
         set_element_colors
         XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
         @outf.close	
+        @theme_successfully_created = true
         return File.expand_path(@outf.path)
     end
   
