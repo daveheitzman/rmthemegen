@@ -59,6 +59,7 @@ class Color::RGB
            (self.b-rgb.b).abs)/3 
   end 
 
+=begin
   #returns a random number distributed about a mean (in [0..1) )
   def next_gaussian(mean)
     begin
@@ -74,6 +75,21 @@ class Color::RGB
     y= y > 1.0 ? 1.0 : y
     y= y < 0.0 ? 0.0 : y
    # puts "next_gaussian: "+ y.to_s
+    return y
+  end 
+=end
+
+  #returns a random number distributed about a mean (in [0..1) )
+  #hopefully this algorithm delivers numbers more tightly clustered about their mean
+  def next_gaussian(mean)
+    y = (-(1.0/8.0)*(Math.log(rand)))
+    y = rand >= 0.5 ? y : -y
+    # so now y should be in [-0.5 .. 0.5]
+    y= y + mean
+    y= y > 1.0 ? 1.0 : y
+    y= y < 0.0 ? 0.0 : y
+   # puts "next_gaussian: "+ y.to_s
+   
     return y
   end 
 

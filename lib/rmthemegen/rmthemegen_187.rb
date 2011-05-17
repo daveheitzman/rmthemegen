@@ -89,7 +89,7 @@ module RMThemeGen
 
       @backgroundcolor= randcolor( :shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
 
-
+      reset_colorsets
     end #def initialize 
 
 
@@ -113,11 +113,12 @@ module RMThemeGen
         end #8times
           @color_sets << @color_set
        } #rand*4times    
-        
 #      @color_set = {:b => rand, :g=>rand, :r => rand}
 #      @color_sets << @color_set
 #     puts @color_sets.inspect
+    end
 
+    def clean_colorsets
       # trim each color set down to at most 2 colors 
       if @color_sets.size > 0 
       ncs = []
@@ -130,10 +131,10 @@ module RMThemeGen
         end
       @color_sets = ncs
 #      puts "@color_sets "+@color_sets.to_s  
-      end 
+      end     
     end
     
-    def clear_color_sets
+    def clear_colorsets
       @color_sets=[]
     end
     
@@ -173,12 +174,14 @@ module RMThemeGen
       df[:bg_rgb] = Color::RGB.from_html(df[:bg_rgb]) if df[:bg_rgb]
       color = brightok = contok = nil;
       cr=Color::RGB.new
-      failsafe=10000
+      #failsafe should make sure the program never hangs trying to create 
+      # a random color. 
+      failsafe=20000
       usecolorsets = (!@color_sets.nil? && @color_sets != []) 
-      while (!color || !brightok || !contok ) do
+      while (!color || !brightok || !contok && failsafe > 0) do
         if df[:shade_of_grey] == true 
           g = b = r = rand*256   
-        elsif  usecolorsets && failsafe > 0
+        elsif  usecolorsets && failsafe > 10000
           cs = @color_sets.shuffle[0] 
  #puts "doing gaussian thing "+cs.inspect
           if cs.keys.include? :r then r = cr.next_gaussian( cs[:r])*256 else r = (df[:r] || rand*256)%256 end 
@@ -201,7 +204,7 @@ module RMThemeGen
         
   #puts "brightok "+brightok.to_s
       failsafe -= 1
-      if failsafe == 0 then puts "failsafe reached " end;
+#     if failsafe == 0 then puts "failsafe reached " end;
       end #while
       cn = color.html
       cn= cn.slice(1,cn.size)
@@ -342,7 +345,8 @@ module RMThemeGen
       f.close
     end
   
-    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0)
+    # (output directory, bg_color_style, colorsets []) 
+    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[])
     #bg_color_style: 0 = blackish, 1 = whitish, 2 = any color
       defaults = {}
       defaults[:outputdir] = outputdir
@@ -350,9 +354,15 @@ module RMThemeGen
       opts = defaults
       @bg_color_style = opts[:bg_color_style]  
       @background_grey = (opts[:bg_color_style] < 2) #whitish or blackish bg are both "grey" 
-
-      reset_colorsets
       
+      if colorsets.is_a?(Array) && colorsets.size > 0
+        @color_sets = colorsets 
+        clean_colorsets
+      else
+        reset_colorsets
+      end
+      
+#      puts "@color_sets: "+@color_sets.inspect
       case opts[:bg_color_style]
         when 0 #blackish background
           @background_min_brightness = 0.0 
@@ -387,7 +397,6 @@ module RMThemeGen
         @outf.close	
         return File.expand_path(@outf.path)
     end
-    
   
   end #class
 end #module 

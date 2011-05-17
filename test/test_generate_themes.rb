@@ -21,7 +21,7 @@ puts
 =begin
 c=Color::RGB.new(0,0,0)
 1000.times do 
-puts c.next_gaussian(0.00 ) 
+puts c.next_gaussian(0.50 ) 
 end 
 Kernel.exit
 =end
@@ -29,9 +29,10 @@ Kernel.exit
  
 l = RMThemeGen::ThemeGenerator.new
 
-100.times do 
+5.times do 
 #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 0 ) 
-  puts l.make_theme_file() 
+#  puts l.make_theme_file(ENV["PWD"],0,[{:r=>0.0,:g=>0.0},{:r=>1.0,:g=>0.0,:b=>0.0}]) 
+  puts l.make_theme_file(ENV["PWD"],0,nil) 
 #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 2 ) 
   end
 puts "testing to_css"
