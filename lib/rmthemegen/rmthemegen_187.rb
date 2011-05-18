@@ -355,6 +355,7 @@ module RMThemeGen
       defaults[:outputdir] = outputdir
       defaults[:bg_color_style] = bg_color_style
       opts = defaults
+      @opts = opts
       @bg_color_style = opts[:bg_color_style]  
       @background_grey = (opts[:bg_color_style] < 2) #whitish or blackish bg are both "grey" 
       
