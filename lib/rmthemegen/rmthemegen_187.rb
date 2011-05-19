@@ -23,11 +23,12 @@ module RMThemeGen
 
   class ThemeGenerator < RMThemeParent
     
-    attr_reader :xml_save, :schemename 
+    attr_reader :xml_save, :themename 
     attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
-      
-    def initialize
     
+    def initialize
+    @theme_successfully_created = false
+
     @iterations = 1 
     @iterations = ARGV[0].to_s.to_i if ARGV[0]
       #bold:                  <option name="FONT_TYPE" value="1" />
@@ -60,9 +61,9 @@ module RMThemeGen
       @italic_chance = 0.2
       @bold_chance = 0.4
       @underline_chance = 0.3
-      @bright_median = 0.85
-        @min_bright = @bright_median * 0.65
-        @max_bright =  [@bright_median * 1.35,1.0].max
+#      @bright_median = 0.85
+#        @min_bright = @bright_median * 0.65
+#        @max_bright =  [@bright_median * 1.35,1.0].max
 
         @min_bright = 0.0
         @max_bright =  1.0
@@ -79,15 +80,65 @@ module RMThemeGen
       @min_cont = 0.30	
       @max_cont = 1.0
       
-      @schemeversion = 1
+      @themeversion = 1
+      @themename = ''
       @background_max_brightness = 0.14
+      @background_min_brightness = 0.65
       @background_grey = true #if false, allows background to be any color, as long as it meets brightness parameter
+      @bg_color_style = 0 #0 = grey/dark 1 = grey/light (whitish), 2 = any color
     #  @foreground_min_brightness = 0.4
 
-
-      @backgroundcolor= randcolor( :shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
       
-    end 
+      @backgroundcolor= randcolor( :shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
+
+      reset_colorsets
+    end #def initialize 
+
+
+    def reset_colorsets()
+      #color sets: add to the variable @color_sets a hash containing 1 or 2 values in [0..1), indicating a shade 
+      # of red or green that the random colors will interpolate around.  
+      # if anything exists in @color_sets, the program will, when choosing its next random color, grab a random
+      # color set, and then the next random color value produced will have up to 2 of its components (r, g, or b) 
+      # chosen with the specified r,g, or b as the median for a random gaussian, which will of course be limited
+      # to the range [0..1)
+
+      @color_sets = []
+      (rand*4).to_i.times { 
+        @color_set = {}
+        3.times do
+         case 
+           when rand < 0.333 then @color_set[:r] = rand
+           when rand < 0.666 then @color_set[:g] = rand
+           else @color_set[:b] = rand
+          end
+        end #8times
+          @color_sets << @color_set
+       } #rand*4times    
+#      @color_set = {:b => rand, :g=>rand, :r => rand}
+#      @color_sets << @color_set
+#     puts @color_sets.inspect
+    end
+
+    def clean_colorsets
+      # trim each color set down to at most 2 colors 
+      if @color_sets.size > 0 
+      ncs = []
+#      puts @color_sets.inspect
+        @color_sets.each  do |cs|
+            while cs.size > 3 do
+              cs.delete(cs.keys[0])              
+            end
+            ncs << cs
+        end
+      @color_sets = ncs
+#      puts "@color_sets "+@color_sets.to_s  
+      end     
+    end
+    
+    def clear_colorsets
+      @color_sets=[]
+    end
     
     def randthemename
       out = " "
@@ -124,21 +175,39 @@ module RMThemeGen
       df = df.merge opts  
       df[:bg_rgb] = Color::RGB.from_html(df[:bg_rgb]) if df[:bg_rgb]
       color = brightok = contok = nil;
-      while (!color || !brightok || !contok ) do
-        r = (df[:r] || rand*256)%256 #mod for robustness 
-        g = (df[:g] || rand*256)%256
-        b = (df[:b] || rand*256)%256
-        g = b = r if df[:shade_of_grey] == true
+      cr=Color::RGB.new
+      #failsafe should make sure the program never hangs trying to create 
+      # a random color. 
+      failsafe=20000
+      usecolorsets = (!@color_sets.nil? && @color_sets != []) 
+      while (!color || !brightok || !contok && failsafe > 0) do
+        if df[:shade_of_grey] == true 
+          g = b = r = rand*256   
+        elsif  usecolorsets && failsafe > 10000
+          cs = @color_sets.shuffle[0] 
+ #puts "doing gaussian thing "+cs.inspect
+          if cs.keys.include? :r then r = cr.next_gaussian( cs[:r])*256 else r = (df[:r] || rand*256)%256 end 
+          if cs.keys.include? :g then g = cr.next_gaussian( cs[:g])*256 else g = (df[:g] || rand*256)%256 end 
+          if cs.keys.include? :b then b = cr.next_gaussian( cs[:b])*256 else b = (df[:b] || rand*256)%256 end 
+        else
+          r = (df[:r] || rand*256)%256 #mod for robustness 
+          g = (df[:g] || rand*256)%256
+          b = (df[:b] || rand*256)%256
+        end
+        
         color = Color::RGB.new(r,g,b)
+  #      puts color.inspect
   #puts "bg" + @backgroundcolor if df[:bg_rgb]
   #puts "color "+color.html
   #puts "contrast "+color.contrast(df[:bg_rgb]).to_s if df[:bg_rgb]
         contok = df[:bg_rgb] ? (df[:min_cont]..df[:max_cont]).include?( color.contrast(df[:bg_rgb]) ) : true
   #puts "contok "+contok.to_s
-        brightok = (df[:min_bright]..df[:max_bright]).include?( color.to_hsl.brightness )  
+        brightok =  (df[:min_bright]..df[:max_bright]).include?( color.to_hsl.brightness )  
+        
   #puts "brightok "+brightok.to_s
-      end 
-  
+      failsafe -= 1
+#     if failsafe == 0 then puts "failsafe reached " end;
+      end #while
       cn = color.html
       cn= cn.slice(1,cn.size)
       return cn
@@ -164,7 +233,8 @@ module RMThemeGen
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.03,:max_cont=>0.09,:shade_of_grey=>@background_grey) }
         elsif o.include?("READONLY_FRAGMENT_BACKGROUND") then
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.03,:max_cont=>0.09,:shade_of_grey=>@background_grey) }
-  
+        elsif o.include?("INDENT_GUIDE") then
+          newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.08,:max_cont=>0.22,:shade_of_grey=>@background_grey) }
         else
 #        puts "bgc"+@backgroundcolor
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont,:max_cont=>@max_cont,:shade_of_grey=>@background_grey).to_s }
@@ -277,11 +347,42 @@ module RMThemeGen
       f.close
     end
   
-    def make_theme_file(outputdir = ENV["PWD"])
-        @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
-        @schemename = randthemename
-        @xmlout = {:scheme=>
-                [{:name => @schemename,:version=>@schemeversion,:parent_scheme=>"Default",
+    # (output directory, bg_color_style, colorsets []) 
+    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[])
+    #bg_color_style: 0 = blackish, 1 = whitish, 2 = any color
+      @theme_successfully_created=false
+      defaults = {}
+      defaults[:outputdir] = outputdir
+      defaults[:bg_color_style] = bg_color_style
+      opts = defaults
+      @opts = opts
+      @bg_color_style = opts[:bg_color_style]  
+      @background_grey = (opts[:bg_color_style] < 2) #whitish or blackish bg are both "grey" 
+      
+      if colorsets.is_a?(Array) && colorsets.size > 0
+        @color_sets = colorsets 
+        clean_colorsets
+      else
+        reset_colorsets
+      end
+      
+#      puts "@color_sets: "+@color_sets.inspect
+      case opts[:bg_color_style]
+        when 0 #blackish background
+          @background_min_brightness = 0.0 
+          @background_max_brightness = 0.14 
+        when 1 #whitish background
+          @background_min_brightness = 0.75 
+          @background_max_brightness = 1.0 
+        when 2 #colored (any) bg
+          @background_min_brightness = 0.0 
+          @background_max_brightness = 1.0 
+      end
+      @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness,
+        :min_bright => @background_min_brightness )# "0"
+      @themename = randthemename
+      @xmlout = {:scheme=>
+                [{:name => @themename,:version=>@themeversion,:parent_scheme=>"Default",
                   :option =>[{:name=>"pencil length",:value=>"48 cm"},{:name => "Doowop level", :value=>"medium"}],
                   :colors => [{ :option => [{:name=>"foreground",:value => "yellow"},{:name=>"background",:value => "black"} ] }],
                   :attributes => [{:option=>[
@@ -291,16 +392,16 @@ module RMThemeGen
                                  }]
                 }]
                 }
-        @savefile = randfilename(@schemename)
-        @outf = File.new(outputdir+"/"+@savefile, "w+")
+        @savefile = randfilename(@themename)
+        @outf = File.new(opts[:outputdir]+"/"+@savefile, "w+")
         set_doc_options
         set_doc_colors
         set_element_colors
         XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
         @outf.close	
+        @theme_successfully_created = true
         return File.expand_path(@outf.path)
     end
-    
   
   end #class
 end #module 
