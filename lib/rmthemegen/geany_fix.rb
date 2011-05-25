@@ -10,7 +10,7 @@ module RMThemeGen
     attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
 
     def initialize
-    @rand = Random.new
+#    @rand = Random.new
     @iterations = 0
     @iterations = ARGV[0].to_s.to_i
 
@@ -21,8 +21,8 @@ module RMThemeGen
     puts "  Restart geany to see new colors  "
   
     begin
-    @dir = (File.expand_path "~/.config/geany/filedefs/")+"/"
-    @filelist = Dir.glob(@dir+"filetypes.*")
+    @dir = (File.expand_path "~/.config/geany/filedefs/")
+    @filelist = Dir.glob(@dir+"/filetypes.*")
 #  puts @dir+"filetypes.*"
 #    puts @filelist.inspect
     t =Time.now
@@ -77,7 +77,7 @@ module RMThemeGen
     def randthemename
       out = " "
       while out.include? " "   do
-       out = @@adjectives[@rand.rand * @@adjectives.size]+"_"+@@nouns[@rand.rand * @@nouns.size]
+       out = @@adjectives[rand * @@adjectives.size]+"_"+@@nouns[rand * @@nouns.size]
         
       end
       return out
@@ -112,17 +112,17 @@ module RMThemeGen
       df[:bg_rgb] = Color::RGB.from_html(df[:bg_rgb]) if df[:bg_rgb]
       color = brightok = contok = nil;
       while (!color || !brightok || !contok ) do
-        r = (df[:r] || @rand.rand*256)%256 #mod for robustness
-        g = (df[:g] || @rand.rand*256)%256
-        b = (df[:b] || @rand.rand*256)%256
+        r = (df[:r] || rand*256)%256 #mod for robustness
+        g = (df[:g] || rand*256)%256
+        b = (df[:b] || rand*256)%256
         g = b = r if df[:shade_of_grey] == true
         color = Color::RGB.new(r,g,b)
   #puts "bg" + @backgroundcolor if df[:bg_rgb]
   #puts "color "+color.html
   #puts "contrast "+color.contrast(df[:bg_rgb]).to_s if df[:bg_rgb]
-        contok = df[:bg_rgb] ? (df[:min_cont]..df[:max_cont]).cover?( color.contrast(df[:bg_rgb]) ) : true
+        contok = df[:bg_rgb] ? (df[:min_cont]..df[:max_cont]).include?( color.contrast(df[:bg_rgb]) ) : true
   #puts "contok "+contok.to_s
-        brightok = (df[:min_bright]..df[:max_bright]).cover?( color.to_hsl.brightness )
+        brightok = (df[:min_bright]..df[:max_bright]).include?( color.to_hsl.brightness )
   #puts "brightok "+brightok.to_s
       end
 
@@ -138,16 +138,34 @@ module RMThemeGen
       @filelist.each do |f|
         begin
 #          puts f+" -->"+@dir+"_old_"+@extstring+File.basename(f)
-          IO.copy_stream(f,@dir+"_old_"+@extstring+File.basename(f))
-     ##   rescue
-      #    raise "sorry there was a problem backing up the following file: "+f
+#          IO.copy_stream(f,@dir+"_old_"+@extstring+File.basename(f))
+        copystring="cp #{f} #{@dir+"/_old_"+@extstring+File.basename(f)}"
+#        puts(copystring) 
+        `#{copystring}`
+        rescue
+          backup_problem = true
+          raise "sorry there was a problem backing up the following file: "+f
         end
       end
 
+      ##########################################
+      # copy in our new files from token_list.rb
+      ##########################################
+      @@geany_file_contents.each_key do |key|
+      filename=@dir+'/filetypes.'+key.to_s
+#      puts filename
+      @fout1 = File.open(filename,"w+")
+        @@geany_file_contents[key].each do |c|
+          @fout1.puts c
+        end
+      @fout1.close
+      end 
+
+      @filelist = Dir.glob(@dir+"/filetypes.*")
       @filelist.each do |f|
   #      puts f.inspect
         @fin = File.open(f,"r+")
-        @fout = File.open("/tmp/gean"+Time.new().nsec.to_s,"w+")
+        @fout = File.open(@dir+"/tmp_out_"+rand.to_s,"w+")
   #      puts @fin.inspect
 
         while !@fin.eof? do
@@ -184,6 +202,10 @@ module RMThemeGen
                   rb = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont, :max_cont=>1.0).upcase
                   rf = randcolor(:bg_rgb=>rb, :min_cont=>0.30, :max_cont=>1.0).upcase
                   newl = token +"="+"0x"+rf+";0x"+rb+";"+"true"+";"+"false"
+                elsif token.include?("type") then 
+                  newl ="type=0xffffff;;true;false"
+                elsif token.include?("indent_guide") then
+                  newl= "indent_guide=0xc0c0c0;;false;false"
                 else
                   newl = token +"="+"0x"+r1+";0x"+r2+";"+p3+";"+p4
                 end
@@ -203,9 +225,9 @@ module RMThemeGen
                 else
                   newl = token +"="+"0x"+r1+";0x"+r2+";"+p3+";"+p4
                 end
-              else
+              else  ############ DEFAULT  ############ 
                 if token.include?("comment") then
-                  r1 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont*0.33, :max_cont=>@min_cont*0.64).upcase
+                  r1 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont*0.77, :max_cont=>@min_cont*0.95).upcase
                   r2 = @backgroundcolor.upcase
                   newl = token +"="+"0x"+r1+";0x"+r2+";"+p3+";"+p4
                 else
@@ -213,17 +235,16 @@ module RMThemeGen
                 end
             end
             @fout.puts(newl)
- #           puts newl
-  #r2= randcolor(:back_rgb=>@backgroundcolor, :min_cont=>@min_cont, :max_cont=>@max_cont)
-  #newl = line.sub(/\=0x*\;/,"=0x"+r1+";")
           else
             @fout.puts(line)
           end
         end
         if @fout then
-          File.delete(File.absolute_path @fin)
-          File.rename(File.absolute_path(@fout), @dir+File.basename(f) )
-        else puts "there was a problem writing to the new file so I left the old one in place"
+#        puts "wanting to delete "+@fin.path.to_s
+#        puts "wanting to copy this file onto it:"+@fout.path.to_s
+          File.delete(@fin.path.to_s)
+          File.rename(@fout.path.to_s, @fin.path.to_s )
+        else puts "there was a problem writing to the new file #{@fout.path.to_s} so I left the old one in place"
         end
         @fout.close
       end
