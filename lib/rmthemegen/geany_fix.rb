@@ -10,7 +10,7 @@ module RMThemeGen
     attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
 
     def initialize
-    @rand = Random.new
+#    @rand = Random.new
     @iterations = 0
     @iterations = ARGV[0].to_s.to_i
 
@@ -77,7 +77,7 @@ module RMThemeGen
     def randthemename
       out = " "
       while out.include? " "   do
-       out = @@adjectives[@rand.rand * @@adjectives.size]+"_"+@@nouns[@rand.rand * @@nouns.size]
+       out = @@adjectives[rand * @@adjectives.size]+"_"+@@nouns[rand * @@nouns.size]
         
       end
       return out
@@ -112,17 +112,17 @@ module RMThemeGen
       df[:bg_rgb] = Color::RGB.from_html(df[:bg_rgb]) if df[:bg_rgb]
       color = brightok = contok = nil;
       while (!color || !brightok || !contok ) do
-        r = (df[:r] || @rand.rand*256)%256 #mod for robustness
-        g = (df[:g] || @rand.rand*256)%256
-        b = (df[:b] || @rand.rand*256)%256
+        r = (df[:r] || rand*256)%256 #mod for robustness
+        g = (df[:g] || rand*256)%256
+        b = (df[:b] || rand*256)%256
         g = b = r if df[:shade_of_grey] == true
         color = Color::RGB.new(r,g,b)
   #puts "bg" + @backgroundcolor if df[:bg_rgb]
   #puts "color "+color.html
   #puts "contrast "+color.contrast(df[:bg_rgb]).to_s if df[:bg_rgb]
-        contok = df[:bg_rgb] ? (df[:min_cont]..df[:max_cont]).cover?( color.contrast(df[:bg_rgb]) ) : true
+        contok = df[:bg_rgb] ? (df[:min_cont]..df[:max_cont]).include?( color.contrast(df[:bg_rgb]) ) : true
   #puts "contok "+contok.to_s
-        brightok = (df[:min_bright]..df[:max_bright]).cover?( color.to_hsl.brightness )
+        brightok = (df[:min_bright]..df[:max_bright]).include?( color.to_hsl.brightness )
   #puts "brightok "+brightok.to_s
       end
 
@@ -139,6 +139,7 @@ module RMThemeGen
         begin
 #          puts f+" -->"+@dir+"_old_"+@extstring+File.basename(f)
           IO.copy_stream(f,@dir+"_old_"+@extstring+File.basename(f))
+          
      ##   rescue
       #    raise "sorry there was a problem backing up the following file: "+f
         end

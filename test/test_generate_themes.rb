@@ -39,5 +39,6 @@ l = RMThemeGen::ThemeGenerator.new
   end
 puts "testing to_css"
 puts l.to_css
-
+puts "testing themename"
+puts l.themename
 puts

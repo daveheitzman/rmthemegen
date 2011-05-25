@@ -1,0 +1,17 @@
+<?xml version='1.0' standalone='yes'?>
+  <dict>
+    <array>
+      <dict>
+        <dict>
+          <string>#000000</string>
+          <string>#FFFFFF</string>
+          <key>background</key>
+          <key>foreground</key>
+        </dict>
+        <key>settings</key>
+      </dict>
+    </array>
+    <key>name</key>
+    <string>cruel_produce</string>
+  </dict>
+  <plist version="1.0" />
