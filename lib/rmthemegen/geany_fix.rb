@@ -6,9 +6,9 @@
 
 #***********************************************************************
 #  geany_fix.rb - a utility to create a new, random color theme for the
-#  geany editor. 
+#  geany editor. http://www.geany.org/
 #    
-#  Released under an MIT-style license
+#  Released under an MIT-style license, see license.txt for details
 #
 #  copyright (c) David Heitzman 2011
 #

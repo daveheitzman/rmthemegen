@@ -4,7 +4,7 @@ require "rmthemegen/version"
 
 Gem::Specification.new do |s|
   s.name        = "rmthemegen"
-  s.version     = "0.0.23"
+  s.version     = "0.0.25"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["David Heitzman"]
   s.email       = ["evolvemeans@gmail.com"]
