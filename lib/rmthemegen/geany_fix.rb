@@ -1,8 +1,25 @@
-require 'rubygems'
-require 'xmlsimple'
-require 'color'
+#require 'rubygems'
+#require 'xmlsimple'
+#require 'color'
+
+#doing it with local files since these are stable gems and I want geany_fix.rb to function without gem dependencies. 
+
+#***********************************************************************
+#  geany_fix.rb - a utility to create a new, random color theme for the
+#  geany editor. 
+#    
+#  Released under an MIT-style license
+#
+#  copyright (c) David Heitzman 2011
+#
+#***********************************************************************
+
+# geany_fix.rb uses a local copy of gems color and xml-simple, in order 
+# ease use as a stand-alone utility. 
+
 require File.dirname(__FILE__)+"/token_list"
-require File.dirname(__FILE__)+'/rgb_contrast_methods'
+require File.dirname(__FILE__)+'/color/color'
+require File.dirname(__FILE__)+'/xmlsimple.rb'
 
 module RMThemeGen
   class GeanyFixer < RMThemeParent
@@ -15,7 +32,7 @@ module RMThemeGen
     @iterations = ARGV[0].to_s.to_i
 
     puts "geany_fix - puts a new (random) color theme into your geany directory"
-    puts "  David Heitzman 2011 "
+    puts "  copyright (c) David Heitzman 2011 "
     puts "  Note: if you want to put back your old Geany colors, go to ~/.config/geany/filedefs/ and"
     puts "  copy the corresponding _old_xxx file back onto filetypes.xyz, eg. filetypes.html, etc. "
     puts "  Restart geany to see new colors  "
