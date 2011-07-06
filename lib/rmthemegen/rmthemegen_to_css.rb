@@ -28,8 +28,19 @@ module RMThemeGen
         @xmlout[:scheme][0][:attributes][0][:option].each do |o|
           if @@tokens_for_css.include? o[:name]
             s+= "#"+ @xmlout[:scheme][0][:name].to_s 
-#            puts o.inspect
-            s+= " .#{o[:name]} {color: \##{o[:value][0][:option][0][:value]};} "
+            s+= " .#{o[:name]} {color: \##{o[:value][0][:option][0][:value]};"
+            #fonttype = 0 #bold: 1,  #italic: 2, bold & italic: 3
+            if o[:value][0][:option][3][:value] == '0'
+              #neither bold nor italic
+              s+= ""
+            elsif o[:value][0][:option][3][:value] == '1'
+              s+= "font-weight:bold;"
+            elsif o[:value][0][:option][3][:value] == '2'
+              s+= "font-style:italic;"
+            elsif o[:value][0][:option][3][:value] == '2' #bold and italic
+              s+= "font-weight:bold;font-style: italic;"
+            end #if
+        s+="} "  
           end #if 
         end 
   #these options are all for background values so far (caret row color and selection background)
