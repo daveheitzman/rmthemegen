@@ -27,6 +27,9 @@ module RMThemeGen
     attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
     
     def initialize
+    @random_seed = Kernel.srand
+    Kernel.srand(@random_seed)
+    
     @theme_successfully_created = false
 
     @iterations = 1 
@@ -61,20 +64,17 @@ module RMThemeGen
       @italic_chance = 0.2
       @bold_chance = 0.4
       @underline_chance = 0.3
-#      @bright_median = 0.85
-#        @min_bright = @bright_median * 0.65
-#        @max_bright =  [@bright_median * 1.35,1.0].max
 
-        @min_bright = 0.0
-        @max_bright =  1.0
+      @min_bright = 0.0
+      @max_bright =  1.0
 
       #	if we avoid any notion of "brightness", which is an absolute quality, then we
-      # can make our background any color we want ! 
+      # can make our background any color we want, then adjust contrast to taste
       
       #tighter contrast spec
       @cont_median = 0.85
-        @min_cont = @cont_median * 0.65
-        @max_cont =  [@cont_median * 1.35,1.0].max
+      @min_cont = @cont_median * 0.65
+      @max_cont =  [@cont_median * 1.35,1.0].max
       
       #broad contrast spec
       @min_cont = 0.30	
@@ -250,6 +250,7 @@ module RMThemeGen
       newopt << {:name => "LINE_SPACING",:value=>'1.0' } #:value=>'1.3' works all right 
       newopt << {:name => "EDITOR_FONT_SIZE",:value => "16"} #:value = "14" is a safe default if you want to specify something
       newopt << {:name => "EDITOR_FONT_NAME",:value => "DejaVu Sans Mono" }
+      newopt << {:name => "RANDOM_SEED",:value => @random_seed.to_s }
       @xmlout[:scheme][0][:option] = newopt
     end
     
@@ -348,8 +349,10 @@ module RMThemeGen
     end
   
     # (output directory, bg_color_style, colorsets []) 
-    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[])
+    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
     #bg_color_style: 0 = blackish, 1 = whitish, 2 = any color
+      @random_seed = rand_seed || Kernel.srand
+      Kernel.srand(@random_seed) 
       @theme_successfully_created=false
       defaults = {}
       defaults[:outputdir] = outputdir
