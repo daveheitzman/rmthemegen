@@ -248,7 +248,7 @@ module RMThemeGen
     def set_doc_options
       newopt = []
       newopt << {:name => "LINE_SPACING",:value=>'1.0' } #:value=>'1.3' works all right 
-      newopt << {:name => "EDITOR_FONT_SIZE",:value => "16"} #:value = "14" is a safe default if you want to specify something
+      newopt << {:name => "EDITOR_FONT_SIZE",:value => "12"} #:value = "14" is a safe default if you want to specify something
       newopt << {:name => "EDITOR_FONT_NAME",:value => "DejaVu Sans Mono" }
       newopt << {:name => "RANDOM_SEED",:value => @random_seed.to_s }
       @xmlout[:scheme][0][:option] = newopt
@@ -314,39 +314,6 @@ module RMThemeGen
       end
       @xmlout[:scheme][0][:attributes] = newopt
     end 
-    
-    def make_geany_files
-      rantm = randthemename
-      geanydir ="geany_"+rantm 
-      Dir.mkdir(geanydir)
-      f=File.new(geanydir+"/filetypes.xml","w+")
-      f.puts('[styling]')
-      #these are for php, html, sgml, xml
-      @@geany_tokens.each do |t|
-      # foreground;background;bold;italic
-        if t.upcase.include? "COMMENT" then
-          f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.12, :max_cont=>0.22)+";0x"+@backgroundcolor+";"+"false;false")
-          else
-          f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor)+";0x"+@backgroundcolor+";false"+";false")
-        end
-      end
-      f.puts(@@geany_filetypes_post)
-      f.close
-  
-      geanydir ="geany_"+rantm 
-      f=File.new(geanydir+"/filetypes.ruby","w+")
-      f.puts('[styling]')
-      @@geany_ruby_tokens.each do |t|
-      # foreground;background;bold;italic
-      if t.upcase.include? "COMMENT" then
-        f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.12, :max_cont=>0.22)+";0x"+@backgroundcolor+";"+"false;false")
-      else
-              f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor)+";0x"+@backgroundcolor+";false"+";false")
-      end
-      end
-      f.puts(@@geany_filetypes_post)
-      f.close
-    end
   
     # (output directory, bg_color_style, colorsets []) 
     def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
@@ -385,21 +352,23 @@ module RMThemeGen
         :min_bright => @background_min_brightness )# "0"
       @themename = randthemename
       @xmlout = {:scheme=>
-                [{:name => @themename,:version=>@themeversion,:parent_scheme=>"Default",
-                  :option =>[{:name=>"pencil length",:value=>"48 cm"},{:name => "Doowop level", :value=>"medium"}],
-                  :colors => [{ :option => [{:name=>"foreground",:value => "yellow"},{:name=>"background",:value => "black"} ] }],
+                [{
                   :attributes => [{:option=>[
                                   {:name=>"2ABSTRACT_CLASS_NAME_ATTRIBUTES", :value=>[{:option=>{:name=>"foreground",:value=>"red"}}] },
                                   {:name=>"4ABSTRACT_CLASS_NAME_ATTRIBUTES", :value=>[{:option=>{:name=>"foreground",:value=>"red"}}] }
                                   ] 
-                                 }]
+                                 }],
+                  :colors => [{ :option => [{:name=>"foreground",:value => "yellow"},{:name=>"background",:value => "black"} ],
+                  :option =>[{:name=>"pencil length",:value=>"48 cm"},{:name => "Doowop level", :value=>"medium"}]
+                   }],
+                :name => @themename,:version=>@themeversion,:parent_scheme=>"Default", :author=>"David Heitzman, http://rmthemegen.com"
                 }]
                 }
         @savefile = randfilename(@themename)
         @outf = File.new(opts[:outputdir]+"/"+@savefile, "w+")
-        set_doc_options
-        set_doc_colors
         set_element_colors
+        set_doc_colors
+        set_doc_options
         XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
         @outf.close	
         @theme_successfully_created = true
