@@ -248,8 +248,8 @@ module RMThemeGen
     def set_doc_options
       newopt = []
       newopt << {:name => "LINE_SPACING",:value=>'1.0' } #:value=>'1.3' works all right 
-      newopt << {:name => "EDITOR_FONT_SIZE",:value => "12"} #:value = "14" is a safe default if you want to specify something
       newopt << {:name => "EDITOR_FONT_NAME",:value => "DejaVu Sans Mono" }
+      newopt << {:name => "EDITOR_FONT_SIZE",:value => "12"} #:value = "14" is a safe default if you want to specify something
       newopt << {:name => "RANDOM_SEED",:value => @random_seed.to_s }
       @xmlout[:scheme][0][:option] = newopt
     end
@@ -318,8 +318,18 @@ module RMThemeGen
     # (output directory, bg_color_style, colorsets []) 
     def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
     #bg_color_style: 0 = blackish, 1 = whitish, 2 = any color
-      @random_seed = rand_seed || Kernel.srand
-      Kernel.srand(@random_seed) 
+      if rand_seed then
+        #if a random seed is given, we need to reset the colorsets and bgstyle according to random numbers created AFTER the generator is seeded, forsaking whatever came in as parameters, since they are irrelevant if the desire is to recreate a previous theme from a random number seed
+        Kernel.srand(rand_seed) 
+        @random_seed=rand_seed
+        bg_color_style=rand(3).to_i
+        reset_colorsets
+      else
+      #the reason we want the native seed used by this ruby implementation is that creating one ourselves might be erroneous in not using enough bits. There is a "formula" used by MRI but we don't know what it is, so we'll just harvest the number from a fresh call to srand, then reseed the rng using that number. 
+        Kernel.srand
+        @random_seed = Kernel.srand #this sets @random_seed to the seed used in the call above
+        Kernel.srand(@random_seed)
+      end
       @theme_successfully_created=false
       defaults = {}
       defaults[:outputdir] = outputdir
