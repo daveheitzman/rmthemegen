@@ -27,6 +27,9 @@ module RMThemeGen
     attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
     
     def initialize
+    @random_seed = Kernel.srand
+    Kernel.srand(@random_seed)
+    
     @theme_successfully_created = false
 
     @iterations = 1 
@@ -61,20 +64,17 @@ module RMThemeGen
       @italic_chance = 0.2
       @bold_chance = 0.4
       @underline_chance = 0.3
-#      @bright_median = 0.85
-#        @min_bright = @bright_median * 0.65
-#        @max_bright =  [@bright_median * 1.35,1.0].max
 
-        @min_bright = 0.0
-        @max_bright =  1.0
+      @min_bright = 0.0
+      @max_bright =  1.0
 
       #	if we avoid any notion of "brightness", which is an absolute quality, then we
-      # can make our background any color we want ! 
+      # can make our background any color we want, then adjust contrast to taste
       
       #tighter contrast spec
       @cont_median = 0.85
-        @min_cont = @cont_median * 0.65
-        @max_cont =  [@cont_median * 1.35,1.0].max
+      @min_cont = @cont_median * 0.65
+      @max_cont =  [@cont_median * 1.35,1.0].max
       
       #broad contrast spec
       @min_cont = 0.30	
@@ -248,8 +248,9 @@ module RMThemeGen
     def set_doc_options
       newopt = []
       newopt << {:name => "LINE_SPACING",:value=>'1.0' } #:value=>'1.3' works all right 
-      newopt << {:name => "EDITOR_FONT_SIZE",:value => "16"} #:value = "14" is a safe default if you want to specify something
       newopt << {:name => "EDITOR_FONT_NAME",:value => "DejaVu Sans Mono" }
+      newopt << {:name => "EDITOR_FONT_SIZE",:value => "12"} #:value = "14" is a safe default if you want to specify something
+      newopt << {:name => "RANDOM_SEED",:value => @random_seed.to_s }
       @xmlout[:scheme][0][:option] = newopt
     end
     
@@ -313,43 +314,22 @@ module RMThemeGen
       end
       @xmlout[:scheme][0][:attributes] = newopt
     end 
-    
-    def make_geany_files
-      rantm = randthemename
-      geanydir ="geany_"+rantm 
-      Dir.mkdir(geanydir)
-      f=File.new(geanydir+"/filetypes.xml","w+")
-      f.puts('[styling]')
-      #these are for php, html, sgml, xml
-      @@geany_tokens.each do |t|
-      # foreground;background;bold;italic
-        if t.upcase.include? "COMMENT" then
-          f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.12, :max_cont=>0.22)+";0x"+@backgroundcolor+";"+"false;false")
-          else
-          f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor)+";0x"+@backgroundcolor+";false"+";false")
-        end
-      end
-      f.puts(@@geany_filetypes_post)
-      f.close
-  
-      geanydir ="geany_"+rantm 
-      f=File.new(geanydir+"/filetypes.ruby","w+")
-      f.puts('[styling]')
-      @@geany_ruby_tokens.each do |t|
-      # foreground;background;bold;italic
-      if t.upcase.include? "COMMENT" then
-        f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.12, :max_cont=>0.22)+";0x"+@backgroundcolor+";"+"false;false")
-      else
-              f.puts(t+"=0x"+randcolor(:bg_rgb=>@backgroundcolor)+";0x"+@backgroundcolor+";false"+";false")
-      end
-      end
-      f.puts(@@geany_filetypes_post)
-      f.close
-    end
   
     # (output directory, bg_color_style, colorsets []) 
-    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[])
+    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
     #bg_color_style: 0 = blackish, 1 = whitish, 2 = any color
+      if rand_seed then
+        #if a random seed is given, we need to reset the colorsets and bgstyle according to random numbers created AFTER the generator is seeded, forsaking whatever came in as parameters, since they are irrelevant if the desire is to recreate a previous theme from a random number seed
+        Kernel.srand(rand_seed) 
+        @random_seed=rand_seed
+        bg_color_style=rand(3).to_i
+        reset_colorsets
+      else
+      #the reason we want the native seed used by this ruby implementation is that creating one ourselves might be erroneous in not using enough bits. There is a "formula" used by MRI but we don't know what it is, so we'll just harvest the number from a fresh call to srand, then reseed the rng using that number. 
+        Kernel.srand
+        @random_seed = Kernel.srand #this sets @random_seed to the seed used in the call above
+        Kernel.srand(@random_seed)
+      end
       @theme_successfully_created=false
       defaults = {}
       defaults[:outputdir] = outputdir
@@ -382,21 +362,23 @@ module RMThemeGen
         :min_bright => @background_min_brightness )# "0"
       @themename = randthemename
       @xmlout = {:scheme=>
-                [{:name => @themename,:version=>@themeversion,:parent_scheme=>"Default",
-                  :option =>[{:name=>"pencil length",:value=>"48 cm"},{:name => "Doowop level", :value=>"medium"}],
-                  :colors => [{ :option => [{:name=>"foreground",:value => "yellow"},{:name=>"background",:value => "black"} ] }],
+                [{
                   :attributes => [{:option=>[
                                   {:name=>"2ABSTRACT_CLASS_NAME_ATTRIBUTES", :value=>[{:option=>{:name=>"foreground",:value=>"red"}}] },
                                   {:name=>"4ABSTRACT_CLASS_NAME_ATTRIBUTES", :value=>[{:option=>{:name=>"foreground",:value=>"red"}}] }
                                   ] 
-                                 }]
+                                 }],
+                  :colors => [{ :option => [{:name=>"foreground",:value => "yellow"},{:name=>"background",:value => "black"} ],
+                  :option =>[{:name=>"pencil length",:value=>"48 cm"},{:name => "Doowop level", :value=>"medium"}]
+                   }],
+                :name => @themename,:version=>@themeversion,:parent_scheme=>"Default", :author=>"David Heitzman, http://rmthemegen.com"
                 }]
                 }
         @savefile = randfilename(@themename)
         @outf = File.new(opts[:outputdir]+"/"+@savefile, "w+")
-        set_doc_options
-        set_doc_colors
         set_element_colors
+        set_doc_colors
+        set_doc_options
         XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
         @outf.close	
         @theme_successfully_created = true

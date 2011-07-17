@@ -1,6 +1,7 @@
-require 'color'
+#require 'color'
 
-class Color::RGB
+module Color
+  class RGB
 
   # Outputs how much contrast this color has with another rgb color. Computes the same
   # regardless of which one is considered foreground. 
@@ -93,5 +94,5 @@ class Color::RGB
     return y
   end 
 
-end
-
+  end #class RGB
+end #module Color

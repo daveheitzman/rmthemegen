@@ -1,0 +1,17 @@
+<?xml version='1.0' standalone='yes'?>
+  <plist version="1.0" />
+  <dict>
+    <array>
+      <dict>
+        <key>settings</key>
+        <dict>
+          <string>#000000</string>
+          <string>#FFFFFF</string>
+          <key>background</key>
+          <key>foreground</key>
+        </dict>
+      </dict>
+    </array>
+    <key>name</key>
+    <string>wide_stone</string>
+  </dict>

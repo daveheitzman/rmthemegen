@@ -37,7 +37,7 @@ l = RMThemeGen::ThemeGenerator.new
 @iterations = @iterations.to_i 
 
 @iterations.times do 
-  puts l.make_theme_file 
+  puts l.make_theme_file() 
   end
 
 
