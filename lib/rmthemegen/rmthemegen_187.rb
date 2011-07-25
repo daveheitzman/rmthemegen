@@ -73,7 +73,8 @@ module RMThemeGen
       
       #tighter contrast spec
       @cont_median = 0.85
-      @min_cont = @cont_median * 0.65
+#      @min_cont = @cont_median * 0.65
+      @min_cont = 0.25
       @max_cont =  [@cont_median * 1.35,1.0].max
       
       #broad contrast spec
@@ -180,6 +181,11 @@ module RMThemeGen
       # a random color. 
       failsafe=20000
       usecolorsets = (!@color_sets.nil? && @color_sets != []) 
+      
+      last_contrast = this_contrast = nil
+      best_color_yet = nil
+      contok = true # this will only get switched off if there is a background color submitted 
+      contrast_mid = ( (df[:min_cont] + df[:max_cont]) / 2.0 ).abs
       while (!color || !brightok || !contok && failsafe > 0) do
         if df[:shade_of_grey] == true 
           g = b = r = rand*256   
@@ -196,11 +202,18 @@ module RMThemeGen
         end
         
         color = Color::RGB.new(r,g,b)
+        best_color_yet ||= color
+        
+        if (df[:bg_rgb]) then 
+          this_contrast = color.contrast(df[:bg_rgb]) 
+          last_contrast ||= this_contrast 
+          best_color_yet = (this_contrast - contrast_mid).abs < (last_contrast - contrast_mid ).abs ? color : best_color_yet
+          contok = (df[:min_cont]..df[:max_cont]).include?( this_contrast )
+        end
   #      puts color.inspect
   #puts "bg" + @backgroundcolor if df[:bg_rgb]
   #puts "color "+color.html
   #puts "contrast "+color.contrast(df[:bg_rgb]).to_s if df[:bg_rgb]
-        contok = df[:bg_rgb] ? (df[:min_cont]..df[:max_cont]).include?( color.contrast(df[:bg_rgb]) ) : true
   #puts "contok "+contok.to_s
         brightok =  (df[:min_bright]..df[:max_bright]).include?( color.to_hsl.brightness )  
         
@@ -208,8 +221,10 @@ module RMThemeGen
       failsafe -= 1
 #     if failsafe == 0 then puts "failsafe reached " end;
       end #while
-      cn = color.html
+#      cn = color.html
+      cn= best_color_yet.html
       cn= cn.slice(1,cn.size)
+
       return cn
     end
     
