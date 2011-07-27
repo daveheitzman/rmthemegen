@@ -179,7 +179,8 @@ module RMThemeGen
       cr=Color::RGB.new
       #failsafe should make sure the program never hangs trying to create 
       # a random color. 
-      failsafe=20000
+      failsafe=200
+      failsafe_mid = (failsafe/2).to_i
       usecolorsets = (!@color_sets.nil? && @color_sets != []) 
       
       last_contrast = this_contrast = nil
@@ -189,7 +190,7 @@ module RMThemeGen
       while (!color || !brightok || !contok && failsafe > 0) do
         if df[:shade_of_grey] == true 
           g = b = r = rand*256   
-        elsif  usecolorsets && failsafe > 10000
+        elsif  usecolorsets && failsafe > failsafe_mid 
           cs = @color_sets.shuffle[0] 
  #puts "doing gaussian thing "+cs.inspect
           if cs.keys.include? :r then r = cr.next_gaussian( cs[:r])*256 else r = (df[:r] || rand*256)%256 end 
@@ -222,7 +223,8 @@ module RMThemeGen
 #     if failsafe == 0 then puts "failsafe reached " end;
       end #while
 #      cn = color.html
-      cn= best_color_yet.html
+
+      cn= failsafe <= 0 ? best_color_yet.html : color.html
       cn= cn.slice(1,cn.size)
 
       return cn
