@@ -82,7 +82,7 @@ module RMThemeGen
     :RUBY_ATTR_READER_CALL =>["name","scope",{}],
     :RUBY_ATTR_WRITER_CALL =>["name","scope",{}],
     :RUBY_BACK_REF =>["name","scope",{}],
-    :RUBY_BAD_CHARACTER=>["name","scope",{}], 
+    :RUBY_BAD_CHARACTER=>["Invalid – Illegal","invalid.illegal",{}], 
     :RUBY_BRACKETS =>["name","scope",{}],
     :RUBY_COMMA =>["name","scope",{}],
     :RUBY_COMMENT =>["name","scope",{}],
