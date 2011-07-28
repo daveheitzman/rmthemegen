@@ -329,7 +329,11 @@ module RMThemeGen
             {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor) }]}] 
         end
         newopt[0][:option] << {:name =>o.to_s , :value=>optblj}
-      @textmate_hash[o.to_sym] = newopt
+        tmphash = {}
+        optblj[0][:option].each do |siing| 
+          tmphash[ siing[:name].to_sym ] = siing[:value] 
+        end 
+        @textmate_hash[o.to_sym] = tmphash
       end
       
       @xmlout[:scheme][0][:attributes] = newopt
@@ -403,6 +407,8 @@ module RMThemeGen
         XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
         @outf.close	
         @theme_successfully_created = true
+puts "textmate_hash: "
+puts @textmate_hash.inspect
         return File.expand_path(@outf.path)
     end
   

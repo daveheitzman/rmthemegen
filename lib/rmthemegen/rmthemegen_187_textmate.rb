@@ -46,10 +46,7 @@ module RMThemeGen
                         :key =>["settings"],
                         :dict=> [{"string"=>["#000000","#FFFFFF"],
                                   "key"=>["background","foreground"] 
-                                
                                 }]
-                                
-                                
                     }]}]
                   }]
                 }
@@ -84,8 +81,8 @@ module RMThemeGen
 #puts @@document_opts_to_textmate.to_s
         @@document_opts_to_textmate.each do |k,v|
           main_array.add_element(
-            make_name_scope_settings(v)
-          )
+            make_name_scope_settings(k,v) 
+          ) if @textmate_hash[k]
         end
         rexmlout << plist
 #        rexmlout.write(@outf)
@@ -110,9 +107,9 @@ module RMThemeGen
       return new_dict
     end 
     
-    def make_name_scope_settings(an_array)
+    def make_name_scope_settings(ruby_symbol,an_array)
       #the array looks like ["name","scope",{}] . the third element in the array is a hash for "settings"
-      new_dict = REXML::Element.new("dict")
+        new_dict = REXML::Element.new("dict")
         te1 = REXML::Element.new("key")      
         te1.add_text("name") 
         te2 = REXML::Element.new("string")      
@@ -128,7 +125,7 @@ module RMThemeGen
         new_dict.add_element te3
         new_dict.add_element te4
         new_dict.add_element te5
-        di1 = make_dict("fontstyle"=>"italic","foreground"=>"#808800")
+        di1 = make_dict(@textmate_hash[ruby_symbol]) 
         new_dict.add_element di1
       return new_dict
     end

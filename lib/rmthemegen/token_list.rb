@@ -55,21 +55,6 @@ module RMThemeGen
     RUBY_STRING 
     RUBY_SYMBOL 
     RUBY_WORDS 
-    SELECTION_BACKGROUNDUMBER 
-    RUBY_OPERATION_SIGN 
-    RUBY_PARAMDEF_CALL 
-    RUBY_PARAMETER_ID 
-    RUBY_PRIVATE_CALL 
-    RUBY_PROTECTED_CALL 
-    RUBY_PUBLIC_CALL 
-    RUBY_REGEXP 
-    RUBY_REQUIRE_ARG_CALL 
-    RUBY_REQUIRE_CALL 
-    RUBY_SEMICOLON 
-    RUBY_SPECIFIC_CALL 
-    RUBY_STRING 
-    RUBY_SYMBOL 
-    RUBY_WORDS 
     SELECTION_BACKGROUND
     
     )
@@ -83,10 +68,10 @@ module RMThemeGen
     :RUBY_ATTR_WRITER_CALL =>["name","scope",{}],
     :RUBY_BACK_REF =>["name","scope",{}],
     :RUBY_BAD_CHARACTER=>["Invalid – Illegal","invalid.illegal",{}], 
-    :RUBY_BRACKETS =>["name","scope",{}],
-    :RUBY_COMMA =>["name","scope",{}],
-    :RUBY_COMMENT =>["name","scope",{}],
-    :RUBY_CONSTANT =>["name","scope",{}],
+    :RUBY_BRACKETS =>["Parentheses","punctuation.section.function, meta.brace.curly.function, meta.function-call punctuation.section.scope.ruby",{}],
+    :RUBY_COMMA =>["Comma","meta.delimiter.object.comma",{}],
+    :RUBY_COMMENT =>["Comment","comment",{}],
+    :RUBY_CONSTANT =>["Constant","constant",{}],
     :RUBY_CONSTANT_DEF_ID=>["name","scope",{}], 
     :RUBY_CVAR =>["name","scope",{}],
     :RUBY_ESCAPE_SEQUENCE =>["name","scope",{}],
@@ -119,7 +104,7 @@ module RMThemeGen
     :RUBY_STRING =>["name","scope",{}],
     :RUBY_SYMBOL =>["name","scope",{}],
     :RUBY_WORDS =>["name","scope",{}],
-    :SELECTION_BACKGROUNDUMBER=>["name","scope",{}], 
+    :SELECTION_BACKGROUND=>["name","scope",{}], 
     :RUBY_OPERATION_SIGN =>["name","scope",{}],
     :RUBY_PARAMDEF_CALL =>["name","scope",{}],
     :RUBY_PARAMETER_ID =>["name","scope",{}],
