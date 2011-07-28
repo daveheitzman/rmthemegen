@@ -63,15 +63,36 @@ module RMThemeGen
         rexmlout << REXML::DocType.new('plist','PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"')
         rexmlout << REXML::XMLDecl.new("1.0","UTF-8",nil)
         plist = REXML::Element.new "plist"
-        plist.add_attributes :version=>"1.0"
-        dict = REXML::Element.new( "dict", plist)
+        plist.add_attributes( "version"=>"1.0")
+        dict = REXML::Element.new( "dict", plist) #causes plist to be the parent of dict
+        dict.add_text(REXML::Element.new("key").add_text("settings") )
+        dict.add_element(REXML::Element.new("name").add_text("cloudy marbles") )
+        dict.add_element(make_dict(:background=>"#FFFFFF" ))
         rexmlout << plist
 #        rexmlout.write(@outf)
-        REXML::Formatters::Pretty.new.write(rexmlout, @outf)
+        formatter = REXML::Formatters::Pretty.new
+        formatter.compact=true
+        formatter.write(rexmlout, @outf)
         @outf.close	
         @theme_successfully_created = true
         return File.expand_path(@outf.path)
     end
+
+    def make_dict(a_hash)
+      new_dict = REXML::Element.new("dict")
+      a_hash.each do |k,v| 
+        te1 = REXML::Element.new("key")      
+        te1.add_text(k.to_s) 
+        te2 = REXML::Element.new("string")      
+        te2.add_text(v.to_s)
+        new_dict.add_element te1
+        new_dict.add_element te2
+      end
+      return new_dict
+    end 
+
+
   end #class
+
 
 end #module 
