@@ -78,12 +78,22 @@ module RMThemeGen
           :selection=>"#"+@document_globals[:SELECTION_BACKGROUND].upcase) 
           
         ) 
+
 #puts @@document_opts_to_textmate.to_s
         @@document_opts_to_textmate.each do |k,v|
           main_array.add_element(
             make_name_scope_settings(k,v) 
           ) if @textmate_hash[k]
         end
+         
+
+        uuid_key = REXML::Element.new("key")
+        uuid_key.add_text("uuid")
+        uuid_element = REXML::Element.new("string")
+        uuid_element.add_text( gen_uuid)
+        dict.add_element uuid_key
+        dict.add_element uuid_element
+
         rexmlout << plist
 #        rexmlout.write(@outf)
         formatter = REXML::Formatters::Pretty.new
@@ -93,6 +103,7 @@ module RMThemeGen
         @theme_successfully_created = true
         return File.expand_path(@outf.path)
     end
+
 
     def make_dict(a_hash)
       new_dict = REXML::Element.new("dict")
@@ -108,6 +119,7 @@ module RMThemeGen
     end 
     
     def make_name_scope_settings(ruby_symbol,an_array)
+    fontstyles = ["","bold","italic", "bold italic"]
       #the array looks like ["name","scope",{}] . the third element in the array is a hash for "settings"
         new_dict = REXML::Element.new("dict")
         te1 = REXML::Element.new("key")      
@@ -125,10 +137,17 @@ module RMThemeGen
         new_dict.add_element te3
         new_dict.add_element te4
         new_dict.add_element te5
-        di1 = make_dict(@textmate_hash[ruby_symbol]) 
+        fontStyle = fontstyles[@textmate_hash[ruby_symbol][:FONT_TYPE].to_i ]
+        di1 = make_dict(:foreground => "#"+@textmate_hash[ruby_symbol][:FOREGROUND].upcase, :fontStyle=>fontStyle) 
         new_dict.add_element di1
       return new_dict
     end
+    
+    def gen_uuid
+        nn = sprintf("%X",rand(99999999999999999999999999999999999999999999999999).abs)
+        nn = nn[0,8]+"-"+nn[12,4]+"-4"+nn[17,3]+"-"+["8","9","A","B"].shuffle[0]+nn[21,3]+"-"+nn[24,12]
+    end
+
   end #class
 
 
