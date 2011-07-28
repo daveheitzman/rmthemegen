@@ -15,6 +15,7 @@
 require 'rubygems'
 require 'color'
 require 'xmlsimple'
+require 'rexml/document'
 require File.dirname(__FILE__)+"/token_list"
 require File.dirname(__FILE__)+'/rgb_contrast_methods'
 require File.dirname(__FILE__)+'/rmthemegen_to_css'
@@ -23,28 +24,7 @@ module RMThemeGen
 
   class ThemeGenerator < RMThemeParent
 
-    def set_tm_doc_options
-      #newopt has to be a hash of "key" => ["color"],"string" => ["color"]
-      #order matters here. ... 
-      #newopt = {}
-      #newopt={:key => ["background"],:string=>["#00ff00"] }  
-      #newopt.merge!( {:key => ["caret"],:string => ["#000000"]}) 
-      #newopt.merge!( {:key => ["foreground"],:string => ["#ffffff"] })
-      @xml_textmate_out[:dict][0][:array][0][:dict][0][:dict][0]
-    end
-
-    def set_tm_doc_colors
-    end
-
-    def set_tm_element_colors
-    end
-
-    def read_tmfile
-      @inf = File.open("./iPlastic.tmTheme","r")
-      
-      @xml_in=XmlSimple.xml_in(@inf)
-      puts @xml_in.inspect 
-    end
+    
     
     def to_textmate
       #it will save the theme file ".tmTheme" in the same directory as other themes
@@ -75,10 +55,19 @@ module RMThemeGen
                 }
         @savefile = "rmt_"+@themename+".tmTheme"
         @outf = File.new(@opts[:outputdir]+"/"+@savefile, "w+")
-        set_tm_doc_options
-        set_tm_doc_colors
-        set_tm_element_colors
-        XmlSimple.xml_out(@xml_textmate_out,{:keeproot=>false,:xmldeclaration=>true,:outputfile=> @outf, :rootname => ""})
+        #set_tm_doc_options
+        #set_tm_doc_colors
+        #set_tm_element_colors
+        #XmlSimple.xml_out(@xml_textmate_out,{:keeproot=>false,:xmldeclaration=>true,:outputfile=> @outf, :rootname => ""})
+        rexmlout = REXML::Document.new
+        rexmlout << REXML::DocType.new('plist','PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"')
+        rexmlout << REXML::XMLDecl.new("1.0","UTF-8",nil)
+        plist = REXML::Element.new "plist"
+        plist.add_attributes :version=>"1.0"
+        dict = REXML::Element.new( "dict", plist)
+        rexmlout << plist
+#        rexmlout.write(@outf)
+        REXML::Formatters::Pretty.new.write(rexmlout, @outf)
         @outf.close	
         @theme_successfully_created = true
         return File.expand_path(@outf.path)
