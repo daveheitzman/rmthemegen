@@ -67,7 +67,13 @@ module RMThemeGen
         dict = REXML::Element.new( "dict", plist) #causes plist to be the parent of dict
         dict.add_text(REXML::Element.new("key").add_text("settings") )
         dict.add_element(REXML::Element.new("name").add_text("cloudy marbles") )
-        dict.add_element(make_dict(:background=>"#FFFFFF" ))
+        dict.add_element(
+          make_dict(:background=>"#"+@document_globals[:backgroundcolor].upcase,
+          :caret=>"#"+ @document_globals[:CARET_COLOR].upcase ,
+          :foreground=>"#"+@document_globals[:TEXT].upcase,
+          :invisibles=>"#"+@document_globals[:backgroundcolor].upcase,
+          :lineHighlight=>"#"+@document_globals[:CARET_ROW_COLOR].upcase,
+          :selection=>"#"+@document_globals[:SELECTION_BACKGROUND].upcase) )
         rexmlout << plist
 #        rexmlout.write(@outf)
         formatter = REXML::Formatters::Pretty.new

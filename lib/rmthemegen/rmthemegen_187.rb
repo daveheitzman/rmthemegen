@@ -89,9 +89,8 @@ module RMThemeGen
       @bg_color_style = 0 #0 = grey/dark 1 = grey/light (whitish), 2 = any color
     #  @foreground_min_brightness = 0.4
 
-      
-      @backgroundcolor= randcolor( :shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
-
+      @document_globals = {}
+      @backgroundcolor = randcolor( :shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
       reset_colorsets
     end #def initialize 
 
@@ -236,16 +235,18 @@ module RMThemeGen
         if o == "CARET_ROW_COLOR" then
           @caret_row_color = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.05,:max_cont => 0.08,:shade_of_grey=>false)
           newopt << {:name=> o, :value => @caret_row_color }
+          @document_globals[:CARET_ROW_COLOR] = @caret_row_color
         elsif o.include?("SELECTION_BACKGROUND") then
           @selection_background = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.07,:max_cont => 0.09,:shade_of_grey=>false)
           newopt << {:name=> o, :value => @selection_background }
+          @document_globals[:SELECTION_BACKGROUND] = @selection_background
         elsif o.include?("SELECTION_FOREGROUND") then
           newopt << {:name=> o }
         elsif o.include?("GUTTER_BACKGROUND") then
           newopt << {:name=> o, :value => @backgroundcolor }
         elsif o.include?("CARET_COLOR") then
-          newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.30,:max_cont=>0.7,:shade_of_grey=>true) }
-
+          newopt << {:name=> o, :value => (@caret_color = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.30,:max_cont=>0.7,:shade_of_grey=>true) )}
+          @document_globals[:CARET_COLOR] = @caret_color
         elsif o.include?("READONLY_BACKGROUND") then
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.03,:max_cont=>0.09,:shade_of_grey=>@background_grey) }
         elsif o.include?("READONLY_FRAGMENT_BACKGROUND") then
@@ -300,12 +301,13 @@ module RMThemeGen
             {:name => "EFFECT_COLOR" },{:name => "FONT_TYPE", :value=>fonttype.to_s },
             {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor) }]}] 
        #default text and background for whole document
-          when ["TEXT","FOLDED_TEXT_ATTRIBUTES"].include?( o.to_s)  
+          when ["TEXT","FOLDED_TEXT_ATTRIBUTES"].include?( o.to_s)
             newcol = randcolor(:bg_rgb=>@backgroundcolor ) 
             optblj=[{:option=>[ {:name => "FOREGROUND", :value => newcol},     
             {:name => "BACKGROUND", :value =>@backgroundcolor},
             {:name => "EFFECT_COLOR" },{:name => "FONT_TYPE", :value=>fonttype.to_s },
-            {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor)}]}] 
+            {:name => "ERROR_STRIPE_COLOR", :value => (randcolor(:bg_rgb=>@backgroundcolor) ) }]}] 
+            @document_globals[:TEXT] = newcol
           when @code_inspections.include?(o.to_s)  
             newcol = randcolor(:bg_rgb=>@backgroundcolor) 
             optblj=[{:option=>[ {:name => "FOREGROUND"},     
@@ -377,6 +379,7 @@ module RMThemeGen
       end
       @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness,
         :min_bright => @background_min_brightness )# "0"
+      @document_globals[:backgroundcolor] = @backgroundcolor
       @themename = randthemename
       @xmlout = {:scheme=>
                 [{
