@@ -65,15 +65,28 @@ module RMThemeGen
         plist = REXML::Element.new "plist"
         plist.add_attributes( "version"=>"1.0")
         dict = REXML::Element.new( "dict", plist) #causes plist to be the parent of dict
+        dict.add_text(REXML::Element.new("key").add_text("name") )
+        dict.add_text(REXML::Element.new("string").add_text( @themename ) )
+        dict.add_text(REXML::Element.new("key").add_text("author") )
+        dict.add_text(REXML::Element.new("string").add_text("David Heitzman") )
         dict.add_text(REXML::Element.new("key").add_text("settings") )
-        dict.add_element(REXML::Element.new("name").add_text("cloudy marbles") )
-        dict.add_element(
+        main_array = REXML::Element.new("array",dict)
+        main_array.add_element(
+        
           make_dict(:background=>"#"+@document_globals[:backgroundcolor].upcase,
           :caret=>"#"+ @document_globals[:CARET_COLOR].upcase ,
           :foreground=>"#"+@document_globals[:TEXT].upcase,
           :invisibles=>"#"+@document_globals[:backgroundcolor].upcase,
           :lineHighlight=>"#"+@document_globals[:CARET_ROW_COLOR].upcase,
-          :selection=>"#"+@document_globals[:SELECTION_BACKGROUND].upcase) )
+          :selection=>"#"+@document_globals[:SELECTION_BACKGROUND].upcase) 
+          
+        ) 
+#puts @@document_opts_to_textmate.to_s
+        @@document_opts_to_textmate.each do |e|
+          main_array.add_element(
+            make_name_scope_settings(e)
+          )
+        end
         rexmlout << plist
 #        rexmlout.write(@outf)
         formatter = REXML::Formatters::Pretty.new
@@ -96,7 +109,29 @@ module RMThemeGen
       end
       return new_dict
     end 
-
+    
+    def make_name_scope_settings(an_array)
+      #the array looks like ["name","scope",{}] . the third element in the array is a hash for "settings"
+      new_dict = REXML::Element.new("dict")
+      an_array.each do |v| 
+        te1 = REXML::Element.new("key")      
+        te1.add_text("name") 
+        te2 = REXML::Element.new("string")      
+        te2.add_text("elementname")
+        te3 = REXML::Element.new("key")      
+        te3.add_text("scope")
+        te4 = REXML::Element.new("string")      
+        te4.add_text("some_scope")
+        new_dict.add_element te1
+        new_dict.add_element te2
+        new_dict.add_element te3
+        new_dict.add_element te4
+        di1 = make_dict("fontstyle"=>"italic","foreground"=>"#808800")
+        new_dict.add_element di1
+      end
+      return new_dict
+    
+    end
 
   end #class
 

@@ -52,7 +52,6 @@ module RMThemeGen
       # underline not implemented yet. There are several font decorations in rubymine, 
       # probably should be used sparingly. 
       @italic_candidates = ["STRING", "SYMBOL", "REQUIRE"]
-      
       @bold_candidates = ["KEYWORD","RUBY_SPECIFIC_CALL", "CONSTANT", "COMMA", "PAREN","RUBY_ATTR_ACCESSOR_CALL", "RUBY_ATTR_READER_CALL" ,"RUBY_ATTR_WRITER_CALL", "IDENTIFIER"]
 # with code inspections we don't color the text, we just put a line or something under it .
       @code_inspections = ["ERROR","WARNING_ATTRIBUTES","DEPRECATED", "TYPO","WARNING_ATTRIBUTES", "BAD_CHARACTER",
@@ -70,7 +69,6 @@ module RMThemeGen
 
       #	if we avoid any notion of "brightness", which is an absolute quality, then we
       # can make our background any color we want, then adjust contrast to taste
-      
       #tighter contrast spec
       @cont_median = 0.85
 #      @min_cont = @cont_median * 0.65
@@ -91,6 +89,7 @@ module RMThemeGen
 
       @document_globals = {}
       @backgroundcolor = randcolor( :shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
+      @textmate_hash = {}
       reset_colorsets
     end #def initialize 
 
@@ -330,7 +329,9 @@ module RMThemeGen
             {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor) }]}] 
         end
         newopt[0][:option] << {:name =>o.to_s , :value=>optblj}
+      @textmate_hash[o.to_sym] = newopt
       end
+      
       @xmlout[:scheme][0][:attributes] = newopt
     end 
   
