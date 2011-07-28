@@ -68,15 +68,16 @@ module RMThemeGen
         dict.add_text(REXML::Element.new("string").add_text("David Heitzman") )
         dict.add_text(REXML::Element.new("key").add_text("settings") )
         main_array = REXML::Element.new("array",dict)
-        main_array.add_element(
-        
-          make_dict(:background=>"#"+@document_globals[:backgroundcolor].upcase,
+        doc_dict = REXML::Element.new("dict",main_array)
+        doc_dict.add_text(REXML::Element.new("key").add_text("settings") )
+        doc_dict.add_element(
+          make_dict(
+          :background=>"#"+@document_globals[:backgroundcolor].upcase,
           :caret=>"#"+ @document_globals[:CARET_COLOR].upcase ,
           :foreground=>"#"+@document_globals[:TEXT].upcase,
           :invisibles=>"#"+@document_globals[:backgroundcolor].upcase,
           :lineHighlight=>"#"+@document_globals[:CARET_ROW_COLOR].upcase,
           :selection=>"#"+@document_globals[:SELECTION_BACKGROUND].upcase) 
-          
         ) 
 
 #puts @@document_opts_to_textmate.to_s
