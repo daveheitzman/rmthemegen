@@ -1,0 +1,32 @@
+#**********************************************************************
+#*                                                                    *
+#*  RmThemeGen - a ruby script to create random, usable themes for    *
+#*  text editors. Currently supports RubyMine 3.X.X                   *
+#*                                                                    *
+#*  By David Heitzman, 2011                                           *
+#*                                                                    *
+#**********************************************************************
+
+#this is a version of the software that should work with ruby 1.8.7
+#originally it was written and tested for ruby 1.9.2
+
+
+
+require 'rubygems'
+require 'color'
+require 'xmlsimple'
+require 'rexml/document'
+require File.dirname(__FILE__)+"/token_list"
+require File.dirname(__FILE__)+'/rgb_contrast_methods'
+require File.dirname(__FILE__)+'/rmthemegen_to_css'
+
+module RMThemeGen
+  class ThemeGenerator < RMThemeParent
+    def process_plists
+  
+      indoc = REXML::Document.new( File.new("./PHP.plist") )
+      puts "indoc, as just read in"
+      puts indoc.to_s
+    end
+  end #class
+end #module 
