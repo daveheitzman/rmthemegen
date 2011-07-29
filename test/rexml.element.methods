@@ -1,0 +1,100 @@
+TEST TEST TEST
+
+  Mac:  Copy xml files to ~/Library/Preferences/RubyMine/color. You must restart RubyMine on the Mac, then look for new color schemes. 
+
+/home/apache/ruby_scripts/rmtg/test/rmt_respective_waitress.xml
+/home/apache/ruby_scripts/rmtg/test/rmt_respective_waitress.tmTheme
+testing to_css
+ <style type="text/css"> #respective_waitress { background-color: #060606; } #respective_waitress .RUBY_ATTR_ACCESSOR_CALL {color: #8bea66;} #respective_waitress .RUBY_ATTR_READER_CALL {color: #ceba37;} #respective_waitress .RUBY_ATTR_WRITER_CALL {color: #e395c1;font-weight:bold;} #respective_waitress .RUBY_BACK_REF {color: #9f3859;} #respective_waitress .RUBY_BAD_CHARACTER {color: #d5b9eb;} #respective_waitress .RUBY_BRACKETS {color: #19c287;} #respective_waitress .RUBY_COMMA {color: #ddabe4;} #respective_waitress .RUBY_COMMENT {color: #a51165;} #respective_waitress .RUBY_CONSTANT {color: #a04cf7;} #respective_waitress .RUBY_CONSTANT_DEF_ID {color: #627e5a;font-weight:bold;} #respective_waitress .RUBY_CVAR {color: #369b52;} #respective_waitress .RUBY_ESCAPE_SEQUENCE {color: #1eac0d;} #respective_waitress .RUBY_EXPR_IN_STRING {color: #886a3c;} #respective_waitress .RUBY_GVAR {color: #84776d;} #respective_waitress .RUBY_HASH_ASSOC {color: #65d31b;} #respective_waitress .RUBY_HEREDOC_CONTENT {color: #674bde;} #respective_waitress .RUBY_HEREDOC_ID {color: #2f39ee;} #respective_waitress .RUBY_IDENTIFIER {color: #a05ec1;font-weight:bold;} #respective_waitress .RUBY_IMPORT_CALL {color: #dedc34;} #respective_waitress .RUBY_INVALID_ESCAPE_SEQUENCE {color: #8590f6;} #respective_waitress .RUBY_IVAR {color: #3a64c6;} #respective_waitress .RUBY_KEYWORD {color: #6fa0ce;} #respective_waitress .RUBY_LINE_CONTINUATION {color: #997fd4;} #respective_waitress .RUBY_LOCAL_VAR_ID {color: #15cd69;} #respective_waitress .RUBY_METHOD_NAME {color: #0ba530;} #respective_waitress .RUBY_NTH_REF {color: #7e8edf;} #respective_waitress .RUBY_NUMBER {color: #e27cdd;} #respective_waitress .RUBY_OPERATION_SIGN {color: #f67c84;} #respective_waitress .RUBY_PARAMDEF_CALL {color: #95f76b;} #respective_waitress .RUBY_PARAMETER_ID {color: #347863;} #respective_waitress .RUBY_PRIVATE_CALL {color: #9f13a2;} #respective_waitress .RUBY_PROTECTED_CALL {color: #2ed10d;} #respective_waitress .RUBY_PUBLIC_CALL {color: #0c6bc8;} #respective_waitress .RUBY_REGEXP {color: #e9b191;} #respective_waitress .RUBY_REQUIRE_ARG_CALL {color: #21e00a;} #respective_waitress .RUBY_REQUIRE_CALL {color: #7183d9;} #respective_waitress .RUBY_SEMICOLON {color: #e9b085;} #respective_waitress .RUBY_SPECIFIC_CALL {color: #73622f;} #respective_waitress .RUBY_STRING {color: #9a8070;} #respective_waitress .RUBY_SYMBOL {color: #15baf2;} #respective_waitress .RUBY_WORDS {color: #811bc7;} #respective_waitress .CARET_ROW_COLOR {background-color: #0e034c;} #respective_waitress .SELECTION_BACKGROUND {background-color: #7b5763;}  </style> 
+testing themename
+respective_waitress
+
+testing plist_to_tokenlist.rb
+indoc, as just read in
+seeing if I can traverse all the kids
+seeing if I can traverse all the kids
+seeing if I can traverse all the kids
+seeing if I can traverse all the kids
+seeing if I can traverse all the kids
+seeing if I can traverse all the kids
+inspect
+<<
+tap
+clone
+value
+wrap
+public_methods
+__send__
+object_id
+instance_variable_defined?
+indent
+equal?
+freeze
+value=
+extend
+send
+methods
+hash
+dup
+each_recursive
+node_type
+bytes
+to_enum
+instance_variables
+eql?
+instance_eval
+id
+next_sibling_node
+singleton_methods
+next_sibling
+empty?
+taint
+find_first_recursive
+enum_for
+frozen?
+instance_variable_get
+next_sibling=
+replace_with
+document
+raw
+instance_of?
+display
+to_a
+method
+dclone
+type
+previous_sibling_node
+raw=
+parent
+instance_exec
+<
+protected_methods
+<=>
+between?
+==
+>
+===
+index_in_parent
+parent=
+remove
+write_with_substitution
+instance_variable_set
+write
+respond_to?
+kind_of?
+>=
+xpath
+to_s
+<=
+indent_text
+class
+private_methods
+=~
+tainted?
+__id__
+previous_sibling
+untaint
+nil?
+parent?
+previous_sibling=
+is_a?
