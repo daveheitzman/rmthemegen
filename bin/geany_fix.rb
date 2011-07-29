@@ -18,9 +18,11 @@
 # geany_fix.rb uses a local copy of gems color and xml-simple, in order 
 # ease use as a stand-alone utility. 
 
-require File.dirname(__FILE__)+"/token_list"
-require File.dirname(__FILE__)+'/color/color'
-require File.dirname(__FILE__)+'/xmlsimple.rb'
+require File.expand_path("../../lib/rmthemegen/token_list",__FILE__)
+require File.expand_path('../../lib/rmthemegen/color/color',__FILE__)
+require File.expand_path("../../lib/rmthemegen/xmlsimple.rb",__FILE__)
+#require File.dirname(__FILE__)#+'./lib/rmthemegen/color/color'
+#require File.dirname(__FILE__)#+'./lib/rmthemegen/xmlsimple.rb'
 
 module RMThemeGen
   class GeanyFixer < RMThemeParent

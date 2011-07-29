@@ -407,8 +407,8 @@ module RMThemeGen
         XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
         @outf.close	
         @theme_successfully_created = true
-puts "textmate_hash: "
-puts @textmate_hash.inspect
+#puts "textmate_hash: "
+#puts @textmate_hash.inspect
         return File.expand_path(@outf.path)
     end
   

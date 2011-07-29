@@ -32,14 +32,57 @@ class Geanyfy
       end 
    end   
 
-   def open_all_files
-      @open_string = "/usr/bin/geany "
+   def open_all_files2
+      @open_string = "geany"
       @filelist.each do |f|
-         @open_string += " " + f
+      @open_string += ' "' + f + '"'
       end
-      @open_string += " & "
-      `#{@open_string} `
+      @open_string += " &"
+      puts "#{@open_string}"
+#      Kernel.exec(@open_string)
+      Kernel.fork do 
+        `#{@open_string}`
+      end
+      puts "geanyfy says 'Happy Editing..'"
+#      `#{@open_string} `
    end
+
+
+   
+   def open_all_files3
+      puts "geanyfy opening #{@filelist.size} files"
+      @filelist.each do |f|
+      puts "geany #{f} &"
+        Kernel.fork do 
+          `geany #{f} &`
+        end
+      end
+      puts "geanyfy - editing #{@filelist.size} files"
+#      `#{@open_string} `
+   end
+
+   def open_all_files
+    atatime=10
+    atatime.freeze
+    c2=0 #counter
+    c3=0
+    limit = @filelist.size
+      puts "geanyfy opening #{@filelist.size} files"
+      while c2 < limit do
+        @command = "geany "
+        c3=0
+          while c2 < limit && c3 < atatime do
+            @command += "\"#{@filelist[c2]}\" "
+            c2 += 1 ; c3 += 1
+          end
+          puts "#{@command}"
+          Kernel.fork do 
+            `#{@command}`
+          end
+      end
+      puts "geanyfy - editing #{@filelist.size} files"
+   end
+
 end 
 
 g=Geanyfy.new
