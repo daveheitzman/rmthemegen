@@ -19,6 +19,7 @@ require 'rexml/document'
 require File.dirname(__FILE__)+"/token_list"
 require File.dirname(__FILE__)+'/rgb_contrast_methods'
 require File.dirname(__FILE__)+'/rmthemegen_to_css'
+#require File.dirname(__FILE__)+'/plist_to_tokenlist'
 
 module RMThemeGen
 
@@ -81,14 +82,23 @@ module RMThemeGen
         ) 
 
 #puts @@document_opts_to_textmate.to_s
-        @@document_opts_to_textmate.each do |k,v|
+#        @@document_opts_to_textmate.each do |k,v|
+ #         main_array.add_element(
+#            make_name_scope_settings(k,v) 
+  #        ) if @textmate_hash[k]
+   #     end
+            puts 'process_plists' 
+    
+        process_plists()
+            puts 'process_plists' 
+
+        
+        @for_tm_output.each do |k|
           main_array.add_element(
-            make_name_scope_settings(k,v) 
-          ) if @textmate_hash[k]
+            make_name_scope_settings_rand(k.to_s,k.to_s,[]) 
+          )
         end
         
-
-
         uuid_key = REXML::Element.new("key")
         uuid_key.add_text("uuid")
         uuid_element = REXML::Element.new("string")
@@ -147,6 +157,32 @@ module RMThemeGen
         new_dict.add_element di1
       return new_dict
     end
+    
+    def make_name_scope_settings_rand(name, scope, settings)
+    fontstyles = ["","bold","italic", "bold italic"]
+      #the array looks like ["name","scope",{}] . the third element in the array is a hash for "settings"
+        new_dict = REXML::Element.new("dict")
+        te1 = REXML::Element.new("key")      
+        te1.add_text("name") 
+        te2 = REXML::Element.new("string")      
+        te2.add_text(name.to_s)
+        te3 = REXML::Element.new("key")      
+        te3.add_text("scope")
+        te4 = REXML::Element.new("string")      
+        te4.add_text(scope.to_s)
+        te5 = REXML::Element.new("key")
+        te5.add_text("settings")      
+        new_dict.add_element te1
+        new_dict.add_element te2
+        new_dict.add_element te3
+        new_dict.add_element te4
+        new_dict.add_element te5
+        fontStyle = '' #fontstyles[@textmate_hash[ruby_symbol][:FONT_TYPE].to_i ]
+        di1 = make_dict(:foreground => "#"+randcolor(:bg_rgb=>@backgroundcolor).upcase, :fontStyle=>fontStyle) 
+        new_dict.add_element di1
+      return new_dict
+    end
+
     
     def gen_uuid
         nn = sprintf("%X",rand(99999999999999999999999999999999999999999999999999).abs)

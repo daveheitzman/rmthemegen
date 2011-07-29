@@ -23,6 +23,7 @@ require File.dirname(__FILE__)+'/rmthemegen_to_css'
 module RMThemeGen
   class ThemeGenerator < RMThemeParent
     def process_plists
+
       @for_tm_output = {}
       indoc = REXML::Document.new( File.new("./PHP.plist") )
       
@@ -57,6 +58,7 @@ module RMThemeGen
       end
       } 
         
+    puts '@for_tm_output.inspect'
     puts @for_tm_output.inspect
     end
     
