@@ -14,6 +14,8 @@
 
 require File.dirname(__FILE__)+'./lib/rmthemegen/rmthemegen_187'
 require File.dirname(__FILE__)+'./lib/rmthemegen/rmthemegen_187_textmate'
+require File.dirname(__FILE__)+'./lib/rmthemegen/rmtg187_new_textmate'
+require File.dirname(__FILE__)+'./lib/rmthemegen/plist_to_tokenlist'
 puts "TEST TEST TEST"
 puts    
 puts "  Mac:  Copy xml files to ~/Library/Preferences/RubyMine/color. You must restart RubyMine on the Mac, then look for new color schemes. "
@@ -42,4 +44,7 @@ puts "testing to_css"
 puts l.to_css
 puts "testing themename"
 puts l.themename
+puts
+puts "testing plist_to_tokenlist.rb"
+l.process_plists
 puts

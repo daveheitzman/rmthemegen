@@ -88,6 +88,7 @@ module RMThemeGen
         end
         
 
+
         uuid_key = REXML::Element.new("key")
         uuid_key.add_text("uuid")
         uuid_element = REXML::Element.new("string")
@@ -105,7 +106,10 @@ module RMThemeGen
         return File.expand_path(@outf.path)
     end
 
-
+    def process_plists
+      
+    end
+    
     def make_dict(a_hash)
       new_dict = REXML::Element.new("dict")
       a_hash.each do |k,v| 
