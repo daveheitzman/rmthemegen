@@ -12,7 +12,7 @@
 #originally it was written and tested for ruby 1.9.2
 
 
-require File.dirname(__FILE__)+'./lib/rmthemegen/rmthemegen_187'
+require File.expand_path('../../lib/rmthemegen/rmthemegen_187',__FILE__)
 
 puts    
 puts "  rmthemegen - creates theme files for use with rubymine (3.0.0 and up) "

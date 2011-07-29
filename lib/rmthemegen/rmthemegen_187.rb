@@ -52,7 +52,6 @@ module RMThemeGen
       # underline not implemented yet. There are several font decorations in rubymine, 
       # probably should be used sparingly. 
       @italic_candidates = ["STRING", "SYMBOL", "REQUIRE"]
-      
       @bold_candidates = ["KEYWORD","RUBY_SPECIFIC_CALL", "CONSTANT", "COMMA", "PAREN","RUBY_ATTR_ACCESSOR_CALL", "RUBY_ATTR_READER_CALL" ,"RUBY_ATTR_WRITER_CALL", "IDENTIFIER"]
 # with code inspections we don't color the text, we just put a line or something under it .
       @code_inspections = ["ERROR","WARNING_ATTRIBUTES","DEPRECATED", "TYPO","WARNING_ATTRIBUTES", "BAD_CHARACTER",
@@ -70,10 +69,10 @@ module RMThemeGen
 
       #	if we avoid any notion of "brightness", which is an absolute quality, then we
       # can make our background any color we want, then adjust contrast to taste
-      
       #tighter contrast spec
       @cont_median = 0.85
-      @min_cont = @cont_median * 0.65
+#      @min_cont = @cont_median * 0.65
+      @min_cont = 0.25
       @max_cont =  [@cont_median * 1.35,1.0].max
       
       #broad contrast spec
@@ -88,9 +87,9 @@ module RMThemeGen
       @bg_color_style = 0 #0 = grey/dark 1 = grey/light (whitish), 2 = any color
     #  @foreground_min_brightness = 0.4
 
-      
-      @backgroundcolor= randcolor( :shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
-
+      @document_globals = {}
+      @backgroundcolor = randcolor( :shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
+      @textmate_hash = {}
       reset_colorsets
     end #def initialize 
 
@@ -178,12 +177,18 @@ module RMThemeGen
       cr=Color::RGB.new
       #failsafe should make sure the program never hangs trying to create 
       # a random color. 
-      failsafe=20000
+      failsafe=200
+      failsafe_mid = (failsafe/2).to_i
       usecolorsets = (!@color_sets.nil? && @color_sets != []) 
+      
+      last_contrast = this_contrast = nil
+      best_color_yet = nil
+      contok = true # this will only get switched off if there is a background color submitted 
+      contrast_mid = ( (df[:min_cont] + df[:max_cont]) / 2.0 ).abs
       while (!color || !brightok || !contok && failsafe > 0) do
         if df[:shade_of_grey] == true 
           g = b = r = rand*256   
-        elsif  usecolorsets && failsafe > 10000
+        elsif  usecolorsets && failsafe > failsafe_mid 
           cs = @color_sets.shuffle[0] 
  #puts "doing gaussian thing "+cs.inspect
           if cs.keys.include? :r then r = cr.next_gaussian( cs[:r])*256 else r = (df[:r] || rand*256)%256 end 
@@ -196,11 +201,18 @@ module RMThemeGen
         end
         
         color = Color::RGB.new(r,g,b)
+        best_color_yet ||= color
+        
+        if (df[:bg_rgb]) then 
+          this_contrast = color.contrast(df[:bg_rgb]) 
+          last_contrast ||= this_contrast 
+          best_color_yet = (this_contrast - contrast_mid).abs < (last_contrast - contrast_mid ).abs ? color : best_color_yet
+          contok = (df[:min_cont]..df[:max_cont]).include?( this_contrast )
+        end
   #      puts color.inspect
   #puts "bg" + @backgroundcolor if df[:bg_rgb]
   #puts "color "+color.html
   #puts "contrast "+color.contrast(df[:bg_rgb]).to_s if df[:bg_rgb]
-        contok = df[:bg_rgb] ? (df[:min_cont]..df[:max_cont]).include?( color.contrast(df[:bg_rgb]) ) : true
   #puts "contok "+contok.to_s
         brightok =  (df[:min_bright]..df[:max_bright]).include?( color.to_hsl.brightness )  
         
@@ -208,8 +220,11 @@ module RMThemeGen
       failsafe -= 1
 #     if failsafe == 0 then puts "failsafe reached " end;
       end #while
-      cn = color.html
+#      cn = color.html
+
+      cn= failsafe <= 0 ? best_color_yet.html : color.html
       cn= cn.slice(1,cn.size)
+
       return cn
     end
     
@@ -219,16 +234,18 @@ module RMThemeGen
         if o == "CARET_ROW_COLOR" then
           @caret_row_color = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.05,:max_cont => 0.08,:shade_of_grey=>false)
           newopt << {:name=> o, :value => @caret_row_color }
+          @document_globals[:CARET_ROW_COLOR] = @caret_row_color
         elsif o.include?("SELECTION_BACKGROUND") then
           @selection_background = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.07,:max_cont => 0.09,:shade_of_grey=>false)
           newopt << {:name=> o, :value => @selection_background }
+          @document_globals[:SELECTION_BACKGROUND] = @selection_background
         elsif o.include?("SELECTION_FOREGROUND") then
           newopt << {:name=> o }
         elsif o.include?("GUTTER_BACKGROUND") then
           newopt << {:name=> o, :value => @backgroundcolor }
         elsif o.include?("CARET_COLOR") then
-          newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.30,:max_cont=>0.7,:shade_of_grey=>true) }
-
+          newopt << {:name=> o, :value => (@caret_color = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.30,:max_cont=>0.7,:shade_of_grey=>true) )}
+          @document_globals[:CARET_COLOR] = @caret_color
         elsif o.include?("READONLY_BACKGROUND") then
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.03,:max_cont=>0.09,:shade_of_grey=>@background_grey) }
         elsif o.include?("READONLY_FRAGMENT_BACKGROUND") then
@@ -283,12 +300,13 @@ module RMThemeGen
             {:name => "EFFECT_COLOR" },{:name => "FONT_TYPE", :value=>fonttype.to_s },
             {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor) }]}] 
        #default text and background for whole document
-          when ["TEXT","FOLDED_TEXT_ATTRIBUTES"].include?( o.to_s)  
+          when ["TEXT","FOLDED_TEXT_ATTRIBUTES"].include?( o.to_s)
             newcol = randcolor(:bg_rgb=>@backgroundcolor ) 
             optblj=[{:option=>[ {:name => "FOREGROUND", :value => newcol},     
             {:name => "BACKGROUND", :value =>@backgroundcolor},
             {:name => "EFFECT_COLOR" },{:name => "FONT_TYPE", :value=>fonttype.to_s },
-            {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor)}]}] 
+            {:name => "ERROR_STRIPE_COLOR", :value => (randcolor(:bg_rgb=>@backgroundcolor) ) }]}] 
+            @document_globals[:TEXT] = newcol
           when @code_inspections.include?(o.to_s)  
             newcol = randcolor(:bg_rgb=>@backgroundcolor) 
             optblj=[{:option=>[ {:name => "FOREGROUND"},     
@@ -311,7 +329,13 @@ module RMThemeGen
             {:name => "ERROR_STRIPE_COLOR", :value =>randcolor(:bg_rgb=>@backgroundcolor) }]}] 
         end
         newopt[0][:option] << {:name =>o.to_s , :value=>optblj}
+        tmphash = {}
+        optblj[0][:option].each do |siing| 
+          tmphash[ siing[:name].to_sym ] = siing[:value] 
+        end 
+        @textmate_hash[o.to_sym] = tmphash
       end
+      
       @xmlout[:scheme][0][:attributes] = newopt
     end 
   
@@ -360,6 +384,7 @@ module RMThemeGen
       end
       @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness,
         :min_bright => @background_min_brightness )# "0"
+      @document_globals[:backgroundcolor] = @backgroundcolor
       @themename = randthemename
       @xmlout = {:scheme=>
                 [{
@@ -382,6 +407,8 @@ module RMThemeGen
         XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
         @outf.close	
         @theme_successfully_created = true
+#puts "textmate_hash: "
+#puts @textmate_hash.inspect
         return File.expand_path(@outf.path)
     end
   
