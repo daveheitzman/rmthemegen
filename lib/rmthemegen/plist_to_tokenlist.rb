@@ -23,9 +23,15 @@ require File.dirname(__FILE__)+'/rmthemegen_to_css'
 module RMThemeGen
   class ThemeGenerator < RMThemeParent
     def process_plists
-
       @for_tm_output = {}
-      indoc = REXML::Document.new( File.new("./PHP.plist") )
+      files_look_in = Dir[File.dirname(__FILE__)+"/syntaxes/*.plist"]
+      puts files_look_in.inspect
+      files_look_in.each do |f|
+        puts "opening file "+f.to_s 
+        syntax_file = File.open(f,"r")
+
+
+      indoc = REXML::Document.new( syntax_file )
       
       visit_all_nodes(indoc.root) { |k|
       begin
@@ -57,6 +63,10 @@ module RMThemeGen
         puts "an exception in process_plists(): "+e.to_s 
       end
       } 
+
+
+        syntax_file.close       
+      end
         
     puts '@for_tm_output.inspect'
     puts @for_tm_output.inspect
