@@ -10,8 +10,6 @@
 #this is a version of the software that should work with ruby 1.8.7
 #originally it was written and tested for ruby 1.9.2
 
-
-
 require 'rubygems'
 require 'color'
 require 'xmlsimple'
@@ -25,6 +23,7 @@ module RMThemeGen
     def process_plists
       @for_tm_output = {}
       files_look_in = Dir[File.dirname(__FILE__)+"/syntaxes/*.plist"]
+      files_look_in = Dir[File.dirname(__FILE__)+"/syntaxes/PHP.plist"]
       puts files_look_in.inspect
       files_look_in.each do |f|
         puts "opening file "+f.to_s 

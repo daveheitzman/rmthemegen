@@ -39,12 +39,12 @@ l = RMThemeGen::ThemeGenerator.new
   puts l.to_textmate
 
 #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 2 ) 
-  end
-puts "testing to_css"
-puts l.to_css
-puts "testing themename"
-puts l.themename
-puts
-puts "testing plist_to_tokenlist.rb"
-l.process_plists
-puts
+  puts "testing to_css"
+  puts l.to_css
+  puts "testing themename"
+  puts l.themename
+  puts
+  #puts "testing plist_to_tokenlist.rb"
+  #l.process_plists
+  puts
+end

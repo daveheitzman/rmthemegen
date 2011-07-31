@@ -87,10 +87,10 @@ module RMThemeGen
 #            make_name_scope_settings(k,v) 
   #        ) if @textmate_hash[k]
    #     end
-            puts 'process_plists' 
+ #           puts 'process_plists' 
     
         process_plists()
-            puts 'process_plists' 
+#            puts 'process_plists' 
 
         
         @for_tm_output.each do |k|
@@ -116,9 +116,7 @@ module RMThemeGen
         return File.expand_path(@outf.path)
     end
 
-    def process_plists
-      
-    end
+
     
     def make_dict(a_hash)
       new_dict = REXML::Element.new("dict")

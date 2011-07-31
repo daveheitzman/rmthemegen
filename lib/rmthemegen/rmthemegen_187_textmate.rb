@@ -1,3 +1,12 @@
+# this file is deprecated. It is designed to produce Textmate syntax files that 
+# are analogues of rmthemegen files. This is a useless endeavor -- Textmate 
+# syntax files can just be produced on their own. Attempting to correlate 
+# Rubymine's color syntax scheme with Textmate's is complex and would require
+# a budget to be done properly. So we'll just have a bunch of tm themes and a bunc
+# of rm themes. see rmtg187_new_textmate.rb 
+
+
+
 #**********************************************************************
 #*                                                                    *
 #*  RmThemeGen - a ruby script to create random, usable themes for    *
