@@ -86,6 +86,11 @@ module RMThemeGen
             end
           end
         end 
-    end 
+    end #visit_all_nodes
+    
+    def handle_as_leaf()
+      #input: a node / element. All the dicts found inside key:name => string:value pairs will be given the same color
+    
+    end
   end #class
 end #module 
