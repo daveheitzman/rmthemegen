@@ -31,7 +31,7 @@ module RMThemeGen
       files_look_in.each do |f|
         puts "opening file "+f.to_s 
         syntax_file = File.open(f,"r")
-
+    
 
       indoc = REXML::Document.new( syntax_file )
       
