@@ -20,6 +20,9 @@ require File.dirname(__FILE__)+'/rmthemegen_to_css'
 
 module RMThemeGen
   class ThemeGenerator < RMThemeParent
+    
+    # input: nothing -- This method goes into ./syntaxes directory and handles all the plists
+    # output: creates a hash containing an element name => style mapping.  
     def process_plists
       @for_tm_output = {}
       files_look_in = Dir[File.dirname(__FILE__)+"/syntaxes/*.plist"]
@@ -32,6 +35,13 @@ module RMThemeGen
 
       indoc = REXML::Document.new( syntax_file )
       
+      indoc.elements.each("*/dict") do |ele|
+        handle_as_leaf ele
+        
+      
+      
+      end 
+=begin      
       visit_all_nodes(indoc.root) { |k|
       begin
 #        puts "*********************"
@@ -61,6 +71,7 @@ module RMThemeGen
       rescue => e
         puts "an exception in process_plists(): "+e.to_s 
       end
+=end
       } 
 
 
@@ -72,25 +83,39 @@ module RMThemeGen
     end
     
     def visit_all_nodes(element, &block)
-        if element.is_a?(REXML::Element) && element.has_elements? then 
-          element.each do |kkid|
-            visit_all_nodes( kkid, &block) 
-          end 
-        else
-        #element.name=='string' && !element.previous_sibling_node.nil? &&&&             element.previous_sibling_node.name=='string' 
-          if (element.respond_to?(:local_name) )
-            if (element.parent.name=='dict' && (element.previous_element.respond_to?(:local_name)  ) )
-              if ( element.previous_element.local_name=='key' && element.previous_element.text=="name" )
-                yield element
-              end
+        if element.is_a?(REXML::Element)  
+          if element.has_elements?  
+            element.each do |kkid|
+              visit_all_nodes( kkid, &block) 
+            end 
+          else
+            if (element.respond_to?(:text) )
+              yield element
             end
-          end
-        end 
+        end
     end #visit_all_nodes
     
-    def handle_as_leaf()
+    def handle_as_leaf(dict_element)
       #input: a node / element. All the dicts found inside key:name => string:value pairs will be given the same color
+      # dict_element.#(has_child that is a <key>captures</key>)?
+      # dict_element.#(has_child that is a <key>begincaptures</key> or <key>endcaptures</key> )?
+#      if true #then visit_all_nodes, giving each one the same color
+ #     if not, then handle_as_leaf(all dict_children of dict_element)
+      return unless dict_element.respond_to? :local_name
+      if dict_has?(self,["captures","beginCaptures","endCaptures"]) 
+        if dict_has_immediate_kids(self,["captures","beginCaptures","endCaptures"])
+      end 
+    end #handle_as_leaf
     
-    end
+    #input: an array of element names (strings) 
+    #output: tells whether dict has any children that are named any of the elements in the array
+    def dict_has?(dict,element_names_arr) 
+      visit_all_nodes(dict) { |e|
+        if element_names_arr.include?(e.local_name) 
+          return true
+        end 
+      }
+    end 
+  
   end #class
 end #module 
