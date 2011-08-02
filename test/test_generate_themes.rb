@@ -44,6 +44,30 @@ l = RMThemeGen::ThemeGenerator.new
   puts "testing themename"
   puts l.themename
   puts
+ 
+  puts '@for_tm_output.inspect'
+#  puts l.for_tm_output.inspect
+  token_ary = []
+  l.for_tm_output.each do |k,v|
+   # puts k.inspect
+    token_ary << k.to_s
+  end 
+  
+  token_ary.sort!
+  nary3=[]
+  token_ary.each do |i|
+    nary3 << [i,l.for_tm_output[i] ]
+  end
+  nary3.each do |i|
+    puts i.inspect
+  end 
+  puts 'number of tokens: '
+  puts l.for_tm_output.size
+
+  puts 'top_level_names'
+  l.top_level_names.each do |n|
+    puts n.inspect
+  end
   #puts "testing plist_to_tokenlist.rb"
   #l.process_plists
   puts

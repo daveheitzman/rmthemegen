@@ -91,14 +91,16 @@ module RMThemeGen
     
         process_plists()
 #            puts 'process_plists' 
-
         
-        @for_tm_output.each do |k|
+        @for_tm_output = @top_level_names 
+        @for_tm_output.each do |k,v|
           main_array.add_element(
-            make_name_scope_settings_rand(k.to_s,k.to_s,[]) 
+            make_name_scope_settings_rand(k.to_s,v.to_s,[]) 
           )
+
         end
-        
+          
+                  
         uuid_key = REXML::Element.new("key")
         uuid_key.add_text("uuid")
         uuid_element = REXML::Element.new("string")
@@ -110,6 +112,9 @@ module RMThemeGen
 #        rexmlout.write(@outf)
         formatter = REXML::Formatters::Pretty.new
         formatter.compact=true
+
+#        formatter = REXML::Formatters::Default.new
+
         formatter.write(rexmlout, @outf)
         @outf.close	
         @theme_successfully_created = true
@@ -167,7 +172,7 @@ module RMThemeGen
         te3 = REXML::Element.new("key")      
         te3.add_text("scope")
         te4 = REXML::Element.new("string")      
-        te4.add_text(scope.to_s)
+        te4.text =scope.to_s
         te5 = REXML::Element.new("key")
         te5.add_text("settings")      
         new_dict.add_element te1
