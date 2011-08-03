@@ -65,9 +65,14 @@ l = RMThemeGen::ThemeGenerator.new
   puts l.for_tm_output.size
 
   puts 'top_level_names'
-  l.top_level_names.each do |n|
+  l.repository_names.each do |n|
     puts n.inspect
   end
+  puts '------------------------->>> under patterns <<<--------------------------- '
+  l.under_patterns.each do |p,v|
+   puts p.to_s+"=>"+v.to_s
+  end
+  #puts l.under_patterns.inspect
   #puts "testing plist_to_tokenlist.rb"
   #l.process_plists
   puts

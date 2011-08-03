@@ -20,7 +20,7 @@ require File.dirname(__FILE__)+'/rmthemegen_to_css'
 
 module RMThemeGen
   class ThemeGenerator < RMThemeParent
-    attr_reader :for_tm_output, :top_level_names
+    attr_reader :for_tm_output, :repository_names, :under_patterns
     def process_plists
       @for_tm_output = {}
       files_look_in = Dir[File.dirname(__FILE__)+"/syntaxes/*.plist"]
@@ -99,8 +99,9 @@ module RMThemeGen
         end
       end
       
-      @for_tm_output = @nhash2
-      @top_level_names = {}
+    
+    #  @for_tm_output = @nhash2
+      @repository_names = {}
 
       indoc.root.elements.each("*/dict") do |e|
         #return if !e.respond_to? :local_name
@@ -110,21 +111,73 @@ module RMThemeGen
         e.elements.each do |ee|          
           if ee.name == "key" 
             puts " ***** " 
-            @top_level_names[ee.text.to_s] = ''
+            @repository_names[ee.text.to_s] = ''
             puts ee.to_s 
             puts " ***** " 
             if ee.next_element 
               visit_all_nodes(ee.next_element)  do |eer|
                   if eer.name == "string" && eer.previous_element.name == "key" &&  eer.previous_element.text == "name"
-                    @top_level_names[ee.text.to_s] += eer.text.to_s+" " 
+                    @repository_names[ee.text.to_s] += eer.text.to_s+" " 
                   end
               end 
             end 
           end 
         end 
       end 
+      
+      @under_patterns={}
+      indoc.root.elements.each("*/key") do |e|
+          main_name=''
+          if e.text == "patterns"  
+            e.next_element.elements.each do |ee| #this is the main array of patterns -- these should be the dicts who define the patterns caught by the syntax engine
+              if ee.name=="dict"
+#              puts "<<>>"+ee.inspect+"<<>>"
+#              puts "<<again>>"+ee.elements.size.to_s+"<<>>"
+                ee.elements.each do |cc|
+                  if cc.text == "name"
+                  main_name = cc.next_element.text   
+                  puts "main_name"+main_name
+                  @under_patterns[main_name]=""
+                  end 
+                end
+              
+                ee.elements.each do |di|
+                  if di.name="dict"
+                    di.elements.each do |di_ch|
+                      di_ch.elements.each do |leaf|
+                        if leaf.previous_element 
+                          @under_patterns[main_name] += leaf.text.to_s+", "  if (leaf.name=="string" && leaf.previous_element.text == "name") 
+                        end 
+                      end 
+                    end 
+                  end 
+                end
+              end 
+            end
+          end  
+ 
+
+      end
+#    @under_patterns.each_key do |k| @under_patterns[k] = @under_patterns[k][ 0, @under_patterns[k].size-2 ] end 
+    @under_patterns.each do |k,v| @under_patterns[k] = v[ 0, v.size-2 ] end 
+=begin            ee.elements.each("*/string") do |elemname|
+              main_name = elemname
+              @under_patterns[main_name]=''
+            end
+            #this harvests all the captures 
+            ee.elements.each("*/dict")  do |eee|
+#                if eee.name == "string" && eee.previous_element.name == "key" &&  eee.previous_element.text == "name"
+                  @under_patterns[main_name] += eee.text.to_s+"," 
+ #               end
+            end 
+              
+          end 
+        end 
+      end 
+=end      
       syntax_file.close       
-      end #files_look_in.each
+    end #files_look_in.each
+      
     end #process_plists
     
     def visit_all_nodes(element, &block)

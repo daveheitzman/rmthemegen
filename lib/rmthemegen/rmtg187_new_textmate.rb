@@ -53,10 +53,6 @@ module RMThemeGen
                 }
         @savefile = "rmt_"+@themename+".tmTheme"
         @outf = File.new(@opts[:outputdir]+"/"+@savefile, "w+")
-        #set_tm_doc_options
-        #set_tm_doc_colors
-        #set_tm_element_colors
-        #XmlSimple.xml_out(@xml_textmate_out,{:keeproot=>false,:xmldeclaration=>true,:outputfile=> @outf, :rootname => ""})
         rexmlout = REXML::Document.new
         rexmlout << REXML::DocType.new('plist','PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"')
         rexmlout << REXML::XMLDecl.new("1.0","UTF-8",nil)
@@ -80,27 +76,30 @@ module RMThemeGen
           :lineHighlight=>"#"+@document_globals[:CARET_ROW_COLOR].upcase,
           :selection=>"#"+@document_globals[:SELECTION_BACKGROUND].upcase) 
         ) 
-
-#puts @@document_opts_to_textmate.to_s
-#        @@document_opts_to_textmate.each do |k,v|
- #         main_array.add_element(
-#            make_name_scope_settings(k,v) 
-  #        ) if @textmate_hash[k]
-   #     end
- #           puts 'process_plists' 
     
         process_plists()
-#            puts 'process_plists' 
-        
-        @for_tm_output = @top_level_names 
+
+=begin
         @for_tm_output.each do |k,v|
           main_array.add_element(
-            make_name_scope_settings_rand(k.to_s,v.to_s,[]) 
+            make_name_scope_settings_rand(k.to_s,k.to_s,[]) 
           )
-
         end
-          
-                  
+=end 
+
+      #so the idea here is to take each key and give it a unique color, then take each value, and give it a unique color. 
+      #The value represents all of the captures that were found lying around under the same dict as the given key. 
+        @under_patterns.each do |k,v|
+          main_array.add_element(
+# so it's  make_name_scope_settings_rand(name,scope,[don't worry about it, but colors you can assign manually]) 
+            make_name_scope_settings_rand(k.to_s.split(".")[0],v.to_s,[])  
+          ) if v.to_s.size > 0
+
+          main_array.add_element(
+            make_name_scope_settings_rand(k.to_s,k.to_s,[]) 
+          ) if k.to_s.size > 0
+        end 
+        
         uuid_key = REXML::Element.new("key")
         uuid_key.add_text("uuid")
         uuid_element = REXML::Element.new("string")
@@ -109,11 +108,8 @@ module RMThemeGen
         dict.add_element uuid_element
 
         rexmlout << plist
-#        rexmlout.write(@outf)
         formatter = REXML::Formatters::Pretty.new
         formatter.compact=true
-
-#        formatter = REXML::Formatters::Default.new
 
         formatter.write(rexmlout, @outf)
         @outf.close	
