@@ -1,0 +1,1296 @@
+markup.quote.markdown
+1
+meta.selector.css entity.name.tag
+14
+entity.name.function, storage.type.function
+1
+support.class.exception
+3
+markup.list
+19
+entity.name.class, entity.name.type.class, support.class, constant.language, variable.other.constant, entity.other.attribute-name, punctuation.definition.entity
+1
+keyword
+51
+source.css
+3
+meta.tag.inline source
+2
+support.constant.property-value.css
+2
+entity.name.tag
+41
+storage
+42
+keyword.markup.element-name
+1
+constant.other, constant.block
+2
+variable.language, variable.other.readwrite.global.pre-defined
+1
+keyword.operator.js
+10
+markup.deleted.diff
+2
+punctuation.definition.prolog.haml
+1
+meta.odd-tab.group11, meta.odd-tab.group10, meta.odd-tab.group9, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block
+1
+entity.name.type.token
+1
+constant.character.escape, string source
+6
+text source string.unquoted, text source text source
+2
+variable, support.variable
+1
+invalid.deprecated
+20
+constant, variable.other
+1
+meta.group.braces.square punctuation.section.scope, meta.group.braces.square meta.delimiter.object.comma, meta.brace.square, punctuation.separator.array, punctuation.section.array
+3
+meta.source.embedded, entity.other.django.tagbraces
+2
+source string source punctuation.section.embedded
+4
+string.regexp.group string.regexp.group string.regexp.group string.regexp.group 
+2
+punctuation.definition, punctuation.separator.variable
+1
+support.function.event-handler.js
+3
+variable.other.readwrite.instance
+2
+meta.tag
+6
+source.ocaml entity.name.tag, source.ocaml meta.record.definition
+1
+text.blog text, text.mail text
+1
+constant.other.date, constant.other.time
+1
+constant.numeric, constant.character.entity, constant.character.entity punctuation.definition.entity
+1
+support.class.js
+2
+meta.brace.erb.return-value
+2
+support.other.variable
+15
+meta.sgml.html meta.doctype, meta.sgml.html meta.doctype entity, meta.sgml.html meta.doctype string, meta.xml-processing, meta.xml-processing entity, meta.xml-processing string
+7
+meta.odd-tab.group5, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block
+1
+source.ruby meta.even-tab, source.ruby meta.even-tab.group2, source.ruby meta.even-tab.group4, source.ruby meta.even-tab.group6, source.ruby meta.even-tab.group8, source.ruby meta.even-tab.group10, source.ruby meta.even-tab.group12
+1
+text.html.markdown markup.list meta.paragraph
+1
+source.ruby
+3
+meta.section entity.name.section, declaration.section entity.name.section
+6
+meta.reference, markup.underline.link
+2
+entity.other.attribute-name.pseudo-element
+1
+text meta.paragraph
+1
+variable.other.readwrite.global.pre-defined, variable.language
+1
+meta.preprocessor.at-rule keyword.control.at-rule
+14
+entity.other.attribute-name.pseudo-class, entity.other.attribute-name.tag.pseudo-class
+2
+meta.link
+1
+declaration.class class-inheritance
+1
+constant.language, keyword.other.unit, constant.other.java, constant.other.unit
+2
+declaration.xml-processing
+2
+entity.other.attribute-name.pseudo-class.css
+1
+string.quoted.double.doctype
+1
+comment.block
+6
+declaration.tag
+3
+storage.type, support.type
+1
+meta.diff.header.from-file
+1
+variable.language, variable.other, variable.parameter.function, keyword.other.special-method, variable.other.block
+1
+constant.other.color.rgb-value.css, support.constant.property-value.css
+2
+meta.header.blog keyword.other, meta.header.mail keyword.other
+1
+string.quoted.other.lt-gt.include
+1
+constant.other.symbol
+1
+meta.subtlegradient
+3
+text string source string source
+2
+entity.name.type.module
+1
+text.html.markdown
+1
+text.latex keyword.control.cite
+2
+entity.name.class.variant
+3
+invalid
+51
+keyword.other
+4
+support.constant.font-name.css
+1
+keyword.other.go.sql
+1
+source.css entity.other.attribute-name.attribute
+1
+string.regexp constant.character.escape
+1
+keyword.operator.comparison
+2
+keyword - keyword.operator, keyword.operator.logical
+1
+source.java.embedded
+1
+meta.odd-tab.group7, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group, meta.section meta.section meta.section meta.section meta.section meta.section meta.section
+1
+punctuation.section.function, meta.brace.curly.function, meta.function-call punctuation.section.scope.ruby, meta.function-call punctuation.separator.object
+1
+source.css meta.scope.property-list meta.property-value punctuation.definition.arguments,
+source.css meta.scope.property-list meta.property-value punctuation.separator.arguments
+1
+support.constant.font-name
+1
+punctuation.section.array
+1
+ meta.round-brackets meta.round-brackets, comment.block.conditional comment.block.conditional
+1
+text.latex meta.end-document, text.latex meta.begin-document, meta.end-document.latex support.function, meta.end-document.latex variable.parameter, meta.begin-document.latex support.function, meta.begin-document.latex variable.parameter
+2
+support.function.properties
+1
+support.constant
+47
+text comment.block -source
+2
+entity.name.tag.doctype
+1
+constant.language, source.js
+1
+constant.numeric.ruby
+3
+meta.headers.blog keyword.other.blog
+1
+text.latex support.function.section
+2
+markup.list.numbered.textile
+1
+entity.other.attribute-name.id
+1
+support.function.activerecord.rails
+3
+keyword.other.unit.css
+1
+source.ocaml keyword.operator.symbol.prefix.floating-point
+6
+meta.round-brackets, meta.property-list, comment.block.conditional
+1
+declaration.section entity.name.section
+1
+text source, string.unquoted
+7
+punctuation - (punctuation.definition.string || punctuation.definition.comment)
+1
+meta.section
+1
+support.other
+1
+variable.other.table-field
+1
+markup.math.multimarkdown
+1
+keyword.control.import
+11
+string
+66
+source comment.block
+8
+text source, meta.scope.django.template
+2
+string.unquoted -string.unquoted.embedded, string.quoted.double.multiline, meta.scope.heredoc
+2
+meta.source.embedded.bound
+1
+string - string source, string source string, meta.scope.heredoc
+1
+keyword.other.unit.css, constant.other.rgb-value.css, constant.numeric.css
+4
+keyword.operator.infix.floating-point.ocaml
+1
+entity.name.type
+20
+support.constant.core.php
+1
+meta.constructor.argument.css
+14
+declaration.function function-result
+1
+meta.preprocessor.c keyword
+11
+declaration.tag, declaration.tag entity, meta.tag, meta.tag entity
+6
+punctuation.section.scope
+1
+meta.xml-processing, declaration.xml-processing
+3
+markup.italic
+12
+meta.assertion, meta.group.assertion keyword.control.group.regexp
+1
+keyword.operator.logical
+1
+meta.function-call support.function - variable
+1
+text.xml
+2
+text.latex meta.environment.list
+2
+support.class, support.type
+8
+variable.other.constant
+11
+meta.property-name
+2
+string.quoted.docinfo.doctype.DTD
+4
+text string source
+2
+text source, string.unquoted.heredoc, source source
+3
+text.html source
+1
+punctuation.definition.string.begin.xml, punctuation.definition.string.end.xml
+1
+entity.name.module,  support.other.module
+2
+meta.tag.inline.any.html,  meta.tag.block.any.html
+3
+declaration.sgml.html declaration.doctype, declaration.sgml.html declaration.doctype entity, declaration.sgml.html declaration.doctype string, declaration.xml-processing, declaration.xml-processing entity, declaration.xml-processing string
+4
+support.type, support.class
+18
+meta.property-group support.constant.property-value.css, meta.property-value support.constant.property-value.css
+14
+meta.diff, meta.diff.header, meta.separator
+4
+entity.other.attribute-name, meta.attribute.smarty
+2
+markup.heading, markup.heading entity
+5
+String Source String, meta.tag string source string
+1
+keyword.storage.php
+1
+meta.tag, declaration.tag
+9
+meta.preprocessor
+7
+entity.name.function.non-terminal.reference
+1
+text.latex keyword.operator.braces
+2
+comment, punctuation.definition.comment
+1
+meta.link, markup.underline
+1
+entity.name.tag.localname.xml
+1
+support.constant.font-name.css, constant.other.color.rgb-value.css
+1
+meta.property-name.css
+2
+support.constant, constant.name
+2
+keyword.other.include.php
+1
+string.interpolated constant.character.escape
+7
+punctuation.separator.parameters
+1
+meta.group.braces.round punctuation.section.scope, 
+meta.group.braces.round meta.delimiter.object.comma, 
+meta.group.braces.curly.function meta.delimiter.object.comma, 
+meta.brace.round
+1
+text
+11
+declaration.function function-argument
+1
+source.ocaml entity.name.type.module
+1
+entity.name.tag.namespace, entity.other.attribute-name.namespace
+5
+source.ocaml keyword.operator.symbol
+3
+embedded
+1
+meta.reference.list markup.underline.link, text.html.textile markup.underline.link
+2
+storage.type.variant.polymorphic, entity.name.type.variant.polymorphic
+1
+support.class
+2
+markup.heading.markdown
+1
+variable.other.readwrite.global
+2
+variable.language
+2
+variable.parameter
+34
+source.js.embedded
+1
+meta.diff.header.to-file
+1
+entity.name.tag.xml, meta.xml-processing.html
+1
+support.constant.tm-language-def, support.constant.name.tm-language-def
+1
+variable.other.php
+1
+string.quoted.single.php
+1
+text.html.markdown meta.paragraph
+1
+punctuation.separator.objects, 
+meta.group.braces.curly meta.delimiter.object.comma, 
+punctuation.separator.key-value -meta.tag, 
+source.ocaml punctuation.separator.match-definition
+1
+meta.brace.erb, source.ruby.embedded.source.brace, punctuation.section.dictionary, punctuation.terminator.dictionary, punctuation.separator.object, punctuation.separator.statement, punctuation.separator.key-value.css
+1
+ meta.round-brackets meta.round-brackets meta.round-brackets meta.round-brackets meta.round-brackets,  comment.block.conditional comment.block.conditional comment.block.conditional comment.block.conditional comment.block.conditional
+1
+support.function, support.constant, support.variable, support.other
+1
+declaration.function function-name
+1
+entity.name.class, declaration.class
+1
+invalid.bad-comma.css
+2
+string.quoted.double.html
+1
+variable.language.this.js
+2
+markup.raw.block
+2
+markup.underline
+10
+meta.function-call.method.without-arguments, meta.function-call.method.without-arguments entity.name.function
+1
+support.function.any-method
+1
+entity.name.function.non-terminal
+1
+variable.other, variable.js
+1
+markup.raw.inline.markdown
+1
+meta.brace.erb
+2
+string.regexp.group string.regexp.group 
+2
+keyword.control
+10
+variable.other.local
+1
+keyword, keyword.operator.setter, keyword.other.special-method, punctuation.delimiter.method, entity.name.tag
+1
+meta.brace.erb, source.ruby.embedded.source.brace, punctuation.section.dictionary, punctuation.terminator.dictionary, punctuation.separator.object
+1
+constant.character.entity
+3
+keyword, storage, support.type
+1
+string variable, variable.parameter.misc.css
+1
+entity.name.function, keyword.other.name-of-parameter.objc
+15
+source source, source.java.embedded
+1
+declaration.tag, meta.tag,declaration.tag.entity, meta.tag.entity
+2
+punctuation.section.function
+1
+entity.name.function.actionscript
+1
+meta.header.value.multimarkdown
+1
+ meta.round-brackets meta.round-brackets meta.round-brackets,  comment.block.conditional comment.block.conditional comment.block.conditional
+1
+comment
+74
+text -text.xml.strict
+2
+keyword.operator.setter
+1
+string -meta.tag -meta.doctype -string.regexp -string.literal -string.interpolated -string.quoted.literal -string.unquoted, variable.parameter.misc.css, text string source string, string.unquoted string, string.regexp string, string.interpolated string, meta.tag source string
+1
+meta.section meta.section meta.section
+1
+meta.tag string -(text source), declaration.tag string -(text source)
+1
+meta.tag string &(text source), declaration.tag string &(text source), source string source
+1
+punctuation.section.function, meta.brace.curly.function, meta.function-call punctuation.section.scope.ruby
+1
+meta.attribute-match.css
+1
+keyword.control.import.python, keyword.control.import.from.python
+1
+punctuation.separator.objects, meta.group.braces.curly meta.delimiter.object.comma, punctuation.separator.key-value -meta.tag
+1
+entity.name.function
+24
+keyword.other.directive.line-number
+2
+text.latex support.function -support.function.textit -support.function.emph
+2
+keyword.other.special-method.ruby
+1
+keyword.operator.assignment
+2
+meta.tag.other, entity.name.tag.style, source entity.other.attribute-name -text.html.basic.embedded , entity.name.tag.script, meta.tag.block.script
+1
+entity.other.attribute-name.html
+1
+entity.name.tag.css
+1
+support.constant.std.php
+1
+text.latex
+2
+text source keyword
+1
+meta.section.html.form
+2
+meta.tag.preprocessor.xml
+5
+meta.function, meta.property.function, declaration.function
+1
+meta.attribute-with-value.id.html, string.quoted.double.html
+1
+source.ruby.rails.embedded.html
+3
+constant.other
+3
+storage.type, support.constant.actionscript.2
+1
+constant.numeric.floating-point
+1
+meta.group.assertion.regexp 
+2
+meta.selector.css, entity.other.attribute-name.pseudo-class.css, entity.name.tag.wildcard.css, entity.other.attribute-name.id.css, entity.other.attribute-name.class.css
+6
+meta.selector.css entity.other.attribute-name.class
+14
+variable.other.global.safer.php
+3
+entity.name.class
+17
+entity.name.type.class.type
+3
+meta.odd-tab.group1, meta.group.braces, meta.block.slate, text.xml.strict meta.tag, meta.paren-group, meta.section
+1
+keyword, variable.language
+1
+keyword.other.special-method
+2
+keyword.other.decorator
+1
+string.regexp constant
+2
+keyword.operator.arithmetic
+1
+punctuation.definition.string
+1
+variable.parameter, variable.other
+3
+punctuation.definition.parameters, variable.parameter.function punctuation.separator.object
+1
+keyword.other.directive
+3
+meta.brace.pipe
+2
+string.regexp comment
+1
+support.class.ruby
+2
+string.regexp constant.character.escape, string.regexp source.ruby.embedded, string.regexp string.regexp.arbitrary-repitition
+9
+other.preprocessor.c entity
+2
+keyword.control.js
+3
+constant
+50
+constant.numeric
+48
+support.type
+10
+meta.header.key.multimarkdown
+1
+meta.brace.curly meta.group
+1
+markup markup -(markup meta.paragraph.list)
+2
+source
+23
+entity.other.attribute-name.pseudo-class
+1
+meta.documentation.tag.param.asdoc
+1
+meta.tag, meta.tag entity
+13
+constant.language.pseudo-variable
+2
+string.regexp punctuation.definition.string keyword.other
+1
+punctuation.section.embedded.ruby
+1
+source entity.name.tag, source entity.other.attribute-name, meta.tag.inline, meta.tag.inline entity
+5
+markup.inserted
+28
+meta.headers.blog
+1
+constant.numeric.integer.int32
+1
+keyword.operator, declaration.function.operator, meta.preprocessor.c.include
+1
+meta.even-tab.group2, meta.group.braces meta.group.braces, meta.block.slate meta.block.slate, text.xml.strict meta.tag meta.tag, meta.group.braces meta.group.braces, meta.tell-block meta.tell-block
+1
+markup.list meta.paragraph
+1
+string.regexp.character-class, string.regexp constant.character.escaped, string.regexp source.ruby.embedded, string.regexp string.regexp.arbitrary-repitition
+1
+source.js meta.group.braces.round, meta.scope.heredoc
+2
+support.variable
+12
+string constant
+19
+variable.other, variable.js, punctuation.separator.variable
+2
+support.type.property-name
+2
+variable.parameter.cite
+2
+markup.link, link, meta.link.inline
+1
+meta.delimiter.object.js
+2
+meta.documentation.tag.see.asdoc
+1
+variable.language, variable.other
+26
+meta.tag.structure, meta.tag.segment
+2
+meta.group.braces.curly punctuation.section.scope, meta.brace.curly
+1
+entity.name.section
+5
+constant.other.rgb-value.css
+1
+meta.tag.xml
+2
+declaration.class class-name
+1
+entity.name.class, support.class.js
+3
+string.regexp.character-class
+4
+markup.hr
+2
+storage.type
+5
+text.latex meta.environment.list meta.environment.list 
+2
+meta.structure.array -punctuation.definition.array, meta.definition.range -punctuation.definition.constant.range
+1
+entity.name.tag.id.haml
+1
+entity.name.function, storage.type.function.js
+3
+string constant.character.escape
+7
+meta.function-call.py
+5
+meta.diff, meta.diff.header
+13
+storage.modifier, meta.tag.inline.any.html, meta.tag.structure.any.html, meta.tag.block.any.html
+1
+meta.thomas_aylott
+2
+entity.name.instance
+1
+entity.name.function, support.function.any-method
+4
+keyword.operator, declaration.function.operator, meta.preprocessor.c.include, punctuation.separator.operator
+1
+source.ruby.rails.embedded.one-line
+2
+class, support.class
+1
+string variable
+16
+entity.name.class, support.class
+1
+meta.tag.inline
+2
+variable.parameter -variable.parameter.misc.css, meta.definition.method  meta.definition.param-list, meta.function.method.with-arguments variable.parameter.function
+2
+meta.odd-tab.group3, meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces, meta.paren-group meta.paren-group meta.paren-group, meta.section meta.section meta.section
+1
+meta.selector.css entity.other.attribute-name.pseudo-class.css,meta.selector.css entity.other.attribute-name.pseudo-element.css
+2
+punctuation.separator.variable
+1
+constant.numeric, string.quoted
+1
+entity.name.tag.doctype.html, meta.sgml.html
+1
+variable.other.php, variable.other.normal
+3
+source.camlp4.embedded.parser.ocaml
+1
+punctuation.separator.parameters.function.js,punctuation.definition.function, punctuation.separator.function-return, punctuation.separator.function-definition, punctuation.definition.arguments, punctuation.separator.arguments
+1
+text source constant.character, text source constant.other
+1
+text.subversion-commit meta.scope.changed-files, text.subversion-commit meta.scope.changed-files.svn meta.diff.separator
+2
+ meta.round-brackets meta.round-brackets meta.round-brackets meta.round-brackets meta.round-brackets meta.round-brackets,  comment.block.conditional comment.block.conditional comment.block.conditional comment.block.conditional comment.block.conditional comment.block.conditional
+1
+meta.selector entity.other.attribute-name.class
+2
+punctuation
+4
+meta.class.instance.constructor keyword.operator.new
+1
+object.property.function.prototype.js
+3
+variable.other
+6
+text.latex support.function
+1
+invalid -invalid.SOMETHING
+1
+entity.name.function, keyword.operator, keyword.other.name-of-parameter
+1
+constant.character.escaped, string source
+1
+entity.other.attribute-name.class.css
+1
+keyword.other.phpdoc.php
+1
+entity.name.type.module-type.ocaml
+1
+meta.even-tab.group8, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block
+1
+meta.tag.other, entity.name.tag.style, entity.name.tag.script, meta.tag.block.script, source.js.embedded punctuation.definition.tag.html, source.css.embedded punctuation.definition.tag.html
+1
+meta.tag, declaration.tag, entity.name.tag, entity.other.attribute-name
+5
+string.regexp.group
+4
+source.regexp keyword.operator
+2
+meta.doctype, meta.tag.sgml-declaration.doctype, meta.tag.sgml.doctype
+2
+meta.selector entity.other.attribute-name.id
+2
+meta.preprocessor.c
+14
+string.quoted.literal, string.quoted.double.ruby.mod
+2
+meta.odd-tab.group11
+1
+object.property.function, meta.definition.method
+1
+meta.class.instance.constructor
+2
+support.function
+59
+declaration.function function-arg-type
+1
+text.html declaration.tag, text.html meta.tag, text.html entity.name.tag.xhtml
+1
+meta.selector
+2
+text.latex meta.environment meta.environment
+1
+ meta.round-brackets meta.round-brackets meta.round-brackets meta.round-brackets,  comment.block.conditional comment.block.conditional comment.block.conditional comment.block.conditional
+1
+meta.footnote
+2
+support.function - variable
+1
+entity.other.attribute-name.class
+1
+meta.footnote.reference.def.multimarkdown
+1
+variable.other.constant.ruby
+1
+keyword, support.constant.property-value, constant.other.color
+2
+constant.numeric.integer.nativeint
+1
+markup.raw
+10
+string.quoted.single.brace, string.quoted.double.brace
+2
+declaration.doctype
+2
+meta.property.vendor.microsoft.trident.5, 
+meta.property.vendor.microsoft.trident.5 support.type.property-name,
+meta.property.vendor.microsoft.trident.5 punctuation.separator.key-value,
+meta.property.vendor.microsoft.trident.5 punctuation.terminator.rule
+1
+meta.even-tab.group8, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group, meta.section meta.section meta.section meta.section meta.section meta.section meta.section meta.section
+1
+storage.type.namespace
+1
+markup.underline.link
+2
+keyword.operator.symbolic, entity.other.attribute-name
+1
+markup.list.unnumbered.textile
+1
+text.latex variable.parameter.label
+2
+punctuation.section.scope.curly, punctuation.section.scope
+1
+meta.property-value, constant.other.color
+1
+string.unquoted.cdata.xml
+1
+text.tex.latex support.function
+2
+variable.parameter.function
+2
+text.latex meta.environment.list meta.environment.list meta.environment.list 
+2
+source.ocaml keyword.operator.symbol.prefix
+4
+source.ocaml keyword.operator
+1
+keyword.preprocessor directive
+3
+punctuation.terminator, meta.delimiter, punctuation.separator.method
+2
+meta.block.slate
+2
+entity.name.type.class-type
+1
+text.tex.latex meta.function.environment
+2
+entity.name.instance, entity.name.type.instance
+1
+declaration.tag, meta.tag
+1
+text.html source.active4d
+1
+constant.character, punctuation.definition.comment, punctuation.delimiter.object
+1
+meta.separator
+6
+meta.citation.reference.def.multimarkdown
+1
+meta.leading-space
+1
+punctuation.terminator.statement, meta.delimiter.statement.js
+2
+entity.name
+13
+keyword.exception
+1
+text.latex keyword.operator.delimiter
+2
+other.preprocessor.c
+5
+support.property, source.css
+1
+punctuation.delimiter.method
+1
+constant.character.escaped, constant.character.escape, string source
+2
+support.type.property-name.css
+22
+comment.other.server-side-include.xhtml, comment.other.server-side-include.html
+1
+text.latex constant.language.general
+2
+meta.header.blog string.unquoted.blog, meta.header.mail string.unquoted
+1
+comment.line
+2
+declaration.function, entity.name.function
+1
+other.preprocessor
+5
+variable
+33
+meta.function markup
+1
+constant.character.escaped, string source - string.unquoted.embedded, string string source
+1
+punctuation.section.embedded
+2
+source.ocaml constant.numeric.floating-point
+5
+constant.numeric.integer.int64
+1
+string source
+6
+text.plain
+1
+entity.name.function.frame
+1
+source.php
+2
+source.ruby entity.name
+1
+declaration.tag.inline, declaration.tag.inline entity, source entity.name.tag, source entity.other.attribute-name, meta.tag.inline, meta.tag.inline entity
+4
+variable.language, variable.other, variable
+1
+meta.scope.property-list
+2
+string -meta.tag -meta.doctype -string.regexp -string.literal -string.interpolated -string.quoted.literal -string.unquoted, variable.parameter.misc.css, text string source string, string.unquoted string, string.regexp string
+1
+entity.name.tag.wildcard, entity.other.attribute-name.universal
+2
+entity.name.reference
+2
+declaration.doctype.DTD
+2
+meta.scope.changed-files.svn, markup.inserted.svn, markup.changed.svn, markup.deleted.svn
+1
+meta.attribute-with-value
+1
+markup.changed
+19
+keyword.operator
+15
+keyword, keyword.operator.logical
+1
+source.diff
+1
+punctuation.separator
+1
+constant, variable.other.constant
+1
+constant.language
+42
+entity.other
+1
+keyword.other.special-method, meta.function-call entity.name.function -(meta.function-call meta.function), support.function - variable
+2
+source.plist string.unquoted, source.plist keyword.operator
+3
+entity.other.attribute-name
+46
+declaration.section section-name
+1
+meta.selector.css entity.other.attribute-name.tag.pseudo-class
+7
+text.latex meta.environment.list meta.environment.list meta.environment.list meta.environment.list 
+2
+source.ocaml keyword.other.directive.line-number
+1
+meta.diff
+1
+text.latex keyword.operator.brackets
+2
+source.ocaml keyword.operator.symbol.infix
+4
+source.camlp4.embedded
+1
+text.blog, text.mail
+1
+meta.assertion, meta.group.assertion keyword.control.group.regexp, meta.group.assertion punctuation.definition.group
+1
+keyword, storage.type.function.php
+1
+string.unquoted.embedded, text source, string.unquoted
+1
+support.function.any-method - punctuation
+1
+meta.section.html.head
+2
+meta.headers.blog string.unquoted.blog
+1
+meta.odd-tab.group9, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group, meta.section meta.section meta.section meta.section meta.section meta.section meta.section meta.section meta.section
+1
+markup.inserted.diff
+2
+string, meta.verbatim
+5
+other.preprocessor, entity.name.preprocessor
+2
+string.regexp
+33
+markup.quote
+17
+entity.other.inherited-class
+64
+invalid.SOMETHING
+1
+meta.header.multimarkdown
+1
+punctuation.definition -punctuation.definition.comment, punctuation.separator.variable
+1
+string.interpolation
+1
+text.latex meta.environment.list meta.environment.list meta.environment.list meta.environment.list meta.environment.list meta.environment.list 
+2
+text.tex.latex meta.function.environment meta.function.environment
+2
+string.interpolated, string.interpolation
+1
+text.html.ruby source
+8
+meta.group.braces.square punctuation.section.scope, meta.group.braces.square meta.delimiter.object.comma, meta.brace.square, punctuation.separator.array, punctuation.section.array, punctuation.definition.array, punctuation.definition.constant.range
+1
+comment -comment.line
+1
+storage, support.type
+1
+meta.source.embedded source
+1
+markup.bold
+13
+variable.other.readwrite.class
+2
+string -string.unquoted.old-plist -string.unquoted.heredoc, string.unquoted.heredoc string
+2
+string.interpolated variable
+1
+meta.line.entry.logfile, meta.line.exit.logfile
+5
+support
+26
+source string source
+6
+string.regexp.group string.regexp.group string.regexp.group 
+2
+text.latex meta.environment.list meta.environment.list meta.environment.list meta.environment.list meta.environment.list 
+2
+source.ruby.rails.embedded.return-value.one-line
+2
+text.html.markdown markup.heading
+1
+source.ruby.embedded.source punctuation.section.embedded.ruby
+1
+punctuation.separator.key-value
+1
+variable.other.global.php
+1
+support.class.collection
+1
+entity
+22
+markup.heading
+15
+meta.function -(meta.tell-block), meta.property.function, declaration.function
+1
+meta.property-value.css
+1
+meta.doctype.DTD, declaration.doctype.DTD
+3
+support.type.exception
+2
+meta.property.vendor.microsoft.trident.4, 
+meta.property.vendor.microsoft.trident.4 support.type.property-name,
+meta.property.vendor.microsoft.trident.4 punctuation.terminator.rule
+1
+storage -storage.modifier
+2
+keyword.type.variant
+4
+meta.selector.css entity.other.attribute-name.id
+14
+markup.bold.textile
+1
+constant.character.escaped, constant.character.escape, string source, string source.ruby
+10
+source.ocaml keyword.operator.symbol.infix.floating-point
+6
+storage.modifier
+6
+meta.odd-tab.group5, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group, meta.section meta.section meta.section meta.section meta.section
+1
+punctuation.separator.key-value.css
+1
+constant, support.constant
+3
+meta.source.embedded.return-value
+1
+meta.section meta.section
+1
+constant.other.placeholder.py
+1
+support.constant.property-value
+1
+constant.language.null.actionscript
+1
+meta.even-tab.group4, meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.tell-block meta.tell-block meta.tell-block meta.tell-block
+1
+meta.tag, declaration.tag, entity.name.tag
+2
+keyword.preprocessor
+3
+text source
+15
+text.latex entity.name.section -meta.group -keyword.operator.braces
+2
+meta.even-tab.group2, meta.group.braces meta.group.braces, meta.block.slate meta.block.slate, text.xml.strict meta.tag meta.tag, meta.group.braces meta.group.braces, meta.paren-group meta.paren-group, meta.section meta.section
+1
+meta.cast
+5
+meta.definition.method
+1
+string.interpolated
+12
+constant.numeric.floating-point.ocaml
+1
+meta.even-tab.group6, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block
+1
+markup.quote markup.quote
+1
+string.quoted.double.include
+1
+storage.type.method
+9
+string.regexp.arbitrary-repitition
+2
+keyword.other.unit
+4
+meta.even-tab.group6, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group meta.paren-group, meta.section meta.section meta.section meta.section meta.section meta.section
+1
+constant.character, constant.other, punctuation.definition.constant
+1
+entity.name.tag.class.haml
+1
+markup.table.multimarkdown
+1
+constant.character, constant.other
+15
+markup.deleted
+30
+entity.name.type.variant
+2
+support.class, support.type, entity.name
+1
+markup comment
+5
+source string.interpolated source
+2
+constant.language.boolean
+1
+meta.diff.range
+1
+meta.property-value
+2
+0comment
+1
+text.latex keyword.control.ref
+2
+text.latex meta.group.braces
+2
+meta.diff.header, meta.separator.diff, meta.diff.index, meta.diff.range
+9
+entity.name.function, entity.name.preprocessor
+2
+meta.tag.sgml.html
+1
+entity.other.attribute-name, meta.tag punctuation.definition.string
+2
+meta.selector entity.name.tag
+2
+meta.tag.sgml.doctype, meta.tag.sgml.doctype entity, meta.tag.sgml.doctype string, meta.tag.preprocessor.xml, meta.tag.preprocessor.xml entity, meta.tag.preprocessor.xml string
+6
+meta.brace.curly meta.group.css
+1
+text.subversion-commit
+2
+meta.tag, declaration.tag, meta.doctype
+1
+entity.parameter.attribute
+1
+entity.name.preprocessor
+5
+meta.odd-tab.group7, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block meta.tell-block
+1
+punctuation.section.property-list.css
+1
+punctuation, punctuation.definition.string, variable.other, meta.tag, support.type.property-name
+1
+text source.ruby
+1
+text.latex markup.raw
+2
+entity.name.type.token.reference
+1
+entity.name.class, entity.name.type.class, entity.name.type.module
+2
+punctuation.separator.inheritance
+1
+string | punctuation.definition.string
+1
+meta.doctype, declaration.doctype
+3
+meta.class -meta.class.instance, declaration.class, meta.definition.class, declaration.module
+2
+comment punctuation
+3
+meta.tag string -source -punctuation, text source text meta.tag string -punctuation
+2
+source -meta.source.embedded
+1
+markup.link
+1
+support.type.function.global, support.class
+1
+storage.type.import
+1
+markup.raw.block.markdown
+1
+meta.tag.block, meta.tag.xml, meta.tag.key
+2
+entity.other.attribute-name.id.css
+1
+storage.type.user-defined
+3
+entity.name.type.class
+2
+keyword.markup.attribute-name
+2
+text.latex meta.environment
+1
+meta.method-return.actionscript.3
+1
+punctuation.definition.string -meta.tag
+2
+meta.group.braces.round punctuation.section.scope, meta.group.braces.round meta.delimiter.object.comma, meta.brace.round
+3
+text.html.markdown string
+1
+constant.character.escape
+1
+text.latex meta.label.reference
+2
+string.quoted source
+10
+constant.character
+7
+source.css meta.attribute-selector keyword.operator.comparison
+1
+support.class.prototype.js
+3
+meta.link.reference.def.markdown
+1
+string.literal
+8
+text.latex variable.parameter.label.reference
+2
+markup.heading | markup.heading entity.name
+1
+meta.tag.meta
+2
+string constant.other.placeholder
+5
+meta.selector.css, entity.name.tag.css, entity.other.attribute-name.id.css, entity.other.attribute-name.class.css
+2
+punctuation.section.embedded -(source string source punctuation.section.embedded), meta.brace.erb.html
+3
+meta.function meta.group.braces.curly.function -(meta.group meta.group), meta.function meta.odd-tab.group1
+1
+storage.type.accessor
+1
+entity.name.tag, declaration.tag
+3
+meta.tag.form, meta.tag.block.form
+2
+text.blog -(text.blog text)
+1
+declaration.function argument-name
+1
+keyword, storage
+18
+meta.tag.sgml.doctype
+2
+meta.source.embedded
+1
+invalid.illegal
+17
+source.ocaml support.other.module
+1
+meta.line.error.logfile
+5
+text.tex.latex entity
+1
+meta.syntax
+2
+keyword.operator.prefix.floating-point.ocaml
+1
+punctuation.terminator.rule.css
+1
+text.html.ruby
+3
+string.regexp punctuation.definition.string, string.quoted.literal punctuation.definition.string, string.quoted.double.ruby.mod punctuation.definition.string
+2
+meta.property.function, meta.function
+1
+meta.odd-tab.group3, meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces, meta.tell-block meta.tell-block meta.tell-block
+1
+invalid.trailing-whitespace
+5
+meta.property-value support.constant.named-color.css, meta.property-value constant
+14
+meta.even-tab.group10
+1
+citation.possible
+1
+entity.other.inherited-class, entity.name.module
+2
+punctuation.definition.entity
+1
+meta.block.content.slate 
+2
+meta.even-tab.group4, meta.group.braces meta.group.braces meta.group.braces meta.group.braces , meta.block.slate meta.block.slate meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag, meta.group.braces meta.group.braces meta.group.braces meta.group.braces, meta.paren-group meta.paren-group meta.paren-group meta.paren-group, meta.section meta.section meta.section meta.section
+1
+punctuation.definition.tag
+3
+meta.odd-tab.group1, meta.group.braces, meta.block.slate, text.xml.strict meta.tag, meta.tell-block meta.tell-block
+1
+string.quoted.double.php
+1
+invalid.deprecated.trailing-whitespace
+9
+meta.function.section
+1
+meta.function-call
+3

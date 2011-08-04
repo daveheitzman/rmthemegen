@@ -13,6 +13,8 @@
 	<string>^\s*(\}|// \}\}\}$)</string>
 	<key>keyEquivalent</key>
 	<string>^~J</string>
+
+
 	<key>name</key>
 	<string>Java</string>
 	<key>patterns</key>
@@ -94,6 +96,7 @@
 			<string>#code</string>
 		</dict>
 	</array>
+
 	<key>repository</key>
 	<dict>
 		<key>all-types</key>

@@ -24,9 +24,6 @@ require File.dirname(__FILE__)+'/rmthemegen_to_css'
 module RMThemeGen
 
   class ThemeGenerator < RMThemeParent
-
-    
-    
     def to_textmate
       #it will save the theme file ".tmTheme" in the same directory as other themes
       #it will return the full name and path of that theme file.
@@ -77,18 +74,11 @@ module RMThemeGen
           :selection=>"#"+@document_globals[:SELECTION_BACKGROUND].upcase) 
         ) 
     
-        process_plists()
+    process_plists()
 
-=begin
-        @for_tm_output.each do |k,v|
-          main_array.add_element(
-            make_name_scope_settings_rand(k.to_s,k.to_s,[]) 
-          )
-        end
-=end 
-
-      #so the idea here is to take each key and give it a unique color, then take each value, and give it a unique color. 
-      #The value represents all of the captures that were found lying around under the same dict as the given key. 
+        #so the idea here is to take each key and give it a unique color, then take each value, and give it a unique color. 
+        #The value represents all of the captures that were found lying around under the same dict as the given key. 
+        @under_patterns={}
         @under_patterns.each do |k,v|
           main_array.add_element(
 # so it's  make_name_scope_settings_rand(name,scope,[don't worry about it, but colors you can assign manually]) 
@@ -99,7 +89,30 @@ module RMThemeGen
             make_name_scope_settings_rand(k.to_s,k.to_s,[]) 
           ) if k.to_s.size > 0
         end 
+
+    get_scopes_from_themefiles()
+
+        @use_scope_threshhold = 5 # a scope will be used only if it appears at least this number of times in the existing themes 
+        co2 =0
+        @scopes_found.each do |k,v|
+        puts k.to_s+" ==> "+v.to_s if v.to_i >= @use_scope_threshhold
+          begin
+            main_array.add_element(
+            # so it's  make_name_scope_settings_rand(name,scope,[don't worry about it, but colors you can assign manually]) 
+              make_name_scope_settings_rand(k.to_s.split(".")[0],k.to_s,[])  
+            ) 
+            co2 += 1 
+          end if ( k.to_s.size > 0 && v.to_i >= @use_scope_threshhold )
         
+#          main_array.add_element(
+#            make_name_scope_settings_rand(k.to_s,k.to_s,[]) 
+#          ) if k.to_s.size > 0
+        end 
+        puts ">> rules being added to create theme <<"
+        puts 'rmtg187_new_textmate.rb adding rules to generate theme file' 
+        puts " #{co2.to_s} rules used" 
+        puts ">> rules being added to create theme <<"
+        puts 
         uuid_key = REXML::Element.new("key")
         uuid_key.add_text("uuid")
         uuid_element = REXML::Element.new("string")
