@@ -19,35 +19,23 @@ require 'rexml/document'
 require File.dirname(__FILE__)+"/token_list"
 require File.dirname(__FILE__)+'/rgb_contrast_methods'
 require File.dirname(__FILE__)+'/rmthemegen_to_css'
-#require File.dirname(__FILE__)+'/plist_to_tokenlist'
+require File.dirname(__FILE__)+'/rmthemegen_to_css'
+require File.dirname(__FILE__)+'/plist_to_tokenlist'
 
 module RMThemeGen
 
   class ThemeGenerator < RMThemeParent
-    def to_textmate
+    
+    def create_textmate_theme(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
+    #returns path to file that it created, which is an xml file that should work in textmate.  
+      handle_rand_seed(rand_seed)
+      before_create(outputdir, bg_color_style, colorsets, rand_seed) 
       #it will save the theme file ".tmTheme" in the same directory as other themes
       #it will return the full name and path of that theme file.
       
-      #has a theme been generated? if not, return nil
-      #read_tmfile
-      if !@theme_successfully_created then return nil end
     
       #bg_color_style: 0 = blackish, 1 = whitish, 2 = any color
       @theme_successfully_created=false
-      @xml_textmate_out = {
-                  :plist => [{:version=>"1.0"}],
-                  :dict=>   [{:key=>["name"], 
-                    :string =>[@themename],
-                    :array=>[
-                      {
-                      :dict => [{
-                        :key =>["settings"],
-                        :dict=> [{"string"=>["#000000","#FFFFFF"],
-                                  "key"=>["background","foreground"] 
-                                }]
-                    }]}]
-                  }]
-                }
         @savefile = "rmt_"+@themename+".tmTheme"
         @outf = File.new(@opts[:outputdir]+"/"+@savefile, "w+")
         rexmlout = REXML::Document.new
@@ -190,6 +178,14 @@ module RMThemeGen
         new_dict.add_element te4
         new_dict.add_element te5
         fontStyle = '' #fontstyles[@textmate_hash[ruby_symbol][:FONT_TYPE].to_i ]
+        if scope.upcase.include? "ITALIC" || rand < (@italic_chance/2) 
+          fontStyle +="italic "
+        end 
+        if scope.upcase.include? "BOLD" || rand < (@bold_chance/2)
+          fontStyle += "bold "
+        end 
+
+
         di1 = make_dict(:foreground => "#"+randcolor(:bg_rgb=>@backgroundcolor).upcase, :fontStyle=>fontStyle) 
         new_dict.add_element di1
       return new_dict

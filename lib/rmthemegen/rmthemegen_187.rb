@@ -18,6 +18,7 @@ require 'xmlsimple'
 require File.dirname(__FILE__)+"/token_list"
 require File.dirname(__FILE__)+'/rgb_contrast_methods'
 require File.dirname(__FILE__)+'/rmthemegen_to_css'
+require File.dirname(__FILE__)+'/rmtg187_new_textmate.rb'
 
 module RMThemeGen
 
@@ -337,11 +338,9 @@ module RMThemeGen
       end
       
       @xmlout[:scheme][0][:attributes] = newopt
-    end 
-  
-    # (output directory, bg_color_style, colorsets []) 
-    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
-    #bg_color_style: 0 = blackish, 1 = whitish, 2 = any color
+    end     
+
+    def handle_rand_seed(rand_seed=nil)
       if rand_seed then
         #if a random seed is given, we need to reset the colorsets and bgstyle according to random numbers created AFTER the generator is seeded, forsaking whatever came in as parameters, since they are irrelevant if the desire is to recreate a previous theme from a random number seed
         Kernel.srand(rand_seed) 
@@ -349,12 +348,14 @@ module RMThemeGen
         bg_color_style=rand(3).to_i
         reset_colorsets
       else
-      #the reason we want the native seed used by this ruby implementation is that creating one ourselves might be erroneous in not using enough bits. There is a "formula" used by MRI but we don't know what it is, so we'll just harvest the number from a fresh call to srand, then reseed the rng using that number. 
+      #the reason we want the native seed used by this ruby implementation is that creating one ourselves might be erroneous in not using enough bits, or otherwise being insufficiently entropic. There is a "formula" used by MRI but we don't know what it is, so we'll just harvest the number from a fresh call to srand, then reseed the rng using that number. 
         Kernel.srand
         @random_seed = Kernel.srand #this sets @random_seed to the seed used in the call above
         Kernel.srand(@random_seed)
       end
-      @theme_successfully_created=false
+    end 
+
+    def before_create(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
       defaults = {}
       defaults[:outputdir] = outputdir
       defaults[:bg_color_style] = bg_color_style
@@ -386,6 +387,21 @@ module RMThemeGen
         :min_bright => @background_min_brightness )# "0"
       @document_globals[:backgroundcolor] = @backgroundcolor
       @themename = randthemename
+    end #before_create
+
+    def make_rm_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
+      make_theme_file(outputdir, bg_color_style, colorsets, rand_seed)
+    end
+    
+    def make_tm_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
+      create_textmate_theme(outputdir, bg_color_style, colorsets, rand_seed)
+    end 
+    # (output directory, bg_color_style, colorsets []) 
+    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
+    #bg_color_style: 0 = blackish, 1 = whitish, 2 = any color, from #000000 to #FFFFFF
+      handle_rand_seed(rand_seed)
+      @theme_successfully_created=false
+      before_create(outputdir, bg_color_style, colorsets, rand_seed)  
       @xmlout = {:scheme=>
                 [{
                   :attributes => [{:option=>[
@@ -400,7 +416,7 @@ module RMThemeGen
                 }]
                 }
         @savefile = randfilename(@themename)
-        @outf = File.new(opts[:outputdir]+"/"+@savefile, "w+")
+        @outf = File.new(@opts[:outputdir]+"/"+@savefile, "w+")
         set_element_colors
         set_doc_colors
         set_doc_options
