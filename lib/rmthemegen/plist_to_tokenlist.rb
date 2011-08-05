@@ -22,6 +22,11 @@ module RMThemeGen
   class ThemeGenerator < RMThemeParent
     attr_reader :for_tm_output, :repository_names, :under_patterns, :scopes_found
 
+    # process_plists is an attempt to take from teh syntax files that are included as "textmate bundles" 
+    # and use the tokens described to create syntax-themes. This attempt has so far been unsuccessful.
+    # all of the example theme files found in the wild do not use the tokens found in the syntax files,
+    # so there is some other way it has of mapping code to symbols. 
+    
     def process_plists
       @for_tm_output = {}
       files_look_in = Dir[File.dirname(__FILE__)+"/syntaxes/*.plist"]
@@ -153,7 +158,8 @@ module RMThemeGen
     def get_scopes_from_themefiles
       @scopes_found = {}
       @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/*.tmTheme"]
- #     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/Brilliance Black.tmTheme"]
+ #     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/Brilliance Dull.tmTheme"]
+      @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/choco.tmTheme"]
       puts '@files_look_in.inspect'
       puts @files_look_in.inspect
       
@@ -181,13 +187,21 @@ module RMThemeGen
             puts "an exception in process_plists(): "+e.to_s 
           end
         } 
-      puts "Found #{@num_sf} scopes in file #{syntax_file.to_s}"    
+#      puts "Found #{@num_sf} scopes in file #{syntax_file.to_s}"    
       syntax_file.close       
       end #files_look_in.each
-      outf=File.new("scopes_harvested","w")
-        @scopes_found.each do |s|
-        outf.puts s
+       @use_scope_threshhold = 0 # a scope will be used only if it appears at least this number of times in the existing themes 
+      @scopes_found.each do |k,v|
+        puts k+"->"+v.to_s
+        @scopes_found.delete(k) unless v >= @use_scope_threshhold
       end 
+
+      outf=File.new("scopes_harvested","w")
+        outf.printf "%s","["
+        @scopes_found.each do |k,v|
+        outf.printf("%s","'"+k.to_s+"', ")
+        end 
+      outf.printf "]"
       outf.close 
     puts "harvested #{@scopes_found.size} scopes from #{@files_look_in.size} files."  
 

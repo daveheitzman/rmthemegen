@@ -32,7 +32,7 @@ Kernel.exit
  
 l = RMThemeGen::ThemeGenerator.new
 
-1.times do 
+10.times do 
 #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 0 ) 
 #  puts l.make_theme_file(ENV["PWD"],0,[{:r=>0.0,:g=>0.0},{:r=>1.0,:g=>0.0,:b=>0.0}]) 
   puts l.make_theme_file(ENV["PWD"],0,nil,nil) 

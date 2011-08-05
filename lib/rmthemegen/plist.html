@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="3600" />
+  <meta name="revisit-after" content="2 days" />
+  <meta name="robots" content="index,follow" />
+  <meta name="publisher" content="Dichodaemon" />
+  <meta name="copyright" content="Dichodaemon" />
+
+  <meta name="author" content="Dichodaemon" />
+  <meta name="distribution" content="global" />
+  <meta name="description" content="Ocatarinetabellachithchix" />
+  <meta name="keywords" content="arzaversperia flexilimosos toves" />
+  <link rel="stylesheet" type="text/css" media="screen,projection,print" href="css/espresso_libre.css" />
+  <title>espresso_libre</title>
+
+</head>
+
+<body>
+<pre class="espresso_libre"><span class="line-numbers">   1 </span> <span class="Comment"><span class="Comment">#</span>**********************************************************************</span>
+<span class="line-numbers">   2 </span> <span class="Comment"><span class="Comment">#</span>*                                                                    *</span>
+<span class="line-numbers">   3 </span> <span class="Comment"><span class="Comment">#</span>*  RmThemeGen - a ruby script to create random, usable themes for    *</span>
+<span class="line-numbers">   4 </span> <span class="Comment"><span class="Comment">#</span>*  text editors. Currently supports RubyMine 3.X.X                   *</span>
+<span class="line-numbers">   5 </span> <span class="Comment"><span class="Comment">#</span>*                                                                    *</span>
+<span class="line-numbers">   6 </span> <span class="Comment"><span class="Comment">#</span>*  By David Heitzman, 2011                                           *</span>
+<span class="line-numbers">   7 </span> <span class="Comment"><span class="Comment">#</span>*                                                                    *</span>
+<span class="line-numbers">   8 </span> <span class="Comment"><span class="Comment">#</span>**********************************************************************</span>
+<span class="line-numbers">   9 </span> 
+<span class="line-numbers">  10 </span> <span class="Comment"><span class="Comment">#</span>this is a version of the software that should work with ruby 1.8.7</span>
+<span class="line-numbers">  11 </span> <span class="Comment"><span class="Comment">#</span>originally it was written and tested for ruby 1.9.2</span>
+<span class="line-numbers">  12 </span> 
+<span class="line-numbers">  13 </span> <span class="Keyword">require</span> <span class="String"><span class="String">'</span>rubygems<span class="String">'</span></span>
+<span class="line-numbers">  14 </span> <span class="Keyword">require</span> <span class="String"><span class="String">'</span>color<span class="String">'</span></span>
+<span class="line-numbers">  15 </span> <span class="Keyword">require</span> <span class="String"><span class="String">'</span>xmlsimple<span class="String">'</span></span>
+<span class="line-numbers">  16 </span> <span class="Keyword">require</span> <span class="String"><span class="String">'</span>rexml/document<span class="String">'</span></span>
+<span class="line-numbers">  17 </span> <span class="Keyword">require</span> <span class="LibraryObject">File</span>.<span class="FunctionName">dirname</span>(<span class="Variable">__FILE__</span>)<span class="Keyword">+</span><span class="String"><span class="String">&quot;</span>/token_list<span class="String">&quot;</span></span>
+<span class="line-numbers">  18 </span> <span class="Keyword">require</span> <span class="LibraryObject">File</span>.<span class="FunctionName">dirname</span>(<span class="Variable">__FILE__</span>)<span class="Keyword">+</span><span class="String"><span class="String">'</span>/rgb_contrast_methods<span class="String">'</span></span>
+<span class="line-numbers">  19 </span> <span class="Keyword">require</span> <span class="LibraryObject">File</span>.<span class="FunctionName">dirname</span>(<span class="Variable">__FILE__</span>)<span class="Keyword">+</span><span class="String"><span class="String">'</span>/rmthemegen_to_css<span class="String">'</span></span>
+<span class="line-numbers">  20 </span> 
+<span class="line-numbers">  21 </span> <span class="Keyword">module</span> <span class="TypeName">RMThemeGen</span>
+<span class="line-numbers">  22 </span>   <span class="Keyword">class</span> <span class="TypeName">ThemeGenerator<span class="InheritedClassName"> <span class="InheritedClassName">&lt;</span> RMThemeParent</span></span>
+<span class="line-numbers">  23 </span>     <span class="Keyword">attr_reader</span> <span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>for_tm_output</span>, <span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>repository_names</span>, <span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>under_patterns</span>, <span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>scopes_found</span>
+<span class="line-numbers">  24 </span> 
+<span class="line-numbers">  25 </span> <span class="Comment">    <span class="Comment">#</span> process_plists is an attempt to take from teh syntax files that are included as &quot;textmate bundles&quot; </span>
+<span class="line-numbers">  26 </span> <span class="Comment">    <span class="Comment">#</span> and use the tokens described to create syntax-themes. This attempt has so far been unsuccessful.</span>
+<span class="line-numbers">  27 </span> <span class="Comment">    <span class="Comment">#</span> all of the example theme files found in the wild do not use the tokens found in the syntax files,</span>
+<span class="line-numbers">  28 </span> <span class="Comment">    <span class="Comment">#</span> so there is some other way it has of mapping code to symbols. </span>
+<span class="line-numbers">  29 </span>     
+<span class="line-numbers">  30 </span>     <span class="Keyword">def</span> <span class="FunctionName">process_plists</span>
+<span class="line-numbers">  31 </span>       <span class="Variable"><span class="Variable">@</span>for_tm_output</span> <span class="Keyword">=</span> {}
+<span class="line-numbers">  32 </span>       files_look_in <span class="Keyword">=</span> <span class="LibraryObject">Dir</span>[<span class="LibraryObject">File</span>.<span class="FunctionName">dirname</span>(<span class="Variable">__FILE__</span>)<span class="Keyword">+</span><span class="String"><span class="String">&quot;</span>/syntaxes/*.plist<span class="String">&quot;</span></span>]
+<span class="line-numbers">  33 </span>      files_look_in <span class="Keyword">=</span> <span class="LibraryObject">Dir</span>[<span class="LibraryObject">File</span>.<span class="FunctionName">dirname</span>(<span class="Variable">__FILE__</span>)<span class="Keyword">+</span><span class="String"><span class="String">&quot;</span>/syntaxes/Ruby.plist<span class="String">&quot;</span></span>]
+<span class="line-numbers">  34 </span>       puts files_look_in.<span class="FunctionName">inspect</span>
+<span class="line-numbers">  35 </span>       
+<span class="line-numbers">  36 </span>       files_look_in.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">f</span>|
+<span class="line-numbers">  37 </span>         puts <span class="String"><span class="String">&quot;</span>opening file <span class="String">&quot;</span></span><span class="Keyword">+</span>f.<span class="FunctionName">to_s</span> 
+<span class="line-numbers">  38 </span>         syntax_file <span class="Keyword">=</span> <span class="LibraryObject">File</span>.<span class="FunctionName">open</span>(f,<span class="String"><span class="String">&quot;</span>r<span class="String">&quot;</span></span>)
+<span class="line-numbers">  39 </span>         indoc <span class="Keyword">=</span> <span class="Variable">REXML</span>::<span class="FunctionName">Document</span>.<span class="FunctionName">new</span>( syntax_file )
+<span class="line-numbers">  40 </span> 
+<span class="line-numbers">  41 </span> 
+<span class="line-numbers">  42 </span>         <span class="FunctionName">visit_all_nodes</span>(indoc.<span class="FunctionName">root</span>) { |<span class="Variable">k</span>|
+<span class="line-numbers">  43 </span>           <span class="Keyword">begin</span>
+<span class="line-numbers">  44 </span>             <span class="Keyword">if</span> (k.<span class="FunctionName">respond_to?</span>(<span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>local_name</span>) )
+<span class="line-numbers">  45 </span>               <span class="Keyword">if</span> (k.<span class="FunctionName">parent</span>.<span class="FunctionName">name</span><span class="Keyword">==</span><span class="String"><span class="String">'</span>dict<span class="String">'</span></span> <span class="Keyword">&amp;&amp;</span> (k.<span class="FunctionName">previous_element</span>.<span class="FunctionName">respond_to?</span>(<span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>local_name</span>)  ) )
+<span class="line-numbers">  46 </span>                 <span class="Keyword">if</span> ( k.<span class="FunctionName">previous_element</span>.<span class="FunctionName">local_name</span><span class="Keyword">==</span><span class="String"><span class="String">'</span>key<span class="String">'</span></span> <span class="Keyword">&amp;&amp;</span> k.<span class="FunctionName">previous_element</span>.<span class="FunctionName">text</span><span class="Keyword">==</span><span class="String"><span class="String">&quot;</span>name<span class="String">&quot;</span></span> )
+<span class="line-numbers">  47 </span>                 <span class="Variable"><span class="Variable">@</span>for_tm_output</span>[k.<span class="FunctionName">text</span>.<span class="FunctionName">to_s</span>]<span class="Keyword">=</span><span class="String"><span class="String">'</span><span class="String">'</span></span>
+<span class="line-numbers">  48 </span>                 <span class="Keyword">end</span>
+<span class="line-numbers">  49 </span>               <span class="Keyword">end</span>
+<span class="line-numbers">  50 </span>             <span class="Keyword">end</span>
+<span class="line-numbers">  51 </span>           <span class="Keyword">rescue</span> =&gt; e
+<span class="line-numbers">  52 </span>             puts <span class="String"><span class="String">&quot;</span>an exception in process_plists(): <span class="String">&quot;</span></span><span class="Keyword">+</span>e.<span class="FunctionName">to_s</span> 
+<span class="line-numbers">  53 </span>           <span class="Keyword">end</span>
+<span class="line-numbers">  54 </span>         } 
+<span class="line-numbers">  55 </span> 
+<span class="line-numbers">  56 </span> <span class="Comment">      <span class="Comment">#</span> take the list of tokens. Find all unique word.word prefixes. Each of them becomes a key in a new hash</span>
+<span class="line-numbers">  57 </span> <span class="Comment">      <span class="Comment">#</span> Each key points to a long string made up of a concatenation of all of the tokens from the list whose prefix</span>
+<span class="line-numbers">  58 </span> <span class="Comment">      <span class="Comment">#</span> matches the found prefix.</span>
+<span class="line-numbers">  59 </span> <span class="Comment">      <span class="Comment">#</span> so, given keyword.other.new.php and keyword.other.phpdoc.doc, we would have @hash['keyword.other']=&quot;keyword.other.new.php and keyword.other.phpdoc.doc&quot;</span>
+<span class="line-numbers">  60 </span>       
+<span class="line-numbers">  61 </span>       puts <span class="String"><span class="String">'</span>@for_tm_output keys listed alphabetically <span class="String">'</span></span>
+<span class="line-numbers">  62 </span>       token_ary <span class="Keyword">=</span> []
+<span class="line-numbers">  63 </span>       <span class="Variable"><span class="Variable">@</span>for_tm_output</span>.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">k</span>,<span class="Variable">v</span>|
+<span class="line-numbers">  64 </span> <span class="Comment">        <span class="Comment">#</span> puts k.inspect</span>
+<span class="line-numbers">  65 </span>         token_ary <span class="Keyword">&lt;&lt;</span> k.<span class="FunctionName">to_s</span>
+<span class="line-numbers">  66 </span>       <span class="Keyword">end</span> 
+<span class="line-numbers">  67 </span>           
+<span class="line-numbers">  68 </span>       token_ary.<span class="FunctionName">sort!</span>
+<span class="line-numbers">  69 </span>       token_ary.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">i</span>|
+<span class="line-numbers">  70 </span>          puts i.<span class="FunctionName">to_s</span> 
+<span class="line-numbers">  71 </span>       <span class="Keyword">end</span> 
+<span class="line-numbers">  72 </span>       
+<span class="line-numbers">  73 </span>       <span class="Variable"><span class="Variable">@</span>nhash2</span> <span class="Keyword">=</span> {}
+<span class="line-numbers">  74 </span>       <span class="Variable"><span class="Variable">@</span>for_tm_output</span>.<span class="FunctionName">each_key</span> <span class="Keyword">do </span>|<span class="Variable">t</span>|
+<span class="line-numbers">  75 </span>         tkary<span class="Keyword">=</span>t.<span class="FunctionName">to_s</span>.<span class="FunctionName">split</span>(<span class="String"><span class="String">&quot;</span>.<span class="String">&quot;</span></span>)
+<span class="line-numbers">  76 </span>         <span class="Keyword">if</span> tkary.<span class="FunctionName">size</span> <span class="Keyword">&gt;=</span> <span class="Number">2</span>
+<span class="line-numbers">  77 </span>           <span class="Variable"><span class="Variable">@</span>nhash2</span>[ tkary[<span class="Number">0</span>]<span class="Keyword">+</span><span class="String"><span class="String">&quot;</span>.<span class="String">&quot;</span></span><span class="Keyword">+</span>tkary[<span class="Number">1</span>] ] <span class="Keyword">||=</span> <span class="String"><span class="String">'</span><span class="String">'</span></span>
+<span class="line-numbers">  78 </span>           <span class="Variable"><span class="Variable">@</span>nhash2</span>[ tkary[<span class="Number">0</span>]<span class="Keyword">+</span><span class="String"><span class="String">&quot;</span>.<span class="String">&quot;</span></span><span class="Keyword">+</span>tkary[<span class="Number">1</span>] ] <span class="Keyword">+=</span> t<span class="Keyword">+</span><span class="String"><span class="String">&quot;</span> <span class="String">&quot;</span></span>
+<span class="line-numbers">  79 </span>         <span class="Keyword">else</span>
+<span class="line-numbers">  80 </span>           <span class="Variable"><span class="Variable">@</span>nhash2</span>[t]<span class="Keyword">=</span><span class="String"><span class="String">'</span><span class="String">'</span></span>
+<span class="line-numbers">  81 </span>         <span class="Keyword">end</span>
+<span class="line-numbers">  82 </span>       <span class="Keyword">end</span>
+<span class="line-numbers">  83 </span>       
+<span class="line-numbers">  84 </span>     
+<span class="line-numbers">  85 </span> <span class="Comment">    <span class="Comment">#</span>  @for_tm_output = @nhash2</span>
+<span class="line-numbers">  86 </span>       <span class="Variable"><span class="Variable">@</span>repository_names</span> <span class="Keyword">=</span> {}
+<span class="line-numbers">  87 </span> 
+<span class="line-numbers">  88 </span>       indoc.<span class="FunctionName">root</span>.<span class="FunctionName">elements</span>.<span class="FunctionName">each</span>(<span class="String"><span class="String">&quot;</span>*/dict<span class="String">&quot;</span></span>) <span class="Keyword">do </span>|<span class="Variable">e</span>|
+<span class="line-numbers">  89 </span> <span class="Comment">        <span class="Comment">#</span>okay, so this does reliably give us the top-level names (each of the ee's is one of them) </span>
+<span class="line-numbers">  90 </span>         e.<span class="FunctionName">elements</span>.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">ee</span>|          
+<span class="line-numbers">  91 </span>           <span class="Keyword">if</span> ee.<span class="FunctionName">name</span> <span class="Keyword">==</span> <span class="String"><span class="String">&quot;</span>key<span class="String">&quot;</span></span> 
+<span class="line-numbers">  92 </span>             puts <span class="String"><span class="String">&quot;</span> ***** <span class="String">&quot;</span></span> 
+<span class="line-numbers">  93 </span>             <span class="Variable"><span class="Variable">@</span>repository_names</span>[ee.<span class="FunctionName">text</span>.<span class="FunctionName">to_s</span>] <span class="Keyword">=</span> <span class="String"><span class="String">'</span><span class="String">'</span></span>
+<span class="line-numbers">  94 </span>             puts ee.<span class="FunctionName">to_s</span> 
+<span class="line-numbers">  95 </span>             puts <span class="String"><span class="String">&quot;</span> ***** <span class="String">&quot;</span></span> 
+<span class="line-numbers">  96 </span>             <span class="Keyword">if</span> ee.<span class="FunctionName">next_element</span> 
+<span class="line-numbers">  97 </span>               <span class="FunctionName">visit_all_nodes</span>(ee.<span class="FunctionName">next_element</span>)  <span class="Keyword">do </span>|<span class="Variable">eer</span>|
+<span class="line-numbers">  98 </span>                   <span class="Keyword">if</span> eer.<span class="FunctionName">name</span> <span class="Keyword">==</span> <span class="String"><span class="String">&quot;</span>string<span class="String">&quot;</span></span> <span class="Keyword">&amp;&amp;</span> eer.<span class="FunctionName">previous_element</span>.<span class="FunctionName">name</span> <span class="Keyword">==</span> <span class="String"><span class="String">&quot;</span>key<span class="String">&quot;</span></span> <span class="Keyword">&amp;&amp;</span>  eer.<span class="FunctionName">previous_element</span>.<span class="FunctionName">text</span> <span class="Keyword">==</span> <span class="String"><span class="String">&quot;</span>name<span class="String">&quot;</span></span>
+<span class="line-numbers">  99 </span>                     <span class="Variable"><span class="Variable">@</span>repository_names</span>[ee.<span class="FunctionName">text</span>.<span class="FunctionName">to_s</span>] <span class="Keyword">+=</span> eer.<span class="FunctionName">text</span>.<span class="FunctionName">to_s</span><span class="Keyword">+</span><span class="String"><span class="String">&quot;</span> <span class="String">&quot;</span></span> 
+<span class="line-numbers"> 100 </span>                   <span class="Keyword">end</span>
+<span class="line-numbers"> 101 </span>               <span class="Keyword">end</span> 
+<span class="line-numbers"> 102 </span>             <span class="Keyword">end</span> 
+<span class="line-numbers"> 103 </span>           <span class="Keyword">end</span> 
+<span class="line-numbers"> 104 </span>         <span class="Keyword">end</span> 
+<span class="line-numbers"> 105 </span>       <span class="Keyword">end</span> 
+<span class="line-numbers"> 106 </span>       
+<span class="line-numbers"> 107 </span>       <span class="Variable"><span class="Variable">@</span>under_patterns</span><span class="Keyword">=</span>{}
+<span class="line-numbers"> 108 </span>       indoc.<span class="FunctionName">root</span>.<span class="FunctionName">elements</span>.<span class="FunctionName">each</span>(<span class="String"><span class="String">&quot;</span>*/key<span class="String">&quot;</span></span>) <span class="Keyword">do </span>|<span class="Variable">e</span>|
+<span class="line-numbers"> 109 </span>           main_name<span class="Keyword">=</span><span class="String"><span class="String">'</span><span class="String">'</span></span>
+<span class="line-numbers"> 110 </span>           <span class="Keyword">if</span> e.<span class="FunctionName">text</span> <span class="Keyword">==</span> <span class="String"><span class="String">&quot;</span>patterns<span class="String">&quot;</span></span>  
+<span class="line-numbers"> 111 </span>             e.<span class="FunctionName">next_element</span>.<span class="FunctionName">elements</span>.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">ee</span>| <span class="Comment"><span class="Comment">#</span>this is the main array of patterns -- these should be the dicts who define the patterns caught by the syntax engine</span>
+<span class="line-numbers"> 112 </span>               <span class="Keyword">if</span> ee.<span class="FunctionName">name</span><span class="Keyword">==</span><span class="String"><span class="String">&quot;</span>dict<span class="String">&quot;</span></span>
+<span class="line-numbers"> 113 </span> <span class="Comment"><span class="Comment">#</span>              puts &quot;&lt;&lt;&gt;&gt;&quot;+ee.inspect+&quot;&lt;&lt;&gt;&gt;&quot;</span>
+<span class="line-numbers"> 114 </span> <span class="Comment"><span class="Comment">#</span>              puts &quot;&lt;&lt;again&gt;&gt;&quot;+ee.elements.size.to_s+&quot;&lt;&lt;&gt;&gt;&quot;</span>
+<span class="line-numbers"> 115 </span>                 ee.<span class="FunctionName">elements</span>.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">cc</span>|
+<span class="line-numbers"> 116 </span>                   <span class="Keyword">if</span>  [<span class="String"><span class="String">&quot;</span>name<span class="String">&quot;</span></span>, <span class="String"><span class="String">&quot;</span>contentName<span class="String">&quot;</span></span>].<span class="FunctionName">include?</span> cc.<span class="FunctionName">text</span> 
+<span class="line-numbers"> 117 </span>                   main_name <span class="Keyword">=</span> cc.<span class="FunctionName">next_element</span>.<span class="FunctionName">text</span>   
+<span class="line-numbers"> 118 </span>                   puts <span class="String"><span class="String">&quot;</span>main_name<span class="String">&quot;</span></span><span class="Keyword">+</span>main_name
+<span class="line-numbers"> 119 </span>                   <span class="Variable"><span class="Variable">@</span>under_patterns</span>[main_name]<span class="Keyword">=</span><span class="String"><span class="String">&quot;</span><span class="String">&quot;</span></span>
+<span class="line-numbers"> 120 </span>                   <span class="Keyword">end</span> 
+<span class="line-numbers"> 121 </span>                 <span class="Keyword">end</span>
+<span class="line-numbers"> 122 </span>               
+<span class="line-numbers"> 123 </span>                 ee.<span class="FunctionName">elements</span>.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">di</span>|
+<span class="line-numbers"> 124 </span>                   <span class="Keyword">if</span> di.<span class="FunctionName">name</span><span class="Keyword">=</span><span class="String"><span class="String">&quot;</span>dict<span class="String">&quot;</span></span>
+<span class="line-numbers"> 125 </span>                     di.<span class="FunctionName">elements</span>.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">di_ch</span>|
+<span class="line-numbers"> 126 </span>                       di_ch.<span class="FunctionName">elements</span>.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">leaf</span>|
+<span class="line-numbers"> 127 </span>                         <span class="Keyword">if</span> leaf.<span class="FunctionName">previous_element</span> 
+<span class="line-numbers"> 128 </span>                           <span class="Variable"><span class="Variable">@</span>under_patterns</span>[main_name] <span class="Keyword">+=</span> leaf.<span class="FunctionName">text</span>.<span class="FunctionName">to_s</span><span class="Keyword">+</span><span class="String"><span class="String">&quot;</span>, <span class="String">&quot;</span></span>  <span class="Keyword">if</span> (leaf.<span class="FunctionName">name</span><span class="Keyword">==</span><span class="String"><span class="String">&quot;</span>string<span class="String">&quot;</span></span> <span class="Keyword">&amp;&amp;</span> leaf.<span class="FunctionName">previous_element</span>.<span class="FunctionName">text</span> <span class="Keyword">==</span> <span class="String"><span class="String">&quot;</span>name<span class="String">&quot;</span></span>) 
+<span class="line-numbers"> 129 </span>                         <span class="Keyword">end</span> 
+<span class="line-numbers"> 130 </span>                       <span class="Keyword">end</span> 
+<span class="line-numbers"> 131 </span>                     <span class="Keyword">end</span> 
+<span class="line-numbers"> 132 </span>                   <span class="Keyword">end</span> 
+<span class="line-numbers"> 133 </span>                 <span class="Keyword">end</span>
+<span class="line-numbers"> 134 </span>               <span class="Keyword">end</span> 
+<span class="line-numbers"> 135 </span>             <span class="Keyword">end</span>
+<span class="line-numbers"> 136 </span>           <span class="Keyword">end</span>  
+<span class="line-numbers"> 137 </span>       <span class="Keyword">end</span>
+<span class="line-numbers"> 138 </span> <span class="Comment"><span class="Comment">#</span>    @under_patterns.each_key do |k| @under_patterns[k] = @under_patterns[k][ 0, @under_patterns[k].size-2 ] end </span>
+<span class="line-numbers"> 139 </span>       <span class="Variable"><span class="Variable">@</span>under_patterns</span>.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">k</span>,<span class="Variable">v</span>| <span class="Variable"><span class="Variable">@</span>under_patterns</span>[k] <span class="Keyword">=</span> v[ <span class="Number">0</span>, v.<span class="FunctionName">size</span><span class="Keyword">-</span><span class="Number">2</span> ] <span class="Keyword">end</span> 
+<span class="line-numbers"> 140 </span>       syntax_file.<span class="FunctionName">close</span>       
+<span class="line-numbers"> 141 </span>     <span class="Keyword">end</span> <span class="Comment"><span class="Comment">#</span>files_look_in.each</span>
+<span class="line-numbers"> 142 </span>       
+<span class="line-numbers"> 143 </span>     <span class="Keyword">end</span> <span class="Comment"><span class="Comment">#</span>process_plists</span>
+<span class="line-numbers"> 144 </span>     
+<span class="line-numbers"> 145 </span>     <span class="Keyword">def</span> <span class="FunctionName">visit_all_nodes</span>(<span class="FunctionParameter">element<span class="FunctionParameter">,</span> <span class="Keyword">&amp;</span>block</span>)
+<span class="line-numbers"> 146 </span>         <span class="Keyword">if</span> element.<span class="FunctionName">is_a?</span>(<span class="Variable">REXML</span>::<span class="FunctionName">Element</span>) 
+<span class="line-numbers"> 147 </span>           <span class="Keyword">if</span> element.<span class="FunctionName">has_elements?</span> <span class="Keyword">then</span> 
+<span class="line-numbers"> 148 </span>             element.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">kkid</span>|
+<span class="line-numbers"> 149 </span>               <span class="FunctionName">visit_all_nodes</span>( kkid, <span class="Keyword">&amp;</span>block) 
+<span class="line-numbers"> 150 </span>             <span class="Keyword">end</span>
+<span class="line-numbers"> 151 </span>           <span class="Keyword">else</span>
+<span class="line-numbers"> 152 </span>             <span class="Keyword">yield</span> element
+<span class="line-numbers"> 153 </span>           <span class="Keyword">end</span>           
+<span class="line-numbers"> 154 </span>         <span class="Keyword">end</span> 
+<span class="line-numbers"> 155 </span>     <span class="Keyword">end</span> <span class="Comment"><span class="Comment">#</span>visit_all_nodes</span>
+<span class="line-numbers"> 156 </span>     
+<span class="line-numbers"> 157 </span>     
+<span class="line-numbers"> 158 </span>     <span class="Keyword">def</span> <span class="FunctionName">get_scopes_from_themefiles</span>
+<span class="line-numbers"> 159 </span>       <span class="Variable"><span class="Variable">@</span>scopes_found</span> <span class="Keyword">=</span> {}
+<span class="line-numbers"> 160 </span>       <span class="Variable"><span class="Variable">@</span>files_look_in</span> <span class="Keyword">=</span> <span class="LibraryObject">Dir</span>[<span class="LibraryObject">File</span>.<span class="FunctionName">dirname</span>(<span class="Variable">__FILE__</span>)<span class="Keyword">+</span><span class="String"><span class="String">&quot;</span>/textmate_themes/*.tmTheme<span class="String">&quot;</span></span>]
+<span class="line-numbers"> 161 </span> <span class="Comment"> <span class="Comment">#</span>     @files_look_in = Dir[File.dirname(__FILE__)+&quot;/textmate_themes/Brilliance Dull.tmTheme&quot;]</span>
+<span class="line-numbers"> 162 </span>       <span class="Variable"><span class="Variable">@</span>files_look_in</span> <span class="Keyword">=</span> <span class="LibraryObject">Dir</span>[<span class="LibraryObject">File</span>.<span class="FunctionName">dirname</span>(<span class="Variable">__FILE__</span>)<span class="Keyword">+</span><span class="String"><span class="String">&quot;</span>/textmate_themes/choco.tmTheme<span class="String">&quot;</span></span>]
+<span class="line-numbers"> 163 </span>       puts <span class="String"><span class="String">'</span>@files_look_in.inspect<span class="String">'</span></span>
+<span class="line-numbers"> 164 </span>       puts <span class="Variable"><span class="Variable">@</span>files_look_in</span>.<span class="FunctionName">inspect</span>
+<span class="line-numbers"> 165 </span>       
+<span class="line-numbers"> 166 </span>       <span class="Variable"><span class="Variable">@</span>files_look_in</span>.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">f</span>|
+<span class="line-numbers"> 167 </span>         puts <span class="String"><span class="String">&quot;</span>opening file <span class="String">&quot;</span></span><span class="Keyword">+</span>f.<span class="FunctionName">to_s</span> 
+<span class="line-numbers"> 168 </span>         <span class="Variable"><span class="Variable">@</span>num_sf</span> <span class="Keyword">=</span><span class="Number">0</span>
+<span class="line-numbers"> 169 </span>         syntax_file <span class="Keyword">=</span> <span class="LibraryObject">File</span>.<span class="FunctionName">open</span>(f,<span class="String"><span class="String">&quot;</span>r<span class="String">&quot;</span></span>)
+<span class="line-numbers"> 170 </span>         indoc <span class="Keyword">=</span> <span class="Variable">REXML</span>::<span class="FunctionName">Document</span>.<span class="FunctionName">new</span>( syntax_file )
+<span class="line-numbers"> 171 </span>         <span class="FunctionName">visit_all_nodes</span>(indoc.<span class="FunctionName">root</span>) { |<span class="Variable">k</span>|
+<span class="line-numbers"> 172 </span>           <span class="Keyword">begin</span>
+<span class="line-numbers"> 173 </span>             <span class="Keyword">if</span> (k.<span class="FunctionName">respond_to?</span>(<span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>local_name</span>) )
+<span class="line-numbers"> 174 </span>               <span class="Keyword">if</span> (k.<span class="FunctionName">parent</span>.<span class="FunctionName">name</span><span class="Keyword">==</span><span class="String"><span class="String">'</span>dict<span class="String">'</span></span> <span class="Keyword">&amp;&amp;</span> (k.<span class="FunctionName">previous_element</span>.<span class="FunctionName">respond_to?</span>(<span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>local_name</span>)  ) )
+<span class="line-numbers"> 175 </span>                 <span class="Keyword">if</span> ( k.<span class="FunctionName">previous_element</span>.<span class="FunctionName">local_name</span><span class="Keyword">==</span><span class="String"><span class="String">'</span>key<span class="String">'</span></span> <span class="Keyword">&amp;&amp;</span> k.<span class="FunctionName">previous_element</span>.<span class="FunctionName">text</span><span class="Keyword">==</span><span class="String"><span class="String">&quot;</span>scope<span class="String">&quot;</span></span> )
+<span class="line-numbers"> 176 </span> <span class="Comment">                  <span class="Comment">#</span> the following monkey business allows us to see how many times we've seen a key</span>
+<span class="line-numbers"> 177 </span>                   <span class="Variable"><span class="Variable">@</span>num_sf</span> <span class="Keyword">+=</span> <span class="Number">1</span>
+<span class="line-numbers"> 178 </span>                   <span class="Keyword">if</span> <span class="Variable"><span class="Variable">@</span>scopes_found</span>[k.<span class="FunctionName">text</span>.<span class="FunctionName">to_s</span>]
+<span class="line-numbers"> 179 </span>                     <span class="Variable"><span class="Variable">@</span>scopes_found</span>[k.<span class="FunctionName">text</span>.<span class="FunctionName">to_s</span>] <span class="Keyword">+=</span> <span class="Number">1</span>
+<span class="line-numbers"> 180 </span>                   <span class="Keyword">else</span>
+<span class="line-numbers"> 181 </span>                     <span class="Variable"><span class="Variable">@</span>scopes_found</span>[k.<span class="FunctionName">text</span>.<span class="FunctionName">to_s</span>] <span class="Keyword">=</span> <span class="Number">1</span>
+<span class="line-numbers"> 182 </span>                   <span class="Keyword">end</span> 
+<span class="line-numbers"> 183 </span>                 <span class="Keyword">end</span>
+<span class="line-numbers"> 184 </span>               <span class="Keyword">end</span>
+<span class="line-numbers"> 185 </span>             <span class="Keyword">end</span>
+<span class="line-numbers"> 186 </span>           <span class="Keyword">rescue</span> =&gt; e
+<span class="line-numbers"> 187 </span>             puts <span class="String"><span class="String">&quot;</span>an exception in process_plists(): <span class="String">&quot;</span></span><span class="Keyword">+</span>e.<span class="FunctionName">to_s</span> 
+<span class="line-numbers"> 188 </span>           <span class="Keyword">end</span>
+<span class="line-numbers"> 189 </span>         } 
+<span class="line-numbers"> 190 </span> <span class="Comment"><span class="Comment">#</span>      puts &quot;Found #{@num_sf} scopes in file #{syntax_file.to_s}&quot;    </span>
+<span class="line-numbers"> 191 </span>       syntax_file.<span class="FunctionName">close</span>       
+<span class="line-numbers"> 192 </span>       <span class="Keyword">end</span> <span class="Comment"><span class="Comment">#</span>files_look_in.each</span>
+<span class="line-numbers"> 193 </span>        <span class="Variable"><span class="Variable">@</span>use_scope_threshhold</span> <span class="Keyword">=</span> <span class="Number">0</span> <span class="Comment"><span class="Comment">#</span> a scope will be used only if it appears at least this number of times in the existing themes </span>
+<span class="line-numbers"> 194 </span>       <span class="Variable"><span class="Variable">@</span>scopes_found</span>.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">k</span>,<span class="Variable">v</span>|
+<span class="line-numbers"> 195 </span>         puts k<span class="Keyword">+</span><span class="String"><span class="String">&quot;</span>-&gt;<span class="String">&quot;</span></span><span class="Keyword">+</span>v.<span class="FunctionName">to_s</span>
+<span class="line-numbers"> 196 </span>         <span class="Variable"><span class="Variable">@</span>scopes_found</span>.<span class="FunctionName">delete</span>(k) <span class="Keyword">unless</span> v <span class="Keyword">&gt;=</span> <span class="Variable"><span class="Variable">@</span>use_scope_threshhold</span>
+<span class="line-numbers"> 197 </span>       <span class="Keyword">end</span> 
+<span class="line-numbers"> 198 </span> 
+<span class="line-numbers"> 199 </span>       outf<span class="Keyword">=</span><span class="LibraryObject">File</span>.<span class="FunctionName">new</span>(<span class="String"><span class="String">&quot;</span>scopes_harvested<span class="String">&quot;</span></span>,<span class="String"><span class="String">&quot;</span>w<span class="String">&quot;</span></span>)
+<span class="line-numbers"> 200 </span>         outf.<span class="FunctionName">printf</span> <span class="String"><span class="String">&quot;</span>%s<span class="String">&quot;</span></span>,<span class="String"><span class="String">&quot;</span>[<span class="String">&quot;</span></span>
+<span class="line-numbers"> 201 </span>         <span class="Variable"><span class="Variable">@</span>scopes_found</span>.<span class="FunctionName">each</span> <span class="Keyword">do </span>|<span class="Variable">k</span>,<span class="Variable">v</span>|
+<span class="line-numbers"> 202 </span>         outf.<span class="FunctionName">printf</span>(<span class="String"><span class="String">&quot;</span>%s<span class="String">&quot;</span></span>,<span class="String"><span class="String">&quot;</span>'<span class="String">&quot;</span></span><span class="Keyword">+</span>k.<span class="FunctionName">to_s</span><span class="Keyword">+</span><span class="String"><span class="String">&quot;</span>', <span class="String">&quot;</span></span>)
+<span class="line-numbers"> 203 </span>         <span class="Keyword">end</span> 
+<span class="line-numbers"> 204 </span>       outf.<span class="FunctionName">printf</span> <span class="String"><span class="String">&quot;</span>]<span class="String">&quot;</span></span>
+<span class="line-numbers"> 205 </span>       outf.<span class="FunctionName">close</span> 
+<span class="line-numbers"> 206 </span>     puts <span class="String"><span class="String">&quot;</span>harvested <span class="StringInterpolation"><span class="StringInterpolation">#{</span><span class="Variable"><span class="Variable">@</span>scopes_found</span><span class="StringInterpolation"><span class="StringInterpolation">.</span><span class="FunctionName">size</span></span><span class="StringInterpolation">}</span></span> scopes from <span class="StringInterpolation"><span class="StringInterpolation">#{</span><span class="Variable"><span class="Variable">@</span>files_look_in</span><span class="StringInterpolation"><span class="StringInterpolation">.</span><span class="FunctionName">size</span></span><span class="StringInterpolation">}</span></span> files.<span class="String">&quot;</span></span>  
+<span class="line-numbers"> 207 </span> 
+<span class="line-numbers"> 208 </span>     <span class="Keyword">end</span> <span class="Comment"><span class="Comment">#</span>get_scopes_from_themefiles</span>
+<span class="line-numbers"> 209 </span>   <span class="Keyword">end</span> <span class="Comment"><span class="Comment">#</span>class</span>
+<span class="line-numbers"> 210 </span> <span class="Keyword">end</span> <span class="Comment"><span class="Comment">#</span>module </span>
+</pre>  <p>
+    <a href="http://validator.w3.org/check?uri=referer">
+      <img style="border:0"
+           src="http://www.w3.org/Icons/valid-xhtml10"
+           alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a>
+    <a href="http://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+           src="http://jigsaw.w3.org/css-validator/images/vcss" 
+           alt="Valid CSS!" />
+    </a>
+  </p>
+</body>
+</html>
