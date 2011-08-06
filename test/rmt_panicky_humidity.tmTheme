@@ -3,7 +3,7 @@
 <plist version='1.0'>
   <dict>
     <key>name</key>
-    <string>puzzled_feeling</string>
+    <string>panicky_humidity</string>
     <key>author</key>
     <string>David Heitzman</string>
     <key>settings</key>
@@ -11,18 +11,18 @@
       <dict>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#AE5892</string>
           <key>invisibles</key>
-          <string>#030303</string>
+          <string>#191919</string>
           <key>lineHighlight</key>
-          <string>#0F0A5A</string>
+          <string>#093135</string>
           <key>selection</key>
-          <string>#3B1E71</string>
+          <string>#30205B</string>
           <key>background</key>
-          <string>#030303</string>
+          <string>#191919</string>
           <key>caret</key>
-          <string>#B8B8B8</string>
+          <string>#B1B1B1</string>
+          <key>foreground</key>
+          <string>#E069D9</string>
         </dict>
       </dict>
       <dict>
@@ -32,10 +32,10 @@
         <string>meta.diff, meta.diff.header, meta.separator</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#00BA88</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#0977C2</string>
         </dict>
       </dict>
       <dict>
@@ -45,10 +45,10 @@
         <string>meta.selector.css entity.other.attribute-name.tag.pseudo-class</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#609848</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#BD7946</string>
         </dict>
       </dict>
       <dict>
@@ -58,10 +58,10 @@
         <string>meta.selector.css entity.name.tag</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0027FA</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#BC6B2A</string>
         </dict>
       </dict>
       <dict>
@@ -75,10 +75,10 @@
         </string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#3815F0</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#6F7C75</string>
         </dict>
       </dict>
       <dict>
@@ -88,10 +88,10 @@
         <string>text.html.ruby source</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0024FF</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#A465AD</string>
         </dict>
       </dict>
       <dict>
@@ -101,10 +101,10 @@
         <string>comment</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#3613F0</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#5B8C62</string>
         </dict>
       </dict>
       <dict>
@@ -117,10 +117,10 @@
         </string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0871CD</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#3BB616</string>
         </dict>
       </dict>
       <dict>
@@ -130,10 +130,10 @@
         <string>invalid.deprecated</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0052E4</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#83A447</string>
         </dict>
       </dict>
       <dict>
@@ -146,10 +146,10 @@
         </string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0043D7</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#C36FA2</string>
         </dict>
       </dict>
       <dict>
@@ -159,10 +159,10 @@
         <string>meta.preprocessor.c</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#5600FF</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#8B779B</string>
         </dict>
       </dict>
       <dict>
@@ -172,10 +172,10 @@
         <string>string variable</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#1831DD</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#82987A</string>
         </dict>
       </dict>
       <dict>
@@ -185,10 +185,10 @@
         <string>invalid.illegal</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0794A8</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#BBFFA2</string>
         </dict>
       </dict>
       <dict>
@@ -198,10 +198,10 @@
         <string>meta.selector.css entity.other.attribute-name.class</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0298AD</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#4B89E9</string>
         </dict>
       </dict>
       <dict>
@@ -211,10 +211,10 @@
         <string>support.constant</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0072F2</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#3583E0</string>
         </dict>
       </dict>
       <dict>
@@ -224,10 +224,10 @@
         <string>support.function</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#4F4CC2</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#3298EB</string>
         </dict>
       </dict>
       <dict>
@@ -240,10 +240,10 @@
         </string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0947DC</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#DD47AE</string>
         </dict>
       </dict>
       <dict>
@@ -253,10 +253,10 @@
         <string>entity</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#00B1E0</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#7F8614</string>
         </dict>
       </dict>
       <dict>
@@ -266,10 +266,10 @@
         <string>meta.preprocessor.at-rule keyword.control.at-rule</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#004EE9</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#989AC5</string>
         </dict>
       </dict>
       <dict>
@@ -279,10 +279,10 @@
         <string>declaration.tag, declaration.tag entity, meta.tag, meta.tag entity</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#2250FE</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#59F457</string>
         </dict>
       </dict>
       <dict>
@@ -292,10 +292,10 @@
         <string>constant</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#407834</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#9FB014</string>
         </dict>
       </dict>
       <dict>
@@ -305,10 +305,10 @@
         <string>markup.changed</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0072F8</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#F4A99C</string>
         </dict>
       </dict>
       <dict>
@@ -318,10 +318,10 @@
         <string>support.type.property-name.css</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0E976F</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#71E7C7</string>
         </dict>
       </dict>
       <dict>
@@ -331,10 +331,10 @@
         <string>markup.list</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#5800EA</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#5C8BFC</string>
         </dict>
       </dict>
       <dict>
@@ -348,10 +348,10 @@
         </string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#6C79A0</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#B5AC4C</string>
         </dict>
       </dict>
       <dict>
@@ -361,10 +361,10 @@
         <string>support</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#008D8C</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#FEA1CF</string>
         </dict>
       </dict>
       <dict>
@@ -374,10 +374,10 @@
         <string>meta.selector.css entity.other.attribute-name.id</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#022CF7</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#BC5275</string>
         </dict>
       </dict>
       <dict>
@@ -387,10 +387,10 @@
         <string>text source</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#730EE3</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#8A8874</string>
         </dict>
       </dict>
       <dict>
@@ -400,10 +400,10 @@
         <string>storage</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#1638E4</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#F3653E</string>
         </dict>
       </dict>
       <dict>
@@ -413,10 +413,10 @@
         <string>markup.heading</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0073B9</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#6478C8</string>
         </dict>
       </dict>
       <dict>
@@ -426,10 +426,10 @@
         <string>meta.constructor.argument.css</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#123DEB</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#BBD28E</string>
         </dict>
       </dict>
       <dict>
@@ -439,10 +439,10 @@
         <string>string.regexp</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0054F0</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#2FCFEB</string>
         </dict>
       </dict>
       <dict>
@@ -452,10 +452,10 @@
         <string>string</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0071C7</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#EB8F70</string>
         </dict>
       </dict>
       <dict>
@@ -465,10 +465,10 @@
         <string>meta.preprocessor.c keyword</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#006A9E</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#4B6EBF</string>
         </dict>
       </dict>
       <dict>
@@ -478,10 +478,10 @@
         <string>keyword</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#9110F8</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#C96517</string>
         </dict>
       </dict>
       <dict>
@@ -491,10 +491,10 @@
         <string>markup.inserted</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0049EB</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#9D7661</string>
         </dict>
       </dict>
       <dict>
@@ -504,10 +504,10 @@
         <string>markup.deleted</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0058E1</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#66D202</string>
         </dict>
       </dict>
       <dict>
@@ -517,10 +517,10 @@
         <string>string constant</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#093DEF</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#A7728F</string>
         </dict>
       </dict>
       <dict>
@@ -530,10 +530,10 @@
         <string>string source</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#3F5CE9</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#FD977F</string>
         </dict>
       </dict>
       <dict>
@@ -543,10 +543,10 @@
         <string>entity.other.inherited-class</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#008E8D</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#CE89DE</string>
         </dict>
       </dict>
       <dict>
@@ -556,14 +556,14 @@
         <string>variable</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#0047FD</string>
           <key>fontStyle</key>
           <string></string>
+          <key>foreground</key>
+          <string>#5266BA</string>
         </dict>
       </dict>
     </array>
     <key>uuid</key>
-    <string>1CF5C445-7BA2-41DF-85D5-653ADA445F0E</string>
+    <string>FBCBF5F6-486F-43CE-8C00-354357BD</string>
   </dict>
 </plist>

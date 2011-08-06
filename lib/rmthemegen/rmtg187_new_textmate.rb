@@ -8,9 +8,6 @@
 #**********************************************************************
 
 #this is a version of the software that should work with ruby 1.8.7
-#originally it was written and tested for ruby 1.9.2
-
-
 
 require 'rubygems'
 require 'color'
@@ -21,11 +18,11 @@ require File.dirname(__FILE__)+'/rgb_contrast_methods'
 require File.dirname(__FILE__)+'/rmthemegen_to_css'
 require File.dirname(__FILE__)+'/rmthemegen_to_css'
 require File.dirname(__FILE__)+'/plist_to_tokenlist'
+require File.dirname(__FILE__)+'/uv_addons'
 
 module RMThemeGen
-
   class ThemeGenerator < RMThemeParent
-    
+
     def create_textmate_theme(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
     #returns path to file that it created, which is an xml file that should work in textmate.  
       handle_rand_seed(rand_seed)
@@ -64,7 +61,7 @@ module RMThemeGen
     
         process_plists()
 
-        #so the idea here is to take each key and give it a unique color, then take each value, and give it a unique color. 
+        #the idea here is to take each key and give it a unique color, then take each value, and give it a unique color. 
         #The value represents all of the captures that were found lying around under the same dict as the given key. 
         @under_patterns={}
         @under_patterns.each do |k,v|
@@ -82,8 +79,6 @@ module RMThemeGen
 
         co2 =0
         @scopes_found.each do |k,v|
-        #@@scopes_found.each do |k,v|
-#        puts k.to_s+" ==> "+v.to_s if v.to_i >= @use_scope_threshhold
           begin
             main_array.add_element(
             # so it's  make_name_scope_settings_rand(name,scope,[don't worry about it, but colors you can assign manually]) 
@@ -92,15 +87,8 @@ module RMThemeGen
             co2 += 1 
           end if  k.to_s.size > 0 #&& v.to_i >= @use_scope_threshhold 
         
-#          main_array.add_element(
-#            make_name_scope_settings_rand(k.to_s,k.to_s,[]) 
-#          ) if k.to_s.size > 0
         end 
-#        puts ">> rules being added to create theme <<"
-#        puts 'rmtg187_new_textmate.rb adding rules to generate theme file' 
-#        puts " #{co2.to_s} rules used" 
-#        puts ">> rules being added to create theme <<"
-#        puts 
+
         uuid_key = REXML::Element.new("key")
         uuid_key.add_text("uuid")
         uuid_element = REXML::Element.new("string")
@@ -193,7 +181,7 @@ module RMThemeGen
 
     
     def gen_uuid
-        nn = sprintf("%X",rand(99999999999999999999999999999999999999999999999999).abs)
+        nn = sprintf("%X",rand(340282366920938463463374607431768211456).abs)
         nn = nn[0,8]+"-"+nn[12,4]+"-4"+nn[17,3]+"-"+["8","9","A","B"].shuffle[0]+nn[21,3]+"-"+nn[24,12]
     end
 

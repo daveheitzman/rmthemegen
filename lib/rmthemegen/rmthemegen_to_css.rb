@@ -16,6 +16,7 @@ require 'xmlsimple'
 require File.dirname(__FILE__)+"/token_list"
 require File.dirname(__FILE__)+'/rgb_contrast_methods'
 
+
 module RMThemeGen
   
   class ThemeGenerator < RMThemeParent

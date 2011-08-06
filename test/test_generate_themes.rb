@@ -32,11 +32,11 @@ Kernel.exit
  
 l = RMThemeGen::ThemeGenerator.new
 
-10.times do 
+3.times do 
 #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 0 ) 
 #  puts l.make_theme_file(ENV["PWD"],0,[{:r=>0.0,:g=>0.0},{:r=>1.0,:g=>0.0,:b=>0.0}]) 
   puts l.make_theme_file(ENV["PWD"],0,nil,nil) 
-  puts l.make_tm_theme_file(ENV["PWD"],(rand*2).to_i,nil,nil)
+  puts newTmTheme=l.make_tm_theme_file(ENV["PWD"],(rand*2).to_i,nil,nil)
 
 #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 2 ) 
   puts "testing to_css"
@@ -44,7 +44,9 @@ l = RMThemeGen::ThemeGenerator.new
   puts "testing themename"
   puts l.themename
   puts
- 
+  Uv::Converters.tmtheme2render( File.expand_path(File.dirname(__FILE__))+"/textmate_themes/choco.tmTheme", File.dirname(__FILE__) )
+  Uv::Converters.tmtheme2render( newTmTheme,"." )
+=begin
   puts '@for_tm_output.inspect'
 #  puts l.for_tm_output.inspect
   token_ary = []
@@ -76,4 +78,5 @@ l = RMThemeGen::ThemeGenerator.new
   #puts "testing plist_to_tokenlist.rb"
   #l.process_plists
   puts
+=end
 end

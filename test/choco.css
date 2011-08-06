@@ -1,0 +1,138 @@
+pre.choco .CssPropertyValue {
+   color: #D3CBA1;
+}
+pre.choco .String {
+   color: #7CA563;
+}
+pre.choco .Constant {
+   color: #DA5659;
+}
+pre.choco .line-numbers {
+   background-color: #DDF0FF;
+   color: #000000;
+}
+pre.choco .EmbeddedSource {
+   background-color: #C09760;
+}
+pre.choco .Variable {
+   color: #7989A6;
+}
+pre.choco .Support {
+   color: #A8799C;
+}
+pre.choco .MarkupList {
+   color: #F9EE98;
+}
+pre.choco .DiffInserted {
+   background-color: #253B22;
+   color: #F8F8F8;
+}
+pre.choco .DiffHeader {
+   background-color: #0E2231;
+   color: #F8F8F8;
+   font-style: italic;
+}
+pre.choco .CssConstructorArgument {
+   color: #8F9D6A;
+}
+pre.choco .CCCPreprocessorDirective {
+   color: #AFC4DB;
+}
+pre.choco .Storage {
+   color: #F1E694;
+}
+pre.choco .DiffChanged {
+   background-color: #4A410D;
+   color: #F8F8F8;
+}
+pre.choco .StringConstant {
+   color: #DDF2A4;
+}
+pre.choco .CssAtRule {
+   color: #8693A5;
+}
+pre.choco .InvalidIllegal {
+   background-color: #29161E;
+   color: #F8F8F8;
+}
+pre.choco {
+   background-color: #1A0F0B;
+   color: #C3BE98;
+}
+pre.choco .MarkupHeading {
+   color: #CF6A4C;
+}
+pre.choco .CssClass {
+   color: #79A660;
+}
+pre.choco .SupportConstant {
+   color: #D77261;
+}
+pre.choco .MetaTagInline {
+   color: #C8A573;
+}
+pre.choco .CCCPreprocessorLine {
+   color: #8996A8;
+}
+pre.choco .StringEmbeddedSource {
+   color: #DAEFA3;
+}
+pre.choco .CssPseudoClass {
+   color: #999D63;
+}
+pre.choco .CssTagName {
+   color: #B48F62;
+}
+pre.choco .SupportFunction {
+   color: #C29863;
+}
+pre.choco .Keyword {
+   color: #B3935C;
+}
+pre.choco .DiffDeleted {
+   background-color: #420E09;
+   color: #F8F8F8;
+}
+pre.choco .CssAdditionalConstants {
+   color: #C9584F;
+}
+pre.choco .MetaTagAll {
+   color: #9F785B;
+}
+pre.choco .DoctypeXmlProcessing {
+   color: #494949;
+}
+pre.choco .StringRegexpSpecial {
+   color: #CF7D34;
+}
+pre.choco .StringRegexp {
+   color: #E9C062;
+}
+pre.choco .EntityInheritedClass {
+   color: #9B5C2E;
+   font-style: italic;
+}
+pre.choco .EmbeddedSourceBright {
+   background-color: #A5896A;
+}
+pre.choco .CssId {
+   color: #7690A4;
+}
+pre.choco .StringVariable {
+   color: #5E828D;
+}
+pre.choco .CssPropertyName {
+   color: #AF977B;
+}
+pre.choco .InvalidDeprecated {
+   color: #D2A8A1;
+   font-style: italic;
+}
+pre.choco .Entity {
+   color: #6D4C2F;
+}
+pre.choco .Comment {
+   background-color: #172013;
+   color: #679D47;
+   font-style: italic;
+}
