@@ -1,2089 +1,2089 @@
 <?xml version='1.0' standalone='yes'?>
-<scheme version="1" parent_scheme="Default" author="David Heitzman, http://rmthemegen.com" name="grand_pruner">
+<scheme version="1" parent_scheme="Default" author="David Heitzman, http://rmthemegen.com" name="magnificent_Wednesday">
   <attributes>
     <option name="ABSTRACT_CLASS_NAME_ATTRIBUTES">
       <value>
-        <option value="d9f133" name="FOREGROUND" />
+        <option value="d57e29" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="9ef530" name="ERROR_STRIPE_COLOR" />
+        <option value="ab58ac" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
       <value>
-        <option value="c7806d" name="FOREGROUND" />
+        <option value="d413f9" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c863ad" name="ERROR_STRIPE_COLOR" />
+        <option value="a07fe0" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="ANNOTATION_NAME_ATTRIBUTES">
       <value>
-        <option value="9a84d4" name="FOREGROUND" />
+        <option value="ff00c6" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="cf4454" name="ERROR_STRIPE_COLOR" />
+        <option value="ad753a" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="ATTR_INTERNAL_CALL_ID">
       <value>
-        <option value="b89c97" name="FOREGROUND" />
+        <option value="a817de" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="de2966" name="ERROR_STRIPE_COLOR" />
+        <option value="ab3e85" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="BAD_CHARACTER">
       <value>
         <option name="FOREGROUND" />
         <option name="BACKGROUND" />
-        <option value="ada37b" name="EFFECT_COLOR" />
+        <option value="a053f8" name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
         <option value="-1" name="EFFECT_TYPE" />
-        <option value="d9e020" name="ERROR_STRIPE_COLOR" />
+        <option value="ff1595" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="BREAKPOINT_ATTRIBUTES">
       <value>
-        <option value="b66a5b" name="FOREGROUND" />
+        <option value="bd31fd" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="76fb33" name="ERROR_STRIPE_COLOR" />
+        <option value="bf74c7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CLASS_NAME_ATTRIBUTES">
       <value>
-        <option value="e292a7" name="FOREGROUND" />
+        <option value="9735ac" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c03e5f" name="ERROR_STRIPE_COLOR" />
+        <option value="a06287" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_BLUE_OUTPUT">
       <value>
-        <option value="da7eba" name="FOREGROUND" />
+        <option value="b46576" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b47a56" name="ERROR_STRIPE_COLOR" />
+        <option value="8772aa" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_CYAN_OUTPUT">
       <value>
-        <option value="e32d89" name="FOREGROUND" />
+        <option value="ff10dd" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff4f45" name="ERROR_STRIPE_COLOR" />
+        <option value="ac5cc3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_ERROR_OUTPUT">
       <value>
-        <option value="ab6d1e" name="FOREGROUND" />
+        <option value="a842ae" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d15a63" name="ERROR_STRIPE_COLOR" />
+        <option value="ce6ccd" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_GRAY_OUTPUT">
       <value>
-        <option value="e53570" name="FOREGROUND" />
+        <option value="cc4fe5" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff2499" name="ERROR_STRIPE_COLOR" />
+        <option value="c81dc2" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_GREEN_OUTPUT">
       <value>
-        <option value="f0434a" name="FOREGROUND" />
+        <option value="9a7718" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="cedc94" name="ERROR_STRIPE_COLOR" />
+        <option value="bb6214" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_MAGENTA_OUTPUT">
       <value>
-        <option value="c460b3" name="FOREGROUND" />
+        <option value="e6334e" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ea7fe1" name="ERROR_STRIPE_COLOR" />
+        <option value="ff3c8e" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_NORMAL_OUTPUT">
       <value>
-        <option value="de3578" name="FOREGROUND" />
+        <option value="9c9a86" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff408a" name="ERROR_STRIPE_COLOR" />
+        <option value="d35267" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_OUTPUT">
       <value>
-        <option value="d62ee3" name="FOREGROUND" />
+        <option value="ba09fa" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="aa632b" name="ERROR_STRIPE_COLOR" />
+        <option value="dd7ef3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_RED_OUTPUT">
       <value>
-        <option value="bdff29" name="FOREGROUND" />
+        <option value="bd8e35" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="89986d" name="ERROR_STRIPE_COLOR" />
+        <option value="c81ec7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_SYSTEM_OUTPUT">
       <value>
-        <option value="c569f9" name="FOREGROUND" />
+        <option value="b2650a" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff9cd4" name="ERROR_STRIPE_COLOR" />
+        <option value="f14c1d" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_USER_INPUT">
       <value>
-        <option value="c6fffa" name="FOREGROUND" />
+        <option value="b12bff" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d95e25" name="ERROR_STRIPE_COLOR" />
+        <option value="77970e" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CONSOLE_YELLOW_OUTPUT">
       <value>
-        <option value="dd8169" name="FOREGROUND" />
+        <option value="a43698" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d651f0" name="ERROR_STRIPE_COLOR" />
+        <option value="94e81a" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CSS.COMMENT">
       <value>
-        <option value="51705e" name="FOREGROUND" />
+        <option value="b73d4a" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="dd3e68" name="ERROR_STRIPE_COLOR" />
+        <option value="d86dd5" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CSS.FUNCTION">
       <value>
-        <option value="ff6d76" name="FOREGROUND" />
+        <option value="b133ea" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b09100" name="ERROR_STRIPE_COLOR" />
+        <option value="ba8213" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CSS.IDENT">
       <value>
-        <option value="cf64e1" name="FOREGROUND" />
+        <option value="7473e3" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c1802b" name="ERROR_STRIPE_COLOR" />
+        <option value="6eabd6" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CSS.KEYWORD">
       <value>
-        <option value="a540e8" name="FOREGROUND" />
+        <option value="c55f82" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="1" name="FONT_TYPE" />
-        <option value="bd3698" name="ERROR_STRIPE_COLOR" />
+        <option value="0" name="FONT_TYPE" />
+        <option value="98744c" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CSS.NUMBER">
       <value>
-        <option value="ebfb0b" name="FOREGROUND" />
+        <option value="ff1284" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d1497e" name="ERROR_STRIPE_COLOR" />
+        <option value="5896e4" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CSS.PROPERTY_NAME">
       <value>
-        <option value="f04879" name="FOREGROUND" />
+        <option value="e714dc" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d0d61c" name="ERROR_STRIPE_COLOR" />
+        <option value="d55ee8" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CSS.PROPERTY_VALUE">
       <value>
-        <option value="b1ec24" name="FOREGROUND" />
+        <option value="819487" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d1afdc" name="ERROR_STRIPE_COLOR" />
+        <option value="8f76fe" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CSS.STRING">
       <value>
-        <option value="8e797d" name="FOREGROUND" />
+        <option value="a33eb2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="bb56b1" name="ERROR_STRIPE_COLOR" />
+        <option value="a05e78" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CSS.TAG_NAME">
       <value>
-        <option value="ae2eaf" name="FOREGROUND" />
+        <option value="75df0b" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="af47ec" name="ERROR_STRIPE_COLOR" />
+        <option value="ea4531" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CSS.URL">
       <value>
-        <option value="bc5f4d" name="FOREGROUND" />
+        <option value="baffb5" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d07f19" name="ERROR_STRIPE_COLOR" />
+        <option value="e9236c" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CUSTOM_INVALID_STRING_ESCAPE_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" />
         <option name="BACKGROUND" />
-        <option value="a1447f" name="EFFECT_COLOR" />
+        <option value="b284dc" name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="0" name="EFFECT_TYPE" />
-        <option value="ffe535" name="ERROR_STRIPE_COLOR" />
+        <option value="1" name="EFFECT_TYPE" />
+        <option value="af15d8" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CUSTOM_KEYWORD1_ATTRIBUTES">
       <value>
-        <option value="e1599f" name="FOREGROUND" />
+        <option value="b3487b" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b6a0b7" name="ERROR_STRIPE_COLOR" />
+        <option value="937766" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CUSTOM_KEYWORD2_ATTRIBUTES">
       <value>
-        <option value="c65630" name="FOREGROUND" />
+        <option value="948b2f" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="1" name="FONT_TYPE" />
-        <option value="f93c93" name="ERROR_STRIPE_COLOR" />
+        <option value="0" name="FONT_TYPE" />
+        <option value="a769f7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CUSTOM_KEYWORD3_ATTRIBUTES">
       <value>
-        <option value="cfacc3" name="FOREGROUND" />
+        <option value="c800f3" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b0c932" name="ERROR_STRIPE_COLOR" />
+        <option value="8936da" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CUSTOM_KEYWORD4_ATTRIBUTES">
       <value>
-        <option value="99e12b" name="FOREGROUND" />
+        <option value="fe18eb" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="1" name="FONT_TYPE" />
-        <option value="bd8c39" name="ERROR_STRIPE_COLOR" />
+        <option value="c312f1" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CUSTOM_LINE_COMMENT_ATTRIBUTES">
       <value>
-        <option value="e0242a" name="FOREGROUND" />
+        <option value="a5298c" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b0834a" name="ERROR_STRIPE_COLOR" />
+        <option value="fc66bb" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CUSTOM_MULTI_LINE_COMMENT_ATTRIBUTES">
       <value>
-        <option value="5d6b4a" name="FOREGROUND" />
+        <option value="ac109c" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ffefc4" name="ERROR_STRIPE_COLOR" />
+        <option value="8a7eaf" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CUSTOM_NUMBER_ATTRIBUTES">
       <value>
-        <option value="c79141" name="FOREGROUND" />
+        <option value="e615c2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a46775" name="ERROR_STRIPE_COLOR" />
+        <option value="747ee1" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CUSTOM_STRING_ATTRIBUTES">
       <value>
-        <option value="e0ba7c" name="FOREGROUND" />
+        <option value="937b4b" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="f4c82b" name="ERROR_STRIPE_COLOR" />
+        <option value="b3a308" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES">
       <value>
-        <option value="b4e97e" name="FOREGROUND" />
+        <option value="8c2ee4" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="db6536" name="ERROR_STRIPE_COLOR" />
+        <option value="b235c7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="DEPRECATED_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" />
         <option name="BACKGROUND" />
-        <option value="d38b45" name="EFFECT_COLOR" />
+        <option value="9c6679" name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
         <option value="3" name="EFFECT_TYPE" />
-        <option value="569e40" name="ERROR_STRIPE_COLOR" />
+        <option value="a0766e" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="DIFF_CONFLICT">
       <value>
-        <option value="d16d25" name="FOREGROUND" />
+        <option value="9cab55" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ca7e13" name="ERROR_STRIPE_COLOR" />
+        <option value="bb5994" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="DIFF_DELETED">
       <value>
-        <option value="5c888f" name="FOREGROUND" />
+        <option value="b962ce" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="cde387" name="ERROR_STRIPE_COLOR" />
+        <option value="a942bf" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="DIFF_INSERTED">
       <value>
-        <option value="af477d" name="FOREGROUND" />
+        <option value="c60fbe" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e9dff5" name="ERROR_STRIPE_COLOR" />
+        <option value="ce62c4" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="DIFF_MODIFIED">
       <value>
-        <option value="914e75" name="FOREGROUND" />
+        <option value="ca328d" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c45c90" name="ERROR_STRIPE_COLOR" />
+        <option value="b413c7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="DUPLICATE_FROM_SERVER">
       <value>
-        <option value="ff2189" name="FOREGROUND" />
+        <option value="a56c56" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="dbf976" name="ERROR_STRIPE_COLOR" />
+        <option value="b95ff7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="EL.BOUNDS">
       <value>
-        <option value="9fd0ad" name="FOREGROUND" />
+        <option value="908d63" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="bd5d3d" name="ERROR_STRIPE_COLOR" />
+        <option value="a07bdb" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="EL.BRACKETS">
       <value>
-        <option value="a1309a" name="FOREGROUND" />
+        <option value="a44ec6" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="cb4e58" name="ERROR_STRIPE_COLOR" />
+        <option value="ac2fa7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="EL.IDENT">
       <value>
-        <option value="ba6558" name="FOREGROUND" />
+        <option value="ff2f0d" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="424dd8" name="ERROR_STRIPE_COLOR" />
+        <option value="8c6aa3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="EL.KEYWORD">
       <value>
-        <option value="ee3b4a" name="FOREGROUND" />
+        <option value="a37c94" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e142a5" name="ERROR_STRIPE_COLOR" />
+        <option value="ea5663" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="EL.NUMBER">
       <value>
-        <option value="83dc7f" name="FOREGROUND" />
+        <option value="ab6abd" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff3010" name="ERROR_STRIPE_COLOR" />
+        <option value="ba41be" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="EL.PARENTHS">
       <value>
-        <option value="ff88c7" name="FOREGROUND" />
+        <option value="cc336a" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="0" name="FONT_TYPE" />
-        <option value="9673e8" name="ERROR_STRIPE_COLOR" />
+        <option value="1" name="FONT_TYPE" />
+        <option value="a432e2" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="EL.STRING">
       <value>
-        <option value="df2ca2" name="FOREGROUND" />
+        <option value="ab86d6" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="dfe4ac" name="ERROR_STRIPE_COLOR" />
+        <option value="a900fb" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="EL_BACKGROUND">
       <value>
-        <option value="de6e2d" name="FOREGROUND" />
+        <option value="d258d2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c96200" name="ERROR_STRIPE_COLOR" />
+        <option value="c88904" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="ERRORS_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" />
         <option name="BACKGROUND" />
-        <option value="6799a0" name="EFFECT_COLOR" />
+        <option value="a14cd2" name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="5" name="EFFECT_TYPE" />
-        <option value="ad7693" name="ERROR_STRIPE_COLOR" />
+        <option value="2" name="EFFECT_TYPE" />
+        <option value="b87b0a" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="EXECUTIONPOINT_ATTRIBUTES">
       <value>
-        <option value="be9f80" name="FOREGROUND" />
+        <option value="a912ec" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c4ef04" name="ERROR_STRIPE_COLOR" />
+        <option value="8f69aa" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="FOLDED_TEXT_ATTRIBUTES">
       <value>
-        <option value="6e47c4" name="FOREGROUND" />
-        <option value="171717" name="BACKGROUND" />
+        <option value="d6716f" name="FOREGROUND" />
+        <option value="1a1a1a" name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="8d6b41" name="ERROR_STRIPE_COLOR" />
+        <option value="b4a84b" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="FOLLOWED_HYPERLINK_ATTRIBUTES">
       <value>
-        <option value="c54c7a" name="FOREGROUND" />
+        <option value="7574ab" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e9c648" name="ERROR_STRIPE_COLOR" />
+        <option value="aa37f7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="GENERIC_SERVER_ERROR_OR_WARNING">
       <value>
-        <option value="c85bdf" name="FOREGROUND" />
+        <option value="bd6c01" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e058ac" name="ERROR_STRIPE_COLOR" />
+        <option value="e95d71" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="GHERKIN_KEYWORD">
       <value>
-        <option value="ff6c53" name="FOREGROUND" />
+        <option value="c876a2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ce2f78" name="ERROR_STRIPE_COLOR" />
+        <option value="b0575a" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HAML_CLASS">
       <value>
-        <option value="eb1be7" name="FOREGROUND" />
+        <option value="a285b0" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="faeb76" name="ERROR_STRIPE_COLOR" />
+        <option value="af5879" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HAML_COMMENT">
       <value>
-        <option value="8d4d4b" name="FOREGROUND" />
+        <option value="ff110e" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b03bff" name="ERROR_STRIPE_COLOR" />
+        <option value="de00f5" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HAML_FILTER">
       <value>
-        <option value="bbd007" name="FOREGROUND" />
+        <option value="a44587" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e75d9d" name="ERROR_STRIPE_COLOR" />
+        <option value="cab493" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HAML_FILTER_CONTENT">
       <value>
-        <option value="9d9aec" name="FOREGROUND" />
+        <option value="9fe350" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e0df4b" name="ERROR_STRIPE_COLOR" />
+        <option value="9d37d0" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HAML_ID">
       <value>
-        <option value="b8fd14" name="FOREGROUND" />
+        <option value="ce5992" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="cdacc4" name="ERROR_STRIPE_COLOR" />
+        <option value="6f78b3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HAML_LINE_CONTINUATION">
       <value>
-        <option value="8a9217" name="FOREGROUND" />
+        <option value="7b53b9" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e27e6c" name="ERROR_STRIPE_COLOR" />
+        <option value="9a7857" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HAML_RUBY_CODE">
       <value>
-        <option value="c73bd0" name="FOREGROUND" />
+        <option value="c07894" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="5e9d3c" name="ERROR_STRIPE_COLOR" />
+        <option value="ff5014" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HAML_RUBY_START">
       <value>
-        <option value="d8e473" name="FOREGROUND" />
+        <option value="b17b0b" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c4af70" name="ERROR_STRIPE_COLOR" />
+        <option value="ad7a0d" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HAML_TAG">
       <value>
-        <option value="ccb2ea" name="FOREGROUND" />
+        <option value="8d6c8e" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff3912" name="ERROR_STRIPE_COLOR" />
+        <option value="ff6230" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HAML_TEXT">
       <value>
-        <option value="c7a263" name="FOREGROUND" />
+        <option value="4770db" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a9615a" name="ERROR_STRIPE_COLOR" />
+        <option value="91c209" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HAML_XHTML">
       <value>
-        <option value="edb3d0" name="FOREGROUND" />
+        <option value="c00ec8" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ca877e" name="ERROR_STRIPE_COLOR" />
+        <option value="f57cfd" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HTML_ATTRIBUTE_NAME">
       <value>
-        <option value="f409a7" name="FOREGROUND" />
+        <option value="cf3df9" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="afc71a" name="ERROR_STRIPE_COLOR" />
+        <option value="d55044" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HTML_ATTRIBUTE_VALUE">
       <value>
-        <option value="e75652" name="FOREGROUND" />
+        <option value="9f7b99" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ae4499" name="ERROR_STRIPE_COLOR" />
+        <option value="9922d7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HTML_COMMENT">
       <value>
-        <option value="72536d" name="FOREGROUND" />
+        <option value="84545a" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="964e82" name="ERROR_STRIPE_COLOR" />
+        <option value="db86d4" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HTML_ENTITY_REFERENCE">
       <value>
-        <option value="ca20c1" name="FOREGROUND" />
+        <option value="d03d9c" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="db9f68" name="ERROR_STRIPE_COLOR" />
+        <option value="dc6500" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HTML_TAG">
       <value>
-        <option value="be5a93" name="FOREGROUND" />
+        <option value="d54b3a" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b16c44" name="ERROR_STRIPE_COLOR" />
+        <option value="b814e3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HTML_TAG_NAME">
       <value>
-        <option value="fe5c7c" name="FOREGROUND" />
+        <option value="a627e4" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e78806" name="ERROR_STRIPE_COLOR" />
+        <option value="ac6fe3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="HYPERLINK_ATTRIBUTES">
       <value>
-        <option value="ac9c29" name="FOREGROUND" />
+        <option value="6350e0" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="92c895" name="ERROR_STRIPE_COLOR" />
+        <option value="ff407a" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option value="b74a4a" name="FOREGROUND" />
+        <option value="fc4ebd" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="1" name="FONT_TYPE" />
-        <option value="5d9654" name="ERROR_STRIPE_COLOR" />
+        <option value="9d5e53" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="INCLUDE_JAVA_CALL">
       <value>
-        <option value="dc821b" name="FOREGROUND" />
+        <option value="d710ec" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="de5269" name="ERROR_STRIPE_COLOR" />
+        <option value="ad76bd" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="INFO_ATTRIBUTES">
       <value>
-        <option value="d7fb4c" name="FOREGROUND" />
+        <option value="b174e3" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c3610c" name="ERROR_STRIPE_COLOR" />
+        <option value="bc5bf6" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="INJECTED_LANGUAGE_FRAGMENT">
       <value>
-        <option value="bad038" name="FOREGROUND" />
+        <option value="af7735" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="dd2fbf" name="ERROR_STRIPE_COLOR" />
+        <option value="af3e86" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="INSPECTION_MULTIPLE_RESOLVE_WARNING_ID">
       <value>
-        <option value="bb6a08" name="FOREGROUND" />
+        <option value="ebb0ab" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="fd703e" name="ERROR_STRIPE_COLOR" />
+        <option value="cd7250" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="INSTANCE_FIELD_ATTRIBUTES">
       <value>
-        <option value="c06646" name="FOREGROUND" />
+        <option value="5241f2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c7b79c" name="ERROR_STRIPE_COLOR" />
+        <option value="f2ff0d" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="INTERFACE_NAME_ATTRIBUTES">
       <value>
-        <option value="d9575e" name="FOREGROUND" />
+        <option value="a4a2b5" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d844df" name="ERROR_STRIPE_COLOR" />
+        <option value="b409ef" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JAVA_DOC_COMMENT">
       <value>
-        <option value="ff0b18" name="FOREGROUND" />
+        <option value="963583" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff7aed" name="ERROR_STRIPE_COLOR" />
+        <option value="9d97c6" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JAVA_DOC_MARKUP">
       <value>
-        <option value="bd7403" name="FOREGROUND" />
+        <option value="911ddd" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ba503d" name="ERROR_STRIPE_COLOR" />
+        <option value="8628da" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JAVA_INVALID_STRING_ESCAPE">
       <value>
-        <option value="befc01" name="FOREGROUND" />
+        <option value="8f6383" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="6d6d7a" name="ERROR_STRIPE_COLOR" />
+        <option value="a47aa2" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JAVA_KEYWORD">
       <value>
-        <option value="9f8598" name="FOREGROUND" />
+        <option value="dc890f" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b77ec3" name="ERROR_STRIPE_COLOR" />
+        <option value="ab00ea" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JAVA_NUMBER">
       <value>
-        <option value="d61797" name="FOREGROUND" />
+        <option value="bf90e2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c07fea" name="ERROR_STRIPE_COLOR" />
+        <option value="cd3c97" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JAVA_STRING">
       <value>
-        <option value="9e4c79" name="FOREGROUND" />
+        <option value="9c8ae6" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d5b8f2" name="ERROR_STRIPE_COLOR" />
+        <option value="a99209" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JAVA_VALID_STRING_ESCAPE">
       <value>
-        <option value="d18df3" name="FOREGROUND" />
+        <option value="9e7c68" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="bcbd7b" name="ERROR_STRIPE_COLOR" />
+        <option value="d2485b" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.ATTRIBUTE">
       <value>
-        <option value="c2b18d" name="FOREGROUND" />
+        <option value="b922f2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="cc31fc" name="ERROR_STRIPE_COLOR" />
+        <option value="9a7b09" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.BADCHARACTER">
       <value>
-        <option value="b00be2" name="FOREGROUND" />
+        <option value="a957ad" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="8fafae" name="ERROR_STRIPE_COLOR" />
+        <option value="e461b5" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.BLOCK_COMMENT">
       <value>
-        <option value="873093" name="FOREGROUND" />
+        <option value="a03774" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff30ad" name="ERROR_STRIPE_COLOR" />
+        <option value="9f6ab1" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.DOC_COMMENT">
       <value>
-        <option value="754f61" name="FOREGROUND" />
+        <option value="961fa2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="db6e6d" name="ERROR_STRIPE_COLOR" />
+        <option value="b99110" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.DOC_MARKUP">
       <value>
-        <option value="d587ab" name="FOREGROUND" />
+        <option value="ea0bed" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c8f3ea" name="ERROR_STRIPE_COLOR" />
+        <option value="c900fe" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.DOC_TAG">
       <value>
-        <option value="d351b4" name="FOREGROUND" />
+        <option value="c09058" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="fc557f" name="ERROR_STRIPE_COLOR" />
+        <option value="ff50e8" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.GLOBAL_FUNCTION">
       <value>
-        <option value="d36716" name="FOREGROUND" />
+        <option value="8d58d5" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a07345" name="ERROR_STRIPE_COLOR" />
+        <option value="bd00ed" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.GLOBAL_VARIABLE">
       <value>
-        <option value="a9e41f" name="FOREGROUND" />
+        <option value="b8741a" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="fe7a4d" name="ERROR_STRIPE_COLOR" />
+        <option value="b05683" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.INSTANCE_MEMBER_FUNCTION">
       <value>
-        <option value="b952bf" name="FOREGROUND" />
+        <option value="835c93" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b964a1" name="ERROR_STRIPE_COLOR" />
+        <option value="e714b5" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.INSTANCE_MEMBER_VARIABLE">
       <value>
-        <option value="73f67e" name="FOREGROUND" />
+        <option value="9e2dbb" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a2517e" name="ERROR_STRIPE_COLOR" />
+        <option value="a09338" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.INVALID_STRING_ESCAPE">
       <value>
-        <option value="c3358c" name="FOREGROUND" />
+        <option value="d25d1e" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="2" name="FONT_TYPE" />
-        <option value="d1a1c9" name="ERROR_STRIPE_COLOR" />
+        <option value="0" name="FONT_TYPE" />
+        <option value="c2b860" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.KEYWORD">
       <value>
-        <option value="c59209" name="FOREGROUND" />
+        <option value="7743d7" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b83c6c" name="ERROR_STRIPE_COLOR" />
+        <option value="f81ce3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.LINE_COMMENT">
       <value>
-        <option value="7f495e" name="FOREGROUND" />
+        <option value="ff1504" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c67a34" name="ERROR_STRIPE_COLOR" />
+        <option value="909073" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.LOCAL_VARIABLE">
       <value>
-        <option value="ed4a57" name="FOREGROUND" />
+        <option value="9550fa" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="fb7e74" name="ERROR_STRIPE_COLOR" />
+        <option value="ae5ead" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.NUMBER">
       <value>
-        <option value="bd6444" name="FOREGROUND" />
+        <option value="e145cb" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="84eec1" name="ERROR_STRIPE_COLOR" />
+        <option value="ff75a2" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.PARAMETER">
       <value>
-        <option value="f5254c" name="FOREGROUND" />
+        <option value="a65e6f" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a8595c" name="ERROR_STRIPE_COLOR" />
+        <option value="e77b2b" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.REGEXP">
       <value>
-        <option value="d3caaf" name="FOREGROUND" />
+        <option value="ad5476" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a2399f" name="ERROR_STRIPE_COLOR" />
+        <option value="ffc171" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.STATIC_MEMBER_FUNCTION">
       <value>
-        <option value="d46548" name="FOREGROUND" />
+        <option value="ba61a8" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b12bfd" name="ERROR_STRIPE_COLOR" />
+        <option value="cf4fa3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.STATIC_MEMBER_VARIABLE">
       <value>
-        <option value="ffa715" name="FOREGROUND" />
+        <option value="c757b2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e3b995" name="ERROR_STRIPE_COLOR" />
+        <option value="df44fa" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.STRING">
       <value>
-        <option value="ff00b2" name="FOREGROUND" />
+        <option value="628167" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="0" name="FONT_TYPE" />
-        <option value="f06a6e" name="ERROR_STRIPE_COLOR" />
+        <option value="2" name="FONT_TYPE" />
+        <option value="9d5295" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JS.VALID_STRING_ESCAPE">
       <value>
-        <option value="c9eb24" name="FOREGROUND" />
+        <option value="980de3" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ed3861" name="ERROR_STRIPE_COLOR" />
+        <option value="9f9799" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JSP_ATTRIBUTE_NAME">
       <value>
-        <option value="cc52f7" name="FOREGROUND" />
+        <option value="a57218" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="8edc44" name="ERROR_STRIPE_COLOR" />
+        <option value="ff5521" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JSP_ATTRIBUTE_VALUE">
       <value>
-        <option value="ba5c7c" name="FOREGROUND" />
+        <option value="9726c7" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="4e8def" name="ERROR_STRIPE_COLOR" />
+        <option value="9c4dbd" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JSP_DIRECTIVE_BACKGROUND">
       <value>
-        <option value="a4647a" name="FOREGROUND" />
+        <option value="c268a7" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="dbf020" name="ERROR_STRIPE_COLOR" />
+        <option value="f51eef" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JSP_DIRECTIVE_NAME">
       <value>
-        <option value="b44369" name="FOREGROUND" />
+        <option value="a95a57" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="bf4c81" name="ERROR_STRIPE_COLOR" />
+        <option value="9769d7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="JSP_SCRIPTING_BACKGROUND">
       <value>
-        <option value="f71b98" name="FOREGROUND" />
+        <option value="76897c" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="7af800" name="ERROR_STRIPE_COLOR" />
+        <option value="a37e17" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="LESS_VARIABLE">
       <value>
-        <option value="ff2ac5" name="FOREGROUND" />
+        <option value="bf41c8" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="bacdba" name="ERROR_STRIPE_COLOR" />
+        <option value="ff4e97" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" />
         <option name="BACKGROUND" />
-        <option value="f4486a" name="EFFECT_COLOR" />
+        <option value="c712fb" name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="0" name="EFFECT_TYPE" />
-        <option value="dd62c2" name="ERROR_STRIPE_COLOR" />
+        <option value="-1" name="EFFECT_TYPE" />
+        <option value="c705df" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="NOT_USED_ELEMENT_ATTRIBUTES">
       <value>
-        <option value="d66d96" name="FOREGROUND" />
+        <option value="b82eea" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a14c71" name="ERROR_STRIPE_COLOR" />
+        <option value="a5809a" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="PROPERTIES.INVALID_STRING_ESCAPE">
       <value>
-        <option value="f09553" name="FOREGROUND" />
+        <option value="a333db" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="2" name="FONT_TYPE" />
-        <option value="de6f8b" name="ERROR_STRIPE_COLOR" />
+        <option value="0" name="FONT_TYPE" />
+        <option value="73c409" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="PROPERTIES.KEY">
       <value>
-        <option value="b1467b" name="FOREGROUND" />
+        <option value="8c39cf" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ffa07c" name="ERROR_STRIPE_COLOR" />
+        <option value="9722d3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="PROPERTIES.VALID_STRING_ESCAPE">
       <value>
-        <option value="afd111" name="FOREGROUND" />
+        <option value="bcff2c" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ffb8c0" name="ERROR_STRIPE_COLOR" />
+        <option value="c273b8" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="PROPERTIES.VALUE">
       <value>
-        <option value="d0f039" name="FOREGROUND" />
+        <option value="b33ed5" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e32d52" name="ERROR_STRIPE_COLOR" />
+        <option value="aa21c3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="REGEXP.BRACES">
       <value>
-        <option value="cfd078" name="FOREGROUND" />
+        <option value="b234d4" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="f31f73" name="ERROR_STRIPE_COLOR" />
+        <option value="cd2e94" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="REGEXP.BRACKETS">
       <value>
-        <option value="f85049" name="FOREGROUND" />
+        <option value="a04e90" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c89943" name="ERROR_STRIPE_COLOR" />
+        <option value="ff6871" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="REGEXP.ESC_CHARACTER">
       <value>
-        <option value="844fed" name="FOREGROUND" />
+        <option value="92a392" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c2219b" name="ERROR_STRIPE_COLOR" />
+        <option value="a87dba" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="REGEXP.META">
       <value>
-        <option value="81ec9f" name="FOREGROUND" />
+        <option value="a416fd" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ef5f43" name="ERROR_STRIPE_COLOR" />
+        <option value="ac2acb" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="REGEXP.PARENTHS">
       <value>
-        <option value="d41cd4" name="FOREGROUND" />
+        <option value="b9662d" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="1" name="FONT_TYPE" />
-        <option value="d43846" name="ERROR_STRIPE_COLOR" />
+        <option value="0" name="FONT_TYPE" />
+        <option value="93726d" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="REGEXP.CHAR_CLASS">
       <value>
-        <option value="c29e1c" name="FOREGROUND" />
+        <option value="c0af49" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="dc4654" name="ERROR_STRIPE_COLOR" />
+        <option value="bd15d1" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="REGEXP.INVALID_STRING_ESCAPE">
       <value>
-        <option value="e04c2e" name="FOREGROUND" />
+        <option value="d514fc" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ee3905" name="ERROR_STRIPE_COLOR" />
+        <option value="ff0098" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="REGEXP.QUOTE_CHARACTER">
       <value>
-        <option value="d65b21" name="FOREGROUND" />
+        <option value="ff4218" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="cb5e12" name="ERROR_STRIPE_COLOR" />
+        <option value="8764f3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="REGEXP.REDUNDANT_ESCAPE">
       <value>
-        <option value="c09169" name="FOREGROUND" />
+        <option value="b48263" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c1a026" name="ERROR_STRIPE_COLOR" />
+        <option value="d93563" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="REQUIRE_GEM_CALL">
       <value>
-        <option value="9e6f2f" name="FOREGROUND" />
+        <option value="f1188f" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a34a9e" name="ERROR_STRIPE_COLOR" />
+        <option value="cc5820" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RHTML_COMMENT_ID">
       <value>
-        <option value="744a71" name="FOREGROUND" />
+        <option value="864e68" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ffed43" name="ERROR_STRIPE_COLOR" />
+        <option value="a78267" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RHTML_EXPRESSION_END_ID">
       <value>
-        <option value="c29139" name="FOREGROUND" />
+        <option value="947572" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d1378f" name="ERROR_STRIPE_COLOR" />
+        <option value="95628d" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RHTML_EXPRESSION_START_ID">
       <value>
-        <option value="be30a0" name="FOREGROUND" />
+        <option value="ab00e9" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="7d6db4" name="ERROR_STRIPE_COLOR" />
+        <option value="9e5b67" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RHTML_OMIT_NEW_LINE_ID">
       <value>
-        <option value="f125e8" name="FOREGROUND" />
+        <option value="ff00d8" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="349bda" name="ERROR_STRIPE_COLOR" />
+        <option value="a731b5" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RHTML_SCRIPTING_BACKGROUND_ID">
       <value>
-        <option value="c9b82a" name="FOREGROUND" />
+        <option value="c34c69" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e1402b" name="ERROR_STRIPE_COLOR" />
+        <option value="ac91aa" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RHTML_SCRIPTLET_END_ID">
       <value>
-        <option value="a45b55" name="FOREGROUND" />
+        <option value="74b774" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="f31c62" name="ERROR_STRIPE_COLOR" />
+        <option value="c67437" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RHTML_SCRIPTLET_START_ID">
       <value>
-        <option value="ffa787" name="FOREGROUND" />
+        <option value="ef898d" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e3c39d" name="ERROR_STRIPE_COLOR" />
+        <option value="9d0dfc" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_ATTR_ACCESSOR_CALL">
       <value>
-        <option value="abb24f" name="FOREGROUND" />
+        <option value="ab0ce1" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="1" name="FONT_TYPE" />
-        <option value="508afa" name="ERROR_STRIPE_COLOR" />
+        <option value="0" name="FONT_TYPE" />
+        <option value="a15afa" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_ATTR_READER_CALL">
       <value>
-        <option value="bce36f" name="FOREGROUND" />
+        <option value="c610b2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="1" name="FONT_TYPE" />
-        <option value="fe5bfa" name="ERROR_STRIPE_COLOR" />
+        <option value="0" name="FONT_TYPE" />
+        <option value="d94e56" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_ATTR_WRITER_CALL">
       <value>
-        <option value="189f9e" name="FOREGROUND" />
+        <option value="942af1" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="6c49b8" name="ERROR_STRIPE_COLOR" />
+        <option value="6053ca" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_BACK_REF">
       <value>
-        <option value="8c1aec" name="FOREGROUND" />
+        <option value="865ab3" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="7e959a" name="ERROR_STRIPE_COLOR" />
+        <option value="6855e7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_BAD_CHARACTER">
       <value>
-        <option value="ac7a71" name="FOREGROUND" />
+        <option value="c3308d" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c3e8ee" name="ERROR_STRIPE_COLOR" />
+        <option value="ee61a9" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_BRACKETS">
       <value>
-        <option value="ef2872" name="FOREGROUND" />
+        <option value="b5588f" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e5aff0" name="ERROR_STRIPE_COLOR" />
+        <option value="a943d7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_COMMA">
       <value>
-        <option value="ffa384" name="FOREGROUND" />
+        <option value="9059bb" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="0" name="FONT_TYPE" />
-        <option value="a44c75" name="ERROR_STRIPE_COLOR" />
+        <option value="1" name="FONT_TYPE" />
+        <option value="ce5c8b" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_COMMENT">
       <value>
-        <option value="ed054f" name="FOREGROUND" />
+        <option value="943a77" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="abbd3b" name="ERROR_STRIPE_COLOR" />
+        <option value="9800fd" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_CONSTANT">
       <value>
-        <option value="cb5372" name="FOREGROUND" />
+        <option value="eb20db" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="1" name="FONT_TYPE" />
-        <option value="8413f6" name="ERROR_STRIPE_COLOR" />
+        <option value="0" name="FONT_TYPE" />
+        <option value="7e5caa" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_CONSTANT_DEF_ID">
       <value>
-        <option value="ad84ac" name="FOREGROUND" />
+        <option value="829ba4" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="0" name="FONT_TYPE" />
-        <option value="c74e40" name="ERROR_STRIPE_COLOR" />
+        <option value="1" name="FONT_TYPE" />
+        <option value="a742d9" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_CVAR">
       <value>
-        <option value="a77571" name="FOREGROUND" />
+        <option value="e30cc1" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c1d149" name="ERROR_STRIPE_COLOR" />
+        <option value="ff514d" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_ESCAPE_SEQUENCE">
       <value>
-        <option value="c3581d" name="FOREGROUND" />
+        <option value="a1636c" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="be4387" name="ERROR_STRIPE_COLOR" />
+        <option value="aa5f9c" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_EXPR_IN_STRING">
       <value>
-        <option value="9bf33b" name="FOREGROUND" />
+        <option value="9f00ff" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d6eef9" name="ERROR_STRIPE_COLOR" />
+        <option value="cd4ad2" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_GVAR">
       <value>
-        <option value="fb12a4" name="FOREGROUND" />
+        <option value="a769c7" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="fff594" name="ERROR_STRIPE_COLOR" />
+        <option value="7572b1" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_HASH_ASSOC">
       <value>
-        <option value="a5e1dc" name="FOREGROUND" />
+        <option value="b35a7e" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="f5d78d" name="ERROR_STRIPE_COLOR" />
+        <option value="a452d8" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_HEREDOC_CONTENT">
       <value>
-        <option value="a75164" name="FOREGROUND" />
+        <option value="ca7e95" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ce5a58" name="ERROR_STRIPE_COLOR" />
+        <option value="a7693d" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_HEREDOC_ID">
       <value>
-        <option value="e84c21" name="FOREGROUND" />
+        <option value="e16cea" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff1cdd" name="ERROR_STRIPE_COLOR" />
+        <option value="c450f2" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_IDENTIFIER">
       <value>
-        <option value="cb407d" name="FOREGROUND" />
+        <option value="ff29da" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="0" name="FONT_TYPE" />
-        <option value="cda83a" name="ERROR_STRIPE_COLOR" />
+        <option value="1" name="FONT_TYPE" />
+        <option value="ab9741" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_IMPORT_CALL">
       <value>
-        <option value="b78545" name="FOREGROUND" />
+        <option value="be76dd" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b0ce0e" name="ERROR_STRIPE_COLOR" />
+        <option value="cb00f0" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_INVALID_ESCAPE_SEQUENCE">
       <value>
-        <option value="eda404" name="FOREGROUND" />
+        <option value="a468f1" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ce28e8" name="ERROR_STRIPE_COLOR" />
+        <option value="af37ce" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_IVAR">
       <value>
-        <option value="dcaf18" name="FOREGROUND" />
+        <option value="7399f1" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ced407" name="ERROR_STRIPE_COLOR" />
+        <option value="7b7658" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_KEYWORD">
       <value>
-        <option value="e4e39c" name="FOREGROUND" />
+        <option value="a9a624" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="de972f" name="ERROR_STRIPE_COLOR" />
+        <option value="d31bb9" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_LINE_CONTINUATION">
       <value>
-        <option value="ff3e45" name="FOREGROUND" />
+        <option value="da00cc" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c54776" name="ERROR_STRIPE_COLOR" />
+        <option value="de09c9" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_LOCAL_VAR_ID">
       <value>
-        <option value="dc9c5c" name="FOREGROUND" />
+        <option value="fc1cdd" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="93d315" name="ERROR_STRIPE_COLOR" />
+        <option value="9180ad" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_METHOD_NAME">
       <value>
-        <option value="85f6d1" name="FOREGROUND" />
+        <option value="34abd0" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ed246d" name="ERROR_STRIPE_COLOR" />
+        <option value="ff6d98" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_NTH_REF">
       <value>
-        <option value="df208a" name="FOREGROUND" />
+        <option value="625ab7" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="bcb94e" name="ERROR_STRIPE_COLOR" />
+        <option value="c28d01" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_NUMBER">
       <value>
-        <option value="d25124" name="FOREGROUND" />
+        <option value="ee1dc0" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c1d894" name="ERROR_STRIPE_COLOR" />
+        <option value="ac6874" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_OPERATION_SIGN">
       <value>
-        <option value="f53f3a" name="FOREGROUND" />
+        <option value="a684e6" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d11fa0" name="ERROR_STRIPE_COLOR" />
+        <option value="ff6452" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_PARAMDEF_CALL">
       <value>
-        <option value="c525ba" name="FOREGROUND" />
+        <option value="b26b08" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="af3997" name="ERROR_STRIPE_COLOR" />
+        <option value="93752c" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_PARAMETER_ID">
       <value>
-        <option value="c706af" name="FOREGROUND" />
+        <option value="ae2add" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="8c708e" name="ERROR_STRIPE_COLOR" />
+        <option value="ae4592" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_PRIVATE_CALL">
       <value>
-        <option value="e49632" name="FOREGROUND" />
+        <option value="f92491" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ec235a" name="ERROR_STRIPE_COLOR" />
+        <option value="bf6cfc" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_PROTECTED_CALL">
       <value>
-        <option value="ca5ee6" name="FOREGROUND" />
+        <option value="9dad3d" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c05d52" name="ERROR_STRIPE_COLOR" />
+        <option value="bd5d6e" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_PUBLIC_CALL">
       <value>
-        <option value="ff6200" name="FOREGROUND" />
+        <option value="e15e62" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="be4c8f" name="ERROR_STRIPE_COLOR" />
+        <option value="b52bd0" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_REGEXP">
       <value>
-        <option value="c8ed03" name="FOREGROUND" />
+        <option value="b826ed" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b980a4" name="ERROR_STRIPE_COLOR" />
+        <option value="c426bf" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_REQUIRE_ARG_CALL">
       <value>
-        <option value="805193" name="FOREGROUND" />
+        <option value="ae5294" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="bd556a" name="ERROR_STRIPE_COLOR" />
+        <option value="c0ab08" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_REQUIRE_CALL">
       <value>
-        <option value="c53ca0" name="FOREGROUND" />
+        <option value="b6485f" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="2" name="FONT_TYPE" />
-        <option value="b3a322" name="ERROR_STRIPE_COLOR" />
+        <option value="a06953" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_SEMICOLON">
       <value>
-        <option value="6c8c95" name="FOREGROUND" />
+        <option value="a639e0" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="dece8e" name="ERROR_STRIPE_COLOR" />
+        <option value="a68903" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_SPECIFIC_CALL">
       <value>
-        <option value="a98e7d" name="FOREGROUND" />
+        <option value="d9649f" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="1" name="FONT_TYPE" />
-        <option value="c28d46" name="ERROR_STRIPE_COLOR" />
+        <option value="d100dc" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_STRING">
       <value>
-        <option value="f03f25" name="FOREGROUND" />
+        <option value="d011e4" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b0f25a" name="ERROR_STRIPE_COLOR" />
+        <option value="935bf7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_SYMBOL">
       <value>
-        <option value="df3559" name="FOREGROUND" />
+        <option value="ff5303" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="53afce" name="ERROR_STRIPE_COLOR" />
+        <option value="c360a2" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="RUBY_WORDS">
       <value>
-        <option value="c849f8" name="FOREGROUND" />
+        <option value="c927d4" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c9404b" name="ERROR_STRIPE_COLOR" />
+        <option value="bd24e5" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SASS_ATTRIBUTE">
       <value>
-        <option value="d04a29" name="FOREGROUND" />
+        <option value="a73bcb" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d07346" name="ERROR_STRIPE_COLOR" />
+        <option value="a08c05" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SASS_COMMENT">
       <value>
-        <option value="d20a7b" name="FOREGROUND" />
+        <option value="f12013" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="aa6b2a" name="ERROR_STRIPE_COLOR" />
+        <option value="ff00ed" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SASS_CONSTANT">
       <value>
-        <option value="ff8f9c" name="FOREGROUND" />
+        <option value="b35dab" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a9fd43" name="ERROR_STRIPE_COLOR" />
+        <option value="f2739e" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SASS_DIRECTIVE">
       <value>
-        <option value="e054a7" name="FOREGROUND" />
+        <option value="eb00bf" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff307a" name="ERROR_STRIPE_COLOR" />
+        <option value="b4559e" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SASS_MIXIN">
       <value>
-        <option value="bccb19" name="FOREGROUND" />
+        <option value="a021c0" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="359f4b" name="ERROR_STRIPE_COLOR" />
+        <option value="c75fae" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SASS_NUMBER">
       <value>
-        <option value="d795cb" name="FOREGROUND" />
+        <option value="9c46f1" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e1a282" name="ERROR_STRIPE_COLOR" />
+        <option value="a05960" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SASS_RULE">
       <value>
-        <option value="bd6174" name="FOREGROUND" />
+        <option value="ff51ab" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="bf3a7e" name="ERROR_STRIPE_COLOR" />
+        <option value="8f2ed9" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SASS_STRING">
       <value>
-        <option value="fdf767" name="FOREGROUND" />
+        <option value="b1788d" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c47045" name="ERROR_STRIPE_COLOR" />
+        <option value="ff5eaf" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SASS_VARIABLE">
       <value>
-        <option value="b2b967" name="FOREGROUND" />
+        <option value="b796ed" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c7c6ec" name="ERROR_STRIPE_COLOR" />
+        <option value="c16ea3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SCOPE_KEY_All">
       <value>
-        <option value="958e5a" name="FOREGROUND" />
+        <option value="ff008c" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ac6c9f" name="ERROR_STRIPE_COLOR" />
+        <option value="bb4e85" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SCOPE_KEY_Non-Project">
       <value>
-        <option value="db5ec6" name="FOREGROUND" />
+        <option value="994fb1" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ffaf2f" name="ERROR_STRIPE_COLOR" />
+        <option value="aa79c3" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="Files">
       <value>
-        <option value="0fac68" name="FOREGROUND" />
+        <option value="9136bb" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff0ca1" name="ERROR_STRIPE_COLOR" />
+        <option value="a06f6b" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SCOPE_KEY_Problems">
       <value>
-        <option value="d2ff78" name="FOREGROUND" />
+        <option value="e1208f" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="fbf252" name="ERROR_STRIPE_COLOR" />
+        <option value="a533a2" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SCOPE_KEY_Production">
       <value>
-        <option value="a9496c" name="FOREGROUND" />
+        <option value="b65490" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="cd3067" name="ERROR_STRIPE_COLOR" />
+        <option value="9152b2" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SCOPE_KEY_Project">
       <value>
-        <option value="c6af54" name="FOREGROUND" />
+        <option value="cd0dfa" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b27643" name="ERROR_STRIPE_COLOR" />
+        <option value="c540f0" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="Files">
       <value>
-        <option value="e44f58" name="FOREGROUND" />
+        <option value="c917b7" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a487a3" name="ERROR_STRIPE_COLOR" />
+        <option value="af8bbf" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SCOPE_KEY_Tests">
       <value>
-        <option value="b1cd9a" name="FOREGROUND" />
+        <option value="c75dc3" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c88fb5" name="ERROR_STRIPE_COLOR" />
+        <option value="967ced" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option value="c7a566" name="FOREGROUND" />
+        <option value="c60ef0" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a8cae5" name="ERROR_STRIPE_COLOR" />
+        <option value="c116fc" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="SQL_KEYWORD">
       <value>
-        <option value="d416e9" name="FOREGROUND" />
+        <option value="af48a5" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ce36eb" name="ERROR_STRIPE_COLOR" />
+        <option value="9d711e" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="STATIC_FIELD_ATTRIBUTES">
       <value>
-        <option value="ee3a25" name="FOREGROUND" />
+        <option value="c67bd3" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="f8fe36" name="ERROR_STRIPE_COLOR" />
+        <option value="b54a5f" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="TEMPLATE_VARIABLE_ATTRIBUTES">
       <value>
-        <option value="c097fd" name="FOREGROUND" />
+        <option value="b827e2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c5c505" name="ERROR_STRIPE_COLOR" />
+        <option value="e86ba7" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="TEXT">
       <value>
-        <option value="e069d9" name="FOREGROUND" />
-        <option value="171717" name="BACKGROUND" />
+        <option value="c5683a" name="FOREGROUND" />
+        <option value="1a1a1a" name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="93834b" name="ERROR_STRIPE_COLOR" />
+        <option value="aa5159" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option value="cc4ffe" name="FOREGROUND" />
+        <option value="a776a0" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c24c53" name="ERROR_STRIPE_COLOR" />
+        <option value="89ff90" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
       <value>
-        <option value="976162" name="FOREGROUND" />
+        <option value="a698be" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="9d8d6a" name="ERROR_STRIPE_COLOR" />
+        <option value="9d7d1b" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="TYPO">
       <value>
         <option name="FOREGROUND" />
         <option name="BACKGROUND" />
-        <option value="917c00" name="EFFECT_COLOR" />
+        <option value="2f69e2" name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
         <option value="0" name="EFFECT_TYPE" />
-        <option value="ffa155" name="ERROR_STRIPE_COLOR" />
+        <option value="8c2ce5" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="WARNING_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" />
         <option name="BACKGROUND" />
-        <option value="cfe8b5" name="EFFECT_COLOR" />
+        <option value="fa18f8" name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="2" name="EFFECT_TYPE" />
-        <option value="c05236" name="ERROR_STRIPE_COLOR" />
+        <option value="5" name="EFFECT_TYPE" />
+        <option value="e657de" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option value="f77172" name="FOREGROUND" />
+        <option value="c700f6" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
-        <option value="1" name="FONT_TYPE" />
-        <option value="c2ff74" name="ERROR_STRIPE_COLOR" />
+        <option value="0" name="FONT_TYPE" />
+        <option value="b066fc" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option value="cc6826" name="FOREGROUND" />
+        <option value="f75e80" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="c06a77" name="ERROR_STRIPE_COLOR" />
+        <option value="e000ae" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="WRONG_REFERENCES_ATTRIBUTES">
       <value>
-        <option value="d08c5c" name="FOREGROUND" />
+        <option value="755cb2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d36d5d" name="ERROR_STRIPE_COLOR" />
+        <option value="e2620f" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="XML_ATTRIBUTE_NAME">
       <value>
-        <option value="94e9f1" name="FOREGROUND" />
+        <option value="be3aec" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="db868b" name="ERROR_STRIPE_COLOR" />
+        <option value="a5439c" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="XML_ATTRIBUTE_VALUE">
       <value>
-        <option value="cd4af9" name="FOREGROUND" />
+        <option value="9b10dc" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="daaddb" name="ERROR_STRIPE_COLOR" />
+        <option value="7363fb" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="XML_COMMENT">
       <value>
-        <option value="4a6c5b" name="FOREGROUND" />
+        <option value="a25315" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ab92b9" name="ERROR_STRIPE_COLOR" />
+        <option value="a99338" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="XML_ENTITY_REFERENCE">
       <value>
-        <option value="718b46" name="FOREGROUND" />
+        <option value="8f3ecd" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="cc443d" name="ERROR_STRIPE_COLOR" />
+        <option value="9f06e6" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="XML_PROLOGUE">
       <value>
-        <option value="b4ecbf" name="FOREGROUND" />
+        <option value="a143bb" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="606599" name="ERROR_STRIPE_COLOR" />
+        <option value="af8ec2" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="XML_TAG">
       <value>
-        <option value="a6f32a" name="FOREGROUND" />
+        <option value="b62fd9" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="8647d1" name="ERROR_STRIPE_COLOR" />
+        <option value="a55066" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="XML_TAG_DATA">
       <value>
-        <option value="be5d14" name="FOREGROUND" />
+        <option value="84a8f2" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="d1cf5e" name="ERROR_STRIPE_COLOR" />
+        <option value="9a2fde" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="XML_TAG_NAME">
       <value>
-        <option value="e64645" name="FOREGROUND" />
+        <option value="b5717a" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="a98641" name="ERROR_STRIPE_COLOR" />
+        <option value="cb20ce" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="YAML_COMMENT">
       <value>
-        <option value="e42428" name="FOREGROUND" />
+        <option value="956512" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ec4d7b" name="ERROR_STRIPE_COLOR" />
+        <option value="ad47f1" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="YAML_SCALAR_DSTRING">
       <value>
-        <option value="c1f08f" name="FOREGROUND" />
+        <option value="d600e1" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="f1c8bb" name="ERROR_STRIPE_COLOR" />
+        <option value="b0730b" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="YAML_SCALAR_KEY">
       <value>
-        <option value="d4840f" name="FOREGROUND" />
+        <option value="375fed" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="af72c0" name="ERROR_STRIPE_COLOR" />
+        <option value="bc3778" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="YAML_SCALAR_LIST">
       <value>
-        <option value="ff9b1b" name="FOREGROUND" />
+        <option value="e964b6" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="e5ae96" name="ERROR_STRIPE_COLOR" />
+        <option value="9c6690" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="YAML_SCALAR_STRING">
       <value>
-        <option value="d19a68" name="FOREGROUND" />
+        <option value="9750b0" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="f98114" name="ERROR_STRIPE_COLOR" />
+        <option value="922efe" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="YAML_SCALAR_VALUE">
       <value>
-        <option value="f8ad2f" name="FOREGROUND" />
+        <option value="eb1f7f" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="fdca0a" name="ERROR_STRIPE_COLOR" />
+        <option value="8d5db0" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="YAML_SCALAR_VALUE4">
       <value>
-        <option value="e9bc97" name="FOREGROUND" />
+        <option value="b832cb" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="ff51b3" name="ERROR_STRIPE_COLOR" />
+        <option value="8f6459" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="YAML_SIGN">
       <value>
-        <option value="aeb410" name="FOREGROUND" />
+        <option value="a43898" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="8245ac" name="ERROR_STRIPE_COLOR" />
+        <option value="ca3fcc" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
     <option name="YAML_TEXT">
       <value>
-        <option value="da0ec2" name="FOREGROUND" />
+        <option value="6e5b99" name="FOREGROUND" />
         <option name="BACKGROUND" />
         <option name="EFFECT_COLOR" />
         <option value="0" name="FONT_TYPE" />
-        <option value="b8da0b" name="ERROR_STRIPE_COLOR" />
+        <option value="a525cc" name="ERROR_STRIPE_COLOR" />
       </value>
     </option>
   </attributes>
   <colors>
-    <option value="b9b9b9" name="ANNOTATIONS_COLOR" />
-    <option value="b1b1b1" name="CARET_COLOR" />
-    <option value="093135" name="CARET_ROW_COLOR" />
-    <option value="838383" name="CONSOLE_BACKGROUND_KEY" />
-    <option value="171717" name="GUTTER_BACKGROUND" />
-    <option value="313131" name="INDENT_GUIDE" />
-    <option value="fbfbfb" name="LINE_NUMBERS_COLOR" />
-    <option value="f8f8f8" name="METHOD_SEPARATORS_COLOR" />
-    <option value="dedede" name="MODIFIED_LINES_COLOR" />
-    <option value="2d2d2d" name="READONLY_BACKGROUND" />
-    <option value="202020" name="READONLY_FRAGMENT_BACKGROUND" />
-    <option value="b8b8b8" name="RECURSIVE_CALL_ATTRIBUTES" />
-    <option value="f2f2f2" name="RIGHT_MARGIN_COLOR" />
-    <option value="505050" name="SELECTED_INDENT_GUIDE" />
-    <option value="c5c5c5" name="SELECTED_TEARLINE_COLOR" />
-    <option value="30205b" name="SELECTION_BACKGROUND" />
+    <option value="dadada" name="ANNOTATIONS_COLOR" />
+    <option value="9f9f9f" name="CARET_COLOR" />
+    <option value="5e0032" name="CARET_ROW_COLOR" />
+    <option value="8d8d8d" name="CONSOLE_BACKGROUND_KEY" />
+    <option value="1a1a1a" name="GUTTER_BACKGROUND" />
+    <option value="000000" name="INDENT_GUIDE" />
+    <option value="c3c3c3" name="LINE_NUMBERS_COLOR" />
+    <option value="d2d2d2" name="METHOD_SEPARATORS_COLOR" />
+    <option value="989898" name="MODIFIED_LINES_COLOR" />
+    <option value="2c2c2c" name="READONLY_BACKGROUND" />
+    <option value="272727" name="READONLY_FRAGMENT_BACKGROUND" />
+    <option value="a0a0a0" name="RECURSIVE_CALL_ATTRIBUTES" />
+    <option value="777777" name="RIGHT_MARGIN_COLOR" />
+    <option value="525252" name="SELECTED_INDENT_GUIDE" />
+    <option value="eeeeee" name="SELECTED_TEARLINE_COLOR" />
+    <option value="820210" name="SELECTION_BACKGROUND" />
     <option name="SELECTION_FOREGROUND" />
-    <option value="fbfbfb" name="TEARLINE_COLOR" />
-    <option value="d9d9d9" name="WHITESPACES" />
+    <option value="aeaeae" name="TEARLINE_COLOR" />
+    <option value="8c8c8c" name="WHITESPACES" />
   </colors>
   <option value="1.0" name="LINE_SPACING" />
   <option value="DejaVu Sans Mono" name="EDITOR_FONT_NAME" />
   <option value="12" name="EDITOR_FONT_SIZE" />
-  <option value="203161023168661341855253757961609809678" name="RANDOM_SEED" />
+  <option value="141684001824473856964427051056786829948" name="RANDOM_SEED" />
 </scheme>
