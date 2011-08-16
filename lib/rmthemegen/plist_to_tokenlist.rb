@@ -159,7 +159,10 @@ module RMThemeGen
       @scopes_found = {}
       @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/*.tmTheme"]
  #     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/Brilliance Dull.tmTheme"]
-      @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/choco.tmTheme"]
+ #     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/choco.tmTheme"]
+     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/IR_Black.tmTheme"]
+     @use_scope_threshhold =0 # a scope will be used only if it appears at least this number of times in the existing themes 
+
       puts '@files_look_in.inspect'
       puts @files_look_in.inspect
       
@@ -190,7 +193,6 @@ module RMThemeGen
 #      puts "Found #{@num_sf} scopes in file #{syntax_file.to_s}"    
       syntax_file.close       
       end #files_look_in.each
-       @use_scope_threshhold = 0 # a scope will be used only if it appears at least this number of times in the existing themes 
       @scopes_found.each do |k,v|
         puts k+"->"+v.to_s
         @scopes_found.delete(k) unless v >= @use_scope_threshhold

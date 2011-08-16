@@ -178,10 +178,9 @@ module RMThemeGen
         new_dict.add_element di1
       return new_dict
     end
-
     
     def gen_uuid
-        nn = sprintf("%X",rand(340282366920938463463374607431768211456).abs)
+        nn = sprintf("%032X",rand(340282366920938463463374607431768211456).abs)
         nn = nn[0,8]+"-"+nn[12,4]+"-4"+nn[17,3]+"-"+["8","9","A","B"].shuffle[0]+nn[21,3]+"-"+nn[24,12]
     end
 
