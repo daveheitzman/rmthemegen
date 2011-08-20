@@ -34,13 +34,13 @@ module Uv
         render["tags"] = []
         count_names = {}
 #    puts @theme.each do |i| i.inspect end ;
-    puts @theme.inspect 
-    puts @theme.methods
-    puts @theme.class
+ #   puts @theme.inspect 
+#    puts @theme.methods
+#    puts @theme.class
     
-    puts 'standard_name = '+standard_name 
-    puts 'code_name = '+code_name 
-    puts @theme.keys
+ #   puts 'standard_name = '+standard_name 
+ #   puts 'code_name = '+code_name 
+ #   puts @theme.keys
         @theme["settings"].each do |t|
            if t["scope"]
               class_name = t["name"].downcase.gsub(/\W/, ' ').gsub('.tmtheme', '').split(' ').collect{|s| s.capitalize}.join

@@ -1,0 +1,631 @@
+--- 
+name: straight_bone
+line: 
+  begin: ""
+  end: ""
+filter: CGI.escapeHTML( @escaped )
+document: 
+  begin: "        <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n        <html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\">\n\n        <head>\n          <meta http-equiv=\"content-type\" content=\"text/html; charset=iso-8859-1\" />\n          <meta http-equiv=\"cache-control\" content=\"no-cache\" />\n          <meta http-equiv=\"expires\" content=\"3600\" />\n          <meta name=\"revisit-after\" content=\"2 days\" />\n          <meta name=\"robots\" content=\"index,follow\" />\n          <meta name=\"publisher\" content=\"Dichodaemon\" />\n          <meta name=\"copyright\" content=\"Dichodaemon\" />\n\n          <meta name=\"author\" content=\"Dichodaemon\" />\n          <meta name=\"distribution\" content=\"global\" />\n          <meta name=\"description\" content=\"Ocatarinetabellachithchix\" />\n          <meta name=\"keywords\" content=\"arzaversperia flexilimosos toves\" />\n          <link rel=\"stylesheet\" type=\"text/css\" media=\"screen,projection,print\" href=\"css/rmt_straight_bone.css\" />\n          <title>rmt_straight_bone</title>\n\n        </head>\n\n        <body>\n"
+  end: "          <p>\n            <a href=\"http://validator.w3.org/check?uri=referer\">\n              <img style=\"border:0\"\n                   src=\"http://www.w3.org/Icons/valid-xhtml10\"\n                   alt=\"Valid XHTML 1.0 Strict\" height=\"31\" width=\"88\" />\n            </a>\n            <a href=\"http://jigsaw.w3.org/css-validator/check?uri=referer\">\n              <img style=\"border:0;width:88px;height:31px\"\n                   src=\"http://jigsaw.w3.org/css-validator/images/vcss\" \n                   alt=\"Valid CSS!\" />\n            </a>\n          </p>\n        </body>\n        </html>\n"
+tags: 
+- begin: <span class="Meta2181692">
+  end: </span>
+  selector: meta.thomas_aylott
+- begin: <span class="Meta6607386">
+  end: </span>
+  selector: meta.subtlegradient
+- begin: <span class="StringMeta8996880">
+  end: </span>
+  selector: "\n          string -meta.tag -meta.doctype -string.regexp -string.literal\n          -string.interpolated -string.quoted.literal -string.unquoted,\n          variable.parameter.misc.css, text string source string,\n          string.unquoted string, string.regexp string, string.interpolated\n          string, meta.tag source string\n        "
+- begin: <span class="Punctuation8039129">
+  end: </span>
+  selector: punctuation.definition.string -meta.tag
+- begin: <span class="String7034154">
+  end: </span>
+  selector: "\n          string.regexp punctuation.definition.string, string.quoted.literal\n          punctuation.definition.string, string.quoted.double.ruby.mod\n          punctuation.definition.string\n        "
+- begin: <span class="String1698254">
+  end: </span>
+  selector: string.quoted.literal, string.quoted.double.ruby.mod
+- begin: <span class="String94682">
+  end: </span>
+  selector: "\n          string.unquoted -string.unquoted.embedded,\n          string.quoted.double.multiline, meta.scope.heredoc\n        "
+- begin: <span class="String4290236">
+  end: </span>
+  selector: string.interpolated
+- begin: <span class="String2736712">
+  end: </span>
+  selector: string.regexp
+- begin: <span class="String2193439">
+  end: </span>
+  selector: string.regexp.group
+- begin: <span class="String1104498">
+  end: </span>
+  selector: "string.regexp.group string.regexp.group "
+- begin: <span class="String1405606">
+  end: </span>
+  selector: "string.regexp.group string.regexp.group string.regexp.group "
+- begin: <span class="String2504301">
+  end: </span>
+  selector: "\n          string.regexp.group string.regexp.group string.regexp.group\n          string.regexp.group \n        "
+- begin: <span class="String6776607">
+  end: </span>
+  selector: string.regexp.character-class
+- begin: <span class="String1953651">
+  end: </span>
+  selector: string.regexp.arbitrary-repitition
+- begin: <span class="String8126190">
+  end: </span>
+  selector: string.regexp punctuation.definition.string keyword.other
+- begin: <span class="Meta2232195">
+  end: </span>
+  selector: "meta.group.assertion.regexp "
+- begin: <span class="Meta6279481">
+  end: </span>
+  selector: "\n          meta.assertion, meta.group.assertion keyword.control.group.regexp,\n          meta.group.assertion punctuation.definition.group\n        "
+- begin: <span class="Constant8025943">
+  end: </span>
+  selector: constant.numeric
+- begin: <span class="Constant5602912">
+  end: </span>
+  selector: constant.character
+- begin: <span class="Constant405644">
+  end: </span>
+  selector: constant.language, keyword.other.unit, constant.other.java, constant.other.unit
+- begin: <span class="Constant1253320">
+  end: </span>
+  selector: constant.language.pseudo-variable
+- begin: <span class="Constant1843423">
+  end: </span>
+  selector: constant.other, constant.block
+- begin: <span class="Support4045980">
+  end: </span>
+  selector: support.constant, constant.name
+- begin: <span class="Variable4202887">
+  end: </span>
+  selector: variable.other.readwrite.global.pre-defined, variable.language
+- begin: <span class="Variable3455708">
+  end: </span>
+  selector: variable.other.constant
+- begin: <span class="Support8270297">
+  end: </span>
+  selector: support.variable
+- begin: <span class="Variable6394097">
+  end: </span>
+  selector: variable.other.readwrite.global
+- begin: <span class="Variable2139652">
+  end: </span>
+  selector: variable.other, variable.js, punctuation.separator.variable
+- begin: <span class="Variable654833">
+  end: </span>
+  selector: variable.other.readwrite.class
+- begin: <span class="Variable2999403">
+  end: </span>
+  selector: variable.other.readwrite.instance
+- begin: <span class="Variable4689165">
+  end: </span>
+  selector: variable.other.php, variable.other.normal
+- begin: <span class="Punctuation5385791">
+  end: </span>
+  selector: punctuation.definition, punctuation.separator.variable
+- begin: <span class="StorageStorage3217706">
+  end: </span>
+  selector: storage -storage.modifier
+- begin: <span class="Other6833174">
+  end: </span>
+  selector: other.preprocessor, entity.name.preprocessor
+- begin: <span class="Variable3126966">
+  end: </span>
+  selector: variable.language.this.js
+- begin: <span class="Storage1420210">
+  end: </span>
+  selector: storage.modifier
+- begin: <span class="Entity2850429">
+  end: </span>
+  selector: entity.name.class, entity.name.type.class, entity.name.type.module
+- begin: <span class="Meta4115265">
+  end: </span>
+  selector: "\n          meta.class -meta.class.instance, declaration.class,\n          meta.definition.class, declaration.module\n        "
+- begin: <span class="Support397856">
+  end: </span>
+  selector: support.type, support.class
+- begin: <span class="Entity2432361">
+  end: </span>
+  selector: entity.name.instance, entity.name.type.instance
+- begin: <span class="Meta8132443">
+  end: </span>
+  selector: meta.class.instance.constructor
+- begin: <span class="Entity5110963">
+  end: </span>
+  selector: entity.other.inherited-class, entity.name.module
+- begin: <span class="Meta1923984">
+  end: </span>
+  selector: meta.definition.method
+- begin: <span class="Meta487940">
+  end: </span>
+  selector: meta.function, meta.property.function, declaration.function
+- begin: <span class="Entity6999522">
+  end: </span>
+  selector: entity.name.function, entity.name.preprocessor
+- begin: <span class="Variable2192279">
+  end: </span>
+  selector: variable.parameter.function
+- begin: <span class="Variable646688">
+  end: </span>
+  selector: "\n          variable.parameter -variable.parameter.misc.css,\n          meta.definition.method meta.definition.param-list,\n          meta.function.method.with-arguments variable.parameter.function\n        "
+- begin: <span class="Punctuation8886030">
+  end: </span>
+  selector: "\n          punctuation.definition.parameters, variable.parameter.function\n          punctuation.separator.object\n        "
+- begin: <span class="Keyword7531743">
+  end: </span>
+  selector: "\n          keyword.other.special-method, meta.function-call entity.name.function\n          -(meta.function-call meta.function), support.function - variable\n        "
+- begin: <span class="Meta2151848">
+  end: </span>
+  selector: meta.function-call support.function - variable
+- begin: <span class="Support5461179">
+  end: </span>
+  selector: support.function
+- begin: <span class="Punctuation5924734">
+  end: </span>
+  selector: "\n          punctuation.section.function, meta.brace.curly.function,\n          meta.function-call punctuation.section.scope.ruby, meta.function-call\n          punctuation.separator.object\n        "
+- begin: <span class="Meta2618576">
+  end: </span>
+  selector: "\n          meta.group.braces.round punctuation.section.scope,\n          meta.group.braces.round meta.delimiter.object.comma,\n          meta.group.braces.curly.function meta.delimiter.object.comma,\n          meta.brace.round\n        "
+- begin: <span class="Meta2436858">
+  end: </span>
+  selector: "\n          meta.function-call.method.without-arguments,\n          meta.function-call.method.without-arguments entity.name.function\n        "
+- begin: <span class="Keyword7308206">
+  end: </span>
+  selector: keyword.control
+- begin: <span class="Keyword7700450">
+  end: </span>
+  selector: keyword
+- begin: <span class="Keyword4149849">
+  end: </span>
+  selector: keyword.other
+- begin: <span class="Source5328214">
+  end: </span>
+  selector: source.regexp keyword.operator
+- begin: <span class="Keyword8042603">
+  end: </span>
+  selector: "\n          keyword.operator, declaration.function.operator,\n          meta.preprocessor.c.include, punctuation.separator.operator\n        "
+- begin: <span class="Keyword2626309">
+  end: </span>
+  selector: keyword.operator.assignment
+- begin: <span class="Keyword5535082">
+  end: </span>
+  selector: keyword.operator.arithmetic
+- begin: <span class="Keyword8286369">
+  end: </span>
+  selector: keyword.operator.logical
+- begin: <span class="Keyword5772084">
+  end: </span>
+  selector: keyword.operator.comparison
+- begin: <span class="Meta845290">
+  end: </span>
+  selector: meta.class.instance.constructor keyword.operator.new
+- begin: <span class="Meta3440214">
+  end: </span>
+  selector: meta.doctype, meta.tag.sgml-declaration.doctype, meta.tag.sgml.doctype
+- begin: <span class="Meta5735598">
+  end: </span>
+  selector: meta.tag
+- begin: <span class="Meta3561854">
+  end: </span>
+  selector: meta.tag.structure, meta.tag.segment
+- begin: <span class="Meta3237683">
+  end: </span>
+  selector: meta.tag.block, meta.tag.xml, meta.tag.key
+- begin: <span class="Meta4864882">
+  end: </span>
+  selector: meta.tag.inline
+- begin: <span class="Meta7201506">
+  end: </span>
+  selector: meta.tag.inline source
+- begin: <span class="Meta7840280">
+  end: </span>
+  selector: "\n          meta.tag.other, entity.name.tag.style, entity.name.tag.script,\n          meta.tag.block.script, source.js.embedded\n          punctuation.definition.tag.html, source.css.embedded\n          punctuation.definition.tag.html\n        "
+- begin: <span class="Meta4670620">
+  end: </span>
+  selector: meta.tag.form, meta.tag.block.form
+- begin: <span class="Meta2304832">
+  end: </span>
+  selector: meta.tag.meta
+- begin: <span class="Meta1648550">
+  end: </span>
+  selector: meta.section.html.head
+- begin: <span class="Meta1452807">
+  end: </span>
+  selector: meta.section.html.form
+- begin: <span class="Meta274134">
+  end: </span>
+  selector: meta.tag.xml
+- begin: <span class="Entity5653465">
+  end: </span>
+  selector: entity.name.tag
+- begin: <span class="Entity944966">
+  end: </span>
+  selector: entity.other.attribute-name, meta.tag punctuation.definition.string
+- begin: <span class="Meta1644101">
+  end: </span>
+  selector: "\n          meta.tag string -source -punctuation, text source text meta.tag string\n          -punctuation\n        "
+- begin: <span class="TextMeta2708713">
+  end: </span>
+  selector: text meta.paragraph
+- begin: <span class="MarkupMarkupMarkupMeta2139002">
+  end: </span>
+  selector: markup markup -(markup meta.paragraph.list)
+- begin: <span class="Markup4249545">
+  end: </span>
+  selector: markup.hr
+- begin: <span class="Markup1290472">
+  end: </span>
+  selector: markup.heading
+- begin: <span class="Markup2582333">
+  end: </span>
+  selector: markup.bold
+- begin: <span class="Markup3885272">
+  end: </span>
+  selector: markup.italic
+- begin: <span class="Markup4075575">
+  end: </span>
+  selector: markup.underline
+- begin: <span class="Meta5433654">
+  end: </span>
+  selector: meta.reference, markup.underline.link
+- begin: <span class="Entity2793214">
+  end: </span>
+  selector: entity.name.reference
+- begin: <span class="Meta4889747">
+  end: </span>
+  selector: "\n          meta.reference.list markup.underline.link, text.html.textile\n          markup.underline.link\n        "
+- begin: <span class="Markup3422943">
+  end: </span>
+  selector: markup.raw.block
+- begin: <span class="Markup3127000">
+  end: </span>
+  selector: markup.quote
+- begin: <span class="Markup1062796">
+  end: </span>
+  selector: markup.list meta.paragraph
+- begin: <span class="Text5917029">
+  end: </span>
+  selector: text.html.markdown
+- begin: <span class="Text2397978">
+  end: </span>
+  selector: text.html.markdown meta.paragraph
+- begin: <span class="Text237750">
+  end: </span>
+  selector: text.html.markdown markup.list meta.paragraph
+- begin: <span class="Text7742304">
+  end: </span>
+  selector: text.html.markdown markup.heading
+- begin: <span class="Text6027642">
+  end: </span>
+  selector: text.html.markdown string
+- begin: <span class="Source1986405">
+  end: </span>
+  selector: source.css
+- begin: <span class="Meta2823476">
+  end: </span>
+  selector: meta.selector
+- begin: <span class="Source7007680">
+  end: </span>
+  selector: "\n          source.css meta.scope.property-list meta.property-value\n          punctuation.definition.arguments, source.css meta.scope.property-list\n          meta.property-value punctuation.separator.arguments\n        "
+- begin: <span class="Entity1323215">
+  end: </span>
+  selector: entity.other.attribute-name.pseudo-element
+- begin: <span class="Entity6180751">
+  end: </span>
+  selector: "\n          entity.other.attribute-name.pseudo-class,\n          entity.other.attribute-name.tag.pseudo-class\n        "
+- begin: <span class="Meta7385747">
+  end: </span>
+  selector: meta.selector entity.other.attribute-name.class
+- begin: <span class="Meta6564150">
+  end: </span>
+  selector: meta.selector entity.other.attribute-name.id
+- begin: <span class="Meta2166766">
+  end: </span>
+  selector: meta.selector entity.name.tag
+- begin: <span class="Entity8402724">
+  end: </span>
+  selector: entity.name.tag.wildcard, entity.other.attribute-name.universal
+- begin: <span class="Source1117552">
+  end: </span>
+  selector: source.css entity.other.attribute-name.attribute
+- begin: <span class="Source513859">
+  end: </span>
+  selector: source.css meta.attribute-selector keyword.operator.comparison
+- begin: <span class="Meta7170757">
+  end: </span>
+  selector: meta.scope.property-list
+- begin: <span class="Meta3952066">
+  end: </span>
+  selector: meta.property-name
+- begin: <span class="Support1140581">
+  end: </span>
+  selector: support.type.property-name
+- begin: <span class="Meta3103891">
+  end: </span>
+  selector: meta.property-value
+- begin: <span class="Text326476">
+  end: </span>
+  selector: text.latex
+- begin: <span class="Text1589513">
+  end: </span>
+  selector: text.latex markup.raw
+- begin: <span class="Text8993829">
+  end: </span>
+  selector: text.latex support.function -support.function.textit -support.function.emph
+- begin: <span class="Text2901365">
+  end: </span>
+  selector: text.latex support.function.section
+- begin: <span class="Text6687323">
+  end: </span>
+  selector: text.latex entity.name.section -meta.group -keyword.operator.braces
+- begin: <span class="Text443172">
+  end: </span>
+  selector: text.latex constant.language.general
+- begin: <span class="Text5363812">
+  end: </span>
+  selector: text.latex keyword.operator.delimiter
+- begin: <span class="Text3238459">
+  end: </span>
+  selector: text.latex keyword.operator.brackets
+- begin: <span class="Text3135119">
+  end: </span>
+  selector: text.latex keyword.operator.braces
+- begin: <span class="Meta3589973">
+  end: </span>
+  selector: meta.footnote
+- begin: <span class="Text7074206">
+  end: </span>
+  selector: text.latex meta.label.reference
+- begin: <span class="Text7281673">
+  end: </span>
+  selector: text.latex keyword.control.ref
+- begin: <span class="Text6543484">
+  end: </span>
+  selector: text.latex variable.parameter.label.reference
+- begin: <span class="Text5967746">
+  end: </span>
+  selector: text.latex keyword.control.cite
+- begin: <span class="Variable3263805">
+  end: </span>
+  selector: variable.parameter.cite
+- begin: <span class="Text3500094">
+  end: </span>
+  selector: text.latex variable.parameter.label
+- begin: <span class="Meta1776687">
+  end: </span>
+  selector: meta.function markup
+- begin: <span class="Text1864367">
+  end: </span>
+  selector: text.latex meta.group.braces
+- begin: <span class="Text9042498">
+  end: </span>
+  selector: text.latex meta.environment.list
+- begin: <span class="Text7711236">
+  end: </span>
+  selector: "text.latex meta.environment.list meta.environment.list "
+- begin: <span class="Text1691194">
+  end: </span>
+  selector: "text.latex meta.environment.list meta.environment.list meta.environment.list "
+- begin: <span class="Text4449907">
+  end: </span>
+  selector: "\n          text.latex meta.environment.list meta.environment.list\n          meta.environment.list meta.environment.list \n        "
+- begin: <span class="Text706862">
+  end: </span>
+  selector: "\n          text.latex meta.environment.list meta.environment.list\n          meta.environment.list meta.environment.list meta.environment.list \n        "
+- begin: <span class="Text3097087">
+  end: </span>
+  selector: "\n          text.latex meta.environment.list meta.environment.list\n          meta.environment.list meta.environment.list meta.environment.list\n          meta.environment.list \n        "
+- begin: <span class="Text4449334">
+  end: </span>
+  selector: "\n          text.latex meta.end-document, text.latex meta.begin-document,\n          meta.end-document.latex support.function, meta.end-document.latex\n          variable.parameter, meta.begin-document.latex support.function,\n          meta.begin-document.latex variable.parameter\n        "
+- begin: <span class="Meta7711162">
+  end: </span>
+  selector: meta.brace.erb.return-value
+- begin: <span class="Source6124744">
+  end: </span>
+  selector: source.ruby.rails.embedded.return-value.one-line
+- begin: <span class="Punctuation4861069">
+  end: </span>
+  selector: "\n          punctuation.section.embedded -(source string source\n          punctuation.section.embedded), meta.brace.erb.html\n        "
+- begin: <span class="Source1474137">
+  end: </span>
+  selector: source.ruby.rails.embedded.one-line
+- begin: <span class="SourceStringSourcePunctuation5160124">
+  end: </span>
+  selector: source string source punctuation.section.embedded
+- begin: <span class="Source7268848">
+  end: </span>
+  selector: source.js.embedded
+- begin: <span class="Source322241">
+  end: </span>
+  selector: source
+- begin: <span class="Meta6052004">
+  end: </span>
+  selector: meta.brace.erb
+- begin: <span class="SourceStringSource6335920">
+  end: </span>
+  selector: source string source
+- begin: <span class="SourceString7572422">
+  end: </span>
+  selector: source string.interpolated source
+- begin: <span class="SourceSourceSource2297346">
+  end: </span>
+  selector: source source, source.java.embedded
+- begin: <span class="TextText6948992">
+  end: </span>
+  selector: text -text.xml.strict
+- begin: <span class="TextSourceMeta483627">
+  end: </span>
+  selector: text source, meta.scope.django.template
+- begin: <span class="TextStringSource4058977">
+  end: </span>
+  selector: text string source
+- begin: <span class="TextStringSourceStringSource6947824">
+  end: </span>
+  selector: text string source string source
+- begin: <span class="InvalidInvalid5054556">
+  end: </span>
+  selector: invalid -invalid.SOMETHING
+- begin: <span class="Invalid3411966">
+  end: </span>
+  selector: invalid.SOMETHING
+- begin: <span class="Meta5040553">
+  end: </span>
+  selector: meta.syntax
+- begin: <span class="CommentComment8868214">
+  end: </span>
+  selector: comment -comment.line
+- begin: <span class="Comment6991977">
+  end: </span>
+  selector: comment.line
+- begin: <span class="CommentPunctuation4189808">
+  end: </span>
+  selector: comment punctuation
+- begin: <span class="TextComment5893251">
+  end: </span>
+  selector: text comment.block -source
+- begin: <span class="Markup5850638">
+  end: </span>
+  selector: markup.inserted
+- begin: <span class="Markup2182441">
+  end: </span>
+  selector: markup.deleted
+- begin: <span class="Markup8536352">
+  end: </span>
+  selector: markup.changed
+- begin: <span class="Text7999619">
+  end: </span>
+  selector: "\n          text.subversion-commit meta.scope.changed-files,\n          text.subversion-commit meta.scope.changed-files.svn\n          meta.diff.separator\n        "
+- begin: <span class="Text5272022">
+  end: </span>
+  selector: text.subversion-commit
+- begin: <span class="Punctuation5491184">
+  end: </span>
+  selector: punctuation.terminator, meta.delimiter, punctuation.separator.method
+- begin: <span class="Punctuation3827968">
+  end: </span>
+  selector: punctuation.terminator.statement, meta.delimiter.statement.js
+- begin: <span class="Meta3531138">
+  end: </span>
+  selector: meta.delimiter.object.js
+- begin: <span class="String1480674">
+  end: </span>
+  selector: string.quoted.single.brace, string.quoted.double.brace
+- begin: <span class="Text4762683">
+  end: </span>
+  selector: text.blog, text.mail
+- begin: <span class="Text1303188">
+  end: </span>
+  selector: text.blog text, text.mail text
+- begin: <span class="Meta4028066">
+  end: </span>
+  selector: meta.header.blog keyword.other, meta.header.mail keyword.other
+- begin: <span class="Meta7741522">
+  end: </span>
+  selector: meta.header.blog string.unquoted.blog, meta.header.mail string.unquoted
+- begin: <span class="Source4119338">
+  end: </span>
+  selector: source.ocaml entity.name.type.module
+- begin: <span class="Source2750949">
+  end: </span>
+  selector: source.ocaml support.other.module
+- begin: <span class="Entity3591921">
+  end: </span>
+  selector: entity.name.type.variant
+- begin: <span class="Source3783609">
+  end: </span>
+  selector: source.ocaml entity.name.tag, source.ocaml meta.record.definition
+- begin: <span class="Punctuation718568">
+  end: </span>
+  selector: punctuation.separator.parameters
+- begin: <span class="Meta2587534">
+  end: </span>
+  selector: meta.brace.pipe
+- begin: <span class="Meta8119491">
+  end: </span>
+  selector: "\n          meta.brace.erb, source.ruby.embedded.source.brace,\n          punctuation.section.dictionary, punctuation.terminator.dictionary,\n          punctuation.separator.object, punctuation.separator.statement,\n          punctuation.separator.key-value.css\n        "
+- begin: <span class="Punctuation3969886">
+  end: </span>
+  selector: punctuation.section.scope.curly, punctuation.section.scope
+- begin: <span class="Punctuation8866722">
+  end: </span>
+  selector: "\n          punctuation.separator.objects, meta.group.braces.curly\n          meta.delimiter.object.comma, punctuation.separator.key-value\n          -meta.tag, source.ocaml punctuation.separator.match-definition \n        "
+- begin: <span class="Punctuation2487746">
+  end: </span>
+  selector: "\n          punctuation.separator.parameters.function.js,punctuation.definition.function, punctuation.separator.function-return, punctuation.separator.function-definition, punctuation.definition.arguments, punctuation.separator.arguments\n        "
+- begin: <span class="Meta8104987">
+  end: </span>
+  selector: "\n          meta.group.braces.square punctuation.section.scope,\n          meta.group.braces.square meta.delimiter.object.comma,\n          meta.brace.square, punctuation.separator.array,\n          punctuation.section.array, punctuation.definition.array,\n          punctuation.definition.constant.range\n        "
+- begin: <span class="Meta4488626">
+  end: </span>
+  selector: "\n          meta.structure.array -punctuation.definition.array,\n          meta.definition.range -punctuation.definition.constant.range\n        "
+- begin: <span class="Meta9031694">
+  end: </span>
+  selector: meta.brace.curly meta.group.css
+- begin: <span class="Meta7375969">
+  end: </span>
+  selector: meta.source.embedded, entity.other.django.tagbraces
+- begin: <span class="Source6805196">
+  end: </span>
+  selector: source.js meta.group.braces.round, meta.scope.heredoc
+- begin: <span class="Source2544144">
+  end: </span>
+  selector: "\n          source.ruby meta.even-tab, source.ruby meta.even-tab.group2,\n          source.ruby meta.even-tab.group4, source.ruby meta.even-tab.group6,\n          source.ruby meta.even-tab.group8, source.ruby meta.even-tab.group10,\n          source.ruby meta.even-tab.group12 \n        "
+- begin: <span class="Meta9088772">
+  end: </span>
+  selector: meta.block.slate
+- begin: <span class="Meta1889329">
+  end: </span>
+  selector: "meta.block.content.slate "
+- begin: <span class="Meta6278209">
+  end: </span>
+  selector: "\n          meta.function meta.group.braces.curly.function -(meta.group\n          meta.group), meta.function meta.odd-tab.group1\n        "
+- begin: <span class="Meta8316594">
+  end: </span>
+  selector: "\n          meta.odd-tab.group1, meta.group.braces, meta.block.slate,\n          text.xml.strict meta.tag, meta.paren-group, meta.section\n        "
+- begin: <span class="Meta7770154">
+  end: </span>
+  selector: "\n          meta.even-tab.group2, meta.group.braces meta.group.braces,\n          meta.block.slate meta.block.slate, text.xml.strict meta.tag meta.tag,\n          meta.group.braces meta.group.braces, meta.paren-group\n          meta.paren-group, meta.section meta.section\n        "
+- begin: <span class="Meta7867286">
+  end: </span>
+  selector: "\n          meta.odd-tab.group3, meta.group.braces meta.group.braces\n          meta.group.braces , meta.block.slate meta.block.slate meta.block.slate\n          , text.xml.strict meta.tag meta.tag meta.tag, meta.group.braces\n          meta.group.braces meta.group.braces, meta.paren-group meta.paren-group\n          meta.paren-group, meta.section meta.section meta.section\n        "
+- begin: <span class="Meta2631332">
+  end: </span>
+  selector: "\n          meta.even-tab.group4, meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces , meta.block.slate\n          meta.block.slate meta.block.slate meta.block.slate , text.xml.strict\n          meta.tag meta.tag meta.tag meta.tag, meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces,\n          meta.paren-group meta.paren-group meta.paren-group meta.paren-group,\n          meta.section meta.section meta.section meta.section\n        "
+- begin: <span class="Meta2726933">
+  end: </span>
+  selector: "\n          meta.odd-tab.group5, meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces ,\n          meta.block.slate meta.block.slate meta.block.slate meta.block.slate\n          meta.block.slate , text.xml.strict meta.tag meta.tag meta.tag meta.tag\n          meta.tag, meta.group.braces meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces, meta.paren-group meta.paren-group\n          meta.paren-group meta.paren-group meta.paren-group, meta.section\n          meta.section meta.section meta.section meta.section\n        "
+- begin: <span class="Meta6298104">
+  end: </span>
+  selector: "\n          meta.even-tab.group6, meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces\n          meta.group.braces , meta.block.slate meta.block.slate meta.block.slate\n          meta.block.slate meta.block.slate meta.block.slate , text.xml.strict\n          meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag,\n          meta.group.braces meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces,\n          meta.paren-group meta.paren-group meta.paren-group meta.paren-group\n          meta.paren-group meta.paren-group, meta.section meta.section\n          meta.section meta.section meta.section meta.section\n        "
+- begin: <span class="Meta2355576">
+  end: </span>
+  selector: "\n          meta.odd-tab.group7, meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces , meta.block.slate\n          meta.block.slate meta.block.slate meta.block.slate meta.block.slate\n          meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag\n          meta.tag meta.tag meta.tag meta.tag meta.tag, meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces,\n          meta.paren-group meta.paren-group meta.paren-group meta.paren-group\n          meta.paren-group meta.paren-group meta.paren-group, meta.section\n          meta.section meta.section meta.section meta.section meta.section\n          meta.section\n        "
+- begin: <span class="Meta266183">
+  end: </span>
+  selector: "\n          meta.even-tab.group8, meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces ,\n          meta.block.slate meta.block.slate meta.block.slate meta.block.slate\n          meta.block.slate meta.block.slate meta.block.slate meta.block.slate ,\n          text.xml.strict meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag\n          meta.tag meta.tag, meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces,\n          meta.paren-group meta.paren-group meta.paren-group meta.paren-group\n          meta.paren-group meta.paren-group meta.paren-group meta.paren-group,\n          meta.section meta.section meta.section meta.section meta.section\n          meta.section meta.section meta.section\n        "
+- begin: <span class="Meta1831435">
+  end: </span>
+  selector: "\n          meta.odd-tab.group9, meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces\n          meta.group.braces , meta.block.slate meta.block.slate meta.block.slate\n          meta.block.slate meta.block.slate meta.block.slate meta.block.slate\n          meta.block.slate meta.block.slate , text.xml.strict meta.tag meta.tag\n          meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag meta.tag,\n          meta.group.braces meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces\n          meta.group.braces meta.group.braces meta.group.braces,\n          meta.paren-group meta.paren-group meta.paren-group meta.paren-group\n          meta.paren-group meta.paren-group meta.paren-group meta.paren-group\n          meta.paren-group, meta.section meta.section meta.section meta.section\n          meta.section meta.section meta.section meta.section meta.section\n        "
+- begin: <span class="Meta5313479">
+  end: </span>
+  selector: meta.even-tab.group10
+- begin: <span class="Meta1208485">
+  end: </span>
+  selector: meta.odd-tab.group11
+- begin: <span class="Meta5381496">
+  end: </span>
+  selector: "\n          meta.property.vendor.microsoft.trident.4,\n          meta.property.vendor.microsoft.trident.4 support.type.property-name,\n          meta.property.vendor.microsoft.trident.4 punctuation.terminator.rule\n        "
+- begin: <span class="Meta4212048">
+  end: </span>
+  selector: "\n          meta.property.vendor.microsoft.trident.5,\n          meta.property.vendor.microsoft.trident.5 support.type.property-name,\n          meta.property.vendor.microsoft.trident.5\n          punctuation.separator.key-value,\n          meta.property.vendor.microsoft.trident.5 punctuation.terminator.rule\n        "
+listing: 
+  begin: <pre class="rmt_straight_bone">
+  end: </pre>
+line-numbers: 
+  begin: <span class="line-numbers">
+  end: </span>

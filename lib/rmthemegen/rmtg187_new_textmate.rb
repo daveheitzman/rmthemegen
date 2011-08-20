@@ -65,8 +65,9 @@ module RMThemeGen
         #The value represents all of the captures that were found lying around under the same dict as the given key. 
         @under_patterns={}
         @under_patterns.each do |k,v|
+          
           main_array.add_element(
-# so it's  make_name_scope_settings_rand(name,scope,[don't worry about it, but colors you can assign manually]) 
+            # so it's  make_name_scope_settings_rand(name,scope,[don't worry about it, but colors you can assign manually]) 
             make_name_scope_settings_rand(k.to_s.split(".")[0],v.to_s,[])  
           ) if v.to_s.size > 0
 
@@ -78,15 +79,16 @@ module RMThemeGen
     get_scopes_from_themefiles()
 
         co2 =0
-        @scopes_found.each do |k,v|
-          begin
+        @scopes_found.each_index do |k|
+          v=@scopes_found[k].to_s
+          if  @scopes_found_count[v] > 0
+            elname=v.split(".")[0]+rand(9090383).to_s
             main_array.add_element(
             # so it's  make_name_scope_settings_rand(name,scope,[don't worry about it, but colors you can assign manually]) 
-              make_name_scope_settings_rand(k.to_s.split(".")[0],k.to_s,[])  
-            ) 
+                make_name_scope_settings_rand(elname,v,[])
+            )  
             co2 += 1 
-          end if  k.to_s.size > 0 #&& v.to_i >= @use_scope_threshhold 
-        
+          end
         end 
 
         uuid_key = REXML::Element.new("key")

@@ -67,7 +67,7 @@ module RMThemeGen
           
       token_ary.sort!
       token_ary.each do |i|
-         puts i.to_s 
+       #  puts i.to_s 
       end 
       
       @nhash2 = {}
@@ -156,15 +156,17 @@ module RMThemeGen
     
     
     def get_scopes_from_themefiles
-      @scopes_found = {}
+      @scopes_found_count = {}
+      @scopes_found = []
       @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/*.tmTheme"]
  #     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/Brilliance Dull.tmTheme"]
  #     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/choco.tmTheme"]
-     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/IR_Black.tmTheme"]
+#     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/IR_Black.tmTheme"]
+     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/Brilliance Black.tmTheme"]
      @use_scope_threshhold =0 # a scope will be used only if it appears at least this number of times in the existing themes 
 
-      puts '@files_look_in.inspect'
-      puts @files_look_in.inspect
+#      puts '@files_look_in.inspect'
+ #     puts @files_look_in.inspect
       
       @files_look_in.each do |f|
         puts "opening file "+f.to_s 
@@ -178,24 +180,26 @@ module RMThemeGen
                 if ( k.previous_element.local_name=='key' && k.previous_element.text=="scope" )
                   # the following monkey business allows us to see how many times we've seen a key
                   @num_sf += 1
-                  if @scopes_found[k.text.to_s]
-                    @scopes_found[k.text.to_s] += 1
+                  @scopes_found << k.text.to_s
+                  if @scopes_found_count[k.text.to_s]
+                    @scopes_found_count[k.text.to_s] += 1
                   else
-                    @scopes_found[k.text.to_s] = 1
+                    @scopes_found_count[k.text.to_s] = 1
                   end 
                 end
               end
             end
-          rescue => e
+          rescue Exception => e
             puts "an exception in process_plists(): "+e.to_s 
           end
         } 
 #      puts "Found #{@num_sf} scopes in file #{syntax_file.to_s}"    
       syntax_file.close       
       end #files_look_in.each
-      @scopes_found.each do |k,v|
-        puts k+"->"+v.to_s
-        @scopes_found.delete(k) unless v >= @use_scope_threshhold
+      @scopes_found_count.each do |k,v|
+        #puts k+"->"+v.to_s
+        @scopes_found_count.delete(k) unless v >= @use_scope_threshhold
+        
       end 
 
       outf=File.new("scopes_harvested","w")
