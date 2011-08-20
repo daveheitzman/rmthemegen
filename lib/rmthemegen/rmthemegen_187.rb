@@ -23,6 +23,8 @@ require File.dirname(__FILE__)+'/rgb_contrast_methods'
 require File.dirname(__FILE__)+'/rmthemegen_to_css'
 require File.dirname(__FILE__)+'/rmtg187_new_textmate.rb'
 require File.dirname(__FILE__)+'/uv_addons.rb'
+require File.dirname(__FILE__)+'/rmthemegen_parent'
+require File.dirname(__FILE__)+'/plist_to_tokenlist'
 
 module RMThemeGen
 
@@ -31,18 +33,7 @@ module RMThemeGen
     attr_reader :xml_save, :themename 
     attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
     
-    def initialize
-    @random_seed = Kernel.srand
-    Kernel.srand(@random_seed)
-    
-    @theme_successfully_created = false
-
-    @iterations = 1 
-    @iterations = ARGV[0].to_s.to_i if ARGV[0]
-      #bold:                  <option name="FONT_TYPE" value="1" />
-      #italic:                <option name="FONT_TYPE" value="2" />
-      #bold & italic:         <option name="FONT_TYPE" value="3" />
-      
+   def initialize
       #"EFFECT-TYPE" s: 
       #   3 ==> cross-out 
       #   1 ==> underline
@@ -56,6 +47,8 @@ module RMThemeGen
       # be exposed equally to 
       # underline not implemented yet. There are several font decorations in rubymine, 
       # probably should be used sparingly. 
+      @bold_chance = 0.4
+      @underline_chance = 0.3
       @italic_candidates = ["STRING", "SYMBOL", "REQUIRE"]
       @bold_candidates = ["KEYWORD","RUBY_SPECIFIC_CALL", "CONSTANT", "COMMA", "PAREN","RUBY_ATTR_ACCESSOR_CALL", "RUBY_ATTR_READER_CALL" ,"RUBY_ATTR_WRITER_CALL", "IDENTIFIER"]
 # with code inspections we don't color the text, we just put a line or something under it .
@@ -66,178 +59,15 @@ module RMThemeGen
       @unders = %w(-1 0 1 2 5  )
       @underline_candidates = ["STRING"]
       @italic_chance = 0.2
-      @bold_chance = 0.4
-      @underline_chance = 0.3
+      super
+   end
 
-      @min_bright = 0.0
-      @max_bright =  1.0
-
-      #	if we avoid any notion of "brightness", which is an absolute quality, then we
-      # can make our background any color we want, then adjust contrast to taste
-      #tighter contrast spec
-      @cont_median = 0.85
-#      @min_cont = @cont_median * 0.65
-      @min_cont = 0.25
-      @max_cont =  [@cont_median * 1.35,1.0].max
-      
-      #broad contrast spec
-      @min_cont = 0.30	
-      @max_cont = 1.0
-      
-      @themeversion = 1
-      @themename = ''
-      @background_max_brightness = 0.14
-      @background_min_brightness = 0.65
-      @background_grey = true #if false, allows background to be any color, as long as it meets brightness parameter
-      @bg_color_style = 0 #0 = grey/dark 1 = grey/light (whitish), 2 = any color
-    #  @foreground_min_brightness = 0.4
-
-      @document_globals = {}
-      @backgroundcolor = randcolor( :shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
-      @textmate_hash = {}
-      reset_colorsets
-    end #def initialize 
-
-
-    def reset_colorsets()
-      #color sets: add to the variable @color_sets a hash containing 1 or 2 values in [0..1), indicating a shade 
-      # of red or green that the random colors will interpolate around.  
-      # if anything exists in @color_sets, the program will, when choosing its next random color, grab a random
-      # color set, and then the next random color value produced will have up to 2 of its components (r, g, or b) 
-      # chosen with the specified r,g, or b as the median for a random gaussian, which will of course be limited
-      # to the range [0..1)
-
-      @color_sets = []
-      (rand*4).to_i.times { 
-        @color_set = {}
-        3.times do
-         case 
-           when rand < 0.333 then @color_set[:r] = rand
-           when rand < 0.666 then @color_set[:g] = rand
-           else @color_set[:b] = rand
-          end
-        end #8times
-          @color_sets << @color_set
-       } #rand*4times    
-#      @color_set = {:b => rand, :g=>rand, :r => rand}
-#      @color_sets << @color_set
-#     puts @color_sets.inspect
-    end
-
-    def clean_colorsets
-      # trim each color set down to at most 2 colors 
-      if @color_sets.size > 0 
-      ncs = []
-#      puts @color_sets.inspect
-        @color_sets.each  do |cs|
-            while cs.size > 3 do
-              cs.delete(cs.keys[0])              
-            end
-            ncs << cs
-        end
-      @color_sets = ncs
-#      puts "@color_sets "+@color_sets.to_s  
-      end     
-    end
-    
-    def clear_colorsets
-      @color_sets=[]
-    end
-    
-    def randthemename
-      out = " "
-      while out.include? " "   do 
-       out = @@adjectives[rand * @@adjectives.size]+"_"+@@nouns[rand * @@nouns.size]
-      end 
-      return out
-    end
-    
-    def randfilename(existing = "")
-     if existing != "" then
-      out=existing
-     else
-      ar=["a","b","f","h","z","1","5"]
-      ar.shuffle! 
-      out =""
-      ar.each { |n|
-        out << n
-      }
-     end
-     return "rmt_"+out+".xml"
-    end
-    
-    
-    def randcolor(opts={})
-      df= { :r=>nil, :g=>nil, :b=>nil, #these are the usual 0..255 
-            :bg_rgb => nil,
-            :min_cont  => @min_cont, #if a backrgb (background color)  is supplied this will be used to create a minimum contrast with it.
-            :max_cont => @max_cont,
-            :max_bright => @max_bright,
-            :min_bright => @min_bright,
-          #  :bright_median => 0.5,
-            :shade_of_grey => false} #forces r == g == b
-      df = df.merge opts  
-      df[:bg_rgb] = Color::RGB.from_html(df[:bg_rgb]) if df[:bg_rgb]
-      color = brightok = contok = nil;
-      cr=Color::RGB.new
-      #failsafe should make sure the program never hangs trying to create 
-      # a random color. 
-      failsafe=200
-      failsafe_mid = (failsafe/2).to_i
-      usecolorsets = (!@color_sets.nil? && @color_sets != []) 
-      
-      last_contrast = this_contrast = nil
-      best_color_yet = nil
-      contok = true # this will only get switched off if there is a background color submitted 
-      contrast_mid = ( (df[:min_cont] + df[:max_cont]) / 2.0 ).abs
-      while (!color || !brightok || !contok && failsafe > 0) do
-        if df[:shade_of_grey] == true 
-          g = b = r = rand*256   
-        elsif  usecolorsets && failsafe > failsafe_mid 
-          cs = @color_sets.shuffle[0] 
- #puts "doing gaussian thing "+cs.inspect
-          if cs.keys.include? :r then r = cr.next_gaussian( cs[:r])*256 else r = (df[:r] || rand*256)%256 end 
-          if cs.keys.include? :g then g = cr.next_gaussian( cs[:g])*256 else g = (df[:g] || rand*256)%256 end 
-          if cs.keys.include? :b then b = cr.next_gaussian( cs[:b])*256 else b = (df[:b] || rand*256)%256 end 
-        else
-          r = (df[:r] || rand*256)%256 #mod for robustness 
-          g = (df[:g] || rand*256)%256
-          b = (df[:b] || rand*256)%256
-        end
-        
-        color = Color::RGB.new(r,g,b)
-        best_color_yet ||= color
-        
-        if (df[:bg_rgb]) then 
-          this_contrast = color.contrast(df[:bg_rgb]) 
-          last_contrast ||= this_contrast 
-          best_color_yet = (this_contrast - contrast_mid).abs < (last_contrast - contrast_mid ).abs ? color : best_color_yet
-          contok = (df[:min_cont]..df[:max_cont]).include?( this_contrast )
-        end
-  #      puts color.inspect
-  #puts "bg" + @backgroundcolor if df[:bg_rgb]
-  #puts "color "+color.html
-  #puts "contrast "+color.contrast(df[:bg_rgb]).to_s if df[:bg_rgb]
-  #puts "contok "+contok.to_s
-        brightok =  (df[:min_bright]..df[:max_bright]).include?( color.to_hsl.brightness )  
-        
-  #puts "brightok "+brightok.to_s
-      failsafe -= 1
-#     if failsafe == 0 then puts "failsafe reached " end;
-      end #while
-#      cn = color.html
-
-      cn= failsafe <= 0 ? best_color_yet.html : color.html
-      cn= cn.slice(1,cn.size)
-
-      return cn
-    end
     
     def set_doc_colors
       newopt = []
       @@doc_color_keys.each do |o|
         if o == "CARET_ROW_COLOR" then
-          @caret_row_color = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.05,:max_cont => 0.08,:shade_of_grey=>false)
+         @caret_row_color = randcolor(:bg_rgb=>@backgroundcolor,:min_cont=>0.05,:max_cont => 0.08,:shade_of_grey=>false)
           newopt << {:name=> o, :value => @caret_row_color }
           @document_globals[:CARET_ROW_COLOR] = @caret_row_color
         elsif o.include?("SELECTION_BACKGROUND") then
@@ -258,13 +88,11 @@ module RMThemeGen
         elsif o.include?("INDENT_GUIDE") then
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>0.08,:max_cont=>0.22,:shade_of_grey=>@background_grey) }
         else
-#        puts "bgc"+@backgroundcolor
           newopt << {:name=> o, :value => randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont,:max_cont=>@max_cont,:shade_of_grey=>@background_grey).to_s }
         end 
       end
       
       @xmlout[:scheme][0][:colors][0][:option] = newopt
-      #Kernel.exit
     end
     
     def set_doc_options
@@ -344,64 +172,18 @@ module RMThemeGen
       @xmlout[:scheme][0][:attributes] = newopt
     end     
 
-    def handle_rand_seed(rand_seed=nil)
-      if rand_seed then
-        #if a random seed is given, we need to reset the colorsets and bgstyle according to random numbers created AFTER the generator is seeded, forsaking whatever came in as parameters, since they are irrelevant if the desire is to recreate a previous theme from a random number seed
-        Kernel.srand(rand_seed) 
-        @random_seed=rand_seed
-        bg_color_style=rand(3).to_i
-        reset_colorsets
-      else
-      #the reason we want the native seed used by this ruby implementation is that creating one ourselves might be erroneous in not using enough bits, or otherwise being insufficiently entropic. There is a "formula" used by MRI but we don't know what it is, so we'll just harvest the number from a fresh call to srand, then reseed the rng using that number. 
-        Kernel.srand
-        @random_seed = Kernel.srand #this sets @random_seed to the seed used in the call above
-        Kernel.srand(@random_seed)
-      end
-    end 
 
-    def before_create(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
-      defaults = {}
-      defaults[:outputdir] = outputdir
-      defaults[:bg_color_style] = bg_color_style
-      opts = defaults
-      @opts = opts
-      @bg_color_style = opts[:bg_color_style]  
-      @background_grey = (opts[:bg_color_style] < 2) #whitish or blackish bg are both "grey" 
-      
-      if colorsets.is_a?(Array) && colorsets.size > 0
-        @color_sets = colorsets 
-        clean_colorsets
-      else
-        reset_colorsets
-      end
-      
-#      puts "@color_sets: "+@color_sets.inspect
-      case opts[:bg_color_style]
-        when 0 #blackish background
-          @background_min_brightness = 0.0 
-          @background_max_brightness = 0.14 
-        when 1 #whitish background
-          @background_min_brightness = 0.75 
-          @background_max_brightness = 1.0 
-        when 2 #colored (any) bg
-          @background_min_brightness = 0.0 
-          @background_max_brightness = 1.0 
-      end
-      @backgroundcolor= randcolor(:shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness,
-        :min_bright => @background_min_brightness )# "0"
-      @document_globals[:backgroundcolor] = @backgroundcolor
-      @themename = randthemename
-    end #before_create
 
-    def make_rm_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
+    def make_rm_theme_file(outputdir = ENV["PWD"], bg_color_style=:dark, colorsets=[], rand_seed=nil)
       make_theme_file(outputdir, bg_color_style, colorsets, rand_seed)
     end
     
-    def make_tm_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
+    def make_tm_theme_file(outputdir = ENV["PWD"], bg_color_style=:dark, colorsets=[], rand_seed=nil)
       create_textmate_theme(outputdir, bg_color_style, colorsets, rand_seed)
     end 
+    
     # (output directory, bg_color_style, colorsets []) 
-    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
+    def make_theme_file(outputdir = ENV["PWD"], bg_color_style=:dark, colorsets=[], rand_seed=nil)
     #bg_color_style: 0 = blackish, 1 = whitish, 2 = any color, from #000000 to #FFFFFF
       handle_rand_seed(rand_seed)
       @theme_successfully_created=false
@@ -427,10 +209,8 @@ module RMThemeGen
         XmlSimple.xml_out(@xmlout,{:keeproot=>true,:xmldeclaration=>true,:outputfile=> @outf, :rootname => "scheme"})
         @outf.close	
         @theme_successfully_created = true
-#puts "textmate_hash: "
-#puts @textmate_hash.inspect
         return File.expand_path(@outf.path)
     end
-  
-  end #class
+   
+  end    #class
 end #module 

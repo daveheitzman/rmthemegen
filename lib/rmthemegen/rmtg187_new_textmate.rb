@@ -10,28 +10,21 @@
 #this is a version of the software that should work with ruby 1.8.7
 
 require 'rubygems'
-require 'color'
-require 'xmlsimple'
-require 'rexml/document'
-require File.dirname(__FILE__)+"/token_list"
-require File.dirname(__FILE__)+'/rgb_contrast_methods'
-require File.dirname(__FILE__)+'/rmthemegen_to_css'
-require File.dirname(__FILE__)+'/rmthemegen_to_css'
-require File.dirname(__FILE__)+'/plist_to_tokenlist'
-require File.dirname(__FILE__)+'/uv_addons'
+require File.dirname(__FILE__)+'/rmthemegen_187'
 
 module RMThemeGen
   class ThemeGenerator < RMThemeParent
 
-    def create_textmate_theme(outputdir = ENV["PWD"], bg_color_style=0, colorsets=[], rand_seed=nil)
+    def create_textmate_theme(outputdir = ENV["PWD"], bg_color_style=:dark, colorsets=[], rand_seed=nil, opts_hash={})
+    opts_hash[:punctuation_bold] = 0.2 
+    opts_hash[:backgrounds_colored] = 0.05
+      
     #returns path to file that it created, which is an xml file that should work in textmate.  
       handle_rand_seed(rand_seed)
       before_create(outputdir, bg_color_style, colorsets, rand_seed) 
       #it will save the theme file ".tmTheme" in the same directory as other themes
       #it will return the full name and path of that theme file.
-      
     
-      #bg_color_style: 0 = blackish, 1 = whitish, 2 = any color
       @theme_successfully_created=false
         @savefile = "rmt_"+@themename+".tmTheme"
         @outf = File.new(@opts[:outputdir]+"/"+@savefile, "w+")
