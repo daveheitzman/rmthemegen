@@ -28,12 +28,13 @@ require File.dirname(__FILE__)+'/plist_to_tokenlist'
 
 module RMThemeGen
 
-  class ThemeGenerator < RMThemeParent
+  class ThemeRubyMine < RMThemeParent
     
     attr_reader :xml_save, :themename 
     attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
     
    def initialize
+      super
       #"EFFECT-TYPE" s: 
       #   3 ==> cross-out 
       #   1 ==> underline
@@ -59,9 +60,7 @@ module RMThemeGen
       @unders = %w(-1 0 1 2 5  )
       @underline_candidates = ["STRING"]
       @italic_chance = 0.2
-      super
    end
-
     
     def set_doc_colors
       newopt = []

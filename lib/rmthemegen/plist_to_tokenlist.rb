@@ -10,18 +10,11 @@
 #this is a version of the software that should work with ruby 1.8.7
 #originally it was written and tested for ruby 1.9.2
 
-require 'rubygems'
-require 'color'
-require 'xmlsimple'
-require 'rexml/document'
-require File.dirname(__FILE__)+"/token_list"
-require File.dirname(__FILE__)+'/rgb_contrast_methods'
-require File.dirname(__FILE__)+'/rmthemegen_to_css'
 
 module RMThemeGen
-  class ThemeGenerator < RMThemeParent
+  class ThemeTextmate < RMThemeParent
     attr_reader :for_tm_output, :repository_names, :under_patterns, :scopes_found
-
+   attr_accessor :scopes_found_count
     # process_plists is an attempt to take from teh syntax files that are included as "textmate bundles" 
     # and use the tokens described to create syntax-themes. This attempt has so far been unsuccessful.
     # all of the example theme files found in the wild do not use the tokens found in the syntax files,
@@ -58,16 +51,13 @@ module RMThemeGen
       # matches the found prefix.
       # so, given keyword.other.new.php and keyword.other.phpdoc.doc, we would have @hash['keyword.other']="keyword.other.new.php and keyword.other.phpdoc.doc"
       
-      puts '@for_tm_output keys listed alphabetically '
       token_ary = []
       @for_tm_output.each do |k,v|
-        # puts k.inspect
         token_ary << k.to_s
       end 
           
       token_ary.sort!
       token_ary.each do |i|
-       #  puts i.to_s 
       end 
       
       @nhash2 = {}
@@ -81,8 +71,6 @@ module RMThemeGen
         end
       end
       
-    
-    #  @for_tm_output = @nhash2
       @repository_names = {}
 
       indoc.root.elements.each("*/dict") do |e|
@@ -156,21 +144,15 @@ module RMThemeGen
     
     
     def get_scopes_from_themefiles
-      @scopes_found_count = {}
-      @scopes_found = []
-      @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/*.tmTheme"]
- #     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/Brilliance Dull.tmTheme"]
- #     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/choco.tmTheme"]
-#     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/IR_Black.tmTheme"]
-     @files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/Brilliance Black.tmTheme"]
-     @use_scope_threshhold =0 # a scope will be used only if it appears at least this number of times in the existing themes 
+      self.scopes_found_count = {}
+      scopes_found = []
+#    files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/*.tmTheme"]
+      files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/Brilliance Black.tmTheme"]
+      use_scope_threshhold =0 # a scope will be used only if it appears at least this number of times in the existing themes 
 
-#      puts '@files_look_in.inspect'
- #     puts @files_look_in.inspect
+      num_sf =0
       
-      @files_look_in.each do |f|
-        puts "opening file "+f.to_s 
-        @num_sf =0
+      files_look_in.each do |f|
         syntax_file = File.open(f,"r")
         indoc = REXML::Document.new( syntax_file )
         visit_all_nodes(indoc.root) { |k|
@@ -179,12 +161,12 @@ module RMThemeGen
               if (k.parent.name=='dict' && (k.previous_element.respond_to?(:local_name)  ) )
                 if ( k.previous_element.local_name=='key' && k.previous_element.text=="scope" )
                   # the following monkey business allows us to see how many times we've seen a key
-                  @num_sf += 1
-                  @scopes_found << k.text.to_s
-                  if @scopes_found_count[k.text.to_s]
-                    @scopes_found_count[k.text.to_s] += 1
+                  num_sf += 1
+                  scopes_found << k.text.to_s
+                  if scopes_found_count[k.text.to_s]
+                    scopes_found_count[k.text.to_s] += 1
                   else
-                    @scopes_found_count[k.text.to_s] = 1
+                    scopes_found_count[k.text.to_s] = 1
                   end 
                 end
               end
@@ -196,21 +178,21 @@ module RMThemeGen
 #      puts "Found #{@num_sf} scopes in file #{syntax_file.to_s}"    
       syntax_file.close       
       end #files_look_in.each
-      @scopes_found_count.each do |k,v|
+      scopes_found_count.each do |k,v|
         #puts k+"->"+v.to_s
-        @scopes_found_count.delete(k) unless v >= @use_scope_threshhold
+        scopes_found_count.delete(k) unless v >= use_scope_threshhold
         
       end 
 
       outf=File.new("scopes_harvested","w")
-        outf.printf "%s","["
-        @scopes_found.each do |k,v|
+      outf.printf "%s","["
+      scopes_found.each do |k,v|
         outf.printf("%s","'"+k.to_s+"', ")
-        end 
+      end 
       outf.printf "]"
       outf.close 
-    puts "harvested #{@scopes_found.size} scopes from #{@files_look_in.size} files."  
-
-    end #get_scopes_from_themefiles
+      puts "plist_to_tokenlist line 205: harvested #{scopes_found.size} scopes from #{files_look_in.size} files."  
+      return scopes_found
+   end #get_scopes_from_themefiles
   end #class
 end #module 

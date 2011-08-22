@@ -13,12 +13,51 @@ require 'rubygems'
 require File.dirname(__FILE__)+'/rmthemegen_187'
 
 module RMThemeGen
-  class ThemeGenerator < RMThemeParent
+  class ThemeTexmate < RMThemeParent
+   
+   def unique_number
+      @unique_num ||= -1
+      @unique_num += 1 
+      @unique_num
+   end 
+   
+   def initialize
+      super
+      @bold_chance = 0.4
+      @underline_chance = 0.3
+      @italic_candidates = []
+      @bold_candidates = []
+# with code inspections we don't color the text, we just put a line or something under it .
+      @code_inspections = []
+      @cross_out = [ ]
+      
+      @underline_candidates = []
+      @italic_chance = 0.2
+   end 
+   
+   def set_doc_options
 
+       doc_dict.add_element(
+          make_dict(
+          :background=>"#"+@document_globals[:backgroundcolor].upcase,
+          :caret=>"#"+ @document_globals[:CARET_COLOR].upcase ,
+          :foreground=>"#"+@document_globals[:TEXT].upcase,
+          :invisibles=>"#"+@document_globals[:backgroundcolor].upcase,
+          :lineHighlight=>"#"+@document_globals[:CARET_ROW_COLOR].upcase,
+          :selection=>"#"+@document_globals[:SELECTION_BACKGROUND].upcase) 
+        ) 
+   end 
+
+   def set_doc_colors
+   end
+
+   def set_element_colors
+   end 
+    
     def create_textmate_theme(outputdir = ENV["PWD"], bg_color_style=:dark, colorsets=[], rand_seed=nil, opts_hash={})
     opts_hash[:punctuation_bold] = 0.2 
     opts_hash[:backgrounds_colored] = 0.05
-      
+    
     #returns path to file that it created, which is an xml file that should work in textmate.  
       handle_rand_seed(rand_seed)
       before_create(outputdir, bg_color_style, colorsets, rand_seed) 
@@ -42,16 +81,9 @@ module RMThemeGen
         main_array = REXML::Element.new("array",dict)
         doc_dict = REXML::Element.new("dict",main_array)
         doc_dict.add_text(REXML::Element.new("key").add_text("settings") )
-        doc_dict.add_element(
-          make_dict(
-          :background=>"#"+@document_globals[:backgroundcolor].upcase,
-          :caret=>"#"+ @document_globals[:CARET_COLOR].upcase ,
-          :foreground=>"#"+@document_globals[:TEXT].upcase,
-          :invisibles=>"#"+@document_globals[:backgroundcolor].upcase,
-          :lineHighlight=>"#"+@document_globals[:CARET_ROW_COLOR].upcase,
-          :selection=>"#"+@document_globals[:SELECTION_BACKGROUND].upcase) 
-        ) 
-    
+
+         set_doc_options()
+         
         process_plists()
 
         #the idea here is to take each key and give it a unique color, then take each value, and give it a unique color. 
