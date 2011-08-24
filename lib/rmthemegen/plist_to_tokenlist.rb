@@ -14,7 +14,9 @@
 module RMThemeGen
   class ThemeTextmate < RMThemeParent
     attr_reader :for_tm_output, :repository_names, :under_patterns, :scopes_found
-   attr_accessor :scopes_found_count
+   attr_accessor :scopes_found_count, :uses_same_foreground, :color_2_group, :group_2_color, :scope_2_group
+   #color_group_colors is a hash: it points from a hex color (#FE2301) => a string ('group14'). Many different colors might point to 1 string
+   #color_groups hashes from a scope name to a color group.   
     # process_plists is an attempt to take from teh syntax files that are included as "textmate bundles" 
     # and use the tokens described to create syntax-themes. This attempt has so far been unsuccessful.
     # all of the example theme files found in the wild do not use the tokens found in the syntax files,
@@ -23,7 +25,7 @@ module RMThemeGen
     def process_plists
       @for_tm_output = {}
       files_look_in = Dir[File.dirname(__FILE__)+"/syntaxes/*.plist"]
-     files_look_in = Dir[File.dirname(__FILE__)+"/syntaxes/Ruby.plist"]
+      files_look_in = Dir[File.dirname(__FILE__)+"/syntaxes/Ruby.plist"]
       puts files_look_in.inspect
       
       files_look_in.each do |f|
@@ -146,6 +148,13 @@ module RMThemeGen
     def get_scopes_from_themefiles
       self.scopes_found_count = {}
       scopes_found = []
+      scopes_found_hash = {}
+      self.group_2_color = {}
+      self.color_2_group = {}
+      self.scope_2_group = {}
+      
+      self.uses_same_foreground = {} #the key is a color in uppercase hex such as #FFAAB1, etc. it points to an array of scope names that use this color. it is necessary to color certain elements the same, so as to achieve effects, like @a -- an object variable
+      #should all be the same color not 1 color for the @ and 1 color for the a  
 #    files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/*.tmTheme"]
       files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/Brilliance Black.tmTheme"]
       use_scope_threshhold =0 # a scope will be used only if it appears at least this number of times in the existing themes 
@@ -162,12 +171,20 @@ module RMThemeGen
                 if ( k.previous_element.local_name=='key' && k.previous_element.text=="scope" )
                   # the following monkey business allows us to see how many times we've seen a key
                   num_sf += 1
-                  scopes_found << k.text.to_s
-                  if scopes_found_count[k.text.to_s]
-                    scopes_found_count[k.text.to_s] += 1
-                  else
-                    scopes_found_count[k.text.to_s] = 1
+                  ssk = String.new(k.text.to_s)
+                  self.scopes_found_count[ssk] ||= 0
+                  self.scopes_found_count[ssk] += 1
+                  scopes_found << ssk
+                  curstyle=get_style_here(k)
+                  color_2_group[curstyle["foreground"]] ||= [] if curstyle["foreground"]
+                  lku = ssk+unique_number.to_s #unique group string 
+                  if curstyle["foreground"]
+                    self.color_2_group[curstyle["foreground"]] = lku
+                  else 
+                    self.color_2_group[curstyle["nocolor"] ] = lku
                   end 
+                  self.group_2_color[lku] = curstyle["foreground"] || "nocolor"
+                  self.scope_2_group[ssk] = lku
                 end
               end
             end
@@ -175,15 +192,17 @@ module RMThemeGen
             puts "an exception in process_plists(): "+e.to_s 
           end
         } 
-#      puts "Found #{@num_sf} scopes in file #{syntax_file.to_s}"    
+      uses_same_foreground.delete_if do |k,v|  v.size == 1  end 
+#      puts "uses same foreground: "+uses_same_foreground.inspect  
+#     puts "Found #{@num_sf} scopes in file #{syntax_file.to_s}"    
       syntax_file.close       
       end #files_look_in.each
-      scopes_found_count.each do |k,v|
-        #puts k+"->"+v.to_s
-        scopes_found_count.delete(k) unless v >= use_scope_threshhold
-        
+
+      self.scopes_found_count.each do |k,v|
+        self.scopes_found_count.delete(k) unless v >= use_scope_threshhold
       end 
 
+      
       outf=File.new("scopes_harvested","w")
       outf.printf "%s","["
       scopes_found.each do |k,v|
@@ -191,8 +210,34 @@ module RMThemeGen
       end 
       outf.printf "]"
       outf.close 
-      puts "plist_to_tokenlist line 205: harvested #{scopes_found.size} scopes from #{files_look_in.size} files."  
+puts "plist_to_tokenlist line 205: harvested #{scopes_found.size} scopes from #{files_look_in.size} files."  
       return scopes_found
    end #get_scopes_from_themefiles
+
+
+      def get_style_here(element)
+        #this is for getting the style features of a single element, given that we are given an element within a top-level dict
+        
+        n = element
+        fail=0
+        while n.local_name != "dict" && fail < 15 
+          n = n.next_element
+          fail += 1
+        end
+        return nil if n.local_name != "dict" || !n.has_elements?
+        
+        h={} 
+#       puts "plist_to_tokenlist#get_style_here (line 207) - n.local_name.inspect == "+n.local_name 
+        n.elements.each do |kid|
+            if kid.local_name == "key"
+puts "key found "+kid.text
+              h[kid.text]=kid.next_element.text if kid.next_element
+            end 
+        end  
+puts "plist_to_tokenlist#get_style_here (line 207) - <dict> == "+h.inspect 
+        return h
+      end #get_style_here
+
+
   end #class
 end #module 

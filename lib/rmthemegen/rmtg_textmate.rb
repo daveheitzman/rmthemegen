@@ -109,26 +109,34 @@ module RMThemeGen
          process_plists()
 
          scopes_found=get_scopes_from_themefiles()
-
+#puts "scopes_found == "+scopes_found.inspect
         co2 =0
         @used_names ={}
+#        self.scopes_found_count.each do |k,v| puts "scope: "+k.to_s+"->"+v.to_s end 
+ 
+ #       puts 'self.scopes_found_count.inspect '+self.scopes_found_count.inspect 
+        
+         self.group_2_color.each do |g,c| group_2_color[g] = "#"+randcolor(:bg_rgb=>@backgroundcolor).upcase end   
+        
         scopes_found.each_index do |k|
-          v=scopes_found[k].to_s
-          if  scopes_found_count[v] > 0
+          v=scopes_found[k]  
+          if  self.scopes_found_count[v] > 0
             scope_text = v
             scope_text = scope_text.split(",")[0] if v.include?(",") 
-            scope_text = scope_text.split[0].split(".") #this takes the first whole token prior to any spaces, then makes the array out of the substrings separated by periods, so "a.b
-            elname = scope_text[0] || "vormeta"+unique_number.to_s
-            co=0 
+            scope_text = scope_text.split[0].split(".") #this takes the first whole token prior to any spaces, then makes the array out of the substrings separated by periods
+            elname = " ~ "+scope_text[0] || " ! "+unique_number.to_s
+            co=1 
             while !@used_names[elname].nil?
                if scope_text[co]
                   elname += "."+scope_text[co] 
                else
-                  elname += "."+unique_number.to_s
+                  elname += unique_number.to_s
                end 
             co += 1
             end
-   puts 'rmtg_textmate:106 '+elname 
+#   puts 'rmtg_textmate:131 '+elname 
+#   puts 'the scope that kills it: "'+v.to_s 
+#            elname = "uniquename"+unique_number.to_s 
             @used_names[elname] = true
             main_array.add_element(
             # so it's  make_name_scope_settings_rand(name,scope,[don't worry about it, but colors you can assign manually]) 
@@ -221,9 +229,12 @@ module RMThemeGen
         if scope.upcase.include? "BOLD" || rand < (@bold_chance/2)
           fontStyle += "bold "
         end 
-
-
-        di1 = make_dict(:foreground => "#"+randcolor(:bg_rgb=>@backgroundcolor).upcase, :fontStyle=>fontStyle) 
+        
+          
+          
+        newcolor = self.group_2_color[scope_2_group[scope]] 
+        
+        di1 = make_dict(:foreground => newcolor, :fontStyle=>fontStyle) 
         new_dict.add_element di1
       return new_dict
     end
