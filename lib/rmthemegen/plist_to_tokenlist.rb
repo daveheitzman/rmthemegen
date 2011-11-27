@@ -156,7 +156,7 @@ module RMThemeGen
       self.uses_same_foreground = {} #the key is a color in uppercase hex such as #FFAAB1, etc. it points to an array of scope names that use this color. it is necessary to color certain elements the same, so as to achieve effects, like @a -- an object variable
       #should all be the same color not 1 color for the @ and 1 color for the a  
 #    files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/*.tmTheme"]
-      files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/Brilliance Black.tmTheme"]
+      files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/IR_Black.tmTheme"]
       use_scope_threshhold =0 # a scope will be used only if it appears at least this number of times in the existing themes 
 
       num_sf =0
@@ -206,7 +206,7 @@ module RMThemeGen
       outf=File.new("scopes_harvested","w")
       outf.printf "%s","["
       scopes_found.each do |k,v|
-        outf.printf("%s","'"+k.to_s+"', ")
+        outf.printf("%s","'"+k.to_s+"',\n ")
       end 
       outf.printf "]"
       outf.close 
