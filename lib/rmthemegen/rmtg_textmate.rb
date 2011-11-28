@@ -104,19 +104,32 @@ module RMThemeGen
         doc_dict = REXML::Element.new("dict",main_array)
         doc_dict.add_text(REXML::Element.new("key").add_text("settings") )
 
-         set_doc_options(doc_dict)
-         
-         process_plists()
+        set_doc_options(doc_dict)
+        
+        process_plists()
 
-         scopes_found=get_scopes_from_themefiles()
-#puts "scopes_found == "+scopes_found.inspect
+        scopes_found=get_scopes_from_themefiles()
         co2 =0
         @used_names ={}
-#        self.scopes_found_count.each do |k,v| puts "scope: "+k.to_s+"->"+v.to_s end 
- 
- #       puts 'self.scopes_found_count.inspect '+self.scopes_found_count.inspect 
         
-         self.group_2_color.each do |g,c| group_2_color[g] = "#"+randcolor(:bg_rgb=>@backgroundcolor).upcase end   
+        #group_2_color.each do |g,c| group_2_color[g] = "#"+randcolor(:bg_rgb=>@backgroundcolor).upcase end   
+        
+        @new_color_to_group = {} #so this will have a key from each color to its group and also a key for each scope to its color
+        @color_2_group.each do |c,g|
+          fontStyle=''
+          if g.join(' ').upcase.include?( "ITALIC" ) || rand < (@italic_chance/2) 
+            fontStyle +="italic "
+          end 
+          if g.join(' ').upcase.include?( "BOLD" ) || rand < (@bold_chance/2)
+            fontStyle += "bold "
+          end 
+          newcol =  "#"+randcolor(:bg_rgb=>@backgroundcolor).upcase
+          @new_color_to_group[newcol] = color_2_group[c]
+          
+          g.each do |s|
+            @new_color_to_group[s] = {:foreground=>newcol,:fontStyle=>fontStyle.chop!}
+          end
+        end 
         
         scopes_found.each_index do |k|
           v=scopes_found[k]  
@@ -145,6 +158,9 @@ module RMThemeGen
             co2 += 1 
           end
         end 
+
+#        variable.other.readwrite.instance.ruby
+#        variable.other.readwrite.class.ruby
 
         uuid_key = REXML::Element.new("key")
         uuid_key.add_text("uuid")
@@ -222,20 +238,16 @@ module RMThemeGen
         new_dict.add_element te3
         new_dict.add_element te4
         new_dict.add_element te5
-        fontStyle = '' #fontstyles[@textmate_hash[ruby_symbol][:FONT_TYPE].to_i ]
-        if scope.upcase.include? "ITALIC" || rand < (@italic_chance/2) 
-          fontStyle +="italic "
-        end 
-        if scope.upcase.include? "BOLD" || rand < (@bold_chance/2)
-          fontStyle += "bold "
-        end 
-        
           
-          
-        newcolor = self.group_2_color[scope_2_group[scope]] 
+#puts "scope= #{scope} , group= #{@scope_2_group[scope]} , newcolor = "+newcolor.to_s          
         
-        di1 = make_dict(:foreground => newcolor, :fontStyle=>fontStyle) 
-        new_dict.add_element di1
+        if @new_color_to_group[scope] 
+puts "scope= #{scope} , group= #{@scope_2_group[scope]} , newcolor = "+@new_color_to_group[scope][:foreground]+ " , fonStyle=#{@new_color_to_group[scope][:fontStyle]}"          
+          di1 = make_dict(@new_color_to_group[scope])   
+        else
+          di1 = make_dict(:fontStyle=>'')
+        end 
+      new_dict.add_element di1
       return new_dict
     end
     

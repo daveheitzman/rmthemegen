@@ -1,4 +1,4 @@
-  #! /usr/bin/ruby 
+  #! /usr/bin/ruby
   #**********************************************************************
   #*                                                                    *
   #*  RmThemeGen - a ruby script to create random, usable themes for    *
@@ -7,38 +7,38 @@
   #*  By David Heitzman, 2011                                           *
   #*                                                                    *
   #**********************************************************************
-  
+
   #this is a version of the software that should work with ruby 1.8.7
   #originally it was written and tested for ruby 1.9.2
-  
-  
+
+
   require File.dirname(__FILE__)+'./lib/rmthemegen/rmtg_rubymine'
   require File.dirname(__FILE__)+'./lib/rmthemegen/rmtg_textmate'
   #require File.dirname(__FILE__)+'./lib/rmthemegen/rmthemegen_187_textmate'
 #  require File.dirname(__FILE__)+'./lib/rmthemegen/rmtg187_new_textmate'
   #require File.dirname(__FILE__)+'./lib/rmthemegen/plist_to_tokenlist'
   puts "TEST TEST TEST"
-  puts    
+  puts
   puts "  Mac:  Copy xml files to ~/Library/Preferences/RubyMine/color. You must restart RubyMine on the Mac, then look for new color schemes. "
   puts
-  
+
 =begin
   c=Color::RGB.new(0,0,0)
-  1000.times do 
-  puts c.next_gaussian(0.50 ) 
-  end 
+  1000.times do
+  puts c.next_gaussian(0.50 )
+  end
   Kernel.exit
 =end
-  
-   
+
+
   l = RMThemeGen::ThemeTextmate.new
-  
-  1.times do 
-  #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 0 ) 
-  #  puts l.make_theme_file(ENV["PWD"],0,[{:r=>0.0,:g=>0.0},{:r=>1.0,:g=>0.0,:b=>0.0}]) 
-    puts l.make_theme_file(ENV["PWD"],:dark,nil,nil) 
+
+  10.times do
+  #  puts l.make_theme_file(:outputdir => ENV["PWD"],:bg_color_style => 0 )
+  #  puts l.make_theme_file(ENV["PWD"],0,[{:r=>0.0,:g=>0.0},{:r=>1.0,:g=>0.0,:b=>0.0}])
+    puts l.make_theme_file(ENV["PWD"],:dark,nil,nil)
     #puts newTmTheme=l.make_tm_theme_file(ENV["PWD"],(rand*2).to_i,nil,nil)
-  
+
     puts "testing to_css"
 #    puts l.to_css
     puts "testing themename"
@@ -53,8 +53,8 @@
     l.for_tm_output.each do |k,v|
      # puts k.inspect
       token_ary << k.to_s
-    end 
-    
+    end
+
     token_ary.sort!
     nary3=[]
     token_ary.each do |i|
@@ -62,10 +62,10 @@
     end
     nary3.each do |i|
       puts i.inspect
-    end 
+    end
     puts 'number of tokens: '
     puts l.for_tm_output.size
-  
+
     puts 'top_level_names'
     l.repository_names.each do |n|
       puts n.inspect

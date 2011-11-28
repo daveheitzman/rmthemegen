@@ -146,17 +146,18 @@ module RMThemeGen
     
     
     def get_scopes_from_themefiles
-      self.scopes_found_count = {}
-      scopes_found = []
-      scopes_found_hash = {}
-      self.group_2_color = {}
-      self.color_2_group = {}
-      self.scope_2_group = {}
+      @scopes_found_count = {}
+      @scopes_found = []
+      @scopes_found_hash = {}
+#      self.group_2_color = {}
+      @color_2_group = {} #each key returns an array of strings, each of which is a scope that shares the color of the key 
+      @scope_2_group = {} #key is a string for a scope, and the value is an array of strings that are scopes. 
       
-      self.uses_same_foreground = {} #the key is a color in uppercase hex such as #FFAAB1, etc. it points to an array of scope names that use this color. it is necessary to color certain elements the same, so as to achieve effects, like @a -- an object variable
+      @uses_same_foreground = {} #the key is a color in uppercase hex such as #FFAAB1, etc. it points to an array of scope names that use this color. it is necessary to color certain elements the same, so as to achieve effects, like @a -- an object variable
       #should all be the same color not 1 color for the @ and 1 color for the a  
 #    files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/*.tmTheme"]
       files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/IR_Black.tmTheme"]
+#      files_look_in = Dir[File.dirname(__FILE__)+"/textmate_themes/Brilliance\ Black.tmTheme"]
       use_scope_threshhold =0 # a scope will be used only if it appears at least this number of times in the existing themes 
 
       num_sf =0
@@ -172,19 +173,18 @@ module RMThemeGen
                   # the following monkey business allows us to see how many times we've seen a key
                   num_sf += 1
                   ssk = String.new(k.text.to_s)
-                  self.scopes_found_count[ssk] ||= 0
-                  self.scopes_found_count[ssk] += 1
-                  scopes_found << ssk
+                  @scopes_found_count[ssk] ||= 0
+                  @scopes_found_count[ssk] += 1
+                  @scopes_found << ssk
                   curstyle=get_style_here(k)
-                  color_2_group[curstyle["foreground"]] ||= [] if curstyle["foreground"]
-                  lku = ssk+unique_number.to_s #unique group string 
+                  @color_2_group[curstyle["foreground"]] ||= [] if curstyle["foreground"]
+                  #lku = ssk+unique_number.to_s #unique group string 
                   if curstyle["foreground"]
-                    self.color_2_group[curstyle["foreground"]] = lku
+                    @color_2_group[curstyle["foreground"]]<<ssk
                   else 
-                    self.color_2_group[curstyle["nocolor"] ] = lku
+                    @color_2_group[curstyle["nocolor"] ] << ssk
                   end 
-                  self.group_2_color[lku] = curstyle["foreground"] || "nocolor"
-                  self.scope_2_group[ssk] = lku
+                  @scope_2_group[ssk] = curstyle["foreground"] || "nocolor"
                 end
               end
             end
@@ -193,7 +193,7 @@ module RMThemeGen
           end
         } 
       uses_same_foreground.delete_if do |k,v|  v.size == 1  end 
-#      puts "uses same foreground: "+uses_same_foreground.inspect  
+#     puts "uses same foreground: "+uses_same_foreground.inspect  
 #     puts "Found #{@num_sf} scopes in file #{syntax_file.to_s}"    
       syntax_file.close       
       end #files_look_in.each
@@ -201,7 +201,6 @@ module RMThemeGen
       self.scopes_found_count.each do |k,v|
         self.scopes_found_count.delete(k) unless v >= use_scope_threshhold
       end 
-
       
       outf=File.new("scopes_harvested","w")
       outf.printf "%s","["
@@ -230,11 +229,11 @@ puts "plist_to_tokenlist line 205: harvested #{scopes_found.size} scopes from #{
 #       puts "plist_to_tokenlist#get_style_here (line 207) - n.local_name.inspect == "+n.local_name 
         n.elements.each do |kid|
             if kid.local_name == "key"
-puts "key found "+kid.text
+#puts "key found "+kid.text
               h[kid.text]=kid.next_element.text if kid.next_element
             end 
         end  
-puts "plist_to_tokenlist#get_style_here (line 207) - <dict> == "+h.inspect 
+#puts "plist_to_tokenlist#get_style_here (line 207) - <dict> == "+h.inspect 
         return h
       end #get_style_here
 
