@@ -5,8 +5,6 @@
  'keyword.operator',
  'entity.name.type',
  'support',
- 'variable.parameter',
- 'constant',
  'storage',
  'storage.modifier',
  'constant',

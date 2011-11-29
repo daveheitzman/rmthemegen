@@ -405,45 +405,6 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>¢ Class name</string>
-			<key>scope</key>
-			<string>entity.name.class, entity.name.type.class, entity.name.type.module</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-				<key>foreground</key>
-				<string>#FF0000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>¢ Class</string>
-			<key>scope</key>
-			<string>meta.class -meta.class.instance, declaration.class, meta.definition.class, declaration.module</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-				<key>foreground</key>
-				<string>#870000</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>¢ Instance</string>
-			<key>scope</key>
-			<string>entity.name.instance, entity.name.type.instance</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-				<key>foreground</key>
-				<string>#FF3D44</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
 			<string>√ Variable</string>
 			<key>scope</key>
 			<string>variable.other, variable.js, punctuation.separator.variable</string>
