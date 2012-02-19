@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["evolvemeans@gmail.com"]
   s.homepage    = "http://aptifuge.com"
   s.summary     = %q{Generates RubyMine >= 3.0 editor color themes}
-  s.description = %q{}
+  s.description = %q{replace your geany editor's color scheme with a new dark one with geany_fix}
   s.rubyforge_project = "rmthemegen"
 
   s.required_ruby_version = '>= 1.8.7'
