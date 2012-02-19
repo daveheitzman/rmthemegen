@@ -40,8 +40,7 @@ module RMThemeGen
     begin
     @dir = (File.expand_path "~/.config/geany/filedefs/")
     @filelist = Dir.glob(@dir+"/filetypes.*")
-    t =Time.now
-    @extstring = t.year.to_s+'-'+t.month.to_s+'-'+t.day.to_s+'-'+t.sec.to_s
+    @extstring = Time.now.strftime("%Y-%m-%d-%M.%S") 
     end
 
 
@@ -136,7 +135,7 @@ module RMThemeGen
     def go_fix_geany
       #goes into the geany directory and kicks some ass. it replaces every single color definition with
       #something random, of course with a consistent background. 
-      @backup_dir = @dir+'_backup_'+@extstring
+      @backup_dir = @dir+'/_backup_'+@extstring
       `mkdir #{@backup_dir}`
       @filelist.each do |f|
         begin
@@ -153,7 +152,6 @@ module RMThemeGen
       ##########################################
       @@geany_file_contents.each_key do |key|
       filename=@dir+'/filetypes.'+key.to_s
-#      puts filename
       @fout1 = File.open(filename,"w+")
         @@geany_file_contents[key].each do |c|
           @fout1.puts c
