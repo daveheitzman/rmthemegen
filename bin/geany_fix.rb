@@ -21,8 +21,6 @@
 require File.expand_path("../../lib/rmthemegen/token_list",__FILE__)
 require File.expand_path('../../lib/rmthemegen/color/color',__FILE__)
 require File.expand_path("../../lib/rmthemegen/xmlsimple.rb",__FILE__)
-#require File.dirname(__FILE__)#+'./lib/rmthemegen/color/color'
-#require File.dirname(__FILE__)#+'./lib/rmthemegen/xmlsimple.rb'
 
 module RMThemeGen
   class GeanyFixer < RMThemeParent
@@ -30,7 +28,6 @@ module RMThemeGen
     attr_reader :xmlout #a huge structure of xml that can be given to XmlSimple.xml_out() to create that actual color theme file
 
     def initialize
-#    @rand = Random.new
     @iterations = 0
     @iterations = ARGV[0].to_s.to_i
 
@@ -43,19 +40,15 @@ module RMThemeGen
     begin
     @dir = (File.expand_path "~/.config/geany/filedefs/")
     @filelist = Dir.glob(@dir+"/filetypes.*")
-#  puts @dir+"filetypes.*"
-#    puts @filelist.inspect
     t =Time.now
-    @extstring = t.year.to_s+t.month.to_s+t.day.to_s+t.sec.to_s
-#    rescue
- #     raise "Sorry. There was trouble accessing the files in " + @dir
+    @extstring = t.year.to_s+'-'+t.month.to_s+'-'+t.day.to_s+'-'+t.sec.to_s
     end
 
 
       @italic_candidates = ["STRING", "SYMBOL", "REQUIRE"]
 
       @bold_candidates = ["KEYWORD","RUBY_SPECIFIC_CALL", "CONSTANT", "COMMA", "PAREN","RUBY_ATTR_ACCESSOR_CALL", "RUBY_ATTR_READER_CALL" ,"RUBY_ATTR_WRITER_CALL", "IDENTIFIER"]
-# with code inspections we don't color the text, we just put a line or something under it .
+      # with code inspections we don't color the text, we just put a line or something under it .
       @code_inspections = ["ERROR","WARNING_ATTRIBUTES","DEPRECATED", "TYPO","WARNING_ATTRIBUTES", "BAD_CHARACTER",
       "CUSTOM_INVALID_STRING_ESCAPE_ATTRIBUTES","ERRORS_ATTRIBUTES", "MATCHED_BRACE_ATTRIBUTES"]
       @cross_out = ["DEPRECATED_ATTRIBUTES" ]
@@ -66,11 +59,11 @@ module RMThemeGen
       @bold_chance = 0.4
       @underline_chance = 0.3
       @bright_median = 0.85
-        @min_bright = @bright_median * 0.65
-        @max_bright =  [@bright_median * 1.35,1.0].max
+      @min_bright = @bright_median * 0.65
+      @max_bright =  [@bright_median * 1.35,1.0].max
 
-        @min_bright = 0.0
-        @max_bright =  1.0
+      @min_bright = 0.0
+      @max_bright =  1.0
 
       #	if we avoid any notion of "brightness", which is an absolute quality, then we
       # can make our background any color we want !
@@ -83,22 +76,16 @@ module RMThemeGen
       #broad contrast spec
       @min_cont = 0.32
       @max_cont = 1.0
-
       @schemeversion = 1
       @background_max_brightness = 0.16
       @background_grey = true #if false, allows background to be any color, as long as it meets brightness parameter
-    #  @foreground_min_brightness = 0.4
-
-
       @backgroundcolor= randcolor( :shade_of_grey=>@background_grey, :max_bright=>@background_max_brightness)# "0"
-
     end #initialize
 
     def randthemename
       out = " "
       while out.include? " "   do
        out = @@adjectives[rand * @@adjectives.size]+"_"+@@nouns[rand * @@nouns.size]
-        
       end
       return out
     end
@@ -137,13 +124,8 @@ module RMThemeGen
         b = (df[:b] || rand*256)%256
         g = b = r if df[:shade_of_grey] == true
         color = Color::RGB.new(r,g,b)
-  #puts "bg" + @backgroundcolor if df[:bg_rgb]
-  #puts "color "+color.html
-  #puts "contrast "+color.contrast(df[:bg_rgb]).to_s if df[:bg_rgb]
         contok = df[:bg_rgb] ? (df[:min_cont]..df[:max_cont]).include?( color.contrast(df[:bg_rgb]) ) : true
-  #puts "contok "+contok.to_s
         brightok = (df[:min_bright]..df[:max_bright]).include?( color.to_hsl.brightness )
-  #puts "brightok "+brightok.to_s
       end
 
       cn = color.html
@@ -154,13 +136,11 @@ module RMThemeGen
     def go_fix_geany
       #goes into the geany directory and kicks some ass. it replaces every single color definition with
       #something random, of course with a consistent background. 
-
+      @backup_dir = @dir+'_backup_'+@extstring
+      `mkdir #{@backup_dir}`
       @filelist.each do |f|
         begin
-#          puts f+" -->"+@dir+"_old_"+@extstring+File.basename(f)
-#          IO.copy_stream(f,@dir+"_old_"+@extstring+File.basename(f))
-        copystring="cp #{f} #{@dir+"/_old_"+@extstring+File.basename(f)}"
-#        puts(copystring) 
+        copystring="cp #{f} #{@backup_dir}"
         `#{copystring}`
         rescue
           backup_problem = true
@@ -183,18 +163,14 @@ module RMThemeGen
 
       @filelist = Dir.glob(@dir+"/filetypes.*")
       @filelist.each do |f|
-  #      puts f.inspect
         @fin = File.open(f,"r+")
         @fout = File.open(@dir+"/tmp_out_"+rand.to_s,"w+")
-  #      puts @fin.inspect
 
         while !@fin.eof? do
           curpos = @fin.pos
           line  = @fin.readline
           if line[0] != "#" && line.include?("=") && line.include?("0x") then
            # go in and root out the color and give it a new one.
-#            puts "here is the line I'm working on -- "
-#            puts line
             r1 = randcolor(:bg_rgb=>@backgroundcolor, :min_cont=>@min_cont, :max_cont=>@max_cont).upcase
             r2 = @backgroundcolor.upcase
             token = line.split("=")[0]
@@ -260,8 +236,6 @@ module RMThemeGen
           end
         end
         if @fout then
-#        puts "wanting to delete "+@fin.path.to_s
-#        puts "wanting to copy this file onto it:"+@fout.path.to_s
           File.delete(@fin.path.to_s)
           File.rename(@fout.path.to_s, @fin.path.to_s )
         else puts "there was a problem writing to the new file #{@fout.path.to_s} so I left the old one in place"

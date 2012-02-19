@@ -4,7 +4,7 @@ require "rmthemegen/version"
 
 Gem::Specification.new do |s|
   s.name        = "rmthemegen"
-  s.version     = "0.0.38"
+  s.version     = "0.0.40"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["David Heitzman"]
   s.email       = ["evolvemeans@gmail.com"]
@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
  
   s.add_dependency('rake') 
   s.bindir = "bin"
-  s.executables = ['bin/generate_themes.rb','bin/geanyfy.rb','bin/geanyfix.rb']
+  s.executables = ['bin/generate_themes','bin/geany_fix']
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
