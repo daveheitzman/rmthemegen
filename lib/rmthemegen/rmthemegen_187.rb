@@ -15,8 +15,8 @@
 require 'rubygems'
 require 'color'
 require 'xmlsimple'
-require 'textpow'
-require 'uv'                    #ultraviolet
+#require 'textpow'
+#require 'uv'                    #ultraviolet
 require 'plist'
 require File.dirname(__FILE__)+"/token_list"
 require File.dirname(__FILE__)+'/rgb_contrast_methods'
