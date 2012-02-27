@@ -21,7 +21,7 @@ require 'plist'
 require File.dirname(__FILE__)+"/token_list"
 require File.dirname(__FILE__)+'/rgb_contrast_methods'
 require File.dirname(__FILE__)+'/rmthemegen_to_css'
-require File.dirname(__FILE__)+'/rmtg187_new_textmate.rb'
+#require File.dirname(__FILE__)+'/rmtg187_new_textmate.rb'
 require File.dirname(__FILE__)+'/uv_addons.rb'
 require File.dirname(__FILE__)+'/rmthemegen_parent'
 require File.dirname(__FILE__)+'/plist_to_tokenlist'
