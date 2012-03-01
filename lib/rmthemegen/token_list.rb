@@ -70,7 +70,7 @@ module RMThemeGen
     :RUBY_ATTR_READER_CALL =>["keyword.other.special-method.ruby","keyword.other.special-method.ruby",{}],
     :RUBY_ATTR_WRITER_CALL =>["keyword.other.special-method.ruby","keyword.other.special-method.ruby",{}],
 #    :RUBY_BACK_REF =>["name","scope",{}],
-    :RUBY_BAD_CHARACTER=>["Invalid – Illegal","invalid.illegal",{}], 
+    :RUBY_BAD_CHARACTER=>["Invalid - Illegal","invalid.illegal",{}], 
     :RUBY_BRACKETS =>["Ruby Brackets","punctuation.section.function, meta.brace.curly.function, meta.function-call punctuation.section.scope.ruby",{}],
     :RUBY_COMMA =>["Comma","meta.delimiter.object.comma",{}],
     :RUBY_COMMENT =>["Comment","comment",{}],
