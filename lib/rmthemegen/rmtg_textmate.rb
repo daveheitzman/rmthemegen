@@ -1,7 +1,8 @@
 #**********************************************************************
 #*                                                                    *
 #*  RmThemeGen - a ruby script to create random, usable themes for    *
-#*  text editors. Currently supports RubyMine 3.X.X                   *
+#*  text editors. Currently supports RubyMine 3.X.X and Textmate,     *
+#*  sublime2                                                          *
 #*                                                                    *
 #*  By David Heitzman, 2011                                           *
 #*                                                                    *
@@ -56,39 +57,42 @@ module RMThemeGen
    #subclass
    def before_create(outputdir, bg_color_style, colorsets, rand_seed)
       super(outputdir, bg_color_style, colorsets, rand_seed)
-      
    end
     
-   def set_doc_colors
+    def set_doc_colors
+    end
 
-   end
+    def set_element_colors
+    end 
+   
+   
+    def make_theme_from_hash
+    end 
 
-   def set_element_colors
-   end 
+    def make_theme_text(bg_color_style=:dark, colorsets=[], rand_seed=nil, opts_hash={})
+      create_textmate_theme( bg_color_style = :dark, colorsets=[], rand_seed=nil, opts_hash )
+    end    
    
-   
-   def make_theme_from_hash
-   
-   end 
-   
-   def make_theme_file(outputdir = ENV["PWD"], bg_color_style=:dark, colorsets=[], rand_seed=nil)
-      create_textmate_theme(outputdir, bg_color_style, colorsets, rand_seed)
-   end 
+    def make_theme_file( outputdir = ENV["PWD"], bg_color_style=:dark, colorsets=[], rand_seed=nil, opts_hash={} )
+      outt=create_textmate_theme(bg_color_style , colorsets, rand_seed, opts_hash) #@themename gets set by that there call, so we need it to happen before we use the filename
+      @savefile = File.expand_path(outputdir)+"/rmt_"+@themename+".tmTheme"
+      File.open(@savefile, "w") do |f|
+        f.puts( outt )
+      end 
+      @savefile
+    end 
  
-    def create_textmate_theme(outputdir = ENV["PWD"], bg_color_style=:dark, colorsets=[], rand_seed=nil, opts_hash={})
-    opts_hash[:punctuation_bold] = 0.2 
-    opts_hash[:backgrounds_colored] = 0.05
+    def create_textmate_theme(bg_color_style=:dark, colorsets=[], rand_seed=nil, opts_hash={})
+      opts_hash[:punctuation_bold] = 0.2 
+      opts_hash[:backgrounds_colored] = 0.05
 
-    
-    #returns path to file that it created, which is an xml file that should work in textmate.  
+      #returns string of a plist xml file that should work in textmate.  
       handle_rand_seed(rand_seed)
-      before_create(outputdir, bg_color_style, colorsets, rand_seed) 
+      before_create( '.',bg_color_style, colorsets, rand_seed) 
       #it will save the theme file ".tmTheme" in the same directory as other themes
       #it will return the full name and path of that theme file.
     
       @theme_successfully_created=false
-        @savefile = "rmt_"+@themename+".tmTheme"
-        @outf = File.new(@opts[:outputdir]+"/"+@savefile, "w+")
         rexmlout = REXML::Document.new
         rexmlout << REXML::DocType.new('plist','PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"')
         rexmlout << REXML::XMLDecl.new("1.0","UTF-8",nil)
@@ -172,11 +176,10 @@ module RMThemeGen
         rexmlout << plist
         formatter = REXML::Formatters::Pretty.new
         formatter.compact=true
-
-        formatter.write(rexmlout, @outf)
-        @outf.close	
+        @output=''
+        formatter.write(rexmlout, @output)
         @theme_successfully_created = true
-        return File.expand_path(@outf.path)
+        @output
     end
 
 

@@ -198,9 +198,9 @@ module RMThemeGen
       end
    end #def handle_rand_seed 
 
-   def before_create(outputdir = ENV["PWD"], bg_color_style=:dark, colorsets=[], rand_seed=nil)
+   def before_create( outputdir=ENV['PWD'], bg_color_style=:dark, colorsets=[], rand_seed=nil)
       defaults = {}
-      defaults[:outputdir] = outputdir
+      defaults[:outputdir] = File.expand_path outputdir
       defaults[:bg_color_style] = bg_color_style
       opts = defaults
       @opts = opts

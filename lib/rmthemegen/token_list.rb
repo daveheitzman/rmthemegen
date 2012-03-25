@@ -100,7 +100,7 @@ module RMThemeGen
     :RUBY_REQUIRE_CALL =>["Require","keyword.other.special-method.ruby",{}],
     :RUBY_SPECIFIC_CALL =>["Ruby Specific Call","keyword.control.pseudo-method.ruby",{}],
     :RUBY_STRING =>["String","string",{}],
-    :RUBY_SYMBOL =>["Symbol","constant.other.symbol",{}],
+    :RUBY_SYMBOL =>["Symbol","constant.other.symbol",{}]
     }
 #    :RUBY_PRIVATE_CALL =>["name","scope",{}],
 #    :RUBY_PROTECTED_CALL =>["name","scope",{}],
