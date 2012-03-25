@@ -10,15 +10,16 @@ require 'uv'
       @syntaxes
   end 
 
-puts  get_syntaxes.inspect
- # puts syn= Textpow::SyntaxNode.new( @syntaxes[@syntaxes.keys.first].to_s)
- # puts Uv::syntaxes.inspect
- # puts Uv::syntaxes_hash.inspect
- puts Uv::syntaxes_hash['ruby'].inspect
- #puts syn=( Uv::syntaxes_hash['ruby'] )
+  get_syntaxes
+  Uv::syntaxes_hash['ruby'].inspect
+  syn=( Uv::syntaxes_hash['ruby'] )
   processor = Textpow::DebugProcessor.new
 
-  puts syn.respond_to?( :parse).to_s 
-  puts syn.parse("def myvar ; return 100; end ", processor)
-  puts syn.parse(File.read('create_syntax.rb'), processor)
+  syn.parse(File.read('create_syntax.rb'), processor)
+
+  render_str = Uv::get_render_and_css( Plist::parse_xml('./rmt_handicapped_fisherman.tmTheme') )  
+  render_processor = Uv::RenderProcessor.new( render_str.first, line_numbers=true, headers=true )
+
+  syn.parse( File.read('create_syntax.rb') , render_processor )
+  puts render_str.last + render_processor.string
 
