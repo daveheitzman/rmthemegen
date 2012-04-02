@@ -1,2 +1,3 @@
   # Your code goes here...
-  require File.dirname(__FILE__)+"/rmthemegen/rmthemegen_187.rb"
+  require File.expand_path(__FILE__,"./../vendor/ultraviolet-0.10.2/lib/uv.rb")
+  require File.expand_path(__FILE__,"rmthemegen/rmthemegen_187.rb")

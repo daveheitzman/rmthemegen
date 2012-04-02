@@ -1,6 +1,9 @@
 require 'rubygems'
 require 'textpow'
-require 'uv'
+
+  require File.expand_path("../../vendor/ultraviolet-0.10.2/lib/uv.rb",__FILE__)
+
+# require 'uv'
 
 
   # Uv::init_syntaxes

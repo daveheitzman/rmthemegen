@@ -1,7 +1,7 @@
 require 'fileutils'
 require 'textpow'
-require 'uv/render_processor.rb'
-require 'uv/utility.rb'
+require File.expand_path('../uv/render_processor.rb',__FILE__)
+require File.expand_path('../uv/utility.rb',__FILE__)
 
 module Uv
 
