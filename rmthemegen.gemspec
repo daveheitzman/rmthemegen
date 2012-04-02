@@ -15,11 +15,11 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.8.7'
 
-  s.add_dependency('xml-simple', ">= 1.0.15")
-  s.add_dependency('color',">=1.4.1")
-  s.add_dependency('textpow',"0.10.1")
-  s.add_dependency('plist',"3.1.0")
-  s.add_dependency('ultraviolet',"0.10.2")
+  s.add_dependency('xml-simple', "1.0.15")
+  s.add_dependency('color',"1.4.1")
+  s.add_dependency('textpow19')
+  s.add_dependency('plist')
+  s.add_dependency('ultraviolet1x')
  
   s.add_dependency('rake') 
   s.bindir = "bin"

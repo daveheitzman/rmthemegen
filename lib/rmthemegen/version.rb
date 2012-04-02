@@ -1,3 +1,3 @@
 module Rmthemegen
-  VERSION = "0.0.38"
+  VERSION = "0.0.47"
 end
